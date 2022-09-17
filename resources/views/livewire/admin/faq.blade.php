@@ -4,10 +4,10 @@
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h3 class="m-0 font-weight-bold card-title-text">
-                    @if(session()->get('status')) Edit @else Add @endif Status 
+                    @if(session()->get('status')=='edit') Edit @else Add @endif FAQ {{session()->get('edit')}}
             </div>
             <div class="card-body">
-                <form wire:submit.prevent="create">
+                <form  @if(session()->get('status')=='edit')  wire:submit.prevent="update" @else wire:submit.prevent="create" @endif>
                     <div class="mb-3 row">
                         <label for="faqInputQuestion" class="col-sm-2 col-form-label">Question</label>
                         <div class="col-sm-10">
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <div class="mb-3 row justify-content-center">
-                        @if(session()->get('status'))
+                        @if(session()->get('status')=='edit')
                         <button type="submit" class="btn btn-success ml-3">Update</button>
                         @else
                         <button type="submit" class="btn btn-success ml-3">Save</button>
@@ -66,11 +66,11 @@
                         <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
                             <div class="row">
                                 <div class="col-sm-12 col-md-6 mb-4">
-                                    <a  wire:click="toggleForm" class="btn btn-primary btn-large card-btn">Add FAQ</a>
+                                    <a  wire:click="toggleForm('create')" class="btn btn-primary btn-large card-btn">Add FAQ</a>
                                 </div>
                                 <div class="col-sm-12 col-md-6 mb-4">
                                     <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                        <input type="text" wire:model="search" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary search-nav" type="button">
                                                 <i class="fas fa-search fa-sm"></i>
@@ -93,14 +93,14 @@
                                             @foreach($data as $faq)
                                             <tr class="odd">
                                                 <td>{{$faq->priority}}</td>
-                                                <td>{{$faq->question}}</td>
+                                                <td>{{strlen($faq->question)>40?substr($faq->question,0,40). "...":$faq->question}}</td>
                                                 <td>{{$faq->user->name}}</td>
                                                 <td>{{$faq->status}}</td>
                                             
                                                 <td class="d-flex align-items-center justify-content-between border">
                                                     <a wire:click="edit('{{$faq->id}}')"><i class="fas fa-edit fa-lg text-warning"></i></a>
-                                                    <a href="faq-show.html"><i class="fa-solid fa-eye fa-lg"></i></a>
-                                                    <a href="#" id="delete-faq"><i class="fas fa-trash fa-lg text-danger"></i></a>
+                                                    <a href="{{route('admin.faqshow',['id'=>$faq->id])}}"><i class="fa-solid fa-eye fa-lg"></i></a>
+                                                    <a wire:click="deleteConfirm({{$faq->id}})" id="delete-faq"><i class="fas fa-trash fa-lg text-danger"></i></a>
                                                 </td>
                                             </tr>
                                             @endforeach
@@ -125,6 +125,7 @@
                 </div>
             </div>
     </div>
+
     @section('bottom-scripts')
     <script type="text/javascript">
         window.addEventListener('swal:create',event=>{
@@ -135,6 +136,31 @@
                 showConfirmButton: false
             });
         });
+        window.addEventListener('swal:update',event=>{
+            Swal.fire({
+                title: event.detail.title,
+                text: event.detail.text,
+                icon: event.detail.type,
+                showConfirmButton: false
+            });
+        });
+        window.addEventListener('swal:deleteConfirm', event => {
+                swal.fire({
+                    title:event.detail.title,
+                    text: event.detail.text,
+                    icon: event.detail.type,
+                    showCancelButton: true,
+                    dangerMode: true,
+                    confirmButtonColor:'#3085d6',
+                    cancelButtonColor:'#d33',
+                    confirmButtonText:"Yes, delete it!"
+                })
+                .then((willDelete) => {
+                    if (willDelete.isConfirmed)
+                        Livewire.emit('delete', event.detail.id);
+                });
+            });
     </script>
+    
     @endsection
 </div>

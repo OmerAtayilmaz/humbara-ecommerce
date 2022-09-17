@@ -182,7 +182,7 @@
 
         <!-- Nav Item - Settings -->
         <li class="nav-item">
-            <a class="nav-link" href="settings#">
+            <a class="nav-link" href="{{route('admin.settings')}}">
                 <i class="fas fa-fw fa-wrench"></i>
                 <span>Settings</span></a>
         </li>

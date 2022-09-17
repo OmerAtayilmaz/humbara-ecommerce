@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
+use App\Models\Faq;
 class AdminController extends Controller
 {
 
@@ -27,6 +28,19 @@ class AdminController extends Controller
     }
     public function faq(){ 
         return view('backoffice.faq.index');
+    }
+    public function faqshow($id){
+        $faq=Faq::find($id);
+        if(empty($faq)){
+            return redirect()->back();
+        }
+        return view('backoffice.faq.show',[
+            'faq'=>$faq
+        ]);
+    }
+
+    public function settings(){
+        return view('backoffice.settings');
     }
 
     

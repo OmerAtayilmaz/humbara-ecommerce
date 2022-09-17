@@ -1,9 +1,5 @@
 Service
-{ } -> FAQ
-    { }->CREATE 
-    { }->UPDATE
-    { }->DELETE
-    
+
 
 
 
@@ -30,6 +26,17 @@ stands for;
 { }-> SHOP_CARD
 { }-> 
  
+
+Services
+{ COMPLETED } -> FAQ
+    { COMPLETED }->CREATE 
+    { COMPLETED }->UPDATE
+    { COMPLETED }->DELETE
+
+    
+
+
+ MIGRATIONS 
 { COMPLETED }-> ROLE 
 { COMPLETED }-> ROLE_USER
 { COMPLETED }-> THEME
@@ -47,3 +54,5 @@ stands for;
 { COMPLETED }-> COURSE VIDEO
 { COMPLETED }-> COURSE PRICES
 { COMPLETED }-> DISCOUNT_PERCENT_COURSE
+
+    
