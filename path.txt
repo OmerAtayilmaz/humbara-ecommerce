@@ -3,12 +3,16 @@ Migrations
 NOTLAR:
 Bir kurs için her tipten bir price girilebilir
 
+c_c_discount_by_percents
+-> butun kurslara indirim uygulamayı sağlayan kodu oluşturdugumuz yerdir.
 
- 
-{ }-> ORDER 
-{ }-> ROLE 
-{ }-> ROLE_USER
+stands for;
+    CC : CourseCode
+
+
 { }-> DISCOUNT_PERCENT_COURSE
+{  }-> ORDER 
+{ }-> ORDER_COURSE
 { }-> COURSE_USER_CONTRACT
 { }-> FINISHED_COURSES
 { }-> COURSE_REVIEW
@@ -17,6 +21,9 @@ Bir kurs için her tipten bir price girilebilir
 { }-> HOMEPAGE_SLIDES
 { }-> 
 { }-> 
+ 
+{ COMPLETED }-> ROLE 
+{ COMPLETED }-> ROLE_USER
 { COMPLETED }-> THEME
 { COMPLETED }-> IMAGES
 { COMPLETED }-> ADMIN TEMPLATE
