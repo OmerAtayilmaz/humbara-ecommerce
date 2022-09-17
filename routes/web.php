@@ -44,13 +44,14 @@ Route::controller(HomeController::class)->group(function(){
 
 
 /* ADMIN ROUTES */
-Route::middleware('auth')->controller(AdminController::class)->prefix('/backoffice')->name('admin.')->group(function(){
-    Route::get('/','index')->name('index');
+Route::/* middleware('auth')-> */prefix('/backoffice')->name('admin.')->group(function(){
+    Route::get('/',[AdminController::class,"index"])->name('index');
     //Route::get('/','logout')->name('logout');
-    Route::get('/user','userlist')->name('userlist');
-    Route::get('/category','categorylist')->name('categorylist');
-    
-    Route::get('/slides',"slideslist")->name('slideslist');
+    Route::get('/user',[AdminController::class,"userlist"])->name('userlist');
+    Route::get('/category',[AdminController::class,'categorylist'])->name('categorylist');
+    Route::get('/slides',[AdminController::class,"slideslist"])->name('slideslist');
+    Route::get("/faq",[AdminController::class,"faq"])->name('faq');
+  
 });
 Route::middleware([
     'auth:sanctum',

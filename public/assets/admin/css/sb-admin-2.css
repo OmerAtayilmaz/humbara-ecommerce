@@ -11313,3 +11313,15 @@ body.sidebar-toggled footer.sticky-footer {
     height: 55px;
   }
 }
+
+.error{
+  font-size:12px;
+  color:red;
+}
+.lw-faq__container textarea{
+  resize:none;
+}
+
+a{
+  cursor:pointer;
+}

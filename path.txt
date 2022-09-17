@@ -1,3 +1,12 @@
+Service
+{ } -> FAQ
+    { }->CREATE 
+    { }->UPDATE
+    { }->DELETE
+    
+
+
+
 Migrations
 
 NOTLAR:
@@ -10,7 +19,6 @@ stands for;
     CC : CourseCode
 
 
-{ }-> DISCOUNT_PERCENT_COURSE
 {  }-> ORDER 
 { }-> ORDER_COURSE
 { }-> COURSE_USER_CONTRACT
@@ -19,7 +27,7 @@ stands for;
 { }-> USER_FINISHED_COURSES
 { }-> USER_WATCHED_VIDEOS
 { }-> HOMEPAGE_SLIDES
-{ }-> 
+{ }-> SHOP_CARD
 { }-> 
  
 { COMPLETED }-> ROLE 
@@ -38,3 +46,4 @@ stands for;
 { COMPLETED }-> COURSE Q & A
 { COMPLETED }-> COURSE VIDEO
 { COMPLETED }-> COURSE PRICES
+{ COMPLETED }-> DISCOUNT_PERCENT_COURSE

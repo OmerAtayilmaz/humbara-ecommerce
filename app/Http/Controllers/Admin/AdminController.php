@@ -25,6 +25,9 @@ class AdminController extends Controller
     public function slideslist(){ 
         return view('backoffice.slides.index');
     }
+    public function faq(){ 
+        return view('backoffice.faq.index');
+    }
 
     
   

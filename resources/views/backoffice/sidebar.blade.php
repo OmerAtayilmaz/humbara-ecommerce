@@ -130,7 +130,7 @@
 
         <!-- Nav Item - Faq -->
         <li class="nav-item">
-            <a class="nav-link" href="faq#">
+            <a class="nav-link" href="{{route('admin.faq')}}">
                 <i class="fas fa-fw fa-question"></i>
                 <span>Faq</span></a>
         </li>

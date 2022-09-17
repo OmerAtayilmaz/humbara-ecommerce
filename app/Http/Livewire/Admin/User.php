@@ -6,7 +6,6 @@ use Livewire\Component;
 use App\Models\User as UserORM;
 class User extends Component
 {
-    
     public $search='';
     public $limit=10;
     public function render()
