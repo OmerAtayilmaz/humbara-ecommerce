@@ -27,13 +27,24 @@ stands for;
 { }-> 
  
 
-Services
+Service
+Theme Servisleri yazılacak
+Contact Messages servisi  yazılacak
+Category Servisi yazılacak
+Kurs Servisi yazaılacak 
+Video servisi yazaılacak
+
+
+Settings -> HATA VAR, SYNC Yöntemle yapılacak 
+    { COMPLETED } -> CREATE
+
 { COMPLETED } -> FAQ
     { COMPLETED }->CREATE 
     { COMPLETED }->UPDATE
     { COMPLETED }->DELETE
 
     
+
 
 
  MIGRATIONS 
