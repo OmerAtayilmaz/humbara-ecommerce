@@ -55,6 +55,7 @@
                     <i class="fas fa-fw fa-question"></i>
                     <span>Faq</span></a>
             </li>
+            
         <hr class="sidebar-divider">
          <!-- Nav Item - Course -->
          <li class="nav-item">
@@ -65,7 +66,8 @@
             </a>
             <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="course#">Courses</a>
+                    <a class="collapse-item" href="{{route('admin.courses')}}">Courses</a>
+                    <a class="collapse-item" href="{{route('admin.createcourse')}}">Create Course</a>
                     <a class="collapse-item" href="course-finished#">Finished Courses</a>
                     <a class="collapse-item" href="course-review#">Course Review</a>
                     <a class="collapse-item" href="course-content#">Course Content</a>

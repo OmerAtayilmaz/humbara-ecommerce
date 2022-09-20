@@ -6,12 +6,31 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\Faq;
+use App\Models\User;
+use App\Models\Course;
+use App\Models\CourseReview;
+class Response {
+    public $user;
+    public $course;
+    public $review;
+    function __construct($user,$course,$reviews){
+        $this->user=$user;
+        $this->course=$course;
+        $this->review=$reviews;
+    }
+}
 class AdminController extends Controller
 {
 
     public function index()
     {
-        return view('backoffice.dashboard');
+        $userQuantity=User::count();
+        $courseQuantity=Course::count();
+        $reviews=CourseReview::count();
+        $data=new Response($userQuantity,$courseQuantity,$reviews);
+        return view('backoffice.dashboard',[
+            'data'=>$data
+        ]);
     }
 
     public function userlist(){
@@ -50,6 +69,19 @@ class AdminController extends Controller
     public function courses(){
         return view('backoffice.courses.index');
     }
+
+    public function createcourse(){
+        return view('backoffice.courses.create');
+    }
+
+    public function favourites(){
+        return view('backoffice.favourites.index');
+    }
+
+    public function messages(){
+        return view('backoffice.messages.index');
+    }
+    
 
     
   

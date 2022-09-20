@@ -58,6 +58,7 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
     Route::get("/messages",[AdminController::class,"messages"])->name('messages');
     Route::get("/orders",[AdminController::class,"orders"])->name('orders');
     Route::get("/courses",[AdminController::class,"courses"])->name('courses');
+    Route::get("/course/create",[AdminController::class,"createcourse"])->name('createcourse');
 });
 
 Route::middleware([

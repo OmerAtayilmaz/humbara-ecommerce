@@ -9,7 +9,7 @@
                     <div class="col mr-2">
                         <div class="text-lg font-weight-bold text-primary text-uppercase mb-3">
                             Number of Members</div>
-                        <div class="h4 mb-0 font-weight-bold text-gray-800">15</div>
+                        <div class="h4 mb-0 font-weight-bold text-gray-800">{{$data->user}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -30,7 +30,7 @@
                     <div class="col mr-2">
                         <div class="text-lg font-weight-bold text-success text-uppercase mb-3">
                             Number Of Courses</div>
-                        <div class="h4 mb-0 font-weight-bold text-gray-800">15</div>
+                        <div class="h4 mb-0 font-weight-bold text-gray-800">{{$data->course}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-book fa-2x text-gray-300"></i>
@@ -51,7 +51,7 @@
                     <div class="col mr-2">
                         <div class="text-lg font-weight-bold text-info text-uppercase mb-3">
                             Number Of Comments</div>
-                        <div class="h4 mb-0 font-weight-bold text-gray-800">15</div>
+                        <div class="h4 mb-0 font-weight-bold text-gray-800">{{$data->review}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-comments fa-2x text-gray-300"></i>

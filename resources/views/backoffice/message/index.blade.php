@@ -1,19 +1,17 @@
 @extends('layouts.backoffice')
 @section('content')
-   <!-- Begin Page Content -->
-   <div class="container-fluid">
+  <!-- Begin Page Content -->
+  <div class="container-fluid">
+    <!-- Page Content -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h3 class="m-0 font-weight-bold card-title-text">Course List</h3>
+            <h3 class="m-0 font-weight-bold card-title-text">Message List</h3>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
                     <div class="row">
-                        <div class="col-sm-12 col-md-6 mb-4">
-                            <a href="course-add.html" class="btn btn-primary btn-large card-btn">Add Course</a>
-                        </div>
-                        <div class="col-sm-12 col-md-6 mb-4">
+                        <div class="col-md-6 mb-4">
                             <div class="input-group">
                                 <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                                 <div class="input-group-append">
@@ -28,53 +26,47 @@
                                 <thead>
                                     <tr role="row">
                                         <th>Id</th>
-                                        <th>User Id</th>
-                                        <th>Title</th>
-                                        <th>Image</th>
-                                        <th>Video</th>
-                                        <th>Description</th>
-                                        <th>Keywords</th>
-                                        <th>Course Content Id</th>
+                                        <th>Name</th>
+                                        <th>Surname</th>
+                                        <th>Email</th>
+                                        <th>Subject</th>
+                                        <th>Message</th>
                                         <th>Status</th>
-                                        <th>Category Id</th>
                                         <th colspan="2">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr class="odd">
                                         <td>1</td>
-                                        <td>Accountant</td>
+                                        <td>Ali</td>
                                         <td>Tokyo</td>
                                         <td>Admin</td>
-                                        <td>Admin</td>
-                                        <td>Admin</td>
-                                        <td>Tokyo</td>
-                                        <td>Tokyo</td>
-                                        <td>Tokyo</td>
-                                        <td>Tokyo</td>
-                                        <td class="d-flex align-items-center justify-content-between border-0">
-                                            <a href="course-edit.html"><i class="fas fa-edit fa-lg text-warning"></i></a>
-                                            <a href="course-show.html"><i class="fa-solid fa-eye fa-lg"></i></a>
-                                            <a href="#" id="delete-course"><i class="fas fa-trash fa-lg text-danger"></i></a>
+                                        <td>Keyword</td>
+                                        <td>zdnkldzfkl</td>
+                                        <td>true</td>
+                                        <td class="d-flex align-items-center justify-content-between">
+                                            <a href="message-edit.html"><i class="fas fa-edit fa-lg text-warning"></i></a>
+                                            <a href="message-show.html"><i class="fa-solid fa-eye fa-lg"></i></a>
+                                            <a href="#" id="delete-message"><i class="fas fa-trash fa-lg text-danger"></i></a>
                                         </td>
                                         <script>
-                                            var deleteCourse = document.querySelector('#delete-course');
-                                            deleteCourse.addEventListener('click', deleteItem);
-                                            function deleteItem() {
+                                            var alertMessage = document.querySelector('#delete-message');
+                                            alertMessage.addEventListener('click', messageDelete);
+                                            function messageDelete() {
                                                 swal({
                                                         title: "Are you sure?",
-                                                        text: "Once deleted, you will not be able to recover this course!",
+                                                        text: "Once deleted, you will not be able to recover this message!",
                                                         icon: "warning",
                                                         buttons: true,
                                                         dangerMode: true,
                                                 })
                                                 .then((willDelete) => {
                                                     if (willDelete) {
-                                                        swal("Poof! Your course has been deleted!", {
+                                                        swal("Poof! Your message has been deleted!", {
                                                         icon: "success",
                                                         });
                                                     } else {
-                                                        swal("Your course is safe!");
+                                                        swal("Your message is safe!");
                                                     }
                                                 });
                                             }
