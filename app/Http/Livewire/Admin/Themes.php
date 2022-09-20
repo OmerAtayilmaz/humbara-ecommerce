@@ -6,7 +6,6 @@ use Livewire\Component;
 
 class Themes extends Component
 {
-
     public function toggleForm($status){
         session([
             'form'=>!session('form'),

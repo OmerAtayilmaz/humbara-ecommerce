@@ -53,13 +53,13 @@
                                         <td>{{$user->email_verified_at?"Active":"Unconfirmed"}}</td>
                                         <td>
                                             user 
-                                            <a href="user-role.html" onclick="return !window.open(this.href, '', 'top=50 left=100 width=800, height=600')">
+                                            <a href="{{route('admin.userroles',['userid'=>2])}}" onclick="return !window.open(this.href, '', 'top=50 left=100 width=800, height=600')">
                                                 <i class="fa-solid fa-circle-plus"></i>
                                             </a>
                                         </td>
                                         <td class="d-flex align-items-center justify-content-between border-0">
                                             <a href="user-edit.html"><i class="fas fa-edit fa-lg text-warning"></i></a>
-                                            <a href="user-show.html"><i class="fa-solid fa-eye fa-lg"></i></a>
+                                            <a href="{{route('admin.usershow',['userid'=>2])}}"><i class="fa-solid fa-eye fa-lg"></i></a>
                                             <a href="#" id="delete-user"><i class="fas fa-trash fa-lg text-danger"></i></a>
                                         </td>
                                     </tr>

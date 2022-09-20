@@ -11,7 +11,7 @@
                 <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
                     <div class="row">
                         <div class="col-sm-12 col-md-6 mb-4">
-                            <a href="course-add.html" class="btn btn-primary btn-large card-btn">Add Course</a>
+                            <a href="{{route('admin.createcourse')}}" class="btn btn-primary btn-large card-btn">Add Course</a>
                         </div>
                         <div class="col-sm-12 col-md-6 mb-4">
                             <div class="input-group">
@@ -27,34 +27,30 @@
                             <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                                 <thead>
                                     <tr role="row">
-                                        <th>Id</th>
-                                        <th>User Id</th>
                                         <th>Title</th>
-                                        <th>Image</th>
-                                        <th>Video</th>
-                                        <th>Description</th>
-                                        <th>Keywords</th>
-                                        <th>Course Content Id</th>
+                                        <th>Instructor</th>
+                                        <th>Language</th>
+                                        <th>Category</th>
+                                        <th>Content</th>
                                         <th>Status</th>
-                                        <th>Category Id</th>
                                         <th colspan="2">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr class="odd">
-                                        <td>1</td>
-                                        <td>Accountant</td>
-                                        <td>Tokyo</td>
-                                        <td>Admin</td>
-                                        <td>Admin</td>
-                                        <td>Admin</td>
-                                        <td>Tokyo</td>
-                                        <td>Tokyo</td>
-                                        <td>Tokyo</td>
-                                        <td>Tokyo</td>
+                                        <td>Model Art Dersleri</td>
+                                        <td>Ahmet</td>
+                                        <td>TR</td>
+                                        <td>3D Design</td>
+                                        <td><a class="btn btn-warning" href="
+                                            {{route('admin.course_content_page',['courseid'=>2])}}
+                                            ">Content</a></td>
+                                        <td>ACTIVE</td>
                                         <td class="d-flex align-items-center justify-content-between border-0">
                                             <a href="course-edit.html"><i class="fas fa-edit fa-lg text-warning"></i></a>
-                                            <a href="course-show.html"><i class="fa-solid fa-eye fa-lg"></i></a>
+                                            <a href="
+                                            {{route('admin.coursedetail',['courseid'=>2])}}
+                                            "><i class="fa-solid fa-eye fa-lg"></i></a>
                                             <a href="#" id="delete-course"><i class="fas fa-trash fa-lg text-danger"></i></a>
                                         </td>
                                         <script>

@@ -11,6 +11,7 @@ return new class extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('title');
+            $table->enum('lang',["TR","EN"]);
             $table->string('description');
             $table->string('keywords');
             $table->longtext('content');

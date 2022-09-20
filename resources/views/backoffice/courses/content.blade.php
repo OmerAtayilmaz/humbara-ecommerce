@@ -1,44 +1,23 @@
-<div>
-   
-    @if(session()->get('form'))
- <div class="container-fluid">
+@extends('layouts.backoffice')
+@section('content')
+  <!-- Begin Page Content -->
+  <div class="container-fluid">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h3 class="m-0 font-weight-bold card-title-text">
-                  @if(session()->get('status')=='edit') Edit @else Add @endif Slide {{session()->get('edit')}}
-            </h3>
+            <h3 class="m-0 font-weight-bold card-title-text">Add Course Content</h3>
         </div>
         <div class="card-body">
-            <form @if(session()->get('status')=='edit')  wire:submit.prevent="update" @else wire:submit.prevent="create" @endif>
-              
+            <form action="">
                 <div class="mb-3 row">
-                    <label for="slideImage" class="col-sm-2 col-form-label">Image</label>
+                    <label for="courseContentCourseId" class="col-sm-2 col-form-label">Course Id</label>
                     <div class="col-sm-10">
-                        <input name="image" type="file" class="form-control" id="slideImage">
-                        @error('question') <small class="error">{{ $message }}</small> @enderror
-
+                        <input name="course_id" type="number" class="form-control" id="courseContentCourseId">
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="slideTitle" class="col-sm-2 col-form-label">Title</label>
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Content</label>
                     <div class="col-sm-10">
-                        <input name="title" type="text" class="form-control" id="slideTitle">
-                        @error('question') <small class="error">{{ $message }}</small> @enderror
-                     </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="slideKeyword" class="col-sm-2 col-form-label">Keywords</label>
-                    <div class="col-sm-10">
-                        <input name="keywords" type="text" class="form-control" id="slideKeyword">
-                        @error('question') <small class="error">{{ $message }}</small> @enderror
-
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="inputQuestion" class="col-sm-2 col-form-label">Description</label>
-                    <div class="col-sm-10">
-                        <textarea id="editor" name="description" rows="4" cols="50" class="form-control"></textarea>
-
+                        <textarea id="editor" name="content" rows="4" cols="50" class="form-control"></textarea>
                         <script>
                             ClassicEditor
                                 .create( document.querySelector( '#editor' ) )
@@ -46,49 +25,36 @@
                                     console.error( error );
                                 } );
                         </script>
-                       @error('question') <small class="error">{{ $message }}</small> @enderror
-
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="slidePriorty" class="col-sm-2 col-form-label">Priority</label>
+                    <label for="courseContentOrder" class="col-sm-2 col-form-label">Order</label>
                     <div class="col-sm-10">
-                        <select name="priority" class="form-control" id="slidePriorty">
-                            <option selected="selected">False</option>
-                            <option>True</option>
-                        </select>
-                        @error('question') <small class="error">{{ $message }}</small> @enderror
-
+                        <input name="order" type="text" class="form-control" id="courseContentOrder">
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="slideStatus" class="col-sm-2 col-form-label">Status</label>
+                    <label for="courseContentStatus" class="col-sm-2 col-form-label">Status</label>
                     <div class="col-sm-10">
-                        <select name="status" class="form-control" id="slideStatus">
+                        <select name="status" class="form-control" id="courseContentStatus">
                             <option selected="selected">False</option>
                             <option>True</option>
                         </select>
-                        @error('question') <small class="error">{{ $message }}</small> @enderror
-
                     </div>
                 </div>
                 <div class="mb-3 row justify-content-center">
-                    <a wire:click="toggleForm(null)" class="btn btn-secondary" id="cancel-slides">Cancel</a>
-                    @if(session()->get('status')=='edit')
-                    <button type="submit" class="btn btn-success ml-3">Update</button>
-                    @else
-                    <button type="submit" class="btn btn-success ml-3">Save</button>
-                    @endif
+                    <a href="#" class="btn btn-secondary" id="cancel-course-content">Cancel</a>
+                    <a href="#" class="btn btn-success ml-3" id="add-course-content">Update</a>
                     <script>
-                        var addSlides = document.querySelector('#add-slides');
-                        var cancelSlides = document.querySelector('#cancel-slides');
-                        addSlides.addEventListener('click', slideAdd);
-                        cancelSlides.addEventListener('click', slideCancel);
-                        function slideAdd() {
-                            swal("Good job!", "You add the slide!", "success");
+                        var addCourse = document.querySelector('#add-course-content');
+                        var cancelCourse = document.querySelector('#cancel-course-content');
+                        addCourse.addEventListener('click', addItem);
+                        cancelCourse.addEventListener('click', cancelItem);
+                        function addItem() {
+                            swal("Good job!", "You add the course content!", "success");
                         }
-                        function slideCancel() {
-                            swal("Slide add cancelled!");
+                        function cancelItem() {
+                            swal("Course content add cancelled!");
                         }
                     </script>
                 </div>
@@ -96,20 +62,19 @@
         </div>
     </div>
 </div>
-@endif
-
+<!-- /.container-fluid -->
   <!-- Begin Page Content -->
   <div class="container-fluid">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h3 class="m-0 font-weight-bold card-title-text">Slide List</h3>
+            <h3 class="m-0 font-weight-bold card-title-text">Course Content List</h3>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
                     <div class="row">
                         <div class="col-sm-12 col-md-6 mb-4">
-                            <a  wire:click="toggleForm('create')" class="btn btn-primary btn-large card-btn">Add Slide</a>
+                            <a href="course-content-add.html" class="btn btn-primary btn-large card-btn">Add Course Content</a>
                         </div>
                         <div class="col-sm-12 col-md-6 mb-4">
                             <div class="input-group">
@@ -125,50 +90,42 @@
                             <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                                 <thead>
                                     <tr role="row">
-                                        <th>Id</th>
-                                        <th>User Id</th>
-                                        <th>Image</th>
+                                        <th>Course Title</th>
                                         <th>Title</th>
-                                        <th>Keywords</th>
-                                        <th>Description</th>
-                                        <th>Priority</th>
+                                        <th>Order</th>
                                         <th>Status</th>
                                         <th colspan="2">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr class="odd">
-                                        <td>1</td>
-                                        <td>Accountant</td>
-                                        <td><img src="..." alt=""></td>
-                                        <td>Admin</td>
-                                        <td>Admin</td>
-                                        <td>Admin</td>
-                                        <td>Admin</td>
-                                        <td>Admin</td>
+                                        <td>3D Model</td>
+                                        <td>All brush types</td>
+                                        <td>4</td>
+                                        <td>ACTIVE</td>
                                         <td class="d-flex align-items-center justify-content-between border-0">
-                                            <a href="slides-edit.html"><i class="fas fa-edit fa-lg text-warning"></i></a>
-                                            <a href="{{route('admin.slideshow',['slideid'=>3])}}"><i class="fa-solid fa-eye fa-lg"></i></a>
-                                            <a href="#" id="delete-slides"><i class="fas fa-trash fa-lg text-danger"></i></a>
+                                            <a href="course-content-edit.html"><i class="fas fa-edit fa-lg text-warning"></i></a>
+                                            <a href="course-content-show.html"><i class="fa-solid fa-eye fa-lg"></i></a>
+                                            <a href="#" id="delete-course-content"><i class="fas fa-trash fa-lg text-danger"></i></a>
                                         </td>
                                         <script>
-                                            var deleteSlide = document.querySelector('#delete-slides');
-                                            deleteSlide.addEventListener('click', deleteItem);
-                                            function deleteItem() {
+                                            var finishedAlert = document.querySelector('#delete-course-content');
+                                            finishedAlert.addEventListener('click', deleteAlert);
+                                            function deleteAlert() {
                                                 swal({
                                                         title: "Are you sure?",
-                                                        text: "Once deleted, you will not be able to recover this slide!",
+                                                        text: "Once deleted, you will not be able to recover this course content!",
                                                         icon: "warning",
                                                         buttons: true,
                                                         dangerMode: true,
                                                 })
                                                 .then((willDelete) => {
                                                     if (willDelete) {
-                                                        swal("Poof! Your slide has been deleted!", {
+                                                        swal("Poof! Your course content has been deleted!", {
                                                         icon: "success",
                                                         });
                                                     } else {
-                                                        swal("Your slide is safe!");
+                                                        swal("Your finished course is safe!");
                                                     }
                                                 });
                                             }
@@ -193,4 +150,4 @@
     </div>
 </div>
 <!-- /.container-fluid -->
-</div>
+@endsection

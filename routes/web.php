@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\CourseController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,8 +49,11 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
     Route::get('/',[AdminController::class,"index"])->name('index');
     //Route::get('/','logout')->name('logout');
     Route::get('/user',[AdminController::class,"userlist"])->name('userlist');
+    Route::get('/user/show/{userid}',[AdminController::class,"userdetail"])->name('usershow');
+    Route::get('/user/roles/{userid}',[AdminController::class,"userroles"])->name('userroles');
     Route::get('/category',[AdminController::class,'categorylist'])->name('categorylist');
     Route::get('/slides',[AdminController::class,"slideslist"])->name('slideslist');
+    Route::get('/slides/show/{slideid}',[AdminController::class,"slideshow"])->name('slideshow');
     Route::get("/faq",[AdminController::class,"faq"])->name('faq');
     Route::get("/faq/{id}",[AdminController::class,"faqshow"])->name('faqshow');
     Route::get("/settings",[AdminController::class,"settings"])->name('settings');
@@ -59,6 +63,10 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
     Route::get("/orders",[AdminController::class,"orders"])->name('orders');
     Route::get("/courses",[AdminController::class,"courses"])->name('courses');
     Route::get("/course/create",[AdminController::class,"createcourse"])->name('createcourse');
+    Route::get("/course/detail/{courseid}",[CourseController::class,"coursedetail"])->name('coursedetail');
+    Route::get("/course/content/{courseid}",[CourseController::class,"course_content_page"])->name('course_content_page');
+    Route::get("/course/lessons/{id}",[CourseController::class,"course_lessons_page"])->name('course_lessons_page');
+
 });
 
 Route::middleware([

@@ -36,6 +36,12 @@ class AdminController extends Controller
     public function userlist(){
         return view('backoffice.user.index');
     }
+    public function userdetail(){
+        return view('backoffice.user.show');
+    }
+    public function userroles(){
+        return view('backoffice.user.addrole');
+    }
 
     //CREATE
     public function categorylist(){
@@ -44,6 +50,9 @@ class AdminController extends Controller
 
     public function slideslist(){ 
         return view('backoffice.slides.index');
+    }
+    public function slideshow(){
+        return view('backoffice.slides.show');
     }
     public function faq(){ 
         return view('backoffice.faq.index');

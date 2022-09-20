@@ -1,69 +1,38 @@
-Service
-
-
-
-
-Migrations
-
-NOTLAR:
-Bir kurs için her tipten bir price girilebilir
-
-c_c_discount_by_percents
--> butun kurslara indirim uygulamayı sağlayan kodu oluşturdugumuz yerdir.
-
-stands for;
-    CC : CourseCode
-
-
-{  }-> ORDER 
-{ }-> ORDER_COURSE
-{ }-> COURSE_USER_CONTRACT
-{ }-> FINISHED_COURSES
-{ }-> COURSE_REVIEW
-{ }-> USER_FINISHED_COURSES
-{ }-> USER_WATCHED_VIDEOS
-{ }-> HOMEPAGE_SLIDES
-{ }-> SHOP_CARD
-{ }-> 
- 
-
-Service
-Theme Servisleri yazılacak
-Contact Messages servisi  yazılacak
-Category Servisi yazılacak
-Kurs Servisi yazaılacak 
-Video servisi yazaılacak
-
-
-Settings -> HATA VAR, SYNC Yöntemle yapılacak 
-    { COMPLETED } -> CREATE
-
-{ COMPLETED } -> FAQ
-    { COMPLETED }->CREATE 
-    { COMPLETED }->UPDATE
-    { COMPLETED }->DELETE
-
-    
-
-
-
- MIGRATIONS 
-{ COMPLETED }-> ROLE 
-{ COMPLETED }-> ROLE_USER
-{ COMPLETED }-> THEME
-{ COMPLETED }-> IMAGES
-{ COMPLETED }-> ADMIN TEMPLATE
-{ COMPLETED }-> ADMIN SLIDER 
-{ COMPLETED }-> FAVOURITES
-{ COMPLETED }-> CREDITCARD
-{ COMPLETED }-> FAQ
-{ COMPLETED }-> Country
-{ COMPLETED }-> ContactMessages
-{ COMPLETED }-> SETTINGS
-{ COMPLETED  }-> COURSE 
-{ COMPLETED }-> COURSE Q & A
-{ COMPLETED }-> COURSE VIDEO
-{ COMPLETED }-> COURSE PRICES
-{ COMPLETED }-> DISCOUNT_PERCENT_COURSE
-
-    
+{ } -> Course CRUD işlemleri tamamlanır 
+{ } -> CourseContent CRUD işlemleri tamamlanır 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 
+{ } -> 

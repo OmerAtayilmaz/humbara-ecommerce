@@ -1,10 +1,9 @@
 @extends('layouts.backoffice')
 @section('content')
- <!-- Begin Page Content -->
- <div class="container-fluid">
+<div class="container-fluid">
     <div class="card shadow mb-4 mt-4">
         <div class="card-header py-3">
-            <h3 class="m-0 font-weight-bold card-title-text">Slide Show Detail</h3>
+            <h3 class="m-0 font-weight-bold card-title-text">User Role</h3>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -16,27 +15,27 @@
                                     <th>Id</th><td>1</td>
                                 </tr>
                                 <tr>
-                                    <th>User Id</th><td>1</td>
+                                    <th>Name</th><td>Ali</td>
                                 </tr>
                                 <tr>
-                                    <th>Image</th><td><img src="..." alt=""></td>
+                                    <th>Surname</th><td>Acar</td>
                                 </tr>
                                 <tr>
-                                    <th>Title</th><td>User</td>
+                                    <th>Role</th><td>User&nbsp;<a href="#"><i class="fa-solid fa-xmark text-danger"></i></a></td>
                                 </tr>
                                 <tr>
-                                    <th>Keywords</th><td>User</td>
-                                </tr>
-                                <tr>
-                                    <th>Description</th><td>User</td>
-                                </tr>
-                                <tr>
-                                    <th>Priority</th><td>User</td>
-                                </tr>
-                                <tr>
-                                    <th>Status</th><td>User</td>
+                                    <th>Add Role</th>
+                                    <td>
+                                        <form action="">
+                                            <select name="user_role" class="form-control" id="userRoleInput">
+                                                <option selected="selected">Admin</option>
+                                                <option>User</option>
+                                            </select>
+                                        </form>
+                                    </td>
                                 </tr>
                             </table>
+                            <a href="#" class="btn btn-success btn-large mb-4">Submit</a>
                         </div>
                     </div>
                 </div>
@@ -44,5 +43,4 @@
         </div>
     </div>
 </div>
-<!-- /.container-fluid -->
 @endsection

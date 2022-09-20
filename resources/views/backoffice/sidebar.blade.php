@@ -68,7 +68,7 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="{{route('admin.courses')}}">Courses</a>
                     <a class="collapse-item" href="{{route('admin.createcourse')}}">Create Course</a>
-                    <a class="collapse-item" href="course-finished#">Finished Courses</a>
+                   {{--  <a class="collapse-item" href="course-finished#">Finished Courses</a> --}}
                     <a class="collapse-item" href="course-review#">Course Review</a>
                     <a class="collapse-item" href="course-content#">Course Content</a>
                 </div>
