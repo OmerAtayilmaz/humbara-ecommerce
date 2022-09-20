@@ -15,7 +15,46 @@
                 <span>Dashboard</span>
             </a>
         </li>
+
+        <!-- Nav Item - Theme -->
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.themes')}}">
+                <i class="fa-brands fa-affiliatetheme"></i>
+                <span>Theme</span></a>
+        </li>
+
+        <!-- Nav Item - Slides -->
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.slideslist')}}">
+                <i class="fa-solid fa-photo-film fa-fw"></i>
+                <span>Slides</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.userlist')}}">
+                <i class="fas fa-fw fa-users"></i>
+                <span>User</span></a>
+        </li>
+
+             <!-- Nav Item - Course -->
+             <li class="nav-item">
+                <a class="nav-link" href="{{route('admin.categorylist')}}">
+                    <i class="fa-solid fa-bars fa-fw"></i>
+                    <span>Category</span></a>
+            </li>
+
+                <!-- Nav Item - Settings -->
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.settings')}}">
+                <i class="fas fa-fw fa-wrench"></i>
+                <span>Settings</span></a>
+        </li>
         <!-- Divider -->
+              <!-- Nav Item - Faq -->
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('admin.faq')}}">
+                    <i class="fas fa-fw fa-question"></i>
+                    <span>Faq</span></a>
+            </li>
         <hr class="sidebar-divider">
          <!-- Nav Item - Course -->
          <li class="nav-item">
@@ -33,18 +72,7 @@
                 </div>
             </div>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('admin.userlist')}}">
-                <i class="fas fa-fw fa-users"></i>
-                <span>User</span></a>
-        </li>
-
-             <!-- Nav Item - Course -->
-             <li class="nav-item">
-                <a class="nav-link" href="{{route('admin.categorylist')}}">
-                    <i class="fa-solid fa-bars fa-fw"></i>
-                    <span>Category</span></a>
-            </li>
+   
     
         
         <!-- Nav Item - Pages Collapse Menu -->
@@ -68,19 +96,6 @@
        
 
 
-        <!-- Nav Item - Theme -->
-        <li class="nav-item">
-            <a class="nav-link" href="theme#">
-                <i class="fa-brands fa-affiliatetheme"></i>
-                <span>Theme</span></a>
-        </li>
-
-        <!-- Nav Item - Slides -->
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('admin.slideslist')}}">
-                <i class="fa-solid fa-photo-film fa-fw"></i>
-                <span>Slides</span></a>
-        </li>
 
         <!-- Nav Item - Images -->
         <li class="nav-item">
@@ -128,12 +143,7 @@
                 <span>Prices</span></a>
         </li>
 
-        <!-- Nav Item - Faq -->
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('admin.faq')}}">
-                <i class="fas fa-fw fa-question"></i>
-                <span>Faq</span></a>
-        </li>
+  
 
         <!-- Nav Item - Faq -->
         <li class="nav-item">
@@ -180,12 +190,7 @@
                 <span>Order Course</span></a>
         </li>
 
-        <!-- Nav Item - Settings -->
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('admin.settings')}}">
-                <i class="fas fa-fw fa-wrench"></i>
-                <span>Settings</span></a>
-        </li>
+    
 
     </ul>
     <!-- End of Sidebar -->

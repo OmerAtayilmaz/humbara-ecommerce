@@ -53,7 +53,13 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
     Route::get("/faq",[AdminController::class,"faq"])->name('faq');
     Route::get("/faq/{id}",[AdminController::class,"faqshow"])->name('faqshow');
     Route::get("/settings",[AdminController::class,"settings"])->name('settings');
+    Route::get("/themes",[AdminController::class,"themes"])->name('themes');
+    Route::get("/favourites",[AdminController::class,"favourites"])->name('favourites');
+    Route::get("/messages",[AdminController::class,"messages"])->name('messages');
+    Route::get("/orders",[AdminController::class,"orders"])->name('orders');
+    Route::get("/courses",[AdminController::class,"courses"])->name('courses');
 });
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

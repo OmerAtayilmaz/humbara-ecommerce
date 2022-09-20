@@ -43,6 +43,14 @@ class AdminController extends Controller
         return view('backoffice.settings');
     }
 
+    public function themes(){
+        return view('backoffice.themes');
+    }
+
+    public function courses(){
+        return view('backoffice.courses.index');
+    }
+
     
   
 }
