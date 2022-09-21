@@ -14,10 +14,10 @@ return new class extends Migration
             $table->enum('lang',["TR","EN"]);
             $table->string('description');
             $table->string('keywords');
+            $table->string('video_url');
             $table->longtext('content');
             $table->string('slug');
             $table->foreignId('course_owner')->references('id')->on('users')->onDelete('cascade');
-            $table->string('image');
             $table->foreignId('category_id');
             $table->string('status');
             $table->timestamps();

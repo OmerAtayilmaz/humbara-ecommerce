@@ -63,6 +63,7 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
     Route::get("/orders",[AdminController::class,"orders"])->name('orders');
     Route::get("/courses",[AdminController::class,"courses"])->name('courses');
     Route::get("/course/create",[AdminController::class,"createcourse"])->name('createcourse');
+    Route::post("/course/create",[CourseController::class,"store"])->name('storecourse');
     Route::get("/course/detail/{courseid}",[CourseController::class,"coursedetail"])->name('coursedetail');
     Route::get("/course/content/{courseid}",[CourseController::class,"course_content_page"])->name('course_content_page');
     Route::get("/course/lessons/{id}",[CourseController::class,"course_lessons_page"])->name('course_lessons_page');

@@ -37,6 +37,25 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($courseList as $course)
+                                    <tr class="odd">
+                                        <td>{{$course->title}}</td>
+                                        <td>{{$course->course_owner}}</td>
+                                        <td>{{$course->lang}}</td>
+                                        <td>{{$course->category}}</td>
+                                        <td><a class="btn btn-warning" href="
+                                            {{route('admin.course_content_page',['courseid'=>2])}}
+                                            ">Content</a></td>
+                                        <td>{{$course->status}}</td>
+                                        <td class="d-flex align-items-center justify-content-between border-0">
+                                            <a href="course-edit.html"><i class="fas fa-edit fa-lg text-warning"></i></a>
+                                            <a href="
+                                            {{route('admin.coursedetail',['courseid'=>$course->id])}}
+                                            "><i class="fa-solid fa-eye fa-lg"></i></a>
+                                            <a href="#" id="delete-course"><i class="fas fa-trash fa-lg text-danger"></i></a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
                                     <tr class="odd">
                                         <td>Model Art Dersleri</td>
                                         <td>Ahmet</td>

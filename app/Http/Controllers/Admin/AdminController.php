@@ -76,7 +76,10 @@ class AdminController extends Controller
     }
 
     public function courses(){
-        return view('backoffice.courses.index');
+        $courseList=Course::where('status','<>','DELETED')->get();
+        return view('backoffice.courses.index',[
+            'courseList'=>$courseList
+        ]);
     }
 
     public function createcourse(){
