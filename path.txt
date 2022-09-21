@@ -1,4 +1,7 @@
-{ } -> Course CRUD işlemleri tamamlanır 
+{ COMPLETED } -> Course CRUD işlemleri tamamlanır
+    CREATE  COMPLETED
+    UPDATE  COMPLETED
+    DELETED COMPLETED
 { } -> CourseContent CRUD işlemleri tamamlanır 
 { } -> 
 { } -> 

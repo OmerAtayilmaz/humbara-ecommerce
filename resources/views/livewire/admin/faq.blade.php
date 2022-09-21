@@ -5,6 +5,7 @@
             <div class="card-header py-3">
                 <h3 class="m-0 font-weight-bold card-title-text">
                     @if(session()->get('status')=='edit') Edit @else Add @endif FAQ {{session()->get('edit')}}
+                </h3>
             </div>
             <div class="card-body">
                 <form  @if(session()->get('status')=='edit')  wire:submit.prevent="update" @else wire:submit.prevent="create" @endif>

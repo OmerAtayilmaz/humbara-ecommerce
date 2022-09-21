@@ -59,7 +59,7 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function categoryTr(){
-        return $this->hasMany(CategoryTr::class);
+    public function user(){
+        return $this->hasMany(Category::class);
     }
 }

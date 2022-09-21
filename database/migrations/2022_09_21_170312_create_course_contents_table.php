@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('course_videos', function (Blueprint $table) {
+        Schema::create('course_contents', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->foreignId('course_id')->constrained()->onDelete('cascade');
             $table->string('title');
             $table->string('video_url');
             $table->string('video_subtitle');
+            $table->string('slug');
             $table->integer('priority')->default(0);
             $table->enum("status", ["ACTIVE", "INACTIVE","DELETED"])->default("active");
             $table->timestamps();
@@ -32,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('course_videos');
+        Schema::dropIfExists('course_contents');
     }
 };

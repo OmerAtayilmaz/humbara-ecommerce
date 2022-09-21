@@ -6,55 +6,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\UserController;
 
-/*
-Admin
-    Kullanıcı
-        Listeler
-        User Detaylarını Görür.
-        Siler.
-        Aldığı Kursları görür.
-        Rollerini görür.
-        Favorilere eklediklerini görür. USER-FAVOURITES
-        Sipariş geçmişini görür. USER-ORDER
-        Reviewlerini yönetir.
-        Credit-cards listeler
-    Kurs
-        Listeler
-        Oluşturur
-        Siler
-        Kurs_content CRUD
-        Kursu alanları görür.
-        Kursa yapılan yorumları görür.
-        Kurs Q&A Görür 
-        Kurs siparişlerini görür.
-        Kursu sepete ekleyenleri görür.
-    FAQ
-        CRUD
-        Sıralar
-    
-    Settings
-        Yönetir
 
-    Themes
-        Yönetir.
-
-    Sipariş
-        Listeler
-        Detayını görür.
-        Sipariş eden userin detaylarını görür.
-        Sipariş edilen kursun/kursların detaylarını görür.
-    
-INSTRUCTOR
-    Kurs yükler
-
-USER
-    Profilini Yönetir
-    Satın aldığı kursları listeler
-    satın aldığı kursları arşivler
-    satın aldığı kursları izler
-    kursu favoriye ekler
-    Kurs izler
-*/
 
 /* HOME ROUTES */
 Route::controller(HomeController::class)->group(function(){
@@ -132,11 +84,14 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
 
     Route::get("/courses",[AdminController::class,"courses"])->name('courses');
     Route::get("/course/create",[AdminController::class,"createcourse"])->name('createcourse');
+
     Route::post("/course/create",[CourseController::class,"store"])->name('storecourse');
+    Route::get("/course/edit/{courseid}",[CourseController::class,"editcourse"])->name('edit_course');
+    Route::post("/course/update/{courseid}",[CourseController::class,"updatecourse"])->name('update_course');
+    Route::get("/course/delete/{courseid}",[CourseController::class,"deletecourse"])->name('delete_course');
     Route::get("/course/detail/{courseid}",[CourseController::class,"coursedetail"])->name('coursedetail');
     Route::get("/course/content/{courseid}",[CourseController::class,"course_content_page"])->name('course_content_page');
     Route::get("/course/lessons/{id}",[CourseController::class,"course_lessons_page"])->name('course_lessons_page');
-
     Route::get("/course-prices/{cid}",[CourseController::class,"course_price_list"])->name("course_price_list");
     Route::get("/user/courses",[CourseController::class,"user_courses_list"])->name("user_courses_list"); // kullanıcının satın aldıgı kurslar
 

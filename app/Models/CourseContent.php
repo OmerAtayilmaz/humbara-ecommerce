@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class CourseContent extends Model
 {
     use HasFactory;
+    protected $fillable=['course_id','title','video_url','video_subtitle','priority','status','slug'];
+    protected $guarded=['id'];
+
+    public function course(){
+        return $this->belongsTo(Course::class,'course_id','id');
+    }
+   
 }

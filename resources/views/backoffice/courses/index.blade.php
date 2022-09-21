@@ -40,61 +40,24 @@
                                     @foreach($courseList as $course)
                                     <tr class="odd">
                                         <td>{{$course->title}}</td>
-                                        <td>{{$course->course_owner}}</td>
+                                        <td><a class="btn btn-info" href="{{route('admin.usershow',['userid'=>$course->user->id])}}">{{$course->user->name}}</a></td>
                                         <td>{{$course->lang}}</td>
-                                        <td>{{$course->category}}</td>
+                                        <td>{{$course->category_id}}</td>
                                         <td><a class="btn btn-warning" href="
-                                            {{route('admin.course_content_page',['courseid'=>2])}}
+                                            {{route('admin.course_content_page',['courseid'=>$course->id])}}
                                             ">Content</a></td>
                                         <td>{{$course->status}}</td>
                                         <td class="d-flex align-items-center justify-content-between border-0">
-                                            <a href="course-edit.html"><i class="fas fa-edit fa-lg text-warning"></i></a>
+                                            <a href="
+                                            {{route('admin.edit_course',['courseid'=>$course->id])}}"><i class="fas fa-edit fa-lg text-warning"></i></a>
                                             <a href="
                                             {{route('admin.coursedetail',['courseid'=>$course->id])}}
                                             "><i class="fa-solid fa-eye fa-lg"></i></a>
-                                            <a href="#" id="delete-course"><i class="fas fa-trash fa-lg text-danger"></i></a>
+                                            <a href="{{route('admin.delete_course',['courseid'=>$course->id])}}" onclick="return confirm('Are you sure?')" id="delete-course"><i class="fas fa-trash fa-lg text-danger"></i></a>
                                         </td>
                                     </tr>
                                     @endforeach
-                                    <tr class="odd">
-                                        <td>Model Art Dersleri</td>
-                                        <td>Ahmet</td>
-                                        <td>TR</td>
-                                        <td>3D Design</td>
-                                        <td><a class="btn btn-warning" href="
-                                            {{route('admin.course_content_page',['courseid'=>2])}}
-                                            ">Content</a></td>
-                                        <td>ACTIVE</td>
-                                        <td class="d-flex align-items-center justify-content-between border-0">
-                                            <a href="course-edit.html"><i class="fas fa-edit fa-lg text-warning"></i></a>
-                                            <a href="
-                                            {{route('admin.coursedetail',['courseid'=>2])}}
-                                            "><i class="fa-solid fa-eye fa-lg"></i></a>
-                                            <a href="#" id="delete-course"><i class="fas fa-trash fa-lg text-danger"></i></a>
-                                        </td>
-                                        <script>
-                                            var deleteCourse = document.querySelector('#delete-course');
-                                            deleteCourse.addEventListener('click', deleteItem);
-                                            function deleteItem() {
-                                                swal({
-                                                        title: "Are you sure?",
-                                                        text: "Once deleted, you will not be able to recover this course!",
-                                                        icon: "warning",
-                                                        buttons: true,
-                                                        dangerMode: true,
-                                                })
-                                                .then((willDelete) => {
-                                                    if (willDelete) {
-                                                        swal("Poof! Your course has been deleted!", {
-                                                        icon: "success",
-                                                        });
-                                                    } else {
-                                                        swal("Your course is safe!");
-                                                    }
-                                                });
-                                            }
-                                        </script>
-                                    </tr>
+                               
                                 </tbody>
                             </table>
                         </div>
