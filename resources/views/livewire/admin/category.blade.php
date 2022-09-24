@@ -1,18 +1,15 @@
 <div>      
      
     @if(session()->has('CREATE_CATEGORY'))
-     
-                <form wire:submit.prevent="save"  class="p-5">
+                <form @if(session()->get('status')=='edit')  wire:submit.prevent="update" @else wire:submit.prevent="create" @endif  class="p-5" enctype="multipart/form-data">
                     <div class="mb-3 row">
                         <label for="inputPassword" class="col-sm-2 col-form-label">Category</label>
                         <div class="col-sm-10">
                             <select name="parent_id" class="form-control" id="categoryInput">
                                 <option selected="selected">Main Category</option>
-                                @if(count($categoryList)<=0)
-                                    @foreach($categoryList as $category)
-                                        <option value="{{$category->id}}">{{$category->name}}</option>
-                                    @endforeach
-                                @endif
+                              
+                                       
+                               
     
                             </select>
                             @error('parent_id') <small class="text-danger">{{ $message }}</small> @enderror
@@ -55,6 +52,20 @@
                         </div>
                     </div>
                     <div class="mb-3 row">
+                        <label class="col-sm-2 col-form-label">content_en</label>
+                        <div class="col-sm-10">
+                            <textarea wire:model="content_en" id="editor" name="answer" rows="4" cols="50" class="form-control"></textarea>
+                            @error('content_en') <small class="text-danger">{{ $message }}</small> @enderror
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-2 col-form-label">content_tr</label>
+                        <div class="col-sm-10">
+                            <textarea wire:model="content_tr" id="editor" name="answer" rows="4" cols="50" class="form-control"></textarea>
+                            @error('content_tr') <small class="text-danger">{{ $message }}</small> @enderror
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label">Description_en</label>
                         <div class="col-sm-10">
                             <textarea wire:model="description_en" id="editor" name="answer" rows="4" cols="50" class="form-control"></textarea>
@@ -72,14 +83,18 @@
                         <label for="status" class="col-sm-2 col-form-label">Status</label>
                         <div class="col-sm-10">
                             <select wire:model="status" name="status" class="form-control" id="status">
-                                <option selected="selected">False</option>
-                                <option>True</option>
+                                <option selected value="ACTIVE">Options</option>
+                                <option value="ACTIVE">True</option>
+                                <option value="PASSIVE">False</option>
                             </select>
                             @error('status') <small class="text-danger">{{ $message }}</small> @enderror
-
                         </div>
                     </div>
-                    <a wire:click="create" class="btn btn-success btn-large card-btn w-100">Save</a>
+                    @if(session()->get('status')=='edit')
+                        <button type="submit" class="btn btn-success ml-3">Update</button>
+                        @else
+                        <button type="submit" class="btn btn-success ml-3">Save</button>
+                        @endif
                 </form>
     @endif
    
@@ -113,7 +128,6 @@
                                     <tr role="row">
                                         <th>Id</th>
                                         <th>Image</th>
-                                        <th>Parent</th>
                                         <th>Title EN</th>
                                         <th>Title TR</th>
                                         <th>Created By</th>
@@ -122,7 +136,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @if(count($categoryList)<=0)
+                                    @if($categoryList==null || count($categoryList)<=0)
                                     <tr class="odd text-center">
                                         <td colspan="8">NO DATA</td>
                                     </tr>
@@ -131,15 +145,14 @@
                                         <tr class="odd">
                                             <td>{{$category->id}}</td>
                                             <td><img src="{{Storage::url($category->image_path)}}" width="60"></td>
-                                            <td>{{$category->parent_id}}</td>
-                                            <td>{{$category->title}}</td>
-
+                                            <td>{{$category->title_en}}</td>
+                                            <td>{{$category->title_tr}}</td>
                                             <td>{{$category->user->name}}</td>
                                             <td>{{$category->status}}</td>
-                                            <td class="d-flex align-items-center justify-content-between">
-                                                <a href="category-edit.html"><i class="fas fa-edit fa-lg text-warning"></i></a>
-                                                <a href="category-show.html"><i class="fa-solid fa-eye fa-lg"></i></a>
-                                                <a href="#" id="delete-category"><i class="fas fa-trash fa-lg text-danger"></i></a>
+                                            <td class="d-flex align-items-center justify-content-between border">
+                                                <a wire:click="edit('{{$category->id}}')"><i class="fas fa-edit fa-lg text-warning"></i></a>
+                                                <a href="{{route('admin.categoryshow',['categoryid'=>$category->id])}}"><i class="fa-solid fa-eye fa-lg"></i></a>
+                                                <a wire:click="deleteConfirm({{$category->id}})" id="delete-faq"><i class="fas fa-trash fa-lg text-danger"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach
@@ -150,55 +163,14 @@
                     </div>
                     <div class="row justify-content-center">
                         <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
-                            <ul class="pagination">
-                                <li class="paginate_button page-item previous disabled" id="dataTable_previous"><a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
-                                <li class="paginate_button page-item active"><a href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
-                                <li class="paginate_button page-item next disabled" id="dataTable_next"><a href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0" class="page-link">Next</a></li>
-                            </ul>
+                           
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-       /*  var alertCategory = document.querySelector('#delete-category');
-        alertCategory.addEventListener('click', categoryDelete);
-        function categoryDelete() {
-            swal({
-                    title: "Are you sure?",
-                    text: "Once deleted, you will not be able to recover this category!",
-                    icon: "warning",
-                    buttons: true,
-                    dangerMode: true,
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    swal("Poof! Your category has been deleted!", {
-                    icon: "success",
-                    });
-                } else {
-                    swal("Your category is safe!");
-                }
-            });
-        }
-        
-   
-        var addCategory = document.querySelector('#add-category');
-        var cancelCategory = document.querySelector('#cancel-category');
-        addCategory.addEventListener('click', addItem);
-        cancelCategory.addEventListener('click', cancelItem);
-        function addItem() {
-            swal("Good job!", "You add the category!", "success");
-        }
-        function cancelItem() {
-            swal("Category add cancelled!");
-        }
- */
-        ClassicEditor
-        .create( document.querySelector( '#editor' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-    </script>
+    @section('bottom-scripts')
+    @include('backoffice.messages.swal2')
+@endsection
 </div>

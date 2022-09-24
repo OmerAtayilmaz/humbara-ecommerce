@@ -85,17 +85,22 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
     Route::get("/courses",[AdminController::class,"courses"])->name('courses');
     Route::get("/course/create",[AdminController::class,"createcourse"])->name('createcourse');
 
-    Route::post("/course/create",[CourseController::class,"store"])->name('storecourse');
-    Route::get("/course/edit/{courseid}",[CourseController::class,"editcourse"])->name('edit_course');
-    Route::post("/course/update/{courseid}",[CourseController::class,"updatecourse"])->name('update_course');
-    Route::get("/course/delete/{courseid}",[CourseController::class,"deletecourse"])->name('delete_course');
-    Route::get("/course/detail/{courseid}",[CourseController::class,"coursedetail"])->name('coursedetail');
-    Route::get("/course/content/{courseid}",[CourseController::class,"course_content_page"])->name('course_content_page');
-    Route::get("/course/lessons/{id}",[CourseController::class,"course_lessons_page"])->name('course_lessons_page');
-    Route::get("/course-prices/{cid}",[CourseController::class,"course_price_list"])->name("course_price_list");
-    Route::get("/user/courses",[CourseController::class,"user_courses_list"])->name("user_courses_list"); // kullanıcının satın aldıgı kurslar
-
+    Route::prefix("/course")->controller(CourseController::class)->group(function(){
+        Route::post("/create","store")->name('storecourse');
+        Route::get("/edit/{courseid}","editcourse")->name('edit_course');
+        Route::post("/update/{courseid}","updatecourse")->name('update_course');
+        Route::get("/delete/{courseid}","deletecourse")->name('delete_course');
+        Route::get("/delete/q-a/{questionid}","delete_course_qa")->name('delete_course_qa');
+        Route::get("/detail/{courseid}","coursedetail")->name('coursedetail');
+        Route::get("/content/{courseid}","course_content_page")->name('course_content_page');
+        Route::get("/lessons/{id}","course_lessons_page")->name('course_lessons_page');
+        Route::get("/questions/{courseid}","course_questions_page")->name('course_questions_page');
+        Route::get("/questions/{courseid}/detail/{questionid}","course_questions_detail")->name('course_questions_detail');
+        Route::get("/{courseid}/prices/","course_price_list")->name("course_price_list");
+        Route::get("/user","user_courses_list")->name("user_courses_list"); // kullanıcının satın aldıgı kurslar
+    });
     
+
 });
 
 Route::middleware([

@@ -1,17 +1,17 @@
 @extends('layouts.backoffice')
 @section('content')
-   <!-- Begin Page Content -->
+       <!-- Begin Page Content -->
    <div class="container-fluid">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h3 class="m-0 font-weight-bold card-title-text">Course List</h3>
+            <h3 class="m-0 font-weight-bold card-title-text">Course Questions</h3>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
                     <div class="row">
                         <div class="col-sm-12 col-md-6 mb-4">
-                            <a href="{{route('admin.createcourse')}}" class="btn btn-primary btn-large card-btn">Add Course</a>
+                            <a href="{{route('admin.course_content_page',['courseid'=>$courseid])}}" class="btn btn-primary btn-large card-btn">Back to Course</a>
                         </div>
                         <div class="col-sm-12 col-md-6 mb-4">
                             <div class="input-group">
@@ -27,42 +27,28 @@
                             <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                                 <thead>
                                     <tr role="row">
-                                        <th>Title</th>
-                                        <th>Instructor</th>
-                                        <th>Q & A</th>
-                                        <th>Pricing</th>
-                                        <th>Language</th>
-                                        <th>Content</th>
+                                        <th>Question</th>
+                                        <th>Asked By</th>
+                                        <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($courseList as $course)
+                                    @foreach($questionList as $question)
                                     <tr class="odd">
-                                        <td>{{substr($course->title,0,80)}}</td>
-                                        <td><a class="btn btn-info" href="{{route('admin.usershow',['userid'=>$course->user->id])}}">{{$course->user->name}}</a></td>
+                                        <td>{{substr($question->question,0,200)}}</td>
                                         <td><a class="btn btn-warning" href="
-                                            {{route('admin.course_questions_page',['courseid'=>$course->id])}}
-                                            ">Q&A</a></td>
-                                        <td><a class="btn btn-warning" href="
-                                            {{route('admin.course_questions_page',['courseid'=>$course->id])}}
-                                            ">Pricing</a></td>
-                                        <td>{{$course->lang}}</td>
-                                        <td><a class="btn btn-warning" href="
-                                            {{route('admin.course_content_page',['courseid'=>$course->id])}}
-                                            ">Content</a></td>
-                                      
+                                            {{route('admin.usershow',['userid'=>$question->user_id])}}
+                                            ">{{$question->user->name}}</a></td>
+                                        <td>{{$question->status}}</td>
                                         <td class="d-flex align-items-center justify-content-between border-0">
                                             <a href="
-                                            {{route('admin.edit_course',['courseid'=>$course->id])}}"><i class="fas fa-edit fa-lg text-warning"></i></a>
-                                            <a href="
-                                            {{route('admin.coursedetail',['courseid'=>$course->id])}}
+                                            {{route('admin.course_questions_detail',['courseid'=>$question->course_id,'questionid'=>$question->id])}}
                                             "><i class="fa-solid fa-eye fa-lg"></i></a>
-                                            <a href="{{route('admin.delete_course',['courseid'=>$course->id])}}" onclick="return confirm('Are you sure?')" id="delete-course"><i class="fas fa-trash fa-lg text-danger"></i></a>
+                                            <a href="{{route('admin.delete_course_qa',['questionid'=>$question->id])}}" onclick="return confirm('Are you sure?')" id="delete-course"><i class="fas fa-trash fa-lg text-danger"></i></a>
                                         </td>
                                     </tr>
                                     @endforeach
-                               
                                 </tbody>
                             </table>
                         </div>

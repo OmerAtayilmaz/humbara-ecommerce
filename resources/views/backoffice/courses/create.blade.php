@@ -22,16 +22,9 @@
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Description</label>
+                    <label for="courseInputVideo" class="col-sm-2 col-form-label">Description</label>
                     <div class="col-sm-10">
-                        <textarea id="editor" name="description" rows="4" cols="50" class="form-control"></textarea>
-                        <script>
-                            ClassicEditor
-                                .create( document.querySelector( '#editor' ) )
-                                .catch( error => {
-                                    console.error( error );
-                                } );
-                        </script>
+                        <input name="description" type="text" class="form-control" id="courseInputVideo">
                     </div>
                 </div>
                 <div class="mb-3 row">
@@ -41,9 +34,16 @@
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="courseInputTitle" class="col-sm-2 col-form-label">Content</label>
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Description</label>
                     <div class="col-sm-10">
-                        <input name="content" type="text" class="form-control" id="courseInputcontent">
+                        <textarea id="editor" name="content" rows="4" cols="50" class="form-control"></textarea>
+                        <script>
+                            ClassicEditor
+                                .create( document.querySelector( '#editor' ) )
+                                .catch( error => {
+                                    console.error( error );
+                                } );
+                        </script>
                     </div>
                 </div>
                 <div class="mb-3 row">

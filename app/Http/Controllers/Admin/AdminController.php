@@ -9,6 +9,7 @@ use App\Models\Faq;
 use App\Models\User;
 use App\Models\Course;
 use App\Models\CourseReview;
+use App\Models\CourseCategory;
 class Response {
     public $user;
     public $course;
@@ -46,6 +47,12 @@ class AdminController extends Controller
     //CREATE
     public function categorylist(){
         return view('backoffice.category.index');
+    }
+    public function categoryshow($categoryid){
+        $category=CourseCategory::find($categoryid);
+        return view('backoffice.category.show',[
+            'category'=>$category
+        ]);
     }
 
     public function slideslist(){ 

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\CourseContent;
+use App\Models\CoursePrice;
+use App\Models\CourseQA as CourseQuestions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Auth;
@@ -67,5 +69,44 @@ class CourseController extends Controller
         $course->status='DELETED';
         $course->save();
         return redirect()->route('admin.courses')->with('success','Course Deleted Successfully');
+    }
+
+    //kalıcı olarak silindiğinde cascade çalışıyor
+    public function deletePermentantly($courseid){
+        $course=Course::find($courseid);
+        $course->delete();
+        return redirect()->route('admin.courses')->with('success','Course Deleted Permentantly');
+    }
+    public function course_questions_page($courseid){
+        $questionList=CourseQuestions::where('course_id',$courseid)
+        ->where('status', '<>','DELETED')
+        ->get();
+        return view('backoffice.courses.questions',[
+            'questionList'=>$questionList,
+            'courseid'=>$courseid
+        ]);
+    }
+
+    public function course_questions_detail($courseid,$questionid){
+        $question=CourseQuestions::find($questionid);
+        return view('backoffice.courses.questiondetail',[
+            'question'=>$question,
+            'courseid'=>$courseid
+        ]);
+    }
+    public function delete_course_qa(){
+        $question=CourseQuestions::find(request('questionid'));
+        $question->status='DELETED';
+        $question->save();
+        return redirect()->back()->with('success','Question Deleted Successfully');
+    }
+
+    public function course_price_list(){
+        $priceList=CoursePrice::
+        where('status', '<>','DELETED')
+        ->get();
+        return view('backoffice.courses.price',[
+            'priceList'=>$priceList
+        ]);
     }
 }

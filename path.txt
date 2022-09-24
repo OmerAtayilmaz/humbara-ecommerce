@@ -2,13 +2,13 @@
     CREATE  COMPLETED
     UPDATE  COMPLETED
     DELETED COMPLETED
-{ } -> CourseContent CRUD işlemleri tamamlanır 
-{ } -> 
-{ } -> 
-{ } -> 
-{ } -> 
-{ } -> 
-{ } -> 
+{ COMPLETED } -> CourseContent CRUD işlemleri tamamlanır 
+{ COMPLETED } -> COURSE CATEGORY ISLEMLERI TAMAMLANIR
+{ COMPLETED } -> COURSE Q&A STRUCTURE 
+{  } -> COURSE PRICES 
+{ } -> COURSE DISCOUND BY PERCENT
+{ } -> COURSE IMAGE_GALLERY // 4 
+{ } -> COURSE COURSE REVIEWS BY USER
 { } -> 
 { } -> 
 { } -> 

@@ -81,8 +81,6 @@ class Faq extends Component
         $this->status=$selected->status;
         $this->priority=$selected->priority;
         $this->edit_id=$edit_id;
-       
-
     }
     public function update(){
         $this->validate([
