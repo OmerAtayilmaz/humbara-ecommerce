@@ -33,6 +33,7 @@
                                         <th>Pricing</th>
                                         <th>Language</th>
                                         <th>Content</th>
+                                        <th>Reviews</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -45,12 +46,15 @@
                                             {{route('admin.course_questions_page',['courseid'=>$course->id])}}
                                             ">Q&A</a></td>
                                         <td><a class="btn btn-warning" href="
-                                            {{route('admin.course_questions_page',['courseid'=>$course->id])}}
+                                            {{route('admin.course_price_list',['courseid'=>$course->id])}}
                                             ">Pricing</a></td>
                                         <td>{{$course->lang}}</td>
                                         <td><a class="btn btn-warning" href="
                                             {{route('admin.course_content_page',['courseid'=>$course->id])}}
-                                            ">Content</a></td>
+                                            ">Lessons</a></td>
+                                        <td><a class="btn btn-info" href="
+                                            {{route('admin.course.reviews.list',['courseid'=>$course->id])}}
+                                            ">Reviews</a></td>
                                       
                                         <td class="d-flex align-items-center justify-content-between border-0">
                                             <a href="

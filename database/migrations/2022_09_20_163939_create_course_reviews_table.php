@@ -14,7 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('course_reviews', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
+            $table->foreignId('course_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('title');
+            $table->string('content');
+            $table->integer('rating');
+            $table->enum("status", ["ACTIVE", "INACTIVE","DELETED"])->default("active");
             $table->timestamps();
         });
     }

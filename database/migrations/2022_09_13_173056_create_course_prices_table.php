@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('campains');
             $table->string('campains_price');
             $table->enum('type',['CAMPAINS','NORMAL','OFF']); // gösterilecek fiyat tipi, kampanya ve normal
-            $table->enum("show", ["ACTIVE", "INACTIVE","DELETED"])->default("active");
+            $table->enum("status", ["ACTIVE", "INACTIVE","DELETED"])->default("active");
             $table->timestamps();
         });
     }

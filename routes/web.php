@@ -97,7 +97,14 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
         Route::get("/questions/{courseid}","course_questions_page")->name('course_questions_page');
         Route::get("/questions/{courseid}/detail/{questionid}","course_questions_detail")->name('course_questions_detail');
         Route::get("/{courseid}/prices/","course_price_list")->name("course_price_list");
+        Route::post("/prices/{priceid}","course_price_update")->name("course_price_update");
         Route::get("/user","user_courses_list")->name("user_courses_list"); // kullanıcının satın aldıgı kurslar
+
+        Route::prefix("/reviews")->name("course.reviews.")->group(function(){
+            Route::get("/{courseid}","course_reviews_list")->name("list");
+            Route::get("/detail/{reviewid}","course_reviews_detail")->name("detail");
+            Route::get("/delete/{reviewid}","course_reviews_delete")->name("delete");
+        });
     });
     
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\CourseContent;
 use App\Models\CoursePrice;
+use App\Models\CourseReview;
 use App\Models\CourseQA as CourseQuestions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -102,11 +103,52 @@ class CourseController extends Controller
     }
 
     public function course_price_list(){
-        $priceList=CoursePrice::
-        where('status', '<>','DELETED')
-        ->get();
-        return view('backoffice.courses.price',[
-            'priceList'=>$priceList
+        $price=CoursePrice::
+        where('course_id',request('courseid'))
+        ->first();
+        if(empty($price)){
+            $price=new CoursePrice();
+            $price->course_id=request('courseid');
+            $price->cheap_pr_title='Cheap Price Title';
+            $price->cheap_price=0;
+            $price->expensive_pr_title='Expensive Price Title';
+            $price->expensive_price=0; 
+            $price->campains='Campain Name';
+            $price->campains_price=0;
+            $price->type='CAMPAINS'; //,['CAMPAINS','NORMAL','OFF']
+            $price->status='INACTIVE';
+            $price->save();
+        }
+        return view('backoffice.courses.pricelist',[
+            'price'=>$price
         ]);
+    }
+    public function course_price_update($priceid){
+        $price=CoursePrice::find($priceid);
+        $price->cheap_pr_title=request('cheap_pr_title');
+        $price->cheap_price=request('cheap_price');
+        $price->expensive_pr_title=request('expensive_pr_title');
+        $price->expensive_price=request('expensive_price');
+        $price->campains=request('campains');
+        $price->campains_price=request('campains_price');
+        $price->type=request('type');
+        $price->status=request('status');
+        $price->save();
+        return redirect()->back()->with('success','Price Updated Successfully');
+    }
+
+    public function course_reviews_list(){
+        $courseReviewsList=CourseReview::where('course_id',request('courseid'))
+        ->where('status','<>','DELETED')
+        ->get();
+        return view('backoffice.review.index',[
+            'reviewList'=>$courseReviewsList
+        ]);
+    }
+    public function course_reviews_delete(){
+        $review=CourseReview::find(request('reviewid'));
+        $review->status='DELETED';
+        $review->save();
+        return redirect()->back()->with('success','Review Deleted Successfully');
     }
 }

@@ -14,7 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('course_image_galleries', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
+            $table->foreignId('course_id')->constrained()->onDelete('cascade');
+            $table->string('image');
+            $table->string('description');
+            $table->smallInteger('order');
+            $table->enum("status", ["ACTIVE", "INACTIVE","DELETED"])->default("active");
             $table->timestamps();
         });
     }
