@@ -73,6 +73,8 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
 
     Route::get("/settings",[AdminController::class,"settings"])->name('settings');
     Route::get("/themes",[AdminController::class,"themes"])->name('themes');
+    
+
     //kullanıcılar sekmesinden erişilir.
     Route::get("/favourites",[AdminController::class,"favourites"])->name('favourites');
 
@@ -102,9 +104,17 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
 
         Route::prefix("/reviews")->name("course.reviews.")->group(function(){
             Route::get("/{courseid}","course_reviews_list")->name("list");
-            Route::get("/detail/{reviewid}","course_reviews_detail")->name("detail");
+         // Route::get("/detail/{reviewid}","course_reviews_detail")->name("detail");
             Route::get("/delete/{reviewid}","course_reviews_delete")->name("delete");
         });
+
+        Route::prefix("/images")->name("course.images.")->group(function(){
+            Route::get("/{courseid}","course_images_list")->name("list");
+            Route::post("/{courseid}","course_images_store")->name("store");
+            Route::get("/delete/{imageid}","course_images_delete")->name("delete");
+        });
+
+
     });
     
 

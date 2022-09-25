@@ -34,6 +34,7 @@
                                         <th>Language</th>
                                         <th>Content</th>
                                         <th>Reviews</th>
+                                        <th>Images</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -51,11 +52,13 @@
                                         <td>{{$course->lang}}</td>
                                         <td><a class="btn btn-warning" href="
                                             {{route('admin.course_content_page',['courseid'=>$course->id])}}
-                                            ">Lessons</a></td>
+                                            "><i class="fa-solid fa-video"></i></i></a></td>
                                         <td><a class="btn btn-info" href="
                                             {{route('admin.course.reviews.list',['courseid'=>$course->id])}}
                                             ">Reviews</a></td>
-                                      
+                                        <td><a class="btn btn-info" href="
+                                            {{route('admin.course.images.list',['courseid'=>$course->id])}}
+                                            "><i class="fa-solid fa-image"></i></a></td>
                                         <td class="d-flex align-items-center justify-content-between border-0">
                                             <a href="
                                             {{route('admin.edit_course',['courseid'=>$course->id])}}"><i class="fas fa-edit fa-lg text-warning"></i></a>

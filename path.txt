@@ -7,23 +7,33 @@
 { COMPLETED } -> COURSE Q&A STRUCTURE 
 { COMPLETED } -> COURSE PRICES 
 { COMPLETED } -> COURSE COURSE REVIEWS BY USER
-{ } -> COURSE DISCOUND BY PERCENT
-{ } -> COURSE IMAGE_GALLERY // 4 
-{ } -> 
-{ } -> 
-{ } -> 
-{ } -> 
-{ } -> 
-{ } -> 
-{ } -> 
-{ } -> 
-{ } -> 
-{ } -> 
-{ } -> 
-{ } -> 
-{ } -> 
-{ } -> 
-{ } -> 
+{ COMPLETED } -> COURSE IMAGE_GALLERY // 4 
+{ } -> THEME CRUD
+{  } -> COURSE DISCOUND BY PERCENT
+{ } -> SETTINGS CRUD 
+{ } -> ORDERS 
+{ } -> CONTACT MESSAGES
+{ } -> COUNTRY CRUD
+{ } -> USER
+    { } -> ROLES
+    { } -> ROLE_USER Relation
+    { } -> COURSE_USER_CONTRACT
+    { } -> FINISHED_COURSES
+    { } -> USER_COURSE_VIDEO // kullanıcın kursta videoyu bitirip bitirmediğini belirtir.
+{ } -> Authorization
+    { } -> User Login
+    { } -> User Logout
+    { } -> User Sign up
+    { } -> User Login with Google
+    { } -> User Login with Facebook
+    { } -> User Reset Password
+    { } -> User Change Password
+    { } -> User Log out from other devices
+    { } -> 
+{ } -> Payments
+    { } -> Iyzico Odeme Entegrasyonu
+    { } -> Stripe Odeme Entegrasyonu
+
 { } -> 
 { } -> 
 { } -> 

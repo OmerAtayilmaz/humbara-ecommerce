@@ -7,6 +7,7 @@ use App\Models\Course;
 use App\Models\CourseContent;
 use App\Models\CoursePrice;
 use App\Models\CourseReview;
+use App\Models\CourseImageGallery;
 use App\Models\CourseQA as CourseQuestions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -150,5 +151,34 @@ class CourseController extends Controller
         $review->status='DELETED';
         $review->save();
         return redirect()->back()->with('success','Review Deleted Successfully');
+    }
+    public function course_images_list(){
+        $courseImagesList=CourseImageGallery::where('course_id',request('courseid'))
+        ->where('status','<>','DELETED')
+        ->get();
+        return view('backoffice.courses.images',[
+            'imageList'=>$courseImagesList,
+            'courseid'=>request('courseid')
+        ]);
+    }
+    public function course_images_store(Request $request){
+        $courseList=CourseImageGallery::count();
+        if($courseList>=4){
+            return redirect()->back()->with('error','You can not add more than 4 images');
+        }
+        $image=new CourseImageGallery();
+        $image->course_id=request('courseid');
+        $image->image=$request->file('image')->store('courseimages','public');
+        $image->description=$request->description;
+        $image->status='ACTIVE';
+        $image->order=$request->order;
+        $image->save();
+        return redirect()->back()->with('success','Image Uploaded Successfully');
+    }
+    public function course_images_delete($imageid){
+        $image=CourseImageGallery::find($imageid);
+        $image->status='DELETED';
+        $image->save();
+        return redirect()->back()->with('success','Image Deleted Successfully');
     }
 }
