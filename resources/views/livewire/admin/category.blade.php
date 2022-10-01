@@ -172,5 +172,5 @@
     </div>
     @section('bottom-scripts')
     @include('backoffice.messages.swal2')
-@endsection
+    @endsection
 </div>

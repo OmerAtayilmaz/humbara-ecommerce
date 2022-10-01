@@ -10,6 +10,8 @@ use App\Models\User;
 use App\Models\Course;
 use App\Models\CourseReview;
 use App\Models\CourseCategory;
+use App\Models\Setting as SettingModel;
+use App\Models\ContactMessage;
 class Response {
     public $user;
     public $course;
@@ -75,7 +77,60 @@ class AdminController extends Controller
     }
 
     public function settings(){
-        return view('backoffice.settings');
+        $settings=SettingModel::first();
+        if(empty($settings)){
+            $settings=new SettingModel();
+            $settings->updated_by=Auth::user()->id;
+            $settings->c_name='';
+            $settings->c_keywords='';
+            $settings->c_description='';
+            $settings->c_logo='';
+            $settings->c_favicon='';
+            $settings->c_email=''; 
+            $settings->c_phone='';
+            $settings->c_address='';
+            $settings->c_facebook='';
+            $settings->c_twitter='';
+            $settings->c_instagram='';
+            $settings->c_youtube='';
+            $settings->c_linkedin='';
+            $settings->contact='';
+            $settings->references='';
+            $settings->about_us='';
+            $settings->status='NEW';
+            $settings->save();
+        }
+        return view('backoffice.settings',[
+            'settings'=>$settings
+        ]);
+    }
+    public function settingscreate(Request $request){
+        $settings=SettingModel::first();
+       // dd($request);
+        $settings->updated_by=Auth::user()->id;
+        $settings->c_name=$request->c_name;
+        $settings->c_keywords=$request->c_keywords;
+        $settings->c_description=$request->c_description;
+        if($request->file('c_logo')!=null){
+            $settings->c_logo=$request->file('c_logo')->store('images');
+        }
+        if($request->file('c_favicon')!=null){
+            $settings->c_favicon=$request->file('c_favicon')->store('images');
+        }
+        $settings->c_email=$request->c_email; 
+        $settings->c_phone=$request->c_phone;
+        $settings->c_address=$request->c_address;
+        $settings->c_facebook=$request->c_facebook;
+        $settings->c_twitter=$request->c_twitter;
+        $settings->c_instagram=$request->c_instagram;
+        $settings->c_youtube=$request->c_youtube;
+        $settings->c_linkedin=$request->c_linkedin;
+        $settings->contact=$request->contact;
+        $settings->references=$request->references;
+        $settings->about_us=$request->about_us;
+        $settings->status='UPDATED';
+        $settings->save();
+        return redirect()->back()->with('success','Settings updated successfully');
     }
 
     public function themes(){
@@ -97,8 +152,17 @@ class AdminController extends Controller
         return view('backoffice.favourites.index');
     }
 
-    public function messages(){
-        return view('backoffice.messages.index');
+    public function contactmessages(){
+        return view('backoffice.contact.index');
+    }
+    public function showcontactmessage($messageid){
+        $message=ContactMessage::find($messageid);
+        if(empty($message)){
+            return redirect()->back();
+        }
+        return view('backoffice.contact.show',[
+            'message'=>$message
+        ]);
     }
     
 

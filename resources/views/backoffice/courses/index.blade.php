@@ -48,7 +48,7 @@
                                             ">Q&A</a></td>
                                         <td><a class="btn btn-warning" href="
                                             {{route('admin.course_price_list',['courseid'=>$course->id])}}
-                                            ">Pricing</a></td>
+                                            ">  <i class="fa-solid fa-hand-holding-dollar fa-fw"></i></a></td>
                                         <td>{{$course->lang}}</td>
                                         <td><a class="btn btn-warning" href="
                                             {{route('admin.course_content_page',['courseid'=>$course->id])}}

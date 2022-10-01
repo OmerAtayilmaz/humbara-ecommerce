@@ -15,14 +15,12 @@
                 <span>Dashboard</span>
             </a>
         </li>
-
         <!-- Nav Item - Theme -->
         <li class="nav-item">
             <a class="nav-link" href="{{route('admin.themes')}}">
                 <i class="fa-brands fa-affiliatetheme"></i>
                 <span>Theme</span></a>
         </li>
-
         <!-- Nav Item - Slides -->
         <li class="nav-item">
             <a class="nav-link" href="{{route('admin.slideslist')}}">
@@ -72,6 +70,11 @@
             </div>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.contactmessages')}}">
+               <i class="fa-solid fa-message fa-fw"></i>
+            <span>Messages</span></a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                 aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-chart-area"></i>
@@ -109,7 +112,7 @@
                 <span>Favourites</span></a>
         </li>
 
-        <!-- Nav Item - Video -->
+{{--         <!-- Nav Item - Video -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
                 aria-expanded="true" aria-controls="collapseFour">
@@ -122,7 +125,7 @@
                     <a class="collapse-item" href="video-comment#">Video Comment</a>
                 </div>
             </div>
-        </li>
+        </li> --}}
 
         <!-- Nav Item - Discount Percent -->
         <li class="nav-item">
@@ -131,23 +134,7 @@
                 <span>Discount Percent</span></a>
         </li>
 
-        <!-- Nav Item - Prices -->
-        <li class="nav-item">
-            <a class="nav-link" href="prices#">
-                <i class="fa-solid fa-hand-holding-dollar fa-fw"></i>
-                <span>Prices</span></a>
-        </li>
 
-  
-
-        <!-- Nav Item - Faq -->
-        <li class="nav-item">
-            <a class="nav-link" href="message#">
-                <i class="fa-solid fa-message fa-fw"></i>
-                <span>Messages</span></a>
-        </li>
-
-        <!-- Nav Item - User -->
       
 
         <!-- Nav Item - Tables -->
@@ -184,8 +171,6 @@
                 <i class="fa-solid fa-list-check"></i>
                 <span>Order Course</span></a>
         </li>
-
-    
 
     </ul>
     <!-- End of Sidebar -->

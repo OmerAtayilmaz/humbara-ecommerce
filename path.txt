@@ -9,10 +9,10 @@
 { COMPLETED } -> COURSE COURSE REVIEWS BY USER
 { COMPLETED } -> COURSE IMAGE_GALLERY // 4 
 { COMPLETED } -> THEME CRUD
-{  } -> COURSE DISCOUND BY PERCENT
-{ } -> SETTINGS CRUD 
+{ COMPLETED } -> SETTINGS CRUD 
+{ COMPLETED } -> CONTACT MESSAGES
+{ } -> COURSE DISCOUND BY PERCENT
 { } -> ORDERS 
-{ } -> CONTACT MESSAGES
 { } -> COUNTRY CRUD
 { } -> USER
     { } -> ROLES
@@ -34,15 +34,15 @@
     { } -> Iyzico Odeme Entegrasyonu
     { } -> Stripe Odeme Entegrasyonu
 
-{ } -> 
-{ } -> 
-{ } -> 
-{ } -> 
-{ } -> 
-{ } -> 
-{ } -> 
-{ } -> 
-{ } -> 
+{ } -> Validations
+    { } -> THEME
+    { } -> SLIDES 
+    { } -> USER
+    { } -> CATEGORY
+    { } -> SETTINGS
+    { } -> FAQ
+    { } -> COURSES
+    { } -> 
 { } -> 
 { } -> 
 { } -> 

@@ -72,14 +72,14 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
     Route::get("/faq/{id}",[AdminController::class,"faqshow"])->name('faqshow');
 
     Route::get("/settings",[AdminController::class,"settings"])->name('settings');
+    Route::post("/settings",[AdminController::class,"settingscreate"])->name('settings.store');
     Route::get("/themes",[AdminController::class,"themes"])->name('themes');
     
-
     //kullanıcılar sekmesinden erişilir.
     Route::get("/favourites",[AdminController::class,"favourites"])->name('favourites');
 
-    Route::get("/messages",[AdminController::class,"messages"])->name('messages');
-    Route::get("/messages/show/{messageid}",[AdminController::class,"showmessage"])->name('showmessage');
+    Route::get("/contact-message",[AdminController::class,"contactmessages"])->name('contactmessages');
+    Route::get("/contact-message/show/{messageid}",[AdminController::class,"showcontactmessage"])->name('contactmessages.show');
     
     Route::get("/orders",[AdminController::class,"orders"])->name('orders');
     Route::get("/orders/show/{orderid}",[AdminController::class,"showorders"])->name('showorders');

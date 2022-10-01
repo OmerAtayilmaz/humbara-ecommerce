@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Setting extends Model
 {
-    //Mass assignment
     protected $fillable = [
         'c_name',
         'c_keywords',
@@ -27,7 +26,6 @@ class Setting extends Model
         'about_us',
         'status',
     ];
-    //erişilemez
     protected $guarded = ['id'];
 
     use HasFactory;
