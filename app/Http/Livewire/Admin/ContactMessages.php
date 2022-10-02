@@ -23,8 +23,7 @@ class ContactMessages extends Component
         })->orderBy('status','ASC')->get();
         return view('livewire.admin.contact-messages',[
         'contactMessagesList'=>$contactMessagesList
-    ]
-    );
+    ]);
     }
 
     public function deleteConfirm($id){

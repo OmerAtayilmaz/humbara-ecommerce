@@ -12,6 +12,8 @@ use App\Models\CourseReview;
 use App\Models\CourseCategory;
 use App\Models\Setting as SettingModel;
 use App\Models\ContactMessage;
+use App\Models\Favourites;
+
 class Response {
     public $user;
     public $course;
@@ -163,6 +165,16 @@ class AdminController extends Controller
         return view('backoffice.contact.show',[
             'message'=>$message
         ]);
+    }
+
+    public function userfavourites($userid){
+        $favourites=Favourites::where('user_id',$userid)->get();
+        return view('backoffice.favourites.index',['favourtiesList'=>$favourites]);
+    }
+
+    public function usercreditcards($userid){
+        $user=User::find($userid);
+        return view('backoffice.creditcards.index',['user'=>$user]);
     }
     
 

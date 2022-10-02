@@ -1,6 +1,5 @@
 @extends('layouts.backoffice')
 @section('content')
-<!-- Begin Page Content -->
 <div class="container-fluid">
     <div class="card shadow mb-4 pt-2">
         <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
@@ -193,7 +192,6 @@
     </form>
     </div>
 </div>
-<!-- /.container-fluid -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
 @endsection

@@ -31,7 +31,8 @@
                                 <tr role="row">
                                     <th>Id</th>
                                     <th>Name</th>
-                                    <th>Surname</th>
+                                    <th>Favourites</th>
+                                    <th>Credit Cards</th>
                                     <th>Email</th>
                                     <th>Type</th>
                                     <th>Roles</th>
@@ -48,7 +49,12 @@
                                     <tr class="odd">
                                         <td>{{$user->id}}</td>
                                         <td>{{$user->name}}</td>
-                                        <td>{{$user->surname}}</td>
+                                        <td  class="text-center">
+                                            <a  class="btn btn-outline-primary" href="{{route('admin.userfavourites',['userid'=>$user->id])}}"><i class="fa-solid fa-heart"></i></a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a class="btn btn-outline-primary" href="{{route('admin.user.creditcards',['userid'=>$user->id])}}"> <i class="fas fa-fw fa-credit-card"></i></a>
+                                        </td>
                                         <td>{{$user->email}}</td>
                                         <td>{{$user->email_verified_at?"Active":"Unconfirmed"}}</td>
                                         <td>

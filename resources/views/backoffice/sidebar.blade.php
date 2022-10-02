@@ -33,26 +33,22 @@
                 <span>User</span></a>
         </li>
 
-             <!-- Nav Item - Course -->
              <li class="nav-item">
                 <a class="nav-link" href="{{route('admin.categorylist')}}">
                     <i class="fa-solid fa-bars fa-fw"></i>
                     <span>Category</span></a>
             </li>
 
-                <!-- Nav Item - Settings -->
         <li class="nav-item">
             <a class="nav-link" href="{{route('admin.settings')}}">
                 <i class="fas fa-fw fa-wrench"></i>
                 <span>Settings</span></a>
         </li>
-        <!-- Divider -->
-              <!-- Nav Item - Faq -->
-              <li class="nav-item">
-                <a class="nav-link" href="{{route('admin.faq')}}">
-                    <i class="fas fa-fw fa-question"></i>
-                    <span>Faq</span></a>
-            </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.faq')}}">
+                <i class="fas fa-fw fa-question"></i>
+                <span>Faq</span></a>
+        </li>
             
         <hr class="sidebar-divider">
          <!-- Nav Item - Course -->
@@ -89,28 +85,17 @@
                 </div>
             </div>
         </li>
-
-
-       
-
-
-
-        <!-- Nav Item - Images -->
         <li class="nav-item">
             <a class="nav-link" href="images#">
                 <i class="fa-solid fa-images fa-fw"></i>
                 <span>Images</span></a>
         </li>
 
-   
-       
-
-        <!-- Nav Item - Favourites -->
-        <li class="nav-item">
+   {{--      <li class="nav-item">
             <a class="nav-link" href="favourites#">
                 <i class="fa-solid fa-heart"></i>
                 <span>Favourites</span></a>
-        </li>
+        </li> --}}
 
 {{--         <!-- Nav Item - Video -->
         <li class="nav-item">
@@ -134,38 +119,21 @@
                 <span>Discount Percent</span></a>
         </li>
 
-
-      
-
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="reviews#">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Reviews</span></a>
-        </li>
-
-        <!-- Nav Item - Comment -->
-        <li class="nav-item">
+{{--         <li class="nav-item">
             <a class="nav-link" href="comment#">
                 <i class="fas fa-fw fa-comments"></i>
                 <span>Comment</span></a>
-        </li>
-
-        <!-- Nav Item - Credit Card -->
-        <li class="nav-item">
+        </li> --}}
+     {{--    <li class="nav-item">
             <a class="nav-link" href="creditCard#">
                 <i class="fas fa-fw fa-credit-card"></i>
                 <span>Credit Card</span></a>
-        </li>
-
-        <!-- Nav Item - Order -->
+        </li> --}}
         <li class="nav-item">
             <a class="nav-link" href="order#">
                 <i class="fas fa-fw fa-list"></i>
                 <span>Order</span></a>
         </li>
-
-        <!-- Nav Item - Order Course -->
         <li class="nav-item">
             <a class="nav-link" href="orderCourse#">
                 <i class="fa-solid fa-list-check"></i>

@@ -20,6 +20,9 @@
     { } -> COURSE_USER_CONTRACT
     { } -> FINISHED_COURSES
     { } -> USER_COURSE_VIDEO // kullanıcın kursta videoyu bitirip bitirmediğini belirtir.
+    { } -> CREDIT CARDS 
+    { } -> FAVOURITES
+    
 { } -> Authorization
     { } -> User Login
     { } -> User Logout
@@ -33,7 +36,6 @@
 { } -> Payments
     { } -> Iyzico Odeme Entegrasyonu
     { } -> Stripe Odeme Entegrasyonu
-
 { } -> Validations
     { } -> THEME
     { } -> SLIDES 

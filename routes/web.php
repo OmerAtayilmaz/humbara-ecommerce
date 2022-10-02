@@ -60,8 +60,9 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
     Route::get('/user/roles/{userid}',[AdminController::class,"userroles"])->name('userroles');
     Route::get('/user/favourites/{userid}',[AdminController::class,"userfavourites"])->name('userfavourites');
     Route::get("/user/{userid}/order-history-list/",[AdminController::class,"userorderhistorylist"])->name("userorderhistorylist");
-    Route::get("/user/{userid}/credit-cards",[AdminController::class,"usercreditcardslist"])->name("usercreditcardslist");
-
+    Route::prefix("/user")->group(function(){
+        Route::get("creditcards/{userid}",[AdminController::class,"usercreditcards"])->name("user.creditcards");
+    });
     Route::get('/category',[AdminController::class,'categorylist'])->name('categorylist');
     Route::get('/category/{categoryid}',[AdminController::class,'categoryshow'])->name('categoryshow');
 
@@ -100,7 +101,7 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
         Route::get("/questions/{courseid}/detail/{questionid}","course_questions_detail")->name('course_questions_detail');
         Route::get("/{courseid}/prices/","course_price_list")->name("course_price_list");
         Route::post("/prices/{priceid}","course_price_update")->name("course_price_update");
-        Route::get("/user","user_courses_list")->name("user_courses_list"); // kullanıcının satın aldıgı kurslar
+        Route::get("/user","user_courses_list")->name("user_courses_list");
 
         Route::prefix("/reviews")->name("course.reviews.")->group(function(){
             Route::get("/{courseid}","course_reviews_list")->name("list");
