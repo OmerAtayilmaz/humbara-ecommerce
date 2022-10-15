@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\ContactMessage;
 class HomeController extends Controller
 {
     public function index()
@@ -49,6 +49,16 @@ class HomeController extends Controller
     }
     public function contactus(){
         return view('storefront.pages.contactus');
+    }
+    public function contactusstore(Request $req){
+        $temp=new ContactMessage();
+        $temp->name=$req->name;
+        $temp->email=$req->email;
+        $temp->message=$req->message;
+        $temp->ip_address=request()->ip();
+        $temp->status='ACTIVE';
+        $temp->save();
+        return redirect()->back();
     }
     public function aboutus(){
         return view('storefront.pages.aboutus');

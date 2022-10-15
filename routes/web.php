@@ -27,6 +27,7 @@ Route::controller(HomeController::class)->group(function(){
     Route::get('privacy-policy','privacypolicy')->name('privacypolicy');
     Route::get('cookies','cookies')->name('cookies');
     Route::get('/contactus','contactus')->name('contactus');
+    Route::post('/contactus','contactusstore')->name('contactus.store');
     Route::get('/aboutus','aboutus')->name('aboutus'); 
 
     //Auth
@@ -62,6 +63,7 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
     Route::get("/user/{userid}/order-history-list/",[AdminController::class,"userorderhistorylist"])->name("userorderhistorylist");
     Route::prefix("/user")->group(function(){
         Route::get("creditcards/{userid}",[AdminController::class,"usercreditcards"])->name("user.creditcards");
+        Route::get("shop-cart/{id}",[AdminController::class,"shopcart"])->name("user.shopcart");
     });
     Route::get('/category',[AdminController::class,'categorylist'])->name('categorylist');
     Route::get('/category/{categoryid}',[AdminController::class,'categoryshow'])->name('categoryshow');
@@ -127,11 +129,7 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
         Route::post("/update/{id}","update")->name("update");
         Route::get("/delete/{id}","delete")->name("delete");
     });
-    /*
-    CART SYSTEM
-        - Which course added to cart (how many times) 
-        - User cart details
-    */
+ 
 
     /*
     ORDER SYSTEM

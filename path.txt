@@ -13,11 +13,13 @@
 { COMPLETED } -> CONTACT MESSAGES
 { COMPLETED } -> KUPON OLSUTURMA SISTEMI
     { COMPLETED } -> TEK KULANIMLIK YUZDELIK KUPON (multi person)
-{ } -> ORDERS 
-    { } -> STEP1: USER MAKES ORDER (ACTIVE_ORDERS) 
-    { } -> STEP2: If payment checkt is successful, the user will be access the course (USER_COURSES)
-{ } -> CARD
-    { } -> Each card is a single order
+{ COMPLETED } -> CARD
+    { COMPLETED } -> Each card is a single order
+{ } -> CONTACT Message kısmı ayarlanacak 
+{ } -> social media linkleri ayarlanacak
+{ } -> DC ve whatsapp linkleri ayarlanacak 
+{ } -> FAQ Dinamik hale getirilecek - karşıdan soru iste 
+{ } -> Karşıdan gerçek veri iste 
 { } -> COUNTRY CRUD
 { } -> USER
     { } -> ROLES
@@ -36,7 +38,6 @@
     { } -> User Reset Password
     { } -> User Change Password
     { } -> User Log out from other devices
-    { } -> 
 { } -> Payments
     { } -> Iyzico Odeme Entegrasyonu
     { } -> Stripe Odeme Entegrasyonu
@@ -49,6 +50,10 @@
     { } -> FAQ
     { } -> COURSES
     { } -> 
+
+{ } -> ORDERS 
+    { } -> STEP1: USER MAKES ORDER (ACTIVE_ORDERS) 
+    { } -> STEP2: If payment checkt is successful, the user will be access the course (USER_COURSES)
 { } -> 
 { } -> 
 { } -> 

@@ -41,8 +41,11 @@ class AdminController extends Controller
     public function userlist(){
         return view('backoffice.user.index');
     }
-    public function userdetail(){
-        return view('backoffice.user.show');
+    public function userdetail($id){
+        $user=User::find($id);
+        return view('backoffice.user.show',[
+            'user'=>$user
+        ]);
     }
     public function userroles(){
         return view('backoffice.user.addrole');
@@ -177,7 +180,12 @@ class AdminController extends Controller
         return view('backoffice.creditcards.index',['user'=>$user]);
     }
     
-
+    public function shopcart($id){
+        $cartItemsList=User::find($id)->shoppingCartItem;
+        return view('backoffice.user.cartlist',[
+            'cartItemsList'=>$cartItemsList
+        ]);
+    }
     
   
 }

@@ -13,22 +13,27 @@
                             <div class="col-sm-12">
                                 <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                                     <tr>
-                                        <th>Id</th><td>1</td>
+                                        <th>Id</th><td>{{$user->id}}</td>
                                     </tr>
                                     <tr>
-                                        <th>Name</th><td>1</td>
+                                        <th>Name</th><td>{{$user->name}}</td>
                                     </tr>
                                     <tr>
-                                        <th>Surname</th><td>Acar</td>
+                                        <th>Surname</th><td>{{$user->surname}}</td>
                                     </tr>
                                     <tr>
-                                        <th>Email</th><td>User</td>
+                                        <th>Email</th><td>{{$user->email}}</td>
                                     </tr>
                                     <tr>
                                         <th>Type</th><td>User</td>
                                     </tr>
                                     <tr>
                                         <th>Role</th><td>User</td>
+                                    </tr>
+                                    <tr>
+                                        <th>User Cart</th><td>
+                                            <a class="btn btn-outline-primary" href="{{route('admin.user.shopcart',['id'=>$user->id])}}">Shopping Cart List </a>
+                                        </td>
                                     </tr>
                                 </table>
                             </div>
