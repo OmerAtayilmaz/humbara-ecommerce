@@ -11,8 +11,13 @@
 { COMPLETED } -> THEME CRUD
 { COMPLETED } -> SETTINGS CRUD 
 { COMPLETED } -> CONTACT MESSAGES
-{ } -> COURSE DISCOUND BY PERCENT
+{ COMPLETED } -> KUPON OLSUTURMA SISTEMI
+    { COMPLETED } -> TEK KULANIMLIK YUZDELIK KUPON (multi person)
 { } -> ORDERS 
+    { } -> STEP1: USER MAKES ORDER (ACTIVE_ORDERS) 
+    { } -> STEP2: If payment checkt is successful, the user will be access the course (USER_COURSES)
+{ } -> CARD
+    { } -> Each card is a single order
 { } -> COUNTRY CRUD
 { } -> USER
     { } -> ROLES
@@ -22,7 +27,6 @@
     { } -> USER_COURSE_VIDEO // kullanıcın kursta videoyu bitirip bitirmediğini belirtir.
     { } -> CREDIT CARDS 
     { } -> FAVOURITES
-    
 { } -> Authorization
     { } -> User Login
     { } -> User Logout

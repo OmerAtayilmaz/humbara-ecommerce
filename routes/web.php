@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CourseController;
+use App\Http\Controllers\Admin\CouponsController;
 use App\Http\Controllers\UserController;
-
 
 
 /* HOME ROUTES */
@@ -117,6 +117,31 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
 
 
     });
+
+    Route::prefix("/coupons")->name("coupons.")->controller(CouponsController::class)->group(function(){
+        Route::get("/","index")->name("index");
+        Route::get("/create","create")->name("create");
+        Route::post("/store","store")->name("store");
+        Route::get("/show/{id}","show")->name("show");
+        Route::get("/edit/{id}","edit")->name("edit");
+        Route::post("/update/{id}","update")->name("update");
+        Route::get("/delete/{id}","delete")->name("delete");
+    });
+    /*
+    CART SYSTEM
+        - Which course added to cart (how many times) 
+        - User cart details
+    */
+
+    /*
+    ORDER SYSTEM
+        - Which course has been ordered
+        - Order Status (Payment Successful-SUCCESS,Payment Error-FAIL)
+        - Admin can see the courses the User bought 
+        - Admin can see the courses User List at Course Page
+    */
+
+    
     
 
 });
