@@ -172,10 +172,10 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <a class="navbar__dropdown--link dropdown-item" href="{{route('userloginpanel')}}">Login</a>
+                  <a class="navbar__dropdown--link dropdown-item" href="{{route('user.loginpanel')}}">Login</a>
                 </li>
                 <li>
-                  <a class="navbar__dropdown--link dropdown-item" href="{{route('userloginpanel')}}">Signup</a>
+                  <a class="navbar__dropdown--link dropdown-item" href="{{route('user.registerpanel')}}">Signup</a>
                 </li>
               </ul>
             </li>
@@ -263,10 +263,10 @@
               </button>
               <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuUser">
                 <li>
-                  <a class="navbar__dropdown--link dropdown-item" href="{{route('userloginpanel')}}">Login</a>
+                  <a class="navbar__dropdown--link dropdown-item" href="{{route('user.loginpanel')}}">Login</a>
                 </li>
                 <li>
-                  <a class="navbar__dropdown--link dropdown-item" href="{{route('userregisterpanel')}}">Signup</a>
+                  <a class="navbar__dropdown--link dropdown-item" href="{{route('user.registerpanel')}}">Signup</a>
                 </li>
               </ul>
             </div>

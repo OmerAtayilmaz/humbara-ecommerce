@@ -15,20 +15,7 @@
     { COMPLETED } -> TEK KULANIMLIK YUZDELIK KUPON (multi person)
 { COMPLETED } -> CARD
     { COMPLETED } -> Each card is a single order
-{ } -> CONTACT Message kısmı ayarlanacak 
-{ } -> social media linkleri ayarlanacak
-{ } -> DC ve whatsapp linkleri ayarlanacak 
-{ } -> FAQ Dinamik hale getirilecek - karşıdan soru iste 
-{ } -> Karşıdan gerçek veri iste 
-{ } -> COUNTRY CRUD
-{ } -> USER
-    { } -> ROLES
-    { } -> ROLE_USER Relation
-    { } -> COURSE_USER_CONTRACT
-    { } -> FINISHED_COURSES
-    { } -> USER_COURSE_VIDEO // kullanıcın kursta videoyu bitirip bitirmediğini belirtir.
-    { } -> CREDIT CARDS 
-    { } -> FAVOURITES
+{ COMPLETED } -> CONTACT Message kısmı ayarlanacak 
 { } -> Authorization
     { } -> User Login
     { } -> User Logout
@@ -38,6 +25,19 @@
     { } -> User Reset Password
     { } -> User Change Password
     { } -> User Log out from other devices
+{ } -> social media linkleri ayarlanacak
+{ } -> DC ve whatsapp linkleri ayarlanacak 
+{ } -> FAQ Dinamik hale getirilecek - karşıdan soru iste 
+{ } -> Karşıdan gerçek veri iste 
+
+{ } -> USER
+    { } -> ROLES
+    { } -> ROLE_USER Relation
+    { } -> COURSE_USER_CONTRACT
+    { } -> FINISHED_COURSES
+    { } -> USER_COURSE_VIDEO // kullanıcın kursta videoyu bitirip bitirmediğini belirtir.
+    { } -> CREDIT CARDS 
+    { } -> FAVOURITES
 { } -> Payments
     { } -> Iyzico Odeme Entegrasyonu
     { } -> Stripe Odeme Entegrasyonu

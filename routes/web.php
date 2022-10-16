@@ -31,9 +31,13 @@ Route::controller(HomeController::class)->group(function(){
     Route::get('/aboutus','aboutus')->name('aboutus'); 
 
     //Auth
-    Route::get('/u-login','login')->name('userloginpanel');
-    Route::get('/u-register','register')->name('userregisterpanel');
-    Route::get('/f-password','forgotpassword')->name('userforgotpasswordpane');
+    Route::name('user.')->group(function(){
+        Route::get('/u-login','login')->name('loginpanel');
+        Route::get('/u-register','register')->name('registerpanel');
+        Route::get('/f-password','forgotpassword')->name('forgotpass-panel');
+        Route::get("/f-password/request","forgotpasswordreqtoken")->name("forgotpasswordreqtoken");
+    });
+ 
 });
 
 

@@ -74,7 +74,7 @@
             <span>
               <small
                 >Don't have an account?
-                <a href="signup.html" class="color-primary"
+                <a href="{{route('user.registerpanel')}}" class="color-primary"
                   >Get started</a
                 ></small
               >
@@ -118,7 +118,7 @@
               <span>OR</span>
             </div>
 
-            <form class="mb-5">
+            <form class="mb-5" autocomplete="off">
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label"
                   >Email address</label
@@ -128,6 +128,7 @@
                   class="form-control"
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
+                  autocomplete="off"
                 />
               </div>
               <div class="mb-3">
@@ -138,10 +139,11 @@
                   type="password"
                   class="form-control"
                   id="exampleInputPassword1"
+                  autocomplete="off"
                 />
               </div>
               <div class="mb-3 d-flex justify-content-end">
-                <a href="forgot-password.html" class="color-primary"
+                <a href="{{route('user.forgotpass-panel')}}" class="color-primary"
                   >Forgot Password?</a
                 >
               </div>
@@ -153,11 +155,10 @@
                 Submit
               </button>
             </form>
-
             <small
               >By clicking Log In, I confirm that I have read and agree to the
-              <a href="#" class="color-primary">Terms of Service</a> and
-              <a href="#" class="color-primary">Privacy Policy</a>.</small
+              <a href="{{route('cookies')}}" class="color-primary">Terms of Service</a> and
+              <a href="{{route('privacypolicy')}}" class="color-primary">Privacy Policy</a>.</small
             >
           </div>
         </div>

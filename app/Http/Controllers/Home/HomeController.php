@@ -69,4 +69,8 @@ class HomeController extends Controller
     public function forgotpassword(){ 
         return view('storefront.auth.forgot-password');
     }
+
+    public function forgotpasswordreqtoken(){
+        return view("storefront.auth.forgot-password-reqtoken");
+    }
 }

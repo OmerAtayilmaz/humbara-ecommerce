@@ -4,7 +4,7 @@
     <div class="container py-3" style="height: 90vh">
       <nav class="d-flex align-items-center justify-content-between">
         <a href="/" class="navbar-brand">
-          <img src="assets/icons/nav_logo.png" alt="logo image" />
+          <img src="{{asset('assets/home')}}/assets/icons/nav_logo.png" alt="logo image" />
         </a>
         <div class="d-flex align-items-center justify-content-between">
           <div class="dropdown">
@@ -53,12 +53,12 @@
             />
             <label for="floatingInput">Email address</label>
           </div>
-          <button
+          <a href="{{route('user.forgotpasswordreqtoken')}}"
             class="btn bg-primarycolor text-white w-100 py-3"
             style="background-color: var(--primary-color)"
           >
             Reset Password
-          </button>
+          </a>
         </form>
       </div>
     </div>
