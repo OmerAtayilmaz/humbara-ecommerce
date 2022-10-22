@@ -38,6 +38,8 @@ Route::controller(HomeController::class)->group(function(){
         Route::post('/u-register','registerreq')->name('registerpanelreq');
         Route::get('/f-password','forgotpassword')->name('forgotpass-panel');
         Route::get("/f-password/request","forgotpasswordreqtoken")->name("forgotpasswordreqtoken");
+
+       
     });
 });
 
@@ -56,6 +58,8 @@ Route::middleware('auth')->prefix('user')->controller(UserController::class)->na
     //kurs sepeti
     Route::get("cart","coursecart")->name("coursecart");
     Route::get("checkout","coursecheckout")->name("coursecheckout"); //sepette satın ala tıklandığında açılacak ödeme sayfası
+    Route::get("checkout/success","checkoutsuccess")->name("checkoutsuccess"); 
+    Route::get("checkout/fail","checkoutfail")->name("checkoutfail"); 
 });
 
 /* ADMIN ROUTES */

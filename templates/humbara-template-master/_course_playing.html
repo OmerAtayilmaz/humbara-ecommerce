@@ -1,0 +1,3350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.1.0/css/font-awesome-ie7.css"
+      integrity="sha512-Kpsc+/EabAS1fFZpJxAMbY4UbBNzSJL3J6fxMEqzuL10stipHg0aWcW0W+Rj1CgP0xm86RCAMIvchOCI1eASaA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--
+    google fonts
+    
+   -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <title>HUMBARA</title>
+    <!-- main css -->
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./dist/progress_bar.css" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="course-playing-navbar navbar navbar-expand-lg navbar-light bg-mutedcolor sticky-top d-flex flex-column"
+    >
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          style="border-color: var(--primary-color)"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+        >
+          <span class="fs-1 color-primary"
+            ><i class="fa-solid fa-bars"></i
+          ></span>
+        </button>
+
+        <a href="/" class="navbar-brand">
+          <img src="assets/icons/nav_logo.png" alt="logo image" />
+        </a>
+
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <button
+              type="button"
+              class="btn-close ms-2 mt-2"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body course-playing-header">
+            <div
+              class="course-playing-header--groups d-flex align-items-center"
+            >
+              <div class="course-name">
+                <h4>Complete C# Unity Game Developer</h4>
+              </div>
+              <div
+                class="dropdown my-courses get-certificate me-2 d-none d-lg-block"
+              >
+                <button
+                  class="btn dropdown-toggle text-white py-1"
+                  style="
+                    background-color: rgba(
+                      var(--bs-light-rgb),
+                      var(--bs-bg-opacity)
+                    ) !important;
+                  "
+                  type="button"
+                  id="dropdownMyCourses"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <div class="pie-wrapper progress-95 style-2">
+                    <!-- <span class="label">95<span class="smaller">%</span></span> -->
+                    <i class="fa-solid fa-trophy"></i>
+                    <div class="pie">
+                      <div class="left-side half-circle"></div>
+                      <div class="right-side half-circle"></div>
+                    </div>
+                    <div class="shadow"></div>
+                  </div>
+                  Sertifika Al
+                </button>
+                <ul
+                  class="dropdown-menu dropdown-menu-lg-end"
+                  aria-labelledby="dropdownGetCertificate"
+                >
+                  <li>
+                    <p>99/100 tamamlandı.</p>
+                  </li>
+                  <li id="get-my-certificate">
+                    <button class="course-btn">
+                      <a href="#">Sertifika Al</a>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <button
+                type="button"
+                class="sharing btn"
+                data-toggle="modal"
+                data-target="#exampleModalCenter"
+                id="course-playing-share-btn"
+              >
+                Share <span class="material-symbols-outlined"> share </span>
+              </button>
+
+              <div id="share-button-modal">
+                <div class="container swiper modalShareSwiper">
+                  <div class="content swiper-wrapper">
+                    <div class="card swiper-slide">
+                      <div class="card-content">
+                        <div class="image">
+                          <img src="./assets/images/profile-pic.png" alt="" />
+                        </div>
+                        <h4 class="social-media-name">Whatsapp</h4>
+                      </div>
+                    </div>
+                    <div class="card swiper-slide">
+                      <div class="card-content">
+                        <div class="image">
+                          <img src="./assets/images/profile-pic.png" alt="" />
+                        </div>
+                        <h4 class="social-media-name">Whatsapp</h4>
+                      </div>
+                    </div>
+                    <div class="card swiper-slide">
+                      <div class="card-content">
+                        <div class="image">
+                          <img src="./assets/images/profile-pic.png" alt="" />
+                        </div>
+                        <h4 class="social-media-name">Whatsapp</h4>
+                      </div>
+                    </div>
+                    <div class="card swiper-slide">
+                      <div class="card-content">
+                        <div class="image">
+                          <img src="./assets/images/profile-pic.png" alt="" />
+                        </div>
+                        <h4 class="social-media-name">Whatsapp</h4>
+                      </div>
+                    </div>
+                    <div class="card swiper-slide">
+                      <div class="card-content">
+                        <div class="image">
+                          <img src="./assets/images/profile-pic.png" alt="" />
+                        </div>
+                        <h4 class="social-media-name">Whatsapp</h4>
+                      </div>
+                    </div>
+                    <div class="card swiper-slide">
+                      <div class="card-content">
+                        <div class="image">
+                          <img src="./assets/images/profile-pic.png" alt="" />
+                        </div>
+                        <h4 class="social-media-name">Whatsapp</h4>
+                      </div>
+                    </div>
+                    <div class="card swiper-slide">
+                      <div class="card-content">
+                        <div class="image">
+                          <img src="./assets/images/profile-pic.png" alt="" />
+                        </div>
+                        <h4 class="social-media-name">Whatsapp</h4>
+                      </div>
+                    </div>
+                    <div class="card swiper-slide">
+                      <div class="card-content">
+                        <div class="image">
+                          <img src="./assets/images/profile-pic.png" alt="" />
+                        </div>
+                        <h4 class="social-media-name">Whatsapp</h4>
+                      </div>
+                    </div>
+                    <div class="card swiper-slide">
+                      <div class="card-content">
+                        <div class="image">
+                          <img src="./assets/images/profile-pic.png" alt="" />
+                        </div>
+                        <h4 class="social-media-name">Whatsapp</h4>
+                      </div>
+                    </div>
+                    <div class="card swiper-slide">
+                      <div class="card-content">
+                        <div class="image">
+                          <img src="./assets/images/profile-pic.png" alt="" />
+                        </div>
+                        <h4 class="social-media-name">Whatsapp</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                </div>
+                <form action="lecture-link">
+                  <input type="text" />
+                  <button>Copy</button>
+                </form>
+              </div>
+
+              <div class="dropdown d-none d-lg-block">
+                <button
+                  class="btn bg-graycolor dropdown-toggle text-white py-1"
+                  style="background-color: var(--primary-color) !important"
+                  type="button"
+                  id="dropdownMenuMore"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="navbar-icon fa-solid fa-ellipsis-vertical"></i>
+                </button>
+                <ul
+                  class="dropdown-menu dropdown-menu-lg-end"
+                  aria-labelledby="dropdownMenuMore"
+                >
+                  <li>
+                    <a class="navbar__dropdown--link dropdown-item" href="#"
+                      >Kursu Arşivle</a
+                    >
+                  </li>
+                  <li>
+                    <a class="navbar__dropdown--link dropdown-item" href="#"
+                      >Kursu favorilerden Kaldır</a
+                    >
+                  </li>
+                  <li>
+                    <a class="navbar__dropdown--link dropdown-item" href="#"
+                      >Kursu hediye et</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="course-playin-content__mobile-navbar">
+      <div class="course-playin-content__mobile-navbar--back-icon">
+        <a href="#"><i class="fa-solid fa-arrow-left"></i></a>
+      </div>
+      <div class="course-playin-content__mobile-navbar--course-name">
+        <h4>Complete C# Unity Game Developer</h4>
+      </div>
+    </div>
+    <div id="course-playing-main-page">
+      <div class="course-main-content-part">
+        <!-- <video  class="d-block w-100">
+          <source type="video/mp4" src="./assets/images/Unbroken - Motivational Video.mp4">
+          <track src="./assets/images/Unbroken - Motivational Video.mp4.vtt" label="English" kind="captions" srclang="en" default>
+        </video> -->
+        <!--Slider Course Playing Screen-->
+        <div class="course-playing-slider">
+          <div class="course-playing-video-part">
+            <button class="buttons prev-button"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="buttons next-button"><i class="fa-solid fa-arrow-right"></i></button>
+            <video onclick="playPause()">
+
+              <source type="video/mp4" src="./assets/images/x2mate.com-Unbroken - Motivational Video-(1080p).mp4" label="1080px">
+              <source type="video/mp4" src="./assets/images/Unbroken - Motivational Video-720px.mp4" label="720px">
+              <source type="video/mp4" src="./assets/images/Unbroken - Motivational Video-360px.mp4" label="360px">
+              <source type="video/mp4" src="./assets/images/x2mate.com-Unbroken - Motivational Video-(144p).mp4" label="144px">
+
+              <track src="..." id="video-track-en"  label="English" kind="captions" srclang="en" default>
+              <track src="./assets/images/[tr] Unbroken - Motivational Video.mp4 (1).vtt" id="video-track-tr"  selected label="Turkish" kind="captions" srclang="tr" default>
+            </video>
+          </div>
+          <div class="course-sidebar--toggle-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            <p>Course Content</p>
+          </div>
+          <div class="course-playing--options">
+            <div class="option__progress-bar">
+              <div class="progress-bar">
+                <div class="progress-bar-fill"></div>
+              </div>
+            </div>
+            <div class="option__sub-options">
+              <div class="option__sub-options--left">
+                <div class="item play">
+                  <i class="fa-solid fa-play play-icon"></i>
+                  <i class="fa-solid fa-pause changable"></i>
+                  <div class="hover-effect-info play">Play</div>
+                  <div class="hover-effect-info-changable">Pause</div>
+                </div>
+                <div class="item rewind">
+                  <i class="fa-solid fa-backward"/></i>
+                  <div class="hover-effect-info">Rewind 5s</div>
+                </div>
+                <div class="item speed">
+                  <button>1x</button>
+                  <div class="hover-effect-info">Playback rate</div>
+                  <div id="playback-rate-modal">
+                    <button value="0.5x" id="1">0.5x<i id="1" class="fa-solid fa-square"></i></button>
+                    <button value="0.75x" id="2">0.75x<i id="2" class="fa-solid fa-square"></i></button>
+                    <button value="1x" id="3">1x<i id="3" class="fa-solid fa-square"></i></button>
+                    <button value="1.25x" id="4">1.25x<i id="4" class="fa-solid fa-square"></i></button>
+                    <button value="1.5x" id="5">1.5x<i id="5" class="fa-solid fa-square"></i></button>
+                    <button value="1.75x" id="6">1.75x<i id="6" class="fa-solid fa-square"></i></button>
+                    <button value="2x" id="7">2x<i id="7" class="fa-solid fa-square"></i></button>
+                  </div>
+                </div>
+                <div class="item forward">
+                  <i class="fa-solid fa-forward"></i>
+                  <div class="hover-effect-info">Forward 5s</div>
+                </div>
+                <div class="item time"><p><span id="currentTime"></span>/<span id="totalTime"></span></p></div>
+                <!-- <div class="item note">
+                  <i class="fa-regular fa-pen-to-square"></i>
+                  <div class="hover-effect-info">Add Note</div>
+                </div> -->
+              </div>
+              <div class="option__sub-options--right">
+                <!-- <div class="item transcript">
+                  <i class="fa-regular fa-file"></i>
+                  <div class="hover-effect-info">Transcripts</div>
+                </div> -->
+                <div class="item sub-title">
+                  <i class="fa-regular fa-closed-captioning"></i>
+                  <div class="hover-effect-info">Captions</div>
+                  <div id="captions-modal">
+                    <button id="closed">Closed<i class="fa-solid fa-square"></i></button>
+                    <p>There is no sub-title</p>
+                  </div>
+                </div>
+                <div class="item volume">
+                  <span class="material-symbols-outlined"> volume_up </span>
+                  <input
+                    type="range"
+                    id="volume"
+                    class="hover-effect-info-volume"
+                  />
+                </div>
+                <!-- <div class="item setting">
+                  <span class="material-symbols-outlined"> settings </span>
+                  <div class="hover-effect-info">Setting</div>
+                  <div id="setting-modal">
+                    <p>Quality</p>
+                   <hr>
+                   <div class="quality">
+                    <button id="1" >1080px<i class="fa-solid fa-square"></i></button>
+                   <button id="2">720px<i class="fa-solid fa-square"></i></button>
+                   <button id="3" >360px<i class="fa-solid fa-square"></i></button>
+                   <button id="4">144px<i class="fa-solid fa-square"></i></button>
+                   </div>
+                  </div>
+                </div> -->
+                <div class="item full-mode">
+                  <span class="material-symbols-outlined"> open_in_full </span>
+                  <div class="hover-effect-info">Fullscreen</div>
+                </div>
+                <div class="item default-mode">
+                  <span class="material-symbols-outlined"> zoom_in_map </span>
+                  <div class="hover-effect-info">Default</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Course Contents -->
+        <div class="course-playing-contents">
+          <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <button
+                class="nav-link active"
+                id="nav-home-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-home"
+                type="button"
+                role="tab"
+                aria-controls="nav-home"
+                aria-selected="true"
+              >
+                Course Content
+              </button>
+              <button
+                class="nav-link"
+                id="nav-overview-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-overview"
+                type="button"
+                role="tab"
+                aria-controls="nav-overview"
+                aria-selected="false"
+              >
+                Overview
+              </button>
+              <button
+                class="nav-link"
+                id="nav-contact-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-contact"
+                type="button"
+                role="tab"
+                aria-controls="nav-contact"
+                aria-selected="false"
+              >
+                Q&A
+              </button>
+              <!-- <button
+                class="nav-link"
+                id="nav-announce-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-announce"
+                type="button"
+                role="tab"
+                aria-controls="nav-announce"
+                aria-selected="false"
+              >
+                Announcements
+              </button>
+              <button
+                class="nav-link"
+                id="nav-review-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-review"
+                type="button"
+                role="tab"
+                aria-controls="nav-review"
+                aria-selected="false"
+              >
+                Reviews
+              </button>
+              <button
+                class="nav-link"
+                id="nav-note-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-note"
+                type="button"
+                role="tab"
+                aria-controls="nav-note"
+                aria-selected="false"
+              >
+                Notes
+              </button> -->
+            </div>
+          </nav>
+          <div class="tab-content" id="nav-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="nav-home"
+              role="tabpanel"
+              aria-labelledby="nav-home-tab"
+              tabindex="0"
+            >
+              <div class="course-content-accordion course-content-group-item">
+                <div class="accordion" id="accordionPanelsStayOpenExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                      <button
+                        class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseOne"
+                        aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapseOne"
+                      >
+                        Section-1:Getting Started With The Course
+                        <div class="course-time">4/9 | 30min</div>
+                      </button>
+                    </h2>
+                    <div
+                      id="panelsStayOpen-collapseOne"
+                      class="accordion-collapse collapse show"
+                      aria-labelledby="panelsStayOpen-headingOne"
+                    >
+                      <div class="accordion-body">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox1"
+                            >1.Into
+                            <div class="time-info">
+                              <span class="material-symbols-outlined">
+                                play_circle
+                              </span>
+                              <p>2min</p>
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox1"
+                            >1.Tools and Software
+                            <div class="time-info">
+                              <span class="material-symbols-outlined">
+                                play_circle
+                              </span>
+                              <p>5min</p>
+                            </div>
+                          </label>
+                          <div class="resources dropdown">
+                            <button
+                              class="btn btn-secondary dropdown-toggle"
+                              type="button"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <span class="material-symbols-outlined">
+                                folder_open </span
+                              >Resources
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li>
+                                <a class="dropdown-item" href="#"
+                                  ><span class="material-symbols-outlined">
+                                    download
+                                  </span>
+                                  image.png</a
+                                >
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="#"
+                                  ><span class="material-symbols-outlined">
+                                    download
+                                  </span>
+                                  image.png</a
+                                >
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="#"
+                                  ><span class="material-symbols-outlined">
+                                    download
+                                  </span>
+                                  image.png</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox1"
+                            >3.Join the Facebook Groups
+                            <div class="time-info">
+                              <span class="material-symbols-outlined">
+                                play_circle
+                              </span>
+                              <p>2min</p>
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox1"
+                            >4.Join The Facebook Support Groups & Share Your
+                            Artwork
+                            <div class="time-info">
+                              <span class="material-symbols-outlined">
+                                play_circle
+                              </span>
+                              <p>10min</p>
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseTwo"
+                        aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseTwo"
+                      >
+                        Section-1:Getting Started With The Course
+                        <div class="course-time">4/9 | 30min</div>
+                      </button>
+                    </h2>
+                    <div
+                      id="panelsStayOpen-collapseTwo"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="panelsStayOpen-headingTwo"
+                    >
+                      <div class="accordion-body">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox1"
+                            >1.Into
+                            <div class="time-info">
+                              <span class="material-symbols-outlined">
+                                play_circle
+                              </span>
+                              <p>2min</p>
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox1"
+                            >1.Tools and Software
+                            <div class="time-info">
+                              <span class="material-symbols-outlined">
+                                play_circle
+                              </span>
+                              <p>5min</p>
+                            </div>
+                          </label>
+                          <div class="resources dropdown">
+                            <button
+                              class="btn btn-secondary dropdown-toggle"
+                              type="button"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <span class="material-symbols-outlined">
+                                folder_open </span
+                              >Resources
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li>
+                                <a class="dropdown-item" href="#"
+                                  ><span class="material-symbols-outlined">
+                                    download
+                                  </span>
+                                  image.png</a
+                                >
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="#"
+                                  ><span class="material-symbols-outlined">
+                                    download
+                                  </span>
+                                  image.png</a
+                                >
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="#"
+                                  ><span class="material-symbols-outlined">
+                                    download
+                                  </span>
+                                  image.png</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox1"
+                            >3.Join the Facebook Groups
+                            <div class="time-info">
+                              <span class="material-symbols-outlined">
+                                play_circle
+                              </span>
+                              <p>2min</p>
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox1"
+                            >4.Join The Facebook Support Groups & Share Your
+                            Artwork
+                            <div class="time-info">
+                              <span class="material-symbols-outlined">
+                                play_circle
+                              </span>
+                              <p>10min</p>
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2
+                      class="accordion-header"
+                      id="panelsStayOpen-headingThree"
+                    >
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseThree"
+                        aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseThree"
+                      >
+                        Section-1:Getting Started With The Course
+                        <div class="course-time">4/9 | 30min</div>
+                      </button>
+                    </h2>
+                    <div
+                      id="panelsStayOpen-collapseThree"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="panelsStayOpen-headingThree"
+                    >
+                      <div class="accordion-body">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox1"
+                            >1.Into
+                            <div class="time-info">
+                              <span class="material-symbols-outlined">
+                                play_circle
+                              </span>
+                              <p>2min</p>
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox1"
+                            >1.Tools and Software
+                            <div class="time-info">
+                              <span class="material-symbols-outlined">
+                                play_circle
+                              </span>
+                              <p>5min</p>
+                            </div>
+                          </label>
+                          <div class="resources dropdown">
+                            <button
+                              class="btn btn-secondary dropdown-toggle"
+                              type="button"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <span class="material-symbols-outlined">
+                                folder_open </span
+                              >Resources
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li>
+                                <a class="dropdown-item" href="#"
+                                  ><span class="material-symbols-outlined">
+                                    download
+                                  </span>
+                                  image.png</a
+                                >
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="#"
+                                  ><span class="material-symbols-outlined">
+                                    download
+                                  </span>
+                                  image.png</a
+                                >
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="#"
+                                  ><span class="material-symbols-outlined">
+                                    download
+                                  </span>
+                                  image.png</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox1"
+                            >3.Join the Facebook Groups
+                            <div class="time-info">
+                              <span class="material-symbols-outlined">
+                                play_circle
+                              </span>
+                              <p>2min</p>
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox1"
+                            >4.Join The Facebook Support Groups & Share Your
+                            Artwork
+                            <div class="time-info">
+                              <span class="material-symbols-outlined">
+                                play_circle
+                              </span>
+                              <p>10min</p>
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2
+                      class="accordion-header"
+                      id="panelsStayOpen-headingFour"
+                    >
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseFour"
+                        aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseFour"
+                      >
+                        Section-1:Getting Started With The Course
+                        <div class="course-time">4/9 | 30min</div>
+                      </button>
+                    </h2>
+                    <div
+                      id="panelsStayOpen-collapseFour"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="panelsStayOpen-headingFour"
+                    >
+                      <div class="accordion-body">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox1"
+                            >1.Into
+                            <div class="time-info">
+                              <span class="material-symbols-outlined">
+                                play_circle
+                              </span>
+                              <p>2min</p>
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox1"
+                            >1.Tools and Software
+                            <div class="time-info">
+                              <span class="material-symbols-outlined">
+                                play_circle
+                              </span>
+                              <p>5min</p>
+                            </div>
+                          </label>
+                          <div class="resources dropdown">
+                            <button
+                              class="btn btn-secondary dropdown-toggle"
+                              type="button"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <span class="material-symbols-outlined">
+                                folder_open </span
+                              >Resources
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li>
+                                <a class="dropdown-item" href="#"
+                                  ><span class="material-symbols-outlined">
+                                    download
+                                  </span>
+                                  image.png</a
+                                >
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="#"
+                                  ><span class="material-symbols-outlined">
+                                    download
+                                  </span>
+                                  image.png</a
+                                >
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="#"
+                                  ><span class="material-symbols-outlined">
+                                    download
+                                  </span>
+                                  image.png</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox1"
+                            >3.Join the Facebook Groups
+                            <div class="time-info">
+                              <span class="material-symbols-outlined">
+                                play_circle
+                              </span>
+                              <p>2min</p>
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox1"
+                            >4.Join The Facebook Support Groups & Share Your
+                            Artwork
+                            <div class="time-info">
+                              <span class="material-symbols-outlined">
+                                play_circle
+                              </span>
+                              <p>10min</p>
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2
+                      class="accordion-header"
+                      id="panelsStayOpen-headingFive"
+                    >
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseFive"
+                        aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseFive"
+                      >
+                        Section-1:Getting Started With The Course
+                        <div class="course-time">4/9 | 30min</div>
+                      </button>
+                    </h2>
+                    <div
+                      id="panelsStayOpen-collapseFive"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="panelsStayOpen-headingFive"
+                    >
+                      <div class="accordion-body">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox1"
+                            >1.Into
+                            <div class="time-info">
+                              <span class="material-symbols-outlined">
+                                play_circle
+                              </span>
+                              <p>2min</p>
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox1"
+                            >1.Tools and Software
+                            <div class="time-info">
+                              <span class="material-symbols-outlined">
+                                play_circle
+                              </span>
+                              <p>5min</p>
+                            </div>
+                          </label>
+                          <div class="resources dropdown">
+                            <button
+                              class="btn btn-secondary dropdown-toggle"
+                              type="button"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <span class="material-symbols-outlined">
+                                folder_open </span
+                              >Resources
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li>
+                                <a class="dropdown-item" href="#"
+                                  ><span class="material-symbols-outlined">
+                                    download
+                                  </span>
+                                  image.png</a
+                                >
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="#"
+                                  ><span class="material-symbols-outlined">
+                                    download
+                                  </span>
+                                  image.png</a
+                                >
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="#"
+                                  ><span class="material-symbols-outlined">
+                                    download
+                                  </span>
+                                  image.png</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox1"
+                            >3.Join the Facebook Groups
+                            <div class="time-info">
+                              <span class="material-symbols-outlined">
+                                play_circle
+                              </span>
+                              <p>2min</p>
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox1"
+                            >4.Join The Facebook Support Groups & Share Your
+                            Artwork
+                            <div class="time-info">
+                              <span class="material-symbols-outlined">
+                                play_circle
+                              </span>
+                              <p>10min</p>
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseSix"
+                        aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseSix"
+                      >
+                        Section-1:Getting Started With The Course
+                        <div class="course-time">4/9 | 30min</div>
+                      </button>
+                    </h2>
+                    <div
+                      id="panelsStayOpen-collapseSix"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="panelsStayOpen-headingSix"
+                    >
+                      <div class="accordion-body">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox1"
+                            >1.Into
+                            <div class="time-info">
+                              <span class="material-symbols-outlined">
+                                play_circle
+                              </span>
+                              <p>2min</p>
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox1"
+                            >1.Tools and Software
+                            <div class="time-info">
+                              <span class="material-symbols-outlined">
+                                play_circle
+                              </span>
+                              <p>5min</p>
+                            </div>
+                          </label>
+                          <div class="resources dropdown">
+                            <button
+                              class="btn btn-secondary dropdown-toggle"
+                              type="button"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <span class="material-symbols-outlined">
+                                folder_open </span
+                              >Resources
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li>
+                                <a class="dropdown-item" href="#"
+                                  ><span class="material-symbols-outlined">
+                                    download
+                                  </span>
+                                  image.png</a
+                                >
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="#"
+                                  ><span class="material-symbols-outlined">
+                                    download
+                                  </span>
+                                  image.png</a
+                                >
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="#"
+                                  ><span class="material-symbols-outlined">
+                                    download
+                                  </span>
+                                  image.png</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox1"
+                            >3.Join the Facebook Groups
+                            <div class="time-info">
+                              <span class="material-symbols-outlined">
+                                play_circle
+                              </span>
+                              <p>2min</p>
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="option1"
+                          />
+                          <label class="form-check-label" for="inlineCheckbox1"
+                            >4.Join The Facebook Support Groups & Share Your
+                            Artwork
+                            <div class="time-info">
+                              <span class="material-symbols-outlined">
+                                play_circle
+                              </span>
+                              <p>10min</p>
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="nav-overview"
+              role="tabpanel"
+              aria-labelledby="nav-overview-tab"
+              tabindex="0"
+            >
+              <div
+                class="course-playing-content--overview row w-80 course-content-group-item"
+              >
+                <div class="overview-header col-10">
+                  <h3>About This Course</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Ullam numquam doloribus a quidem totam dolorum quia.
+                    Perferendis earum mollitia alias!
+                  </p>
+                </div>
+                <hr />
+                <div class="overview-item col-10">
+                  <h5 class="header col-4">By The Numbers</h5>
+                  <ul class="part-1 col-4">
+                    <li>Skill level: All Levels</li>
+                    <li>Students: 82637</li>
+                    <li>Languages: English</li>
+                    <li>Captions: Yes</li>
+                  </ul>
+                  <ul class="part-2 col-4">
+                    <li>Lectures: 126</li>
+                    <li>Video: 27 total hours</li>
+                    <li>Sections:6</li>
+                  </ul>
+                </div>
+                <hr />
+                <div class="overview-item col-10">
+                  <h5 class="header col-4">Certificates</h5>
+                  <div class="desc col-8">
+                    <p>Get Humbara certificate by completing entire course</p>
+                    <button>Humbara Certificate</button>
+                  </div>
+                </div>
+                <hr />
+                <div class="overview-item col-10">
+                  <h5 class="header col-4">Features</h5>
+                  <div class="desc col-8">
+                    <p>
+                      Available <a href="#">iOS</a> and <a href="#">Android</a>
+                    </p>
+                  </div>
+                </div>
+                <hr />
+                <div class="overview-item col-10" id="description">
+                  <h5 class="header col-4">Description</h5>
+                  <div class="desc col-8">
+                    <p>
+                      Join over 16,000 learning students and start gaining the
+                      art skills you've always wanted. The Ultimate Digital
+                      Painting Course will show you how to create advanced art
+                      that will stand up as professional work. This course will
+                      enhance or give you skills in the world of Digital
+                      Painting - or your money back The course is your track to
+                      obtaining digital drawing & painting skills like you
+                      always knew you should have! Whether for your own projects
+                      or to paint for clients. This course will take you from
+                      having little knowledge in digital painting and drawing to
+                      creating advanced art and having a deep understanding of
+                      drawing fundamentals. So what else is in it for you?
+                      <strong>
+                        You’ll create over 60 different projects in this course
+                        that will take you from beginner to expert!</strong
+                      >You’ll gain instant access to all 18 sections of the
+                      course. The course is setup to quickly take you through
+                      step by step, the process of digital drawing and painting
+                      in many different styles. It will equip you with the
+                      knowledge to create stunning designs and illustration!
+                      <strong
+                        >Don’t believe me? I offer you a full money back
+                        guarantee within the first 30 days of purchasing the
+                        course.</strong
+                      >You’ll get access to the 18 sections of the course that
+                      will teach you the fundamentals of drawing and digital
+                      painting from the ground up. The course is supported with
+                      over 20 hours of clear content that we walk you through
+                      each step of the way.
+                    </p>
+                    <ul>
+                      <li class="dot">Lorem ipsum dolor sit amet.</li>
+                      <li class="dot">Lorem ipsum dolor sit amet.</li>
+                      <li class="dot">Lorem ipsum dolor sit amet.</li>
+                      <li class="dot">Lorem ipsum dolor sit amet.</li>
+                      <li class="dot">Lorem ipsum dolor sit amet.</li>
+                      <li class="dot">Lorem ipsum dolor sit amet.</li>
+                    </ul>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Nesciunt illum suscipit odit, placeat magnam veniam
+                      voluptatibus voluptas beatae ipsam cumque voluptatum, ad
+                      ipsum sint molestiae ex numquam est expedita tenetur? Eius
+                      laboriosam expedita culpa ea deserunt eos optio facere
+                      dignissimos.
+                    </p>
+                    <p>
+                      <strong
+                        >Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Molestiae, rem.?</strong
+                      >
+                    </p>
+                    <ul>
+                      <li class="dot">Lorem ipsum dolor sit amet.</li>
+                      <li class="dot">Lorem ipsum dolor sit amet.</li>
+                      <li class="dot">Lorem ipsum dolor sit amet.</li>
+                      <li class="dot">Lorem ipsum dolor sit amet.</li>
+                      <li class="dot">Lorem ipsum dolor sit amet.</li>
+                      <li class="dot">Lorem ipsum dolor sit amet.</li>
+                    </ul>
+                  </div>
+                </div>
+                <hr />
+                <div class="overview-item col-10" id="instructor">
+                  <h5 class="header col-4">Instructor</h5>
+                  <div class="desc col-8">
+                    <div class="item profile">
+                      <img src="./assets/images/profile-pic.png" alt="" />
+                      <p>
+                        <strong>Sima ATAYİLMAZ</strong> / Front-End Developer
+                        and AI Expert
+                      </p>
+                    </div>
+                    <div class="item lines">
+                      <a href="#"> <i class="fa-brands fa-instagram"></i></a>
+                      <a href="#"> <i class="fa-brands fa-linkedin"></i></a>
+                      <a href="#"> <i class="fa-brands fa-facebook"></i></a>
+                      <a href="#"> <i class="fa-brands fa-youtube"></i></a>
+                      <a href="#"> <i class="fa-brands fa-twitter"></i></a>
+                      <a href="#"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    <div class="item info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Laboriosam dolores placeat reprehenderit quisquam
+                        similique beatae corrupti animi maiores dicta libero
+                        tempore incidunt deleniti ipsa cum voluptate quia,
+                        atque, explicabo perspiciatis! Eos distinctio libero
+                        iusto impedit ea, aliquam qui, dolore porro animi
+                        corporis ducimus omnis veniam vel perferendis delectus
+                        quaerat hic.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="my-list--pagination w-100">
+                  <button>Daha Fazla</button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="nav-contact"
+              role="tabpanel"
+              aria-labelledby="nav-contact-tab"
+              tabindex="0"
+            >
+              <div class="course-question-content course-content-group-item">
+                <div class="filter-options row">
+                  <div class="filter-types col-md-12 col-sm-12">
+                    <div class="row">
+                      <div class="types--sort col-md-5 col-sm-12">
+                        <p>Sıralama</p>
+                        <select
+                          class="form-select"
+                          aria-label="Default select example"
+                        >
+                          <option selected>Yorumlara Göre Sıralama</option>
+                          <option value="1">En son yorum</option>
+                          <option value="2">En çok oy alan</option>
+                          <option value="3">Yorumlara Göre Sıralama</option>
+                        </select>
+                      </div>
+                      <div class="types--filter col-md-7 col-sm-12">
+                        <p>Filtreleme</p>
+                        <div class="filter-choice">
+                          <select
+                            class="form-select col-md-6 col-sm-6"
+                            aria-label="Default select example"
+                          >
+                            <option selected>Ders</option>
+                            <option value="1">Tüm Dersler</option>
+                            <option value="2">Belli Dersler</option>
+                          </select>
+                          <select
+                            class="form-select col-md-6 col-sm-6"
+                            aria-label="Default select example"
+                          >
+                            <option selected>Sorular</option>
+                            <option value="1">Beğendiğim Sorular</option>
+                            <option value="2">Sorduğum Sorular</option>
+                            <option value="3">Cevapsız Sorular</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="filter-search col-md-11 col-sm-12">
+                    <p>Kurs Ara</p>
+                    <div class="search-part">
+                      <input type="text" />
+                      <button>Ara</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="content-questions">
+                  <h3>All Questions In This Course</h3>
+                  <div class="question" id="add-question">
+                    <div class="question-user">
+                      <img src="./assets/images/profile-pic.png" alt="" />
+                      <div class="question-info">
+                        <h4>Add Question</h4>
+                        <input type="text" placeholder="Enter the header" />
+                        <textarea
+                          name="question"
+                          id="question-add"
+                          placeholder="Your Question..."
+                        ></textarea>
+                        <!-- <div class="quesiton-info--user">
+                          <a href="#">Sima</a>
+                          <a href="#">Lecture-19</a>
+                          <p>2 months ago</p>
+                        </div> -->
+                        <div class="question-info--lecture">
+                          <label for="lecture">Lecture:</label>
+                          <select name="lecture" id="lecture">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="question-action">
+                      <div>0<i class="fa-solid fa-thumbs-up"></i></div>
+                      <div>0<i class="fa-solid fa-comment-dots"></i></div>
+                    </div>
+                  </div>
+                  <div class="question">
+                    <div class="question-user">
+                      <img src="./assets/images/profile-pic.png" alt="" />
+                      <div class="question-info">
+                        <p><strong>Lorem ipsum dolor sit amet.</strong></p>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Quaerat perferendis, odio odit eveniet corporis
+                          ab! Lorem ipsum, dolor sit amet consectetur
+                          adipisicing elit. Accusamus.
+                        </p>
+                        <div class="quesiton-info--user">
+                          <a href="#">Sima</a>
+                          <a href="#">Lecture-19</a>
+                          <p>2 months ago</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="question-action">
+                      <div>354<i class="fa-solid fa-thumbs-up"></i></div>
+                      <div>12<i class="fa-solid fa-comment-dots"></i></div>
+                    </div>
+                  </div>
+                  <div class="question">
+                    <div class="question-user">
+                      <img src="./assets/images/profile-pic.png" alt="" />
+                      <div class="question-info">
+                        <p><strong>Lorem ipsum dolor sit amet.</strong></p>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Quaerat perferendis, odio odit eveniet corporis
+                          ab! Lorem ipsum, dolor sit amet consectetur
+                          adipisicing elit. Accusamus.
+                        </p>
+                        <div class="quesiton-info--user">
+                          <a href="#">Sima</a>
+                          <a href="#">Lecture-19</a>
+                          <p>2 months ago</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="question-action">
+                      <div>354<i class="fa-solid fa-thumbs-up"></i></div>
+                      <div>12<i class="fa-solid fa-comment-dots"></i></div>
+                    </div>
+                  </div>
+                  <div class="question">
+                    <div class="question-user">
+                      <img src="./assets/images/profile-pic.png" alt="" />
+                      <div class="question-info">
+                        <p><strong>Lorem ipsum dolor sit amet.</strong></p>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Quaerat perferendis, odio odit eveniet corporis
+                          ab! Lorem ipsum, dolor sit amet consectetur
+                          adipisicing elit. Accusamus.
+                        </p>
+                        <div class="quesiton-info--user">
+                          <a href="#">Sima</a>
+                          <a href="#">Lecture-19</a>
+                          <p>2 months ago</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="question-action">
+                      <div>354<i class="fa-solid fa-thumbs-up"></i></div>
+                      <div>12<i class="fa-solid fa-comment-dots"></i></div>
+                    </div>
+                  </div>
+                  <div class="question">
+                    <div class="question-user">
+                      <img src="./assets/images/profile-pic.png" alt="" />
+                      <div class="question-info">
+                        <p><strong>Lorem ipsum dolor sit amet.</strong></p>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Quaerat perferendis, odio odit eveniet corporis
+                          ab! Lorem ipsum, dolor sit amet consectetur
+                          adipisicing elit. Accusamus.
+                        </p>
+                        <div class="quesiton-info--user">
+                          <a href="#">Sima</a>
+                          <a href="#">Lecture-19</a>
+                          <p>2 months ago</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="question-action">
+                      <div>354<i class="fa-solid fa-thumbs-up"></i></div>
+                      <div>12<i class="fa-solid fa-comment-dots"></i></div>
+                    </div>
+                  </div>
+                  <div class="question">
+                    <div class="question-user">
+                      <img src="./assets/images/profile-pic.png" alt="" />
+                      <div class="question-info">
+                        <p><strong>Lorem ipsum dolor sit amet.</strong></p>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Quaerat perferendis, odio odit eveniet corporis
+                          ab! Lorem ipsum, dolor sit amet consectetur
+                          adipisicing elit. Accusamus.
+                        </p>
+                        <div class="quesiton-info--user">
+                          <a href="#">Sima</a>
+                          <a href="#">Lecture-19</a>
+                          <p>2 months ago</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="question-action">
+                      <div>354<i class="fa-solid fa-thumbs-up"></i></div>
+                      <div>12<i class="fa-solid fa-comment-dots"></i></div>
+                    </div>
+                  </div>
+                  <div class="question">
+                    <div class="question-user">
+                      <img src="./assets/images/profile-pic.png" alt="" />
+                      <div class="question-info">
+                        <p><strong>Lorem ipsum dolor sit amet.</strong></p>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Quaerat perferendis, odio odit eveniet corporis
+                          ab! Lorem ipsum, dolor sit amet consectetur
+                          adipisicing elit. Accusamus.
+                        </p>
+                        <div class="quesiton-info--user">
+                          <a href="#">Sima</a>
+                          <a href="#">Lecture-19</a>
+                          <p>2 months ago</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="question-action">
+                      <div>354<i class="fa-solid fa-thumbs-up"></i></div>
+                      <div>12<i class="fa-solid fa-comment-dots"></i></div>
+                    </div>
+                  </div>
+                  <div class="question">
+                    <div class="question-user">
+                      <img src="./assets/images/profile-pic.png" alt="" />
+                      <div class="question-info">
+                        <p><strong>Lorem ipsum dolor sit amet.</strong></p>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Quaerat perferendis, odio odit eveniet corporis
+                          ab! Lorem ipsum, dolor sit amet consectetur
+                          adipisicing elit. Accusamus.
+                        </p>
+                        <div class="quesiton-info--user">
+                          <a href="#">Sima</a>
+                          <a href="#">Lecture-19</a>
+                          <p>2 months ago</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="question-action">
+                      <div>354<i class="fa-solid fa-thumbs-up"></i></div>
+                      <div>12<i class="fa-solid fa-comment-dots"></i></div>
+                    </div>
+                  </div>
+                  <div class="question">
+                    <div class="question-user">
+                      <img src="./assets/images/profile-pic.png" alt="" />
+                      <div class="question-info">
+                        <p><strong>Lorem ipsum dolor sit amet.</strong></p>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Quaerat perferendis, odio odit eveniet corporis
+                          ab! Lorem ipsum, dolor sit amet consectetur
+                          adipisicing elit. Accusamus.
+                        </p>
+                        <div class="quesiton-info--user">
+                          <a href="#">Sima</a>
+                          <a href="#">Lecture-19</a>
+                          <p>2 months ago</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="question-action">
+                      <div>354<i class="fa-solid fa-thumbs-up"></i></div>
+                      <div>12<i class="fa-solid fa-comment-dots"></i></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="my-list--pagination w-100">
+                  <button>Daha Fazla</button>
+                </div>
+              </div>
+            </div>
+            <!-- <div
+              class="tab-pane fade"
+              id="nav-announce"
+              role="tabpanel"
+              aria-labelledby="nav-announce-tab"
+              tabindex="0"
+            >
+              <div
+                class="course-announcement-content course-content-group-item"
+              >
+                <div class="announcement">
+                  <div class="anouncement--owner">
+                    <img src="./assets/images/profile-pic.png" alt="" />
+                    <div class="anouncement--owner-info">
+                      <a href="#">Sima</a>
+                      <p>
+                        posted an announcement <strong>4 months ago</strong>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="announcement--content">
+                    <h3 class="content-header">!!Design Prompt Generators!!</h3>
+                    <div class="content-desc">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ab, repellendus? Sit delectus facilis voluptatibus,
+                        magni earum est magnam, necessitatibus excepturi atque
+                        quasi iste optio nostrum ullam odit, quae ex natus.
+                        Dignissimos eligendi illo sed! Tenetur totam laudantium
+                        fuga reprehenderit, cum odit exercitationem dignissimos
+                        nam, qui nemo blanditiis necessitatibus aliquid eum!
+                      </p>
+                      <img src="./assets/images/ouracademy.png" alt="" />
+                      <a href="#">Join Us!!</a>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Odit consequuntur distinctio libero doloremque inventore
+                        enim ipsum eaque quibusdam rerum laudantium eos aut qui
+                        ab, optio, error, a natus itaque fugiat? Accusantium eos
+                        sed dolores eveniet deleniti esse provident omnis
+                        excepturi?
+                      </p>
+                    </div>
+                    <div class="content-comment">
+                      <img src="./assets/images/card_img.png" alt="" />
+                      <input type="text" placeholder="Enter Your Comment" />
+                    </div>
+                  </div>
+                  <hr />
+                </div>
+                <div class="announcement">
+                  <div class="anouncement--owner">
+                    <img src="./assets/images/profile-pic.png" alt="" />
+                    <div class="anouncement--owner-info">
+                      <a href="#">Sima</a>
+                      <p>
+                        posted an announcement <strong>4 months ago</strong>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="announcement--content">
+                    <h3 class="content-header">!!Design Prompt Generators!!</h3>
+                    <div class="content-desc">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ab, repellendus? Sit delectus facilis voluptatibus,
+                        magni earum est magnam, necessitatibus excepturi atque
+                        quasi iste optio nostrum ullam odit, quae ex natus.
+                        Dignissimos eligendi illo sed! Tenetur totam laudantium
+                        fuga reprehenderit, cum odit exercitationem dignissimos
+                        nam, qui nemo blanditiis necessitatibus aliquid eum!
+                      </p>
+                      <img src="./assets/images/ouracademy.png" alt="" />
+                      <a href="#">Join Us!!</a>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Odit consequuntur distinctio libero doloremque inventore
+                        enim ipsum eaque quibusdam rerum laudantium eos aut qui
+                        ab, optio, error, a natus itaque fugiat? Accusantium eos
+                        sed dolores eveniet deleniti esse provident omnis
+                        excepturi?
+                      </p>
+                    </div>
+                    <div class="content-comment">
+                      <img src="./assets/images/card_img.png" alt="" />
+                      <input type="text" placeholder="Enter Your Comment" />
+                    </div>
+                  </div>
+                  <hr />
+                </div>
+                <div class="announcement">
+                  <div class="anouncement--owner">
+                    <img src="./assets/images/profile-pic.png" alt="" />
+                    <div class="anouncement--owner-info">
+                      <a href="#">Sima</a>
+                      <p>
+                        posted an announcement <strong>4 months ago</strong>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="announcement--content">
+                    <h3 class="content-header">!!Design Prompt Generators!!</h3>
+                    <div class="content-desc">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ab, repellendus? Sit delectus facilis voluptatibus,
+                        magni earum est magnam, necessitatibus excepturi atque
+                        quasi iste optio nostrum ullam odit, quae ex natus.
+                        Dignissimos eligendi illo sed! Tenetur totam laudantium
+                        fuga reprehenderit, cum odit exercitationem dignissimos
+                        nam, qui nemo blanditiis necessitatibus aliquid eum!
+                      </p>
+                      <img src="./assets/images/ouracademy.png" alt="" />
+                      <a href="#">Join Us!!</a>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Odit consequuntur distinctio libero doloremque inventore
+                        enim ipsum eaque quibusdam rerum laudantium eos aut qui
+                        ab, optio, error, a natus itaque fugiat? Accusantium eos
+                        sed dolores eveniet deleniti esse provident omnis
+                        excepturi?
+                      </p>
+                    </div>
+                    <div class="content-comment">
+                      <img src="./assets/images/card_img.png" alt="" />
+                      <input type="text" placeholder="Enter Your Comment" />
+                    </div>
+                  </div>
+                </div>
+                <div class="my-list--pagination w-100">
+                  <button>Daha Fazla</button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="nav-review"
+              role="tabpanel"
+              aria-labelledby="nav-review-tab"
+              tabindex="0"
+            >
+              <div class="course-reviews-content course-content-group-item">
+                <div class="course-rating">
+                  <h3>Student Feedback</h3>
+                  <div class="course-rating--info">
+                    <div class="info-scoring">
+                      <h1>4.7</h1>
+                      <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                      </div>
+                      <p>Course Rating</p>
+                    </div>
+                    <div class="info-progress-bars">
+                      <div class="progress-bar-item">
+                        <div class="item"><div class="item-full"></div></div>
+                        <div class="stars">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-regular fa-star"></i>
+                          <i class="fa-regular fa-star"></i>
+                          <i class="fa-regular fa-star"></i>
+                          <i class="fa-regular fa-star"></i>
+                        </div>
+                        <a href="#">1%</a>
+                      </div>
+                      <div class="progress-bar-item">
+                        <div class="item"><div class="item-full"></div></div>
+                        <div class="stars">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-regular fa-star"></i>
+                          <i class="fa-regular fa-star"></i>
+                          <i class="fa-regular fa-star"></i>
+                        </div>
+                        <a href="#">1%</a>
+                      </div>
+                      <div class="progress-bar-item">
+                        <div class="item"><div class="item-full"></div></div>
+                        <div class="stars">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-regular fa-star"></i>
+                          <i class="fa-regular fa-star"></i>
+                        </div>
+                        <a href="#">7%</a>
+                      </div>
+                      <div class="progress-bar-item">
+                        <div class="item"><div class="item-full"></div></div>
+                        <div class="stars">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-regular fa-star"></i>
+                        </div>
+                        <a href="#">30%</a>
+                      </div>
+                      <div class="progress-bar-item">
+                        <div class="item"><div class="item-full"></div></div>
+                        <div class="stars">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                        </div>
+                        <a href="#">61%</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="course-reviews">
+                  <h3>Reviews</h3>
+                  <div class="filter-options row w-100">
+                    <div class="filter-search col-md-8 col-sm-12">
+                      <p>Yorum Ara</p>
+                      <div class="search-part">
+                        <input type="text" />
+                        <button>Ara</button>
+                      </div>
+                    </div>
+                    <div class="filter-types col-md-4 col-sm-12">
+                      <div class="row">
+                        <div class="types--sort col-md-12 col-sm-12">
+                          <p>Sıralama</p>
+                          <select
+                            class="form-select"
+                            aria-label="Default select example"
+                          >
+                            <option selected>Yorumlar</option>
+                            <option value="1">1 yıldız</option>
+                            <option value="2">2 yıldız</option>
+                            <option value="3">3 yıldız</option>
+                            <option value="4">4 yıldız</option>
+                            <option value="5">5 yıldız</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="reviews">
+                    <div class="review">
+                      <img src="./assets/images/profile-pic.png" alt="" />
+                      <div class="review-info">
+                        <h5>Sima Asiltürk</h5>
+                        <div class="stars">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star-half-stroke"></i>
+                          <span> 6 gün önce</span>
+                        </div>
+                        <div class="review-text">
+                          <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Minima eum culpa voluptates repudiandae fugit
+                            nostrum, placeat, asperiores inventore, dolorum iste
+                            blanditiis sapiente qui magnam sit mollitia
+                            laboriosam deserunt ducimus excepturi facere. Nam
+                            eaque debitis minus neque sed, repudiandae
+                            reiciendis quas adipisci quisquam nostrum laudantium
+                            aut consequatur distinctio voluptatibus, ducimus
+                            accusantium!
+                          </p>
+                        </div>
+                        <div class="my-list--pagination w-100">
+                          <button>Daha Fazla</button>
+                        </div>
+                        <p>Bu yorum yardımcı oldu mu?</p>
+                        <div class="review-icons">
+                          <i class="fa-regular fa-thumbs-up"></i>
+                          <i class="fa-regular fa-thumbs-down"></i>
+                          <a href="#">Report</a>
+                        </div>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="review">
+                      <img src="./assets/images/profile-pic.png" alt="" />
+                      <div class="review-info">
+                        <h5>Sima Asiltürk</h5>
+                        <div class="stars">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star-half-stroke"></i>
+                          <span> 6 gün önce</span>
+                        </div>
+                        <div class="review-text">
+                          <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Minima eum culpa voluptates repudiandae fugit
+                            nostrum, placeat, asperiores inventore, dolorum iste
+                            blanditiis sapiente qui magnam sit mollitia
+                            laboriosam deserunt ducimus excepturi facere. Nam
+                            eaque debitis minus neque sed, repudiandae
+                            reiciendis quas adipisci quisquam nostrum laudantium
+                            aut consequatur distinctio voluptatibus, ducimus
+                            accusantium!
+                          </p>
+                        </div>
+                        <p>Bu yorum yardımcı oldu mu?</p>
+                        <div class="review-icons">
+                          <i class="fa-regular fa-thumbs-up"></i>
+                          <i class="fa-regular fa-thumbs-down"></i>
+                          <a href="#">Report</a>
+                        </div>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="review">
+                      <img src="./assets/images/profile-pic.png" alt="" />
+                      <div class="review-info">
+                        <h5>Sima Asiltürk</h5>
+                        <div class="stars">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star-half-stroke"></i>
+                          <span> 6 gün önce</span>
+                        </div>
+                        <div class="review-text">
+                          <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Minima eum culpa voluptates repudiandae fugit
+                            nostrum, placeat, asperiores inventore, dolorum iste
+                            blanditiis sapiente qui magnam sit mollitia
+                            laboriosam deserunt ducimus excepturi facere. Nam
+                            eaque debitis minus neque sed, repudiandae
+                            reiciendis quas adipisci quisquam nostrum laudantium
+                            aut consequatur distinctio voluptatibus, ducimus
+                            accusantium!
+                          </p>
+                        </div>
+                        <p>Bu yorum yardımcı oldu mu?</p>
+                        <div class="review-icons">
+                          <i class="fa-regular fa-thumbs-up"></i>
+                          <i class="fa-regular fa-thumbs-down"></i>
+                          <a href="#">Report</a>
+                        </div>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="review">
+                      <img src="./assets/images/profile-pic.png" alt="" />
+                      <div class="review-info">
+                        <h5>Sima Asiltürk</h5>
+                        <div class="stars">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star-half-stroke"></i>
+                          <span> 6 gün önce</span>
+                        </div>
+                        <div class="review-text">
+                          <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Minima eum culpa voluptates repudiandae fugit
+                            nostrum, placeat, asperiores inventore, dolorum iste
+                            blanditiis sapiente qui magnam sit mollitia
+                            laboriosam deserunt ducimus excepturi facere. Nam
+                            eaque debitis minus neque sed, repudiandae
+                            reiciendis quas adipisci quisquam nostrum laudantium
+                            aut consequatur distinctio voluptatibus, ducimus
+                            accusantium!
+                          </p>
+                        </div>
+                        <p>Bu yorum yardımcı oldu mu?</p>
+                        <div class="review-icons">
+                          <i class="fa-regular fa-thumbs-up"></i>
+                          <i class="fa-regular fa-thumbs-down"></i>
+                          <a href="#">Report</a>
+                        </div>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="review">
+                      <img src="./assets/images/profile-pic.png" alt="" />
+                      <div class="review-info">
+                        <h5>Sima Asiltürk</h5>
+                        <div class="stars">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star-half-stroke"></i>
+                          <span> 6 gün önce</span>
+                        </div>
+                        <div class="review-text">
+                          <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Minima eum culpa voluptates repudiandae fugit
+                            nostrum, placeat, asperiores inventore, dolorum iste
+                            blanditiis sapiente qui magnam sit mollitia
+                            laboriosam deserunt ducimus excepturi facere. Nam
+                            eaque debitis minus neque sed, repudiandae
+                            reiciendis quas adipisci quisquam nostrum laudantium
+                            aut consequatur distinctio voluptatibus, ducimus
+                            accusantium!
+                          </p>
+                        </div>
+                        <p>Bu yorum yardımcı oldu mu?</p>
+                        <div class="review-icons">
+                          <i class="fa-regular fa-thumbs-up"></i>
+                          <i class="fa-regular fa-thumbs-down"></i>
+                          <a href="#">Report</a>
+                        </div>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="review">
+                      <img src="./assets/images/profile-pic.png" alt="" />
+                      <div class="review-info">
+                        <h5>Sima Asiltürk</h5>
+                        <div class="stars">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star-half-stroke"></i>
+                          <span> 6 gün önce</span>
+                        </div>
+                        <div class="review-text">
+                          <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Minima eum culpa voluptates repudiandae fugit
+                            nostrum, placeat, asperiores inventore, dolorum iste
+                            blanditiis sapiente qui magnam sit mollitia
+                            laboriosam deserunt ducimus excepturi facere. Nam
+                            eaque debitis minus neque sed, repudiandae
+                            reiciendis quas adipisci quisquam nostrum laudantium
+                            aut consequatur distinctio voluptatibus, ducimus
+                            accusantium!
+                          </p>
+                        </div>
+                        <p>Bu yorum yardımcı oldu mu?</p>
+                        <div class="review-icons">
+                          <i class="fa-regular fa-thumbs-up"></i>
+                          <i class="fa-regular fa-thumbs-down"></i>
+                          <a href="#">Report</a>
+                        </div>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="review">
+                      <img src="./assets/images/profile-pic.png" alt="" />
+                      <div class="review-info">
+                        <h5>Sima Asiltürk</h5>
+                        <div class="stars">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star-half-stroke"></i>
+                          <span> 6 gün önce</span>
+                        </div>
+                        <div class="review-text">
+                          <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Minima eum culpa voluptates repudiandae fugit
+                            nostrum, placeat, asperiores inventore, dolorum iste
+                            blanditiis sapiente qui magnam sit mollitia
+                            laboriosam deserunt ducimus excepturi facere. Nam
+                            eaque debitis minus neque sed, repudiandae
+                            reiciendis quas adipisci quisquam nostrum laudantium
+                            aut consequatur distinctio voluptatibus, ducimus
+                            accusantium!
+                          </p>
+                        </div>
+                        <p>Bu yorum yardımcı oldu mu?</p>
+                        <div class="review-icons">
+                          <i class="fa-regular fa-thumbs-up"></i>
+                          <i class="fa-regular fa-thumbs-down"></i>
+                          <a href="#">Report</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review-button">
+                    <button>Daha Fazla Yoruma Bak</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="nav-note"
+              role="tabpanel"
+              aria-labelledby="nav-note-tab"
+              tabindex="0"
+            >
+              <div class="course-note-content course-content-group-item">
+                <div class="course-note--adding">
+                  <div class="note-time">0:59</div>
+                  <div class="note-part">
+                    <form action="">
+                      <div><label for="">Not Ekle</label></div>
+                      <textarea name="" id=""></textarea>
+                      <div class="buttons">
+                        <button>Cancel</button>
+                        <button>Save</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="course-note--note-list">
+                  <h3>Notlarım</h3>
+                  <div class="filter-options row">
+                    <div class="filter-types col-md-12 col-sm-12">
+                      <div class="row">
+                        <div class="types--filter col-md-12 col-sm-12">
+                          <p>Filtreleme</p>
+                          <div class="filter-choice col-12">
+                            <select
+                              class="form-select col-md-6 col-sm-6"
+                              aria-label="Default select example"
+                            >
+                              <option selected>Ders</option>
+                              <option value="1">Tüm Dersler</option>
+                              <option value="2">Belli Dersler</option>
+                            </select>
+                            <select
+                              class="form-select col-md-6 col-sm-6"
+                              aria-label="Default select example"
+                            >
+                              <option selected>En sona göre sırala</option>
+                              <option value="1">En ilke göre sırala</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="note-list--note">
+                    <div class="note">
+                      <div class="note-icon">
+                        <i class="fa-solid fa-file"></i>
+                      </div>
+                      <div class="note-info">
+                        <div class="note-time">
+                          <p>0:59</p>
+                          <a href="#">Section-2</a>
+                        </div>
+
+                        <div class="note-text">
+                          Lorem, ipsum dolor sit amet consectetur adipisicing
+                          elit. Suscipit vero autem dolor necessitatibus illum
+                          mollitia aliquam cum asperiores ipsa, repellendus
+                          facilis. Nisi vitae necessitatibus voluptatibus est
+                          ut, architecto neque? Delectus, tenetur harum porro
+                          similique sapiente totam optio repellendus ab.
+                          Doloremque consectetur vitae quibusdam dolorem eveniet
+                          reprehenderit earum temporibus natus atque.
+                        </div>
+                        <div class="note-btn">
+                          <button>Sil</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="note">
+                      <div class="note-icon">
+                        <i class="fa-solid fa-file"></i>
+                      </div>
+                      <div class="note-info">
+                        <div class="note-time">
+                          <p>0:59</p>
+                          <a href="#">Section-2</a>
+                        </div>
+
+                        <div class="note-text">
+                          Lorem, ipsum dolor sit amet consectetur adipisicing
+                          elit. Suscipit vero autem dolor necessitatibus illum
+                          mollitia aliquam cum asperiores ipsa, repellendus
+                          facilis. Nisi vitae necessitatibus voluptatibus est
+                          ut, architecto neque? Delectus, tenetur harum porro
+                          similique sapiente totam optio repellendus ab.
+                          Doloremque consectetur vitae quibusdam dolorem eveniet
+                          reprehenderit earum temporibus natus atque.
+                        </div>
+                        <div class="note-btn">
+                          <button>Sil</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="note">
+                      <div class="note-icon">
+                        <i class="fa-solid fa-file"></i>
+                      </div>
+                      <div class="note-info">
+                        <div class="note-time">
+                          <p>0:59</p>
+                          <a href="#">Section-2</a>
+                        </div>
+
+                        <div class="note-text">
+                          Lorem, ipsum dolor sit amet consectetur adipisicing
+                          elit. Suscipit vero autem dolor necessitatibus illum
+                          mollitia aliquam cum asperiores ipsa, repellendus
+                          facilis. Nisi vitae necessitatibus voluptatibus est
+                          ut, architecto neque? Delectus, tenetur harum porro
+                          similique sapiente totam optio repellendus ab.
+                          Doloremque consectetur vitae quibusdam dolorem eveniet
+                          reprehenderit earum temporibus natus atque.
+                        </div>
+                        <div class="note-btn">
+                          <button>Sil</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="note">
+                      <div class="note-icon">
+                        <i class="fa-solid fa-file"></i>
+                      </div>
+                      <div class="note-info">
+                        <div class="note-time">
+                          <p>0:59</p>
+                          <a href="#">Section-2</a>
+                        </div>
+
+                        <div class="note-text">
+                          Lorem, ipsum dolor sit amet consectetur adipisicing
+                          elit. Suscipit vero autem dolor necessitatibus illum
+                          mollitia aliquam cum asperiores ipsa, repellendus
+                          facilis. Nisi vitae necessitatibus voluptatibus est
+                          ut, architecto neque? Delectus, tenetur harum porro
+                          similique sapiente totam optio repellendus ab.
+                          Doloremque consectetur vitae quibusdam dolorem eveniet
+                          reprehenderit earum temporibus natus atque.
+                        </div>
+                        <div class="note-btn">
+                          <button>Sil</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="note">
+                      <div class="note-icon">
+                        <i class="fa-solid fa-file"></i>
+                      </div>
+                      <div class="note-info">
+                        <div class="note-time">
+                          <p>0:59</p>
+                          <a href="#">Section-2</a>
+                        </div>
+
+                        <div class="note-text">
+                          Lorem, ipsum dolor sit amet consectetur adipisicing
+                          elit. Suscipit vero autem dolor necessitatibus illum
+                          mollitia aliquam cum asperiores ipsa, repellendus
+                          facilis. Nisi vitae necessitatibus voluptatibus est
+                          ut, architecto neque? Delectus, tenetur harum porro
+                          similique sapiente totam optio repellendus ab.
+                          Doloremque consectetur vitae quibusdam dolorem eveniet
+                          reprehenderit earum temporibus natus atque.
+                        </div>
+                        <div class="note-btn">
+                          <button>Sil</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="note">
+                      <div class="note-icon">
+                        <i class="fa-solid fa-file"></i>
+                      </div>
+                      <div class="note-info">
+                        <div class="note-time">
+                          <p>0:59</p>
+                          <a href="#">Section-2</a>
+                        </div>
+
+                        <div class="note-text">
+                          Lorem, ipsum dolor sit amet consectetur adipisicing
+                          elit. Suscipit vero autem dolor necessitatibus illum
+                          mollitia aliquam cum asperiores ipsa, repellendus
+                          facilis. Nisi vitae necessitatibus voluptatibus est
+                          ut, architecto neque? Delectus, tenetur harum porro
+                          similique sapiente totam optio repellendus ab.
+                          Doloremque consectetur vitae quibusdam dolorem eveniet
+                          reprehenderit earum temporibus natus atque.
+                        </div>
+                        <div class="note-btn">
+                          <button>Sil</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="note">
+                      <div class="note-icon">
+                        <i class="fa-solid fa-file"></i>
+                      </div>
+                      <div class="note-info">
+                        <div class="note-time">
+                          <p>0:59</p>
+                          <a href="#">Section-2</a>
+                        </div>
+
+                        <div class="note-text">
+                          Lorem, ipsum dolor sit amet consectetur adipisicing
+                          elit. Suscipit vero autem dolor necessitatibus illum
+                          mollitia aliquam cum asperiores ipsa, repellendus
+                          facilis. Nisi vitae necessitatibus voluptatibus est
+                          ut, architecto neque? Delectus, tenetur harum porro
+                          similique sapiente totam optio repellendus ab.
+                          Doloremque consectetur vitae quibusdam dolorem eveniet
+                          reprehenderit earum temporibus natus atque.
+                        </div>
+                        <div class="note-btn">
+                          <button>Sil</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="my-list--pagination w-100">
+                    <button>Daha Fazla</button>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+
+        <footer class="container-fluid footer__container bg-light d-flex">
+          <div
+            class="d-flex align-items-center justify-content-center flex-wrap mx-auto mb-3"
+          >
+            <a href="#" class="text-decoration-none color-gray">Newsletter</a>
+            <span class="mx-1">|</span>
+            <a href="#" class="text-decoration-none color-gray">Company</a>
+            <span class="mx-1">|</span>
+            <a href="#" class="text-decoration-none color-gray">Support</a>
+            <span class="mx-1">|</span>
+            <a href="#" class="text-decoration-none color-gray"
+              >Terms Of Service</a
+            >
+            <span class="mx-1">|</span>
+            <a href="#" class="text-decoration-none color-gray"
+              >Privacy Policy</a
+            >
+            <span class="mx-1">|</span>
+            <a href="#" class="text-decoration-none color-gray">Licenses</a>
+            <span class="mx-1">|</span>
+            <a href="#" class="text-decoration-none color-gray"
+              >Become an Affiliate</a
+            >
+          </div>
+          <div class="social-icons">
+            <a href="#" class="color-primary"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a href="#" class="color-primary"
+              ><i class="fa-brands fa-youtube"></i
+            ></a>
+            <a href="#" class="color-primary"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+            <a href="#" class="color-primary"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+          </div>
+          <div class="footer--rights text-center">Copyright © 2022 Humbara</div>
+        </footer>
+      </div>
+      <!--Sidebar-->
+      <div class="course-sidebar" id="course-sidebar">
+        <div class="course-sidebar--header">
+          <h2>Kurs İçeriği</h2>
+          <button class="course-sidebar__header--close-btn">
+            <i class="fa-solid fa-x"></i>
+          </button>
+        </div>
+        <div class="course-sidebar--body">
+          <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseOne"
+                  aria-expanded="true"
+                  aria-controls="panelsStayOpen-collapseOne"
+                >
+                  Section-1:Getting Started With The Course
+                  <div class="course-time">4/9 | 30min</div>
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapseOne"
+                class="accordion-collapse collapse show"
+                aria-labelledby="panelsStayOpen-headingOne"
+              >
+                <div class="accordion-body">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >1.Into
+                      <div class="time-info">
+                        <span class="material-symbols-outlined">
+                          play_circle
+                        </span>
+                        <p>2min</p>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >1.Tools and Software
+                      <div class="time-info">
+                        <span class="material-symbols-outlined">
+                          play_circle
+                        </span>
+                        <p>5min</p>
+                      </div>
+                    </label>
+                    <div class="resources dropdown">
+                      <button
+                        class="btn btn-secondary dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <span class="material-symbols-outlined">
+                          folder_open </span
+                        >Resources
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><span class="material-symbols-outlined">
+                              download
+                            </span>
+                            image.png</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><span class="material-symbols-outlined">
+                              download
+                            </span>
+                            image.png</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><span class="material-symbols-outlined">
+                              download
+                            </span>
+                            image.png</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >3.Join the Facebook Groups
+                      <div class="time-info">
+                        <span class="material-symbols-outlined">
+                          play_circle
+                        </span>
+                        <p>2min</p>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >4.Join The Facebook Support Groups & Share Your Artwork
+                      <div class="time-info">
+                        <span class="material-symbols-outlined">
+                          play_circle
+                        </span>
+                        <p>10min</p>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseTwo"
+                >
+                  Section-1:Getting Started With The Course
+                  <div class="course-time">4/9 | 30min</div>
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingTwo"
+              >
+                <div class="accordion-body">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >1.Into
+                      <div class="time-info">
+                        <span class="material-symbols-outlined">
+                          play_circle
+                        </span>
+                        <p>2min</p>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >1.Tools and Software
+                      <div class="time-info">
+                        <span class="material-symbols-outlined">
+                          play_circle
+                        </span>
+                        <p>5min</p>
+                      </div>
+                    </label>
+                    <div class="resources dropdown">
+                      <button
+                        class="btn btn-secondary dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <span class="material-symbols-outlined">
+                          folder_open </span
+                        >Resources
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><span class="material-symbols-outlined">
+                              download
+                            </span>
+                            image.png</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><span class="material-symbols-outlined">
+                              download
+                            </span>
+                            image.png</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><span class="material-symbols-outlined">
+                              download
+                            </span>
+                            image.png</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >3.Join the Facebook Groups
+                      <div class="time-info">
+                        <span class="material-symbols-outlined">
+                          play_circle
+                        </span>
+                        <p>2min</p>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >4.Join The Facebook Support Groups & Share Your Artwork
+                      <div class="time-info">
+                        <span class="material-symbols-outlined">
+                          play_circle
+                        </span>
+                        <p>10min</p>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseThree"
+                  aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseThree"
+                >
+                  Section-1:Getting Started With The Course
+                  <div class="course-time">4/9 | 30min</div>
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapseThree"
+                class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingThree"
+              >
+                <div class="accordion-body">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >1.Into
+                      <div class="time-info">
+                        <span class="material-symbols-outlined">
+                          play_circle
+                        </span>
+                        <p>2min</p>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >1.Tools and Software
+                      <div class="time-info">
+                        <span class="material-symbols-outlined">
+                          play_circle
+                        </span>
+                        <p>5min</p>
+                      </div>
+                    </label>
+                    <div class="resources dropdown">
+                      <button
+                        class="btn btn-secondary dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <span class="material-symbols-outlined">
+                          folder_open </span
+                        >Resources
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><span class="material-symbols-outlined">
+                              download
+                            </span>
+                            image.png</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><span class="material-symbols-outlined">
+                              download
+                            </span>
+                            image.png</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><span class="material-symbols-outlined">
+                              download
+                            </span>
+                            image.png</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >3.Join the Facebook Groups
+                      <div class="time-info">
+                        <span class="material-symbols-outlined">
+                          play_circle
+                        </span>
+                        <p>2min</p>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >4.Join The Facebook Support Groups & Share Your Artwork
+                      <div class="time-info">
+                        <span class="material-symbols-outlined">
+                          play_circle
+                        </span>
+                        <p>10min</p>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseFour"
+                  aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseFour"
+                >
+                  Section-1:Getting Started With The Course
+                  <div class="course-time">4/9 | 30min</div>
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapseFour"
+                class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingFour"
+              >
+                <div class="accordion-body">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >1.Into
+                      <div class="time-info">
+                        <span class="material-symbols-outlined">
+                          play_circle
+                        </span>
+                        <p>2min</p>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >1.Tools and Software
+                      <div class="time-info">
+                        <span class="material-symbols-outlined">
+                          play_circle
+                        </span>
+                        <p>5min</p>
+                      </div>
+                    </label>
+                    <div class="resources dropdown">
+                      <button
+                        class="btn btn-secondary dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <span class="material-symbols-outlined">
+                          folder_open </span
+                        >Resources
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><span class="material-symbols-outlined">
+                              download
+                            </span>
+                            image.png</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><span class="material-symbols-outlined">
+                              download
+                            </span>
+                            image.png</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><span class="material-symbols-outlined">
+                              download
+                            </span>
+                            image.png</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >3.Join the Facebook Groups
+                      <div class="time-info">
+                        <span class="material-symbols-outlined">
+                          play_circle
+                        </span>
+                        <p>2min</p>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >4.Join The Facebook Support Groups & Share Your Artwork
+                      <div class="time-info">
+                        <span class="material-symbols-outlined">
+                          play_circle
+                        </span>
+                        <p>10min</p>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseFive"
+                  aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseFive"
+                >
+                  Section-1:Getting Started With The Course
+                  <div class="course-time">4/9 | 30min</div>
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapseFive"
+                class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingFive"
+              >
+                <div class="accordion-body">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >1.Into
+                      <div class="time-info">
+                        <span class="material-symbols-outlined">
+                          play_circle
+                        </span>
+                        <p>2min</p>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >1.Tools and Software
+                      <div class="time-info">
+                        <span class="material-symbols-outlined">
+                          play_circle
+                        </span>
+                        <p>5min</p>
+                      </div>
+                    </label>
+                    <div class="resources dropdown">
+                      <button
+                        class="btn btn-secondary dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <span class="material-symbols-outlined">
+                          folder_open </span
+                        >Resources
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><span class="material-symbols-outlined">
+                              download
+                            </span>
+                            image.png</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><span class="material-symbols-outlined">
+                              download
+                            </span>
+                            image.png</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><span class="material-symbols-outlined">
+                              download
+                            </span>
+                            image.png</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >3.Join the Facebook Groups
+                      <div class="time-info">
+                        <span class="material-symbols-outlined">
+                          play_circle
+                        </span>
+                        <p>2min</p>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >4.Join The Facebook Support Groups & Share Your Artwork
+                      <div class="time-info">
+                        <span class="material-symbols-outlined">
+                          play_circle
+                        </span>
+                        <p>10min</p>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseSix"
+                  aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseSix"
+                >
+                  Section-1:Getting Started With The Course
+                  <div class="course-time">4/9 | 30min</div>
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapseSix"
+                class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingSix"
+              >
+                <div class="accordion-body">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >1.Into
+                      <div class="time-info">
+                        <span class="material-symbols-outlined">
+                          play_circle
+                        </span>
+                        <p>2min</p>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >1.Tools and Software
+                      <div class="time-info">
+                        <span class="material-symbols-outlined">
+                          play_circle
+                        </span>
+                        <p>5min</p>
+                      </div>
+                    </label>
+                    <div class="resources dropdown">
+                      <button
+                        class="btn btn-secondary dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <span class="material-symbols-outlined">
+                          folder_open </span
+                        >Resources
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><span class="material-symbols-outlined">
+                              download
+                            </span>
+                            image.png</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><span class="material-symbols-outlined">
+                              download
+                            </span>
+                            image.png</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><span class="material-symbols-outlined">
+                              download
+                            </span>
+                            image.png</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >3.Join the Facebook Groups
+                      <div class="time-info">
+                        <span class="material-symbols-outlined">
+                          play_circle
+                        </span>
+                        <p>2min</p>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >4.Join The Facebook Support Groups & Share Your Artwork
+                      <div class="time-info">
+                        <span class="material-symbols-outlined">
+                          play_circle
+                        </span>
+                        <p>10min</p>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!---->
+    </div>
+    <!-- scripts -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- swiper -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="./vendors/swiper.js"></script>
+    <script src="./vendors/supportbar.js"></script>
+    <script src="./vendors/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Humbara | Payment Successful</title>
+
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+
+    <!-- main css -->
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <nav
+      class="container pt-3 d-flex align-items-center justify-content-between"
+    >
+      <a href="/" class="navbar-brand">
+        <img src="assets/icons/nav_logo.png" alt="logo image" />
+      </a>
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="dropdown">
+          <button
+            class="btn bg-graycolor text-white dropdown-toggle"
+            style="background-color: var(--gray-color) !important"
+            type="button"
+            id="dropdownMenuLanguage"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-globe"></i>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLanguage">
+            <li><a class="dropdown-item" href="#">Turkish</a></li>
+            <li><a class="dropdown-item" href="#">English</a></li>
+          </ul>
+        </div>
+
+        <div class="vr mx-3"></div>
+
+        <a href="#" class="text-decoration-none color-dark">Support</a>
+      </div>
+    </nav>
+
+    <section class="section-padding">
+      <div class="container">
+        <div
+          class="d-flex flex-column align-items-center justify-content-center"
+        >
+          <i
+            class="fa-solid fa-circle-check text-success"
+            style="font-size: 4rem"
+          ></i>
+          <h3 class="fw-bold mt-4">Payment Successful</h3>
+          <p>Your payment was succesful. Thank you for your purchase!</p>
+
+          <small class="color-gray text-uppercase fw-bold mt-4"
+            >Continue with</small
+          >
+
+          <div
+            class="row my-5 align-items-center border p-2 rounded-3" 
+          >
+            <div class="col-md-2 col-lg-2 col-xl-2 px-0">
+              <img
+                src="assets/images/card_img.png"
+                class="img-fluid rounded-3 w-100"
+                alt=""
+              />
+            </div>
+            <div class="col-md-5 col-lg-6 col-xl-6 flex-grow-1 my-3">
+              <h6 class="text-muted">Course</h6>
+              <h6 class="text-black mb-0">Course Title</h6>
+            </div>
+            <div class="col-md-5 col-lg-4 col-xl-4">
+              <button
+                class="btn bg-primarycolor text-white mx-auto w-100 py-2"
+                style="background-color: var(--primary-color)"
+              >
+                Start Course
+              </button>
+            </div>
+          </div>
+
+          <small class="color-gray text-uppercase fw-bold mb-4">Or</small>
+
+          <button
+            class="btn bg-primarycolor text-white"
+            style="background-color: var(--primary-color)"
+          >
+            <i class="fa-solid fa-arrow-left"></i> Go Home
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- scripts -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

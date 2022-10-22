@@ -171,12 +171,16 @@
                 Account
               </a>
               <ul class="dropdown-menu">
+                @auth
+                END AUTH
+                @else
                 <li>
                   <a class="navbar__dropdown--link dropdown-item" href="{{route('user.loginpanel')}}">Login</a>
                 </li>
                 <li>
                   <a class="navbar__dropdown--link dropdown-item" href="{{route('user.registerpanel')}}">Signup</a>
                 </li>
+                @endauth
               </ul>
             </li>
             <li class="nav-item dropdown navbar__dropdown d-block d-lg-none mb-3">
@@ -262,12 +266,21 @@
                 <i class="navbar-icon fa-solid fa-user"></i>
               </button>
               <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuUser">
+                @auth
+                <li>
+                  <a class="navbar__dropdown--link dropdown-item" href="{{route('user.profile')}}">Profile</a>
+                </li>
+                <li>
+                  <a class="navbar__dropdown--link dropdown-item" href="{{route('user.registerpanel')}}">Log out</a>
+                </li>
+                @else
                 <li>
                   <a class="navbar__dropdown--link dropdown-item" href="{{route('user.loginpanel')}}">Login</a>
                 </li>
                 <li>
                   <a class="navbar__dropdown--link dropdown-item" href="{{route('user.registerpanel')}}">Signup</a>
                 </li>
+                @endauth
               </ul>
             </div>
 

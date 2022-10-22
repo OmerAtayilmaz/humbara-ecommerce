@@ -7,37 +7,32 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+
+    public function profile()
     {
-        //
+        return view('storefront.user.profile');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function coursecart(){
+        return view('storefront.courses.cart');
     }
-
+  
+    public function coursecheckout()
+    {
+        return view('storefront.user.checkout');
+    }
+    public function checkoutsuccess(){
+        return view('storefront.user.checkout-success');
+    }
+    public function checkoutfail(){
+        return view('storefront.user.checkout-fail');
+    }
     /**
      * Display the specified resource.
      *

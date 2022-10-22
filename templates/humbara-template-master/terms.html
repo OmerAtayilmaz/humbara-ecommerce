@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Humbara | Terms</title>
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- main css -->
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+
+  <body>
+    <!-- Top Bar -->
+    <nav class="navbar bg-primarycolor">
+      <div class="container">
+        <div class="w-100 d-flex align-items-center justify-content-between">
+          <div
+            class="d-lg-flex d-none align-items-center justify-content-center m-0"
+          >
+            <span class="color-dark fs-5">
+              <i class="fa-solid fa-bullhorn"></i>
+            </span>
+            <p class="m-0 ms-2 text-white">Sale Title</p>
+          </div>
+          <div class="flex-grow-1 m-0">
+            <h5 class="text-white text-center m-0">
+              <span class="fw-bold">30%</span> off all products
+            </h5>
+          </div>
+          <div class="d-none d-lg-block">
+            <button
+              class="btn bg-lightcolor color-dark p-1"
+              style="background-color: var(--light-color)"
+            >
+              Shop Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Navbar -->
+    <nav
+      class="py-1 navbar navbar-expand-lg navbar-light bg-mutedcolor sticky-top d-flex flex-column"
+    >
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          style="border-color: var(--primary-color)"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+        >
+          <span class="fs-1 color-primary"
+            ><i class="fa-solid fa-bars"></i
+          ></span>
+        </button>
+
+        <a href="/" class="navbar-brand">
+          <img src="assets/icons/nav_logo.png" alt="logo image" />
+        </a>
+
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <button
+              type="button"
+              class="btn-close ms-2 mt-2"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav">
+              <li class="nav-item navbar__dropdown d-none d-lg-block">
+                <button
+                  class="nav-link navbar__dropdown--btn d-flex align-items-center p-1"
+                >
+                  Courses <i class="ms-2 fa-solid fa-angle-down"></i>
+                </button>
+
+                <div class="navbar__dropdown--content w-50">
+                  <div class="row w-100">
+                    <div
+                      class="col-12 col-md-6 d-flex flex-column align-items-start justify-content-start bg-darkcolor p-2"
+                      style="border-radius: 0.5rem 0 0 0.5rem"
+                    >
+                      <a
+                        class="navbar__dropdown--link p-2 d-block w-100 rounded-3 text-white mb-2 text-decoration-none"
+                        href="#"
+                        >All Courses</a
+                      >
+                      <a
+                        class="navbar__dropdown--link p-2 d-block w-100 rounded-3 text-white mb-2 text-decoration-none"
+                        href="#"
+                        >Best Courses</a
+                      >
+                      <a
+                        class="navbar__dropdown--link p-2 d-block w-100 rounded-3 text-white mb-2 text-decoration-none"
+                        href="#"
+                        >Latest</a
+                      >
+                    </div>
+                    <div
+                      class="col-12 col-md-6 d-flex flex-column align-items-start justify-content-center p-2"
+                    >
+                      <a
+                        class="navbar__dropdown--link p-2 d-block w-100 rounded-3 color-dark mb-2 text-decoration-none"
+                        href="#"
+                        >Intro Courses</a
+                      >
+                      <a
+                        class="navbar__dropdown--link p-2 d-block w-100 rounded-3 color-dark mb-2 text-decoration-none"
+                        href="#"
+                        >Modeling</a
+                      >
+                      <a
+                        class="navbar__dropdown--link p-2 d-block w-100 rounded-3 color-dark mb-2 text-decoration-none"
+                        href="#"
+                        >Concept Art</a
+                      >
+                      <a
+                        class="navbar__dropdown--link p-2 d-block w-100 rounded-3 color-dark mb-2 text-decoration-none"
+                        href="#"
+                        >Character Creation</a
+                      >
+                      <a
+                        class="navbar__dropdown--link p-2 d-block w-100 rounded-3 color-dark mb-2 text-decoration-none"
+                        href="#"
+                        >Animation</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item navbar__dropdown d-none d-lg-block">
+                <button
+                  class="nav-link navbar__dropdown--btn d-flex align-items-center p-1"
+                >
+                  Assets <i class="ms-2 fa-solid fa-angle-down"></i>
+                </button>
+
+                <div class="navbar__dropdown--content w-50">
+                  <div class="row w-100">
+                    <div
+                      class="col-12 col-md-6 d-flex flex-column align-items-start justify-content-center bg-darkcolor p-2"
+                      style="border-radius: 0.5rem 0 0 0.5rem"
+                    >
+                      <a
+                        class="navbar__dropdown--link p-2 d-block w-100 rounded-3 text-white mb-2 text-decoration-none"
+                        href="#"
+                        >All Assets</a
+                      >
+                      <a
+                        class="navbar__dropdown--link p-2 d-block w-100 rounded-3 text-white mb-2 text-decoration-none"
+                        href="#"
+                        >Best Assets</a
+                      >
+                      <a
+                        class="navbar__dropdown--link p-2 d-block w-100 rounded-3 text-white mb-2 text-decoration-none"
+                        href="#"
+                        >Latest</a
+                      >
+                    </div>
+                    <div
+                      class="col-12 col-md-6 d-flex flex-column align-items-start justify-content-center p-2"
+                    >
+                      <a
+                        class="navbar__dropdown--link p-2 d-block w-100 rounded-3 color-dark mb-2 text-decoration-none"
+                        href="#"
+                        >3D Models</a
+                      >
+                      <a
+                        class="navbar__dropdown--link p-2 d-block w-100 rounded-3 color-dark mb-2 text-decoration-none"
+                        href="#"
+                        >Brushing</a
+                      >
+                      <a
+                        class="navbar__dropdown--link p-2 d-block w-100 rounded-3 color-dark mb-2 text-decoration-none"
+                        href="#"
+                        >Game Assets</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li
+                class="nav-item dropdown navbar__dropdown d-block d-lg-none mb-3"
+              >
+                <a
+                  class="nav-link dropdown-toggle p-2 m-0"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Assets
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item navbar__dropdown--link" href="#"
+                      >All Assets</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item navbar__dropdown--link" href="#"
+                      >Best Assets</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item navbar__dropdown--link" href="#"
+                      >Latest</a
+                    >
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a class="dropdown-item navbar__dropdown--link" href="#"
+                      >3D Models</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item navbar__dropdown--link" href="#"
+                      >Brushes</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item navbar__dropdown--link" href="#"
+                      >Game Assets</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li
+                class="nav-item dropdown navbar__dropdown d-block d-lg-none mb-3"
+              >
+                <a
+                  class="nav-link dropdown-toggle p-2 m-0"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Courses
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item navbar__dropdown--link" href="#"
+                      >All Courses</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item navbar__dropdown--link" href="#"
+                      >Best Courses</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item navbar__dropdown--link" href="#"
+                      >Latest</a
+                    >
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a class="dropdown-item navbar__dropdown--link" href="#"
+                      >Intro Courses</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item navbar__dropdown--link" href="#"
+                      >Modeling</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item navbar__dropdown--link" href="#"
+                      >Concept Art</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item navbar__dropdown--link" href="#"
+                      >Character Creation</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item navbar__dropdown--link" href="#"
+                      >Animation</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li
+                class="nav-item dropdown navbar__dropdown d-block d-lg-none mb-3"
+              >
+                <a
+                  class="nav-link dropdown-toggle p-2 m-0 d-flex align-items-center"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fa-solid fa-user me-2"></i>
+                  Account
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="login.html"
+                      >Login</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="signup.html"
+                      >Signup</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li
+                class="nav-item dropdown navbar__dropdown d-block d-lg-none mb-3"
+              >
+                <a
+                  class="nav-link dropdown-toggle p-2 m-0 d-flex align-items-center"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fa-solid fa-ellipsis-vertical me-2"></i>
+                  Other
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="creators-list.html"
+                      >Instructors</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="productlist-category.html"
+                      >Product List Category</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="productlist-creator.html"
+                      >Product List Creator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="productlist-special.html"
+                      >Product List Special</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="productlist-campaign.html"
+                      >Product List Campaign</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="payment-failed.html"
+                      >Payment Failed</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="payment-successful.html"
+                      >Payment Successful</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="cart.html"
+                      >Cart</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="checkout.html"
+                      >Checkout</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="about-us.html"
+                      >About Us</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="cookie.html"
+                      >Cookie</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="terms.html"
+                      >Terms</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="privacy.html"
+                      >Privacy</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+            <form
+              class="d-flex nav__form position-relative me-auto mb-sm-0 mb-3"
+              role="search"
+            >
+              <input
+                class="form-control nav__search--input py-0"
+                type="text"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button
+                class="btn nav__form--button color-primary position-absolute top-50 end-0 translate-middle-y rounded-2 py-0"
+                style="
+                  background-color: transparent !important;
+                  color: var(--primary-color);
+                  border: none;
+                "
+                type="submit"
+              >
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+
+            <div class="d-flex align-items-center">
+              <button
+                class="d-none d-lg-block btn bg-primarycolor text-white btn-cart me-2 py-1"
+                style="background-color: var(--primary-color) !important"
+              >
+                <span
+                  class="cart-counter bg-darkcolor rounded-circle text-white"
+                >
+                  2
+                </span>
+                <i class="navbar-icon fa-solid fa-cart-shopping"></i>
+              </button>
+
+              <div class="dropdown me-2 d-none d-lg-block">
+                <button
+                  class="btn bg-graycolor dropdown-toggle text-white py-1"
+                  style="background-color: var(--gray-color) !important"
+                  type="button"
+                  id="dropdownMenuUser"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="navbar-icon fa-solid fa-user"></i>
+                </button>
+                <ul
+                  class="dropdown-menu dropdown-menu-lg-end"
+                  aria-labelledby="dropdownMenuUser"
+                >
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="login.html"
+                      >Login</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="signup.html"
+                      >Signup</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="dropdown d-none d-lg-block">
+                <button
+                  class="btn bg-graycolor dropdown-toggle text-white py-1"
+                  style="background-color: var(--gray-color) !important"
+                  type="button"
+                  id="dropdownMenuMore"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="navbar-icon fa-solid fa-ellipsis-vertical"></i>
+                </button>
+                <ul
+                  class="dropdown-menu dropdown-menu-lg-end"
+                  aria-labelledby="dropdownMenuMore"
+                >
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="creators-list.html"
+                      >Instructors</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="productlist-category.html"
+                      >Product List Category</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="productlist-creator.html"
+                      >Product List Creator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="productlist-special.html"
+                      >Product List Special</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="productlist-campaign.html"
+                      >Product List Campaign</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="payment-failed.html"
+                      >Payment Failed</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="payment-successful.html"
+                      >Payment Successful</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="cart.html"
+                      >Cart</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="checkout.html"
+                      >Checkout</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="about-us.html"
+                      >About Us</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="cookie.html"
+                      >Cookie</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="terms.html"
+                      >Terms</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="navbar__dropdown--link dropdown-item"
+                      href="privacy.html"
+                      >Privacy</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="d-block d-lg-none btn bg-primarycolor text-white btn-cart me-2"
+          style="background-color: var(--primary-color) !important"
+        >
+          <span class="cart-counter bg-darkcolor rounded-circle text-white">
+            2
+          </span>
+          <i class="fa-solid fa-cart-shopping"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Sub Navbar -->
+    <nav class="navbar d-none d-sm-block bg-darkcolor py-0">
+      <div class="container">
+        <ul
+          class="w-100 navbar-nav d-flex flex-wrap flex-row align-items-center justify-content-evenly"
+        >
+          <li class="nav-item">
+            <a
+              class="nav-link color-gray"
+              style="font-size: 0.75rem; color: var(--gray-color) !important"
+              aria-current="page"
+              href="productlist-category.html"
+              >FN Exclusives</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link color-gray"
+              style="font-size: 0.75rem; color: var(--gray-color) !important"
+              aria-current="page"
+              href="productlist-category.html"
+              >ZBrush Courses</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link color-gray"
+              style="font-size: 0.75rem; color: var(--gray-color) !important"
+              aria-current="page"
+              href="productlist-category.html"
+              >Blender Courses</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link color-gray"
+              style="font-size: 0.75rem; color: var(--gray-color) !important"
+              aria-current="page"
+              href="productlist-category.html"
+              >Texturing Courses</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link color-gray"
+              style="font-size: 0.75rem; color: var(--gray-color) !important"
+              aria-current="page"
+              href="productlist-category.html"
+              >Modeling Courses</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link color-gray"
+              style="font-size: 0.75rem; color: var(--gray-color) !important"
+              aria-current="page"
+              href="productlist-category.html"
+              >Free Content</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="section-padding">
+      <div class="container">
+        <h1>Terms of Service</h1>
+        <p>Last updated: September 25, 2016</p>
+        <p>
+          Please read these Terms of Service ("Terms", "Terms of Service")
+          carefully before using the https://www.github.com/mrwhiterk website
+          (the "Service") operated by mrwhiterk ("us", "we", or "our").
+        </p>
+        <p>
+          Your access to and use of the Service is conditioned on your
+          acceptance of and compliance with these Terms. These Terms apply to
+          all visitors, users and others who access or use the Service.
+        </p>
+        <p>
+          By accessing or using the Service you agree to be bound by these
+          Terms. If you disagree with any part of the terms then you may not
+          access the Service. This Terms of Service was created with
+          <a href="https://termsfeed.com/terms-service/generator/"
+            >the Terms of Service Generator from TermsFeed</a
+          >.
+        </p>
+        <p><strong>Accounts</strong></p>
+        <p>
+          When you create an account with us, you must provide us information
+          that is accurate, complete, and current at all times. Failure to do so
+          constitutes a breach of the Terms, which may result in immediate
+          termination of your account on our Service.
+        </p>
+        <p>
+          You are responsible for safeguarding the password that you use to
+          access the Service and for any activities or actions under your
+          password, whether your password is with our Service or a third-party
+          service.
+        </p>
+        <p>
+          You agree not to disclose your password to any third party. You must
+          notify us immediately upon becoming aware of any breach of security or
+          unauthorized use of your account.
+        </p>
+        <p><strong>Links To Other Web Sites</strong></p>
+        <p>
+          Our Service may contain links to third-party web sites or services
+          that are not owned or controlled by mrwhiterk.
+        </p>
+        <p>
+          mrwhiterk has no control over, and assumes no responsibility for, the
+          content, privacy policies, or practices of any third party web sites
+          or services. You further acknowledge and agree that mrwhiterk shall
+          not be responsible or liable, directly or indirectly, for any damage
+          or loss caused or alleged to be caused by or in connection with use of
+          or reliance on any such content, goods or services available on or
+          through any such web sites or services.
+        </p>
+        <p>
+          We strongly advise you to read the terms and conditions and privacy
+          policies of any third-party web sites or services that you visit.
+        </p>
+        <p><strong>Termination</strong></p>
+        <p>
+          We may terminate or suspend access to our Service immediately, without
+          prior notice or liability, for any reason whatsoever, including
+          without limitation if you breach the Terms.
+        </p>
+        <p>
+          All provisions of the Terms which by their nature should survive
+          termination shall survive termination, including, without limitation,
+          ownership provisions, warranty disclaimers, indemnity and limitations
+          of liability.
+        </p>
+        <p>
+          We may terminate or suspend your account immediately, without prior
+          notice or liability, for any reason whatsoever, including without
+          limitation if you breach the Terms.
+        </p>
+        <p>
+          Upon termination, your right to use the Service will immediately
+          cease. If you wish to terminate your account, you may simply
+          discontinue using the Service.
+        </p>
+        <p>
+          All provisions of the Terms which by their nature should survive
+          termination shall survive termination, including, without limitation,
+          ownership provisions, warranty disclaimers, indemnity and limitations
+          of liability.
+        </p>
+        <p><strong>Governing Law</strong></p>
+        <p>
+          These Terms shall be governed and construed in accordance with the
+          laws of Colorado, United States, without regard to its conflict of law
+          provisions.
+        </p>
+        <p>
+          Our failure to enforce any right or provision of these Terms will not
+          be considered a waiver of those rights. If any provision of these
+          Terms is held to be invalid or unenforceable by a court, the remaining
+          provisions of these Terms will remain in effect. These Terms
+          constitute the entire agreement between us regarding our Service, and
+          supersede and replace any prior agreements we might have between us
+          regarding the Service.
+        </p>
+        <p><strong>Changes</strong></p>
+        <p>
+          We reserve the right, at our sole discretion, to modify or replace
+          these Terms at any time. If a revision is material we will try to
+          provide at least 30 days notice prior to any new terms taking effect.
+          What constitutes a material change will be determined at our sole
+          discretion.
+        </p>
+        <p>
+          By continuing to access or use our Service after those revisions
+          become effective, you agree to be bound by the revised terms. If you
+          do not agree to the new terms, please stop using the Service.
+        </p>
+        <p><strong>Contact Us</strong></p>
+        <p>If you have any questions about these Terms, please contact us.</p>
+      </div>
+    </section>
+
+    <footer class="container-fluid footer__container bg-light d-flex">
+      <div
+        class="d-flex align-items-center justify-content-center flex-wrap mx-auto mb-3"
+      >
+        <a href="#" class="text-decoration-none color-gray">Newsletter</a>
+        <span class="mx-1">|</span>
+        <a href="#" class="text-decoration-none color-gray">Company</a>
+        <span class="mx-1">|</span>
+        <a href="#" class="text-decoration-none color-gray">Support</a>
+        <span class="mx-1">|</span>
+        <a href="#" class="text-decoration-none color-gray">Terms Of Service</a>
+        <span class="mx-1">|</span>
+        <a href="#" class="text-decoration-none color-gray">Privacy Policy</a>
+        <span class="mx-1">|</span>
+        <a href="#" class="text-decoration-none color-gray">Licenses</a>
+        <span class="mx-1">|</span>
+        <a href="#" class="text-decoration-none color-gray"
+          >Become an Affiliate</a
+        >
+      </div>
+      <div class="social-icons">
+        <a href="#" class="color-primary"
+          ><i class="fa-brands fa-facebook-f"></i
+        ></a>
+        <a href="#" class="color-primary"
+          ><i class="fa-brands fa-youtube"></i
+        ></a>
+        <a href="#" class="color-primary"
+          ><i class="fa-brands fa-linkedin-in"></i
+        ></a>
+        <a href="#" class="color-primary"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+      </div>
+      <div class="footer--rights text-center">Copyright © 2022 Humbara</div>
+    </footer>
+
+    <!-- scripts -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
