@@ -1201,3 +1201,8 @@ a:hover {
 .color-primary{
   font-size:0.9rem;
 }
+
+/* Register Page */
+.register-form input[type="checkbox"], input[type="radio"]{
+    padding:25px;
+}

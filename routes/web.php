@@ -33,11 +33,12 @@ Route::controller(HomeController::class)->group(function(){
     //Auth
     Route::name('user.')->group(function(){
         Route::get('/u-login','login')->name('loginpanel');
+        Route::post('/u-login','loginreq')->name('loginreq');
         Route::get('/u-register','register')->name('registerpanel');
+        Route::post('/u-register','registerreq')->name('registerpanelreq');
         Route::get('/f-password','forgotpassword')->name('forgotpass-panel');
         Route::get("/f-password/request","forgotpasswordreqtoken")->name("forgotpasswordreqtoken");
     });
- 
 });
 
 
@@ -133,17 +134,6 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
         Route::post("/update/{id}","update")->name("update");
         Route::get("/delete/{id}","delete")->name("delete");
     });
- 
-
-    /*
-    ORDER SYSTEM
-        - Which course has been ordered
-        - Order Status (Payment Successful-SUCCESS,Payment Error-FAIL)
-        - Admin can see the courses the User bought 
-        - Admin can see the courses User List at Course Page
-    */
-
-    
     
 
 });

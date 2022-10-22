@@ -4,18 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Humbara | Signup</title>
-
-    <!-- bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-
-    <!-- fontawesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -23,15 +18,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- swiper -->
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
     />
-    <!-- main css -->
     <link rel="stylesheet" href="{{asset('assets/home')}}/css/main.css" />
   </head>
-
   <body class="h-100">
     <div class="row g-0 h-100">
       <div
@@ -74,7 +66,7 @@
             <span>
               <small
                 >Already have an account?
-                <a href="/login.html" class="color-primary">Login</a></small
+                <a href="{{route('user.loginpanel')}}" class="color-primary">Login</a></small
               >
             </span>
             <div
@@ -115,50 +107,59 @@
             <div class="or-divider">
               <span>OR</span>
             </div>
-
-            <form class="mb-5">
+            <form class="register-form" class="mb-5"  method="POST" action="{{ route('user.registerpanelreq') }}">
+              @csrf
               <div class="mb-3">
-                <label for="exampleInputFullname" class="form-label"
+                <label for="fullname" class="form-label"
                   >Full Name</label
                 >
                 <input
                   type="text"
                   class="form-control"
-                  id="exampleInputFullname"
+                  id="fullname"
                   aria-describedby="emailHelp"
+                  name="name"
                 />
               </div>
               <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label"
+                <label for="email" class="form-label"
                   >Email address</label
                 >
                 <input
                   type="email"
                   class="form-control"
-                  id="exampleInputEmail1"
+                  id="email"
                   aria-describedby="emailHelp"
+                  name="email"
                 />
               </div>
               <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label"
+                <label for="password" class="form-label"
                   >Password</label
                 >
                 <input
                   type="password"
                   class="form-control"
-                  id="exampleInputPassword1"
+                  id="password"
+                  name="password"
                 />
               </div>
               <div class="mb-3">
-                <label for="exampleInputPassword2" class="form-label"
+                <label for="password_confirmation" class="form-label"
                   >Confirm Password</label
                 >
                 <input
                   type="password"
                   class="form-control"
-                  id="exampleInputPassword2"
+                  id="password_confirmation"
+                  name="password_confirmation"
                 />
               </div>
+               <input type="checkbox" required/><span>
+              By clicking Join, I confirm that I have read and agree to the
+              <a href="{{route('termsconditions')}}" class="color-primary">Terms of Service</a> and
+              <a href="{{route('privacypolicy')}}" class="color-primary">Privacy Policy</a>.</span
+            >
               <button
                 type="submit"
                 class="btn bg-primarycolor text-white"
@@ -166,13 +167,7 @@
               >
                 Register
               </button>
-            </form>
-
-            <small
-              >By clicking Join, I confirm that I have read and agree to the
-              <a href="#" class="color-primary">Terms of Service</a> and
-              <a href="#" class="color-primary">Privacy Policy</a>.</small
-            >
+            </form>           
           </div>
         </div>
       </div>

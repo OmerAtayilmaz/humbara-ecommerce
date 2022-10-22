@@ -5,6 +5,10 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ContactMessage;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+
 class HomeController extends Controller
 {
     public function index()
@@ -33,12 +37,16 @@ class HomeController extends Controller
         return view('storefront.courses.cart');
     }
     public function login(){
+        if(Auth::user())
+            return redirect()->route('home');
         return view('storefront.auth.login');
     }
     public function logout(){
         return view('storefront.auth.logout');
     }
     public function register(){
+        if(Auth::user())
+            return redirect()->route('home');
         return view('storefront.auth.register');
     }
     public function termsconditions(){
@@ -72,5 +80,28 @@ class HomeController extends Controller
 
     public function forgotpasswordreqtoken(){
         return view("storefront.auth.forgot-password-reqtoken");
+    }
+
+    public function loginreq(Request $req){
+
+        Auth::attempt([
+            'email'=>$req->email,
+            'password'=>$req->password
+        ]);
+        return redirect()->route('home');
+    }
+
+    public function registerreq(Request $req){
+        $temp=new User();
+        $fullname  = explode(" ", $req->name);
+        $firstname = $fullname[0];
+        $secondname= $fullname[1];
+        $temp->name=$firstname;
+        $temp->surname=$secondname;
+        $temp->email=$req->email;
+        $temp->password=Hash::make($req->password);
+        $temp->save();
+        Auth::login($temp);
+        return redirect()->route('home');    
     }
 }

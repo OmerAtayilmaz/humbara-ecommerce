@@ -118,7 +118,8 @@
               <span>OR</span>
             </div>
 
-            <form class="mb-5" autocomplete="off">
+            <form class="mb-5" autocomplete="off" method="post">
+              @csrf
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label"
                   >Email address</label
@@ -129,6 +130,7 @@
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
                   autocomplete="off"
+                  name="email"
                 />
               </div>
               <div class="mb-3">
@@ -140,6 +142,7 @@
                   class="form-control"
                   id="exampleInputPassword1"
                   autocomplete="off"
+                  name="password"
                 />
               </div>
               <div class="mb-3 d-flex justify-content-end">
