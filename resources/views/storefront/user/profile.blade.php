@@ -36,10 +36,10 @@
           <div class="profile-content--part" id="first-part">
             <div class="image-content">
               <div id="profile-frame">
-                <img src="{{asset('assets/home')}}/assets/images/profile-exmp.jpg" alt="" />
+                <img src="{{Storage::url(Auth::user()->profile_photo_path)}}" width="100" />
               </div>
               <div id="profile--image-option">
-                <label for="">Change Your image</label>
+                <label for="">Change Your Image</label>
                 <div class="image-load-input">
                   <input type="text" placeholder="Image Upload" />
                   <button>Upload</button>
@@ -48,11 +48,11 @@
             </div>
   
             <label for="name">First Name</label>
-            <input type="text" placeholder="Your Name" />
+            <input type="text" value="{{Auth::user()->name}}" placeholder="Your Name" />
             <label for="surname">Last Name</label>
-            <input type="text" placeholder="Your Surname" />
-            <label for="job-title">Job Title</label>
-            <input type="text" placeholder="Your Job" />
+            <input type="text" placeholder="Your Surname" value="{{Auth::user()->surname}}" />
+            <label for="email">E-mail</label>
+            <input type="text" value="{{Auth::user()->email}}" placeholder="Your Job" />
             <label for="bio">Your Biography</label>
             <textarea
               name=""

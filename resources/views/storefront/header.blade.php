@@ -249,8 +249,109 @@
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
           </form>
+          
 
           <div class="d-flex align-items-center">
+            <div class="dropdown my-courses me-2 d-none d-lg-block">
+              <button
+                class="btn dropdown-toggle text-white py-1"
+                style="background-color: var(--primary-color) !important"
+                type="button"
+                id="dropdownMyCourses"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                My Courses
+              </button>
+              <ul
+                class="dropdown-menu dropdown-menu-lg-end"
+                aria-labelledby="dropdownMyCoursess"
+              >
+                <li>
+                  <a
+                    class="navbar__dropdown--link dropdown-item"
+                    href="/"
+                  >
+                    <div class="course-content">
+                      <img src="{{asset('assets/home')}}/assets/images/fp-image.png" alt="" />
+                      <div class="course-content--dec">
+                        <p>Course Name</p>
+                        <div class="progress">
+                          <div
+                            class="progress-bar"
+                            role="progressbar"
+                            aria-label="Example with label"
+                            style="width: 25%"
+                            aria-valuenow="25"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                          >
+                            25%
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="navbar__dropdown--link dropdown-item"
+                    href="/"
+                  >
+                    <div class="course-content">
+                      <img src="{{asset('assets/home')}}/assets/images/fp-image.png" alt="" />
+                      <div class="course-content--dec">
+                        <p>Course Name</p>
+                        <div class="progress">
+                          <div
+                            class="progress-bar"
+                            role="progressbar"
+                            aria-label="Example with label"
+                            style="width: 25%"
+                            aria-valuenow="25"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                          >
+                            25%
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="navbar__dropdown--link dropdown-item"
+                    href="/"
+                  >
+                    <div class="course-content">
+                      <img src="{{asset('assets/home')}}/assets/images/fp-image.png" alt="" />
+                      <div class="course-content--dec">
+                        <p>Course Name</p>
+                        <div class="progress">
+                          <div
+                            class="progress-bar"
+                            role="progressbar"
+                            aria-label="Example with label"
+                            style="width: 25%"
+                            aria-valuenow="25"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                          >
+                            25%
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li id="go-to-my-course">
+                  <div class="course-btn">
+                    <a href="{{route('user.courses')}}">Kurslarıma Git</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
             <a href="{{route('coursescart')}}" class="d-none d-lg-block btn bg-primarycolor text-white btn-cart me-2 py-1"
               style="background-color: var(--primary-color) !important">
               <span class="cart-counter bg-darkcolor rounded-circle text-white">
@@ -271,7 +372,7 @@
                   <a class="navbar__dropdown--link dropdown-item" href="{{route('user.profile')}}">Profile</a>
                 </li>
                 <li>
-                  <a class="navbar__dropdown--link dropdown-item" href="{{route('user.registerpanel')}}">Log out</a>
+                  <a class="navbar__dropdown--link dropdown-item" href="{{route('user.logout')}}">Log out</a>
                 </li>
                 @else
                 <li>

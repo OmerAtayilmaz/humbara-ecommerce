@@ -60,6 +60,8 @@ Route::middleware('auth')->prefix('user')->controller(UserController::class)->na
     Route::get("checkout","coursecheckout")->name("coursecheckout"); //sepette satın ala tıklandığında açılacak ödeme sayfası
     Route::get("checkout/success","checkoutsuccess")->name("checkoutsuccess"); 
     Route::get("checkout/fail","checkoutfail")->name("checkoutfail"); 
+    Route::get("/courses","courses")->name("courses");
+    Route::get("/logout","logout")->name("logout");
 });
 
 /* ADMIN ROUTES */

@@ -8,11 +8,11 @@ window.addEventListener("scroll", function (e) {
   }
 });
 
-
-
 const collapseBtn = document.querySelector(".support__item--collapse");
 const collapseArea = document.querySelector(".support__collapse");
 
-collapseBtn.addEventListener("click", () => {
-  collapseArea.classList.toggle("deactive");
-})
+if (collapseBtn) {
+  collapseBtn.addEventListener("click", () => {
+    collapseArea.classList.toggle("deactive");
+  });
+}
