@@ -104,4 +104,10 @@ class HomeController extends Controller
         Auth::login($temp);
         return redirect()->route('home');    
     }
+    public function creators(){
+        return view('storefront.courses.creator-list');
+    }
+    public function creatordetail(){
+        return view('storefront.courses.creator');
+    }
 }

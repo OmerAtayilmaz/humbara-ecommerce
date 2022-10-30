@@ -63,14 +63,14 @@
             ></textarea>
           </div>
           <div class="profile-content--part">
-            <label for="website">Website</label>
+  {{--           <label for="website">Website</label>
             <input type="text" placeholder="Username" />
             <label for="linkedin">Linkedin</label>
             <input type="text" placeholder="Username" />
             <label for="facebook">Facebook</label>
             <input type="text" placeholder="Username" />
             <label for="youtube">Youtube</label>
-            <input type="text" placeholder="Username" />
+            <input type="text" placeholder="Username" /> --}}
             <label for="lang">Your Language</label>
             <select class="form-select" aria-label="Default select example">
               <option selected>Korean</option>

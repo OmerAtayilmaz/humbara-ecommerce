@@ -13,6 +13,7 @@ use App\Models\CourseCategory;
 use App\Models\Setting as SettingModel;
 use App\Models\ContactMessage;
 use App\Models\Favourites;
+use App\Models\TopBanner;
 
 class Response {
     public $user;
@@ -186,6 +187,34 @@ class AdminController extends Controller
             'cartItemsList'=>$cartItemsList
         ]);
     }
+
+    public function topBanner(){
+        $topBanner=TopBanner::first();
+        if(empty($topBanner)){
+            $topBanner=new TopBanner();
+            $topBanner->title_en='';
+            $topBanner->title_tr='';
+            $topBanner->text_tr='';
+            $topBanner->text_en='';
+            $topBanner->status='ACTIVE';
+            $topBanner->save();
+        }
+        return view('backoffice.top-banner',[
+            'topBanner'=>$topBanner
+        ]);
+    }
+    public function topBannerStore(Request $req){
+        $topBanner=TopBanner::first();
+        $topBanner->title_en=$req->title_en;
+        $topBanner->title_tr=$req->title_tr;
+        $topBanner->text_tr=$req->text_tr;
+        $topBanner->text_en=$req->text_en;
+        $topBanner->status=$req->status;
+        $topBanner->save();
+        return redirect()->back()->with('success','Top Banner updated successfully');    
+    
+    }
+   
     
   
 }

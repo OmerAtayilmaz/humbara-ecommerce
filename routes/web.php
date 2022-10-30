@@ -19,9 +19,9 @@ Route::controller(HomeController::class)->group(function(){
     Route::get('/best-assets','bestassets')->name('bestassets');
     Route::get('/latest-assets','latestassets')->name('latestassets');
     Route::get('cart','coursescart')->name('coursescart');
-
     Route::get("course/{slug}-{courseid}","coursedetail")->name("coursedetail");
-
+    Route::get("creators","creators")->name("creators");
+    Route::get("creators/detail","creatordetail")->name("creator.detail");
     //official
     Route::get('terms-conditions','termsconditions')->name('termsconditions');
     Route::get('privacy-policy','privacypolicy')->name('privacypolicy');
@@ -39,7 +39,7 @@ Route::controller(HomeController::class)->group(function(){
         Route::get('/f-password','forgotpassword')->name('forgotpass-panel');
         Route::get("/f-password/request","forgotpasswordreqtoken")->name("forgotpasswordreqtoken");
 
-       
+
     });
 });
 
@@ -141,7 +141,10 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
         Route::get("/delete/{id}","delete")->name("delete");
     });
     
-
+    Route::prefix("/banner")->name("banner.")->controller(AdminController::class)->group(function(){
+        Route::get("/","topBanner")->name("index");
+        Route::post("/store","topBannerStore")->name("store");
+    });
 });
 
 Route::middleware([

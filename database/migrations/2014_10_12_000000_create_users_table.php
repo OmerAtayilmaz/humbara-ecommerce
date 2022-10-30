@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('profile_photo_path', 2048)->nullable();
             $table->string('surname',120)->nullable();
             $table->smallInteger('country_id')->nullable();
+            $table->longText('bio')->nullable();
             $table->timestamps();
         });
     }

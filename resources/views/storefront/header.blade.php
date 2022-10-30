@@ -393,10 +393,13 @@
               </button>
               <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuMore">
                 <li>
-                  <a class="navbar__dropdown--link dropdown-item" href="creators-list.html">Instructors</a>
+                  <a class="navbar__dropdown--link dropdown-item" href="{{route('creators')}}">Instructors</a>
                 </li>
                 <li>
-                  <a class="navbar__dropdown--link dropdown-item" href="productlist-category.html">Product List
+                  <a class="navbar__dropdown--link dropdown-item" href="{{route('creator.detail')}}">Instructor Details</a>
+                </li>
+                <li>
+                  <a class="navbar__dropdown--link dropdown-item" href="{{route('creator.detail')}}">Product List
                     Category</a>
                 </li>
                 <li>
@@ -411,30 +414,7 @@
                   <a class="navbar__dropdown--link dropdown-item" href="productlist-campaign.html">Product List
                     Campaign</a>
                 </li>
-                <li>
-                  <a class="navbar__dropdown--link dropdown-item" href="payment-failed.html">Payment Failed</a>
-                </li>
-                <li>
-                  <a class="navbar__dropdown--link dropdown-item" href="payment-successful.html">Payment Successful</a>
-                </li>
-                <li>
-                  <a class="navbar__dropdown--link dropdown-item" href="cart.html">Cart</a>
-                </li>
-                <li>
-                  <a class="navbar__dropdown--link dropdown-item" href="checkout.html">Checkout</a>
-                </li>
-                <li>
-                  <a class="navbar__dropdown--link dropdown-item" href="about-us.html">About Us</a>
-                </li>
-                <li>
-                  <a class="navbar__dropdown--link dropdown-item" href="cookie.html">Cookie</a>
-                </li>
-                <li>
-                  <a class="navbar__dropdown--link dropdown-item" href="terms.html">Terms</a>
-                </li>
-                <li>
-                  <a class="navbar__dropdown--link dropdown-item" href="privacy.html">Privacy</a>
-                </li>
+            
               </ul>
             </div>
           </div>
