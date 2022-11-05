@@ -11,6 +11,8 @@ use App\Http\Controllers\UserController;
 /* HOME ROUTES */
 Route::controller(HomeController::class)->group(function(){
     Route::get('/','index')->name('home');
+    Route::get('/search','search')->name('search');
+    Route::get('/c/{id}','coursesByCategory')->name('courses.bycategory');
     Route::redirect('/home','/');
     Route::get('/all-courses','allcourses')->name('allcourses');
     Route::get('/best-courses','bestcourses')->name('bestcourses');
@@ -38,8 +40,6 @@ Route::controller(HomeController::class)->group(function(){
         Route::post('/u-register','registerreq')->name('registerpanelreq');
         Route::get('/f-password','forgotpassword')->name('forgotpass-panel');
         Route::get("/f-password/request","forgotpasswordreqtoken")->name("forgotpasswordreqtoken");
-
-
     });
 });
 

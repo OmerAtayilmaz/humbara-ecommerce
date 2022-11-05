@@ -7,10 +7,9 @@
                         <div class="col-sm-10">
                             <select name="parent_id" class="form-control" id="categoryInput">
                                 <option selected="selected">Main Category</option>
-                              
-                                       
-                               
-    
+                            {{--     @foreach($categoryList as $category)
+                                <option value="{{$category->id}}">{{$category->title_en}}/{{$category->title_tr}}</option>
+                                @endforeach --}}
                             </select>
                             @error('parent_id') <small class="text-danger">{{ $message }}</small> @enderror
                         </div>
@@ -144,7 +143,7 @@
                                         @foreach($categoryList as $category)
                                         <tr class="odd">
                                             <td>{{$category->id}}</td>
-                                            <td><img src="{{Storage::url($category->image_path)}}" width="60"></td>
+                                            <td><img src="{{Storage::url($category->image)}}" width="60"></td>
                                             <td>{{$category->title_en}}</td>
                                             <td>{{$category->title_tr}}</td>
                                             <td>{{$category->user->name}}</td>

@@ -6,17 +6,17 @@
           <span class="color-dark fs-5">
             <i class="fa-solid fa-bullhorn"></i>
           </span>
-          <p class="m-0 ms-2 text-white">Sale Title</p>
+          <p class="m-0 ms-2 text-white">{{$topBanner->text_tr}}</p>
         </div>
         <div class="flex-grow-1 m-0">
           <h5 class="text-white text-center m-0">
-            <span class="fw-bold">30%</span> off all products
+           {{$topBanner->title_tr}}
           </h5>
         </div>
         <div class="d-none d-lg-block">
-          <button class="btn bg-lightcolor color-dark p-1" style="background-color: var(--light-color)">
+          <a href="#productList" class="btn bg-lightcolor color-dark p-1" style="background-color: var(--light-color)">
             Shop Now
-          </button>
+          </a>
         </div>
       </div>
     </div>
@@ -236,21 +236,7 @@
               </ul>
             </li>
           </ul>
-
-          <form class="d-flex nav__form position-relative me-auto mb-sm-0 mb-3" role="search">
-            <input class="form-control nav__search--input py-0" type="text" placeholder="Search" aria-label="Search" />
-            <button
-              class="btn nav__form--button color-primary position-absolute top-50 end-0 translate-middle-y rounded-2 py-0"
-              style="
-                  background-color: transparent !important;
-                  color: var(--primary-color);
-                  border: none;
-                " type="submit">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-          </form>
-          
-
+         @include('storefront.search')
           <div class="d-flex align-items-center">
             <div class="dropdown my-courses me-2 d-none d-lg-block">
               <button
@@ -431,34 +417,4 @@
     </div>
   </nav>
 
-  <!-- Sub Navbar -->
-  <nav class="navbar d-none d-sm-block bg-darkcolor py-0">
-    <div class="container">
-      <ul class="w-100 navbar-nav d-flex flex-wrap flex-row align-items-center justify-content-evenly">
-        <li class="nav-item">
-          <a class="nav-link color-gray" style="font-size: 0.75rem; color: var(--gray-color) !important"
-            aria-current="page" href="productlist-category.html">FN Exclusives</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link color-gray" style="font-size: 0.75rem; color: var(--gray-color) !important"
-            aria-current="page" href="productlist-category.html">ZBrush Courses</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link color-gray" style="font-size: 0.75rem; color: var(--gray-color) !important"
-            aria-current="page" href="productlist-category.html">Blender Courses</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link color-gray" style="font-size: 0.75rem; color: var(--gray-color) !important"
-            aria-current="page" href="productlist-category.html">Texturing Courses</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link color-gray" style="font-size: 0.75rem; color: var(--gray-color) !important"
-            aria-current="page" href="productlist-category.html">Modeling Courses</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link color-gray" style="font-size: 0.75rem; color: var(--gray-color) !important"
-            aria-current="page" href="productlist-category.html">Free Content</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+ @include('storefront.subnav')

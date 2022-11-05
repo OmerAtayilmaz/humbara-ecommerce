@@ -3,26 +3,25 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Models\TopBanner;
+use App\Models\CourseCategory;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
     public function register()
     {
         //
     }
-
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
     public function boot()
     {
-        //
+        //sharing data with all views
+        $topBanner=TopBanner::first();
+        if(!empty($topBanner))
+            View::share('topBanner',$topBanner);
+
+        $categoryList=CourseCategory::where('status','ACTIVE')->limit(5)->get();
+        if(!empty($categoryList))
+            View::share('categoryList',$categoryList);
     }
 }
