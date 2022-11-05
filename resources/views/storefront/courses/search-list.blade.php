@@ -6,7 +6,7 @@
       <div class="row" style="--bs-gutter-y: 1rem">
         <div class="col-12 col-sm-6 d-flex align-items-center justify-content-sm-start justify-content-center fs-4">
           <i class="fa-solid fa-search"></i>
-          <h4 class="text-white mb-0 ms-3">Search Results for this category</h4>
+          <h4 class="text-white mb-0 ms-3">Search Results for {{$search}}</h4>
         </div>
       </div>
     </div>

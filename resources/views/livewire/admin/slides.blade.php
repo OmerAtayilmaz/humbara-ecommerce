@@ -9,67 +9,61 @@
             </h3>
         </div>
         <div class="card-body">
-            <form @if(session()->get('status')=='edit')  wire:submit.prevent="update" @else wire:submit.prevent="create" @endif>
+            <form @if(session()->get('status')=='edit')  wire:submit.prevent="update" @else wire:submit.prevent="create" @endif enctype="multipart/form-data">
               
                 <div class="mb-3 row">
-                    <label for="slideImage" class="col-sm-2 col-form-label">Image</label>
+                    <label for="image" class="col-sm-2 col-form-label">Image</label>
                     <div class="col-sm-10">
-                        <input name="image" type="file" class="form-control" id="slideImage">
-                        @error('question') <small class="error">{{ $message }}</small> @enderror
+                        <input wire:model="image" name="image" type="file" class="form-control" id="image">
+                        @error('image') <small class="error">{{ $message }}</small> @enderror
 
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="slideTitle" class="col-sm-2 col-form-label">Title</label>
+                    <label for="title" class="col-sm-2 col-form-label">Title</label>
                     <div class="col-sm-10">
-                        <input name="title" type="text" class="form-control" id="slideTitle">
-                        @error('question') <small class="error">{{ $message }}</small> @enderror
+                        <input wire:model="title" name="title" type="text" class="form-control" id="title">
+                        @error('title') <small class="error">{{ $message }}</small> @enderror
                      </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="slideKeyword" class="col-sm-2 col-form-label">Keywords</label>
+                    <label for="subtitle" class="col-sm-2 col-form-label">Sub Title</label>
                     <div class="col-sm-10">
-                        <input name="keywords" type="text" class="form-control" id="slideKeyword">
-                        @error('question') <small class="error">{{ $message }}</small> @enderror
+                        <input wire:model="subtitle"   name="subtitle" type="text" class="form-control" id="subtitle">
+                        @error('subtitle') <small class="error">{{ $message }}</small> @enderror
 
                     </div>
                 </div>
+      
                 <div class="mb-3 row">
-                    <label for="inputQuestion" class="col-sm-2 col-form-label">Description</label>
+                    <label for="priority" class="col-sm-2 col-form-label">Priority</label>
                     <div class="col-sm-10">
-                        <textarea id="editor" name="description" rows="4" cols="50" class="form-control"></textarea>
-
-                        <script>
-                            ClassicEditor
-                                .create( document.querySelector( '#editor' ) )
-                                .catch( error => {
-                                    console.error( error );
-                                } );
-                        </script>
-                       @error('question') <small class="error">{{ $message }}</small> @enderror
-
-                    </div>
+                        <input wire:model="priority"  name="priority" type="number" class="form-control" id="priority">
+                        @error('priority') <small class="error">{{ $message }}</small> @enderror
+                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="slidePriorty" class="col-sm-2 col-form-label">Priority</label>
+                    <label for="btn_text" class="col-sm-2 col-form-label">Button Text</label>
                     <div class="col-sm-10">
-                        <select name="priority" class="form-control" id="slidePriorty">
-                            <option selected="selected">False</option>
-                            <option>True</option>
+                        <input wire:model="button_text"  name="button_text" type="text" class="form-control" id="btn_text">
+                        @error('button_text') <small class="error">{{ $message }}</small> @enderror
+                     </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="button_link" class="col-sm-2 col-form-label">Button Link</label>
+                    <div class="col-sm-10">
+                        <input wire:model="button_link"  name="button_link" type="text" class="form-control" id="button_link">
+                        @error('button_link') <small class="error">{{ $message }}</small> @enderror
+                     </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="status" class="col-sm-2 col-form-label">Status</label>
+                    <div class="col-sm-10">
+                        <select wire:model="status"  name="status" class="form-control" id="status">
+                            <option value="ACTIVE">ACTIVE</option>
+                            <option value="PENDING" selected>PENDING</option>
                         </select>
-                        @error('question') <small class="error">{{ $message }}</small> @enderror
-
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="slideStatus" class="col-sm-2 col-form-label">Status</label>
-                    <div class="col-sm-10">
-                        <select name="status" class="form-control" id="slideStatus">
-                            <option selected="selected">False</option>
-                            <option>True</option>
-                        </select>
-                        @error('question') <small class="error">{{ $message }}</small> @enderror
-
+                        @error('status') <small class="error">{{ $message }}</small> @enderror
                     </div>
                 </div>
                 <div class="mb-3 row justify-content-center">
@@ -126,54 +120,36 @@
                                 <thead>
                                     <tr role="row">
                                         <th>Id</th>
-                                        <th>User Id</th>
+                                        <th>Creator</th>
                                         <th>Image</th>
                                         <th>Title</th>
-                                        <th>Keywords</th>
-                                        <th>Description</th>
+                                        <th>Sub Title</th>
+                                        <th>Button Text</th>
+                                        <th>Button Link</th>
                                         <th>Priority</th>
                                         <th>Status</th>
                                         <th colspan="2">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($slides as $slide)
                                     <tr class="odd">
-                                        <td>1</td>
-                                        <td>Accountant</td>
-                                        <td><img src="..." alt=""></td>
-                                        <td>Admin</td>
-                                        <td>Admin</td>
-                                        <td>Admin</td>
-                                        <td>Admin</td>
-                                        <td>Admin</td>
+                                        <td>{{$slide->id}}</td>
+                                        <td>{{$slide->owner->name}}</td>
+                                        <td><img src="{{Storage::url($slide->image)}}" width="100"></td>
+                                        <td>{{$slide->title}}</td>
+                                        <td>{{$slide->subtitle}}</td>
+                                        <td>{{$slide->button_text}}</td>
+                                        <td>{{$slide->button_link}}</td>
+                                        <td>{{$slide->priority}}</td>
+                                        <td>{{$slide->status}}</td>
                                         <td class="d-flex align-items-center justify-content-between border-0">
-                                            <a href="slides-edit.html"><i class="fas fa-edit fa-lg text-warning"></i></a>
+                                            <a  ><i class="fas fa-edit fa-lg text-warning"></i></a>
                                             <a href="{{route('admin.slideshow',['slideid'=>3])}}"><i class="fa-solid fa-eye fa-lg"></i></a>
-                                            <a href="#" id="delete-slides"><i class="fas fa-trash fa-lg text-danger"></i></a>
+                                            <a wire:click="deleteConfirm({{$slide->id}})" id="delete-slides"><i class="fas fa-trash fa-lg text-danger"></i></a>
                                         </td>
-                                        <script>
-                                            var deleteSlide = document.querySelector('#delete-slides');
-                                            deleteSlide.addEventListener('click', deleteItem);
-                                            function deleteItem() {
-                                                swal({
-                                                        title: "Are you sure?",
-                                                        text: "Once deleted, you will not be able to recover this slide!",
-                                                        icon: "warning",
-                                                        buttons: true,
-                                                        dangerMode: true,
-                                                })
-                                                .then((willDelete) => {
-                                                    if (willDelete) {
-                                                        swal("Poof! Your slide has been deleted!", {
-                                                        icon: "success",
-                                                        });
-                                                    } else {
-                                                        swal("Your slide is safe!");
-                                                    }
-                                                });
-                                            }
-                                        </script>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

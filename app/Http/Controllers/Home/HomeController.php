@@ -4,16 +4,24 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\ContactMessage;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-
+use App\Models\ContactMessage;
+use App\Models\User;
+use App\Models\TopBanner;
+use App\Models\HomeSlider;
+use App\Models\Course;
 class HomeController extends Controller
 {
+
     public function index()
     {
-        return view('storefront.home.index');
+        $slides=HomeSlider::where('status','ACTIVE')->get();
+        $OFF_COURSES=Course::where('status','ACTIVE')->get();
+        return view('storefront.home.index',[
+            'heroSlides'=>$slides,
+            'offCourses'=>$OFF_COURSES
+        ]);
     }
     public function allcourses(){
         return  view('storefront.courses.all');
@@ -109,5 +117,23 @@ class HomeController extends Controller
     }
     public function creatordetail(){
         return view('storefront.courses.creator');
+    }
+    public function search(){
+       $search=request("query");
+       $data=Course::where('status','<>','DELETED')
+        ->where(function($query) use ($search){
+            return $query->where('title','LIKE',"%".$search."%")
+                    ->orWhere('lang','LIKE','%'.$search.'%')
+                    ->orWhere('description','LIKE','%'.$search.'%')
+                    ->orWhere('keywords','LIKE','%'.$search.'%')
+                    ->orWhere('content','LIKE','%'.$search.'%');
+        })->get(); 
+        return view('storefront.courses.search-list')->with('courseList',$data)->with("search",$search);
+    }
+
+    public function coursesByCategory($id){
+        $data=Course::where('status','ACTIVE')
+        ->where('category_id',$id)->get();
+        return view('storefront.courses.bycategory')->with('courseList',$data);
     }
 }
