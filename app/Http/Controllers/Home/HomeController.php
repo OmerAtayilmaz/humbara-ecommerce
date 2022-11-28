@@ -11,16 +11,21 @@ use App\Models\User;
 use App\Models\TopBanner;
 use App\Models\HomeSlider;
 use App\Models\Course;
+use App\Models\CoursePrice;
+use Illuminate\Support\Facades\DB;
+
 class HomeController extends Controller
 {
 
     public function index()
     {
         $slides=HomeSlider::where('status','ACTIVE')->get();
-        $OFF_COURSES=Course::where('status','ACTIVE')->get();
+        $OFF_COURSES=Course::where('status','ACTIVE')->limit(4)->get();
+        $FEATURED_COURSES=Course::where('status','ACTIVE')->limit(4)->get();
         return view('storefront.home.index',[
             'heroSlides'=>$slides,
-            'offCourses'=>$OFF_COURSES
+            'offCourses'=>$OFF_COURSES,
+            'featuredCourses'=>$FEATURED_COURSES
         ]);
     }
     public function allcourses(){

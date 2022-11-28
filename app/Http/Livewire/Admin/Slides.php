@@ -26,7 +26,7 @@ class Slides extends Component
     }
     public function render()
     {
-        $this->slides=HomeSlider::all();
+        $this->slides=HomeSlider::where('status','<>','DELETED')->get();
         return view('livewire.admin.slides',[
             'slides'=>$this->slides
         ]);

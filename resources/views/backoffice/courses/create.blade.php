@@ -22,15 +22,21 @@
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="courseInputVideo" class="col-sm-2 col-form-label">Description</label>
+                    <label for="card_img" class="col-sm-2 col-form-label">Card Image</label>
                     <div class="col-sm-10">
-                        <input name="description" type="text" class="form-control" id="courseInputVideo">
+                        <input name="card_image" type="file" class="form-control" id="card_img">
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="courseInputVideo" class="col-sm-2 col-form-label">Intro Video URL</label>
+                    <label for="desc" class="col-sm-2 col-form-label">Description</label>
                     <div class="col-sm-10">
-                        <input name="video_url" type="text" class="form-control" id="courseInputVideo">
+                        <input name="description" type="text" class="form-control" id="desc">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="intro" class="col-sm-2 col-form-label">Intro Video URL</label>
+                    <div class="col-sm-10">
+                        <input name="video_url" type="text" class="form-control" id="intro">
                     </div>
                 </div>
                 <div class="mb-3 row">

@@ -14,6 +14,7 @@ return new class extends Migration
             $table->enum('lang',["TR","EN"]);
             $table->string('description');
             $table->string('keywords');
+            $table->string('card_image');
             $table->string('video_url');
             $table->longtext('content');
             $table->string('slug');

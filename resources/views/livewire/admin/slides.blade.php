@@ -169,4 +169,7 @@
     </div>
 </div>
 <!-- /.container-fluid -->
+@section('bottom-scripts')
+@include('backoffice.messages.swal2')
+@endsection
 </div>

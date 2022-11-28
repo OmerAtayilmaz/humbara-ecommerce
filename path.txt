@@ -1,1 +1,2 @@
 1-storefront-home slider attributeleri update edilecek
+2-pricing logicini ayarla
