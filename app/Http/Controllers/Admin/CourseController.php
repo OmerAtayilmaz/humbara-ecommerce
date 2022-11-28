@@ -35,6 +35,7 @@ class CourseController extends Controller
         $course->description=$request->description;
         $course->video_url=$request->video_url;
         $course->content=$request->content;
+        $course->card_image=$request->file('card_image')->store('coursecard','public');
         $course->slug=Str::slug($request->title);
         $course->course_owner=Auth::user()->id;
         $course->category_id=$request->category_id;
