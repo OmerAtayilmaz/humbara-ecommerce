@@ -1,2 +1,18 @@
-1-storefront-home slider attributeleri update edilecek
-2-pricing logicini ayarla
+[COMPLETED] -> Ay sonu indirimleri yapısı bitirilecek
+[COMPLETED] -> Hepsini göster yapısı yapılacak
+[COMPLETED] -> Öne çıkanlar yapısı bitirilecek
+[COMPLETED] -> Hepsini göster yapısı yapılacak
+[COMPLETED] -> Sections ayarlanacak
+[] -> Multi-language support
+[] -> What you'll learn section bitirilecek
+[] -> Latest Comments
+[] -> Frequently Asked Questions
+[] -> All courses
+    [] -> AllCoursesSlide (priority,text,image)
+    [] ->
+    [] ->
+[] -> Course Details
+
+--- Bulunan Buglar
+fiyat eklerken truncated exception 'type' kontrol edilmelidir.
+Sayfalarda geri buttonu çalışmıyor. - özellikle backofficede -

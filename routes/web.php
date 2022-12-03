@@ -6,7 +6,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\CouponsController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\Admin\FeaturedCoursesController;
 
 /* HOME ROUTES */
 Route::controller(HomeController::class)->group(function(){
@@ -24,13 +24,15 @@ Route::controller(HomeController::class)->group(function(){
     Route::get("course/{slug}-{courseid}","coursedetail")->name("coursedetail");
     Route::get("creators","creators")->name("creators");
     Route::get("creators/detail","creatordetail")->name("creator.detail");
+    Route::get("off-courses/all","offcourses")->name("offcourses.list");
+
     //official
     Route::get('terms-conditions','termsconditions')->name('termsconditions');
     Route::get('privacy-policy','privacypolicy')->name('privacypolicy');
     Route::get('cookies','cookies')->name('cookies');
     Route::get('/contactus','contactus')->name('contactus');
     Route::post('/contactus','contactusstore')->name('contactus.store');
-    Route::get('/aboutus','aboutus')->name('aboutus'); 
+    Route::get('/aboutus','aboutus')->name('aboutus');
 
     //Auth
     Route::name('user.')->group(function(){
@@ -58,8 +60,8 @@ Route::middleware('auth')->prefix('user')->controller(UserController::class)->na
     //kurs sepeti
     Route::get("cart","coursecart")->name("coursecart");
     Route::get("checkout","coursecheckout")->name("coursecheckout"); //sepette satın ala tıklandığında açılacak ödeme sayfası
-    Route::get("checkout/success","checkoutsuccess")->name("checkoutsuccess"); 
-    Route::get("checkout/fail","checkoutfail")->name("checkoutfail"); 
+    Route::get("checkout/success","checkoutsuccess")->name("checkoutsuccess");
+    Route::get("checkout/fail","checkoutfail")->name("checkoutfail");
     Route::get("/courses","courses")->name("courses");
     Route::get("/logout","logout")->name("logout");
 });
@@ -88,13 +90,13 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
     Route::get("/settings",[AdminController::class,"settings"])->name('settings');
     Route::post("/settings",[AdminController::class,"settingscreate"])->name('settings.store');
     Route::get("/themes",[AdminController::class,"themes"])->name('themes');
-    
+
     //kullanıcılar sekmesinden erişilir.
     Route::get("/favourites",[AdminController::class,"favourites"])->name('favourites');
 
     Route::get("/contact-message",[AdminController::class,"contactmessages"])->name('contactmessages');
     Route::get("/contact-message/show/{messageid}",[AdminController::class,"showcontactmessage"])->name('contactmessages.show');
-    
+
     Route::get("/orders",[AdminController::class,"orders"])->name('orders');
     Route::get("/orders/show/{orderid}",[AdminController::class,"showorders"])->name('showorders');
 
@@ -128,6 +130,12 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
             Route::get("/delete/{imageid}","course_images_delete")->name("delete");
         });
 
+        Route::prefix("featured")->controller(FeaturedCoursesController::class)->name("course.featured")->group(function(){
+            Route::get("/","index");
+            Route::post("/","store")->name('.store');
+            Route::get("/delete/{id}","destroy")->name('.destroy');
+            Route::get("/edit/{id}","update")->name('.update');
+        });
 
     });
 
@@ -140,7 +148,7 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
         Route::post("/update/{id}","update")->name("update");
         Route::get("/delete/{id}","delete")->name("delete");
     });
-    
+
     Route::prefix("/banner")->name("banner.")->controller(AdminController::class)->group(function(){
         Route::get("/","topBanner")->name("index");
         Route::post("/store","topBannerStore")->name("store");

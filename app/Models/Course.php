@@ -9,6 +9,8 @@ class Course extends Model
 {
     use HasFactory;
 
+    protected $table="courses";
+
     public function category(){
         return $this->belongsTo(CourseCategory::class,'category_id','id');
     }
@@ -16,8 +18,8 @@ class Course extends Model
         return $this->belongsTo(User::class,'course_owner','id');
     }
 
-    public function pricing(){
-        return $this->hasMany(CoursePrice::class,'course_id','id');
+    public function course_price(){
+        return $this->hasOne(CoursePrice::class,'course_id','id');
     }
 
     public function off_courses(){

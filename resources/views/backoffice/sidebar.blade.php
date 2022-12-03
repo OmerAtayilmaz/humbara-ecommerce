@@ -55,6 +55,7 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="{{route('admin.courses')}}">Courses</a>
                     <a class="collapse-item" href="{{route('admin.createcourse')}}">Create Course</a>
+                    <a class="collapse-item" href="{{route('admin.course.featured')}}">Featured Courses</a>
                 </div>
             </div>
         </li>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
+use App\Models\FeaturedCourses;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -16,17 +17,46 @@ use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
+    public static function printCoursePriceText($type,$pricing){
+        $price="";
+        switch ($type){
+            case "OFF":
+                $price=$pricing->cheap_pr_title;
+                break;
+            case "NORMAL":
+                $price=$pricing->expensive_price;
+                break;
+            case "CAMPAINS":
+                $price=$pricing->campains_price;
+                break;
+        }
+        return $price;
+    }
+    public static function printCoursePrice($type,$pricing){
+        $price="";
+        switch ($type){
+            case "OFF":
+                $price=$pricing->cheap_price;
+                break;
+            case "NORMAL":
+                $price=$pricing->expensive_price;
+                break;
+            case "CAMPAINS":
+                $price=$pricing->campains_price;
+                break;
+        }
+        return $price;
+    }
 
     public function index()
     {
-        $slides=HomeSlider::where('status','ACTIVE')->get();
-        $OFF_COURSES=Course::where('status','ACTIVE')->limit(4)->get();
-        $FEATURED_COURSES=Course::where('status','ACTIVE')->limit(4)->get();
-        return view('storefront.home.index',[
-            'heroSlides'=>$slides,
-            'offCourses'=>$OFF_COURSES,
-            'featuredCourses'=>$FEATURED_COURSES
-        ]);
+        $heroSlides=HomeSlider::where('status','ACTIVE')->get();
+        $offCourses=Course::with("course_price")->where('status','ACTIVE')->limit(4)->get();
+        $featuredCourses=FeaturedCourses::where('status','active')->limit(4)->get();
+        return view('storefront.home.index',compact("offCourses","heroSlides","featuredCourses"));
+    }
+    public function offcourses(){
+        return view("storefront.courses.show-all");
     }
     public function allcourses(){
         return  view('storefront.courses.all');
@@ -87,7 +117,7 @@ class HomeController extends Controller
     public function cookies(){
         return view('storefront.pages.cookies');
     }
-    public function forgotpassword(){ 
+    public function forgotpassword(){
         return view('storefront.auth.forgot-password');
     }
 
@@ -115,7 +145,7 @@ class HomeController extends Controller
         $temp->password=Hash::make($req->password);
         $temp->save();
         Auth::login($temp);
-        return redirect()->route('home');    
+        return redirect()->route('home');
     }
     public function creators(){
         return view('storefront.courses.creator-list');
@@ -132,7 +162,7 @@ class HomeController extends Controller
                     ->orWhere('description','LIKE','%'.$search.'%')
                     ->orWhere('keywords','LIKE','%'.$search.'%')
                     ->orWhere('content','LIKE','%'.$search.'%');
-        })->get(); 
+        })->get();
         return view('storefront.courses.search-list')->with('courseList',$data)->with("search",$search);
     }
 

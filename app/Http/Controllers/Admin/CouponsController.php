@@ -37,7 +37,7 @@ class CouponsController extends Controller
         $temp->created_by=Auth::user()->id;
         $temp->discount_percent=$req->discount_percent;
         $temp->save();
-        return redirect()->back()->with("success","Coupons updated successfully!");;
+        return redirect()->back()->with("success","Coupons updated successfully!");
     }
     public function store(Request $req){
         $temp=new CCMultipleUser();

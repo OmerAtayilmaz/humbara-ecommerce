@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Auth;
 class UserController extends Controller
 {
-    
 
     public function profile()
     {
@@ -17,7 +16,7 @@ class UserController extends Controller
     public function coursecart(){
         return view('storefront.courses.cart');
     }
-  
+
     public function coursecheckout()
     {
         return view('storefront.user.checkout');
