@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Admin\AdminController;
@@ -7,7 +8,7 @@ use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\CouponsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin\FeaturedCoursesController;
-
+use App\Http\Controllers\Home\CourseController as HomeCourseController;
 /* HOME ROUTES */
 Route::controller(HomeController::class)->group(function(){
     Route::get('/','index')->name('home');
@@ -40,15 +41,34 @@ Route::controller(HomeController::class)->group(function(){
         Route::post('/u-login','loginreq')->name('loginreq');
         Route::get('/u-register','register')->name('registerpanel');
         Route::post('/u-register','registerreq')->name('registerpanelreq');
-        Route::get('/f-password','forgotpassword')->name('forgotpass-panel');
-        Route::get("/f-password/request","forgotpasswordreqtoken")->name("forgotpasswordreqtoken");
+        //aynı route-get-post ise 1 name yeterlidir.
+        Route::get('/f-password/reset','forgotpassword')->name('forgotpass-panel');
+        //farklı bir tanımlama
+        Route::post('/f-password/reset','App\Http\Controllers\Home\HomeController@send_reset_token');
+        Route::get('/reset-password/{token}/{email}','App\Http\Controllers\Home\HomeController@reset_password_form')->name("reset-password");
+        Route::post('/reset-password/{token}/{email}','App\Http\Controllers\Home\HomeController@reset_password_update');
     });
 });
+Route::controller(HomeCourseController::class)->name("product.")->group(function(){
+    Route::get("/detail/{id}","detail")->name("detail");
+});
+Route::get("lang/{lang}",function ($locale){
+        Cookie::queue("lang",$locale,1440);
+        return back();
+})->name("language");
+
+
+Route::middleware("auth")->get("user/email/verify",[HomeController::class,"user_email_verify_panel"])->name("user.email.verify");
+Route::middleware("auth")->post("user/email/verify",[HomeController::class,"user_email_verify_post"]);
+Route::middleware("auth")->get("user/email/verify/{token}",[HomeController::class,"user_email_verified"])->name("user.email.verified");
 
 
 /* USER ROUTES */
-Route::middleware('auth')->prefix('user')->controller(UserController::class)->name('user.')->group(function(){
-    Route::get('/my-profile',"profile")->name('profile');
+Route::middleware(['auth',"verified"])->prefix('user')->controller(UserController::class)->name('user.')->group(function(){
+
+
+
+    Route::get('/my-profile',"profile")->name('profile')->middleware("verified");;
     Route::get("/my-courses","courses")->name("courses");
     Route::get("/my-courses/archived","archivedcourses")->name("archivedcourses");
     Route::get("/my-courses/favourites","favourites")->name("favourites");

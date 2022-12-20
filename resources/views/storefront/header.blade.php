@@ -15,8 +15,11 @@
         </div>
         <div class="d-none d-lg-block">
           <a href="#productList" class="btn bg-lightcolor color-dark p-1" style="background-color: var(--light-color)">
-            Shop Now
+            {{__("header.top_bar_btn")}}
           </a>
+            <a href="{{route('language',Cookie::get('lang')=='en'?'tr':'en')}}" class="btn bg-lightcolor color-dark px-3 py-1" style="background-color: var(--light-color)">
+                {{__("header.top_bar_lang")}}
+            </a>
         </div>
       </div>
     </div>
@@ -42,7 +45,7 @@
           <ul class="navbar-nav">
             <li class="nav-item navbar__dropdown d-none d-lg-block">
               <button class="nav-link navbar__dropdown--btn d-flex align-items-center p-1">
-                Courses <i class="ms-2 fa-solid fa-angle-down"></i>
+                {{__('header.navbar.courses')}} <i class="ms-2 fa-solid fa-angle-down"></i>
               </button>
 
               <div class="navbar__dropdown--content w-50">
@@ -74,7 +77,7 @@
             </li>
             <li class="nav-item navbar__dropdown d-none d-lg-block">
               <button class="nav-link navbar__dropdown--btn d-flex align-items-center p-1">
-                Assets <i class="ms-2 fa-solid fa-angle-down"></i>
+                  {{__('header.navbar.assets')}} <i class="ms-2 fa-solid fa-angle-down"></i>
               </button>
 
               <div class="navbar__dropdown--content w-50">
@@ -103,7 +106,7 @@
             <li class="nav-item dropdown navbar__dropdown d-block d-lg-none mb-3">
               <a class="nav-link dropdown-toggle p-2 m-0" href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                Assets
+                  {{__('header.navbar.assets')}}
               </a>
               <ul class="dropdown-menu">
                 <li>
@@ -400,7 +403,7 @@
                   <a class="navbar__dropdown--link dropdown-item" href="productlist-campaign.html">Product List
                     Campaign</a>
                 </li>
-            
+
               </ul>
             </div>
           </div>

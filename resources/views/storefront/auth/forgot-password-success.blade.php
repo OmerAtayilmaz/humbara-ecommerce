@@ -29,25 +29,25 @@
         <a href="#" class="text-decoration-none color-dark">Support</a>
       </div>
     </nav>
-<section class="section-padding">
-    <div class="container">
-      <div
-        class="d-flex flex-column align-items-center justify-content-center"
-      >
-        <i
-          class="fa-solid fa-circle-check text-success"
-          style="font-size: 4rem"
-        ></i>
-        <h3 class="fw-bold mt-4">Email Sent</h3>
-        <p>Check your e-mail address, click the link then reset the password.</p>
-        <a href="{{route('home')}}"
-          class="btn bg-primarycolor text-white"
-          style="background-color: var(--primary-color)"
-        >
-          <i class="fa-solid fa-arrow-left"></i> Go Home
-        </a>
-      </div>
-    </div>
-  </section>
+    <section class="section-padding">
+        <div class="container">
+          <div
+            class="d-flex flex-column align-items-center justify-content-center"
+          >
+            <i
+              class="fa-solid fa-circle-check text-success"
+              style="font-size: 4rem"
+            ></i>
+            <h3 class="fw-bold mt-4">Email Sent</h3>
+            <p>Check your e-mail address, click the link then reset the password.</p>
+            <a href="{{route('home')}}"
+              class="btn bg-primarycolor text-white"
+              style="background-color: var(--primary-color)"
+            >
+              <i class="fa-solid fa-arrow-left"></i> Go Home
+            </a>
+          </div>
+        </div>
+    </section>
 </div>
 @endsection

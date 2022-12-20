@@ -27,4 +27,6 @@ class Course extends Model
             $query->where('type','OFF');
         }));
     }
+
+
 }

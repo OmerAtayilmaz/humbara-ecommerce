@@ -43,22 +43,25 @@
           Please enter the email address associated with your account and We
           will email you a link to reset your password.
         </p>
-        <form class="w-100">
+        <form class="w-100" action="{{route('user.forgotpass-panel')}}" method="post">
+            @csrf
           <div class="form-floating mb-3">
             <input
+                name="email"
               type="email"
               class="form-control"
-              id="floatingInput"
+              id="email"
               placeholder="name@example.com"
+              required
             />
-            <label for="floatingInput">Email address</label>
+            <label for="email">Email address</label>
           </div>
-          <a href="{{route('user.forgotpasswordreqtoken')}}"
+          <button type="submit"
             class="btn bg-primarycolor text-white w-100 py-3"
             style="background-color: var(--primary-color)"
           >
             Reset Password
-          </a>
+          </button>
         </form>
       </div>
     </div>

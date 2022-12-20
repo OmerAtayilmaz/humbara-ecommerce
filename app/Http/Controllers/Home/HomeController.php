@@ -3,17 +3,21 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
+use App\Mail\RegisterationMail;
+use App\Mail\ResetPasswordMail;
+use App\Models\Faq;
 use App\Models\FeaturedCourses;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\ContactMessage;
 use App\Models\User;
-use App\Models\TopBanner;
 use App\Models\HomeSlider;
 use App\Models\Course;
-use App\Models\CoursePrice;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Crypt;
 
 class HomeController extends Controller
 {
@@ -53,7 +57,8 @@ class HomeController extends Controller
         $heroSlides=HomeSlider::where('status','ACTIVE')->get();
         $offCourses=Course::with("course_price")->where('status','ACTIVE')->limit(4)->get();
         $featuredCourses=FeaturedCourses::where('status','active')->limit(4)->get();
-        return view('storefront.home.index',compact("offCourses","heroSlides","featuredCourses"));
+        $faqs=Faq::where('status','ACTIVE')->limit(4)->get();
+        return view('storefront.home.index',compact("offCourses","heroSlides","featuredCourses","faqs"));
     }
     public function offcourses(){
         return view("storefront.courses.show-all");
@@ -120,11 +125,62 @@ class HomeController extends Controller
     public function forgotpassword(){
         return view('storefront.auth.forgot-password');
     }
-
-    public function forgotpasswordreqtoken(){
-        return view("storefront.auth.forgot-password-reqtoken");
+    public function send_reset_token(Request $req){
+        $email=$req->input("email");
+        $user=User::where('email',$email)->first();
+        if($user){
+            //id gereklidir! Selectte id olmalıdır.
+            $user->reset_password_token=Str::random(40);
+            $user->reset_password_expired=Carbon::now()->addMinute(120);
+            $user->save();
+            $mail=new ResetPasswordMail($user);
+            Mail::to($user->email)->send($mail);
+        }else{
+            return back()->with("error","There is no user found with provided e-mail");
+        }
+        return view("storefront.auth.forgot-password-success");
     }
 
+    public function reset_password_form(Request $req){
+        //token yoksa anasayfaya atar
+        if(!isset($req->token))
+            return redirect()->route("home");
+
+        return view("storefront.auth.forgot-password-update");
+    }
+    public function reset_password_update(Request $req){
+
+        //TODO: Where şartları ayrılıp ayrı ayrı validasyon eklenecek.
+
+        $token=$req->token;
+        $pass=$req->input("password");
+        $c_pass=$req->input("cpassword");
+        $email=Crypt::decryptString($req->email);
+
+        //token-email validate
+        if(!isset($req->token)||!isset($req->email))
+            return redirect()->route("home");
+        //are the passwords same?
+        if($pass!=$c_pass)
+            return redirect()->back()->with("error","Password does not confirmed.");
+
+
+        $user=User::where('email',$email)
+            ->where('reset_password_token',$token)
+            ->where('reset_password_expired','>',now())
+            ->update(
+                [
+                    'password'=>bcrypt($pass),
+                    'reset_password_expired'=>null,
+                    'reset_password_token'=>null
+                ]
+            );
+        if($user)
+            return redirect()->route("home")->with("success","The password has been reset gracefully!.");
+
+        return redirect()->back()->with("error","Something went wrong!");
+
+    }
     public function loginreq(Request $req){
 
         Auth::attempt([
@@ -137,14 +193,21 @@ class HomeController extends Controller
     public function registerreq(Request $req){
         $temp=new User();
         $fullname  = explode(" ", $req->name);
+        if(count($fullname)>1){
         $firstname = $fullname[0];
         $secondname= $fullname[1];
+        }
+        else{
+            $firstname=$fullname;
+            $secondname="";
+        }
         $temp->name=$firstname;
         $temp->surname=$secondname;
         $temp->email=$req->email;
         $temp->password=Hash::make($req->password);
         $temp->save();
         Auth::login($temp);
+
         return redirect()->route('home');
     }
     public function creators(){
@@ -171,4 +234,35 @@ class HomeController extends Controller
         ->where('category_id',$id)->get();
         return view('storefront.courses.bycategory')->with('courseList',$data);
     }
+
+    public function user_email_verify_panel(){
+       return view("storefront.auth.verify-email");
+    }
+    public function user_email_verify_post(Request $req){
+       if(Auth::check()){
+            $user=Auth::user();
+            $mail=new RegisterationMail($user);
+            Mail::to($user->email)->send($mail);
+        }
+
+        return view("storefront.auth.verify-email-send");
+    }
+    public function user_email_verified(Request $req){
+        $email=Crypt::decryptString($req->token);
+        $user=User::where('email',$email)->first();
+        //eger böyle bir kullanıcı yoksa
+        if(!$user)
+            return redirect()->route("home");
+
+        //daha önce aktif etmişse ve linke tekrar tıklarsa
+        if($user->email_verified_at!=null)
+            return view("storefront.auth.verify-email-success",["message"=>"Email hesabınız daha önce onaylanmıştır."]);
+
+        //daha önce aktif etmemişse
+        $user->email_verified_at=now();
+        $user->save();
+        return view("storefront.auth.verify-email-success")->with("message","Email hesabınız başarıyla onaylandı");
+
+    }
+
 }
