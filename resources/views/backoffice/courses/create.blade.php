@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Description</label>
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Content</label>
                     <div class="col-sm-10">
                         <textarea id="editor" name="content" rows="4" cols="50" class="form-control"></textarea>
                         <script>

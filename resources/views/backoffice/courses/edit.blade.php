@@ -24,14 +24,7 @@
                 <div class="mb-3 row">
                     <label for="inputPassword" class="col-sm-2 col-form-label">Description</label>
                     <div class="col-sm-10">
-                        <textarea id="editor"  name="description" rows="4" cols="50" class="form-control">{{$course->description}}</textarea>
-                        <script>
-                            ClassicEditor
-                                .create( document.querySelector( '#editor' ) )
-                                .catch( error => {
-                                    console.error( error );
-                                } );
-                        </script>
+                        <input  name="description" class="form-control" value="{{$course->description}}"/>
                     </div>
                 </div>
                 <div class="mb-3 row">
@@ -43,7 +36,15 @@
                 <div class="mb-3 row">
                     <label for="courseInputTitle" class="col-sm-2 col-form-label">Content</label>
                     <div class="col-sm-10">
-                        <input name="content" value="{{$course->content}}" type="text" class="form-control" id="courseInputcontent">
+                        <textarea id="editor"  name="content"  type="text" class="form-control" id="courseInputcontent">{{$course->content}}</textarea>
+
+                        <script>
+                            ClassicEditor
+                                .create( document.querySelector( '#editor' ) )
+                                .catch( error => {
+                                    console.error( error );
+                                } );
+                        </script>
                     </div>
                 </div>
                 <div class="mb-3 row">

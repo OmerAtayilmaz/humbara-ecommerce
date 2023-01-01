@@ -1,9 +1,7 @@
 what you'll learn section bitir
-[] -> Kullanıcı Kayıt Olduğunda Anlık Olarak Bir Kod Gidecek- Eğer maildeki Kodu Girerse kayıt olabilecek -
-[] -> Category Sayfasında Livewire ile anlık FACET Management yapılacak
-[] -> Newsletter kısmı aktif hale getirilecek
-[] -> Course Details
 [] -> Add to Cart logic işlemleri
+[] -> Newsletter kısmı aktif hale getirilecek
+[] -> Category Sayfasında Livewire ile anlık FACET Management yapılacak
 [] -> Buying Course
 [] -> Accessing Course If it has the course
 [] -> Authority => Customer, Manager, Editor
@@ -13,15 +11,14 @@ what you'll learn section bitir
 --- Bulunan Buglar
 fiyat eklerken truncated exception 'type' kontrol edilmelidir.
 Sayfalarda geri buttonu çalışmıyor. - özellikle backofficede -
+
 -kredi kartlarının 6 hanesinden fazlasını tutmak suçtur-
+
 -unique olmayan email ile kayıt olunduğunda HATA dönüyor-mesaj dönmelidir.
 
-[COMPLETED] -> Kullanıcı Kayıt Olduğunda Mail Addresine Mail gidecek
-[COMPLETED] -> Ay sonu indirimleri yapısı bitirilecek
-[COMPLETED] -> Hepsini göster yapısı yapılacak
-[COMPLETED] -> Öne çıkanlar yapısı bitirilecek
-[COMPLETED] -> Hepsini göster yapısı yapılacak
-[COMPLETED] -> Sections ayarlanacak
-[COMPLETED] -> Frequently Asked Questions
-[COMPLETED] -> Multi-language support
-[COMPLETED] -> Email-Reset Password
+-Her sayfada ayrı ayrı konsol kontrol edilmelidir, exceptionların hepsi giderilmeli jsleri yüklenmelidir.
+
+
+
+----
+[COMPLETED] -> Course Details

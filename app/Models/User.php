@@ -67,6 +67,6 @@ class User extends Authenticatable
         return $this->hasMany(CreditCard::class);
     }
     public function shoppingCartItem(){
-        return $this->hasMany(Cart::class,"user_id","id");
+        return $this->hasMany(CourseCart::class,"user_id","id");
     }
 }

@@ -28,5 +28,13 @@ class Course extends Model
         }));
     }
 
+    //scopes
+    public function scopeGetActiveCourse($query,$id){
+        return $this->where('id',$id)->where("status","ACTIVE")->first();
+    }
+    public function course_images(){
+        return $this->hasMany(CourseImageGallery::class,"course_id","id");
+    }
+
 
 }

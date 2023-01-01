@@ -44,12 +44,12 @@
                                     >
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    Product Detail
+                                    {{$course->title}}
                                 </li>
                             </ol>
                         </nav>
                         <!-- BREADCRUMB END -->
-                        <h3 class="text-white">Product Detail</h3>
+                        <h3 class="text-white">{{$course->title}}</h3>
                         <div
                             class="extra text-white d-flex flex-sm-row flex-column align-items-sm-center align-items-start justify-content-start"
                         >
@@ -59,25 +59,24 @@
                             </div>
                             <div class="creator">
                                 <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
-                                <span>by John Doe</span>
+                                <span>by {{$course->user->name}}</span>
                             </div>
                         </div>
                         <div class="mt-4 text-white">
                             <h4>Description</h4>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quisquam accusantium quia temporibus fugit dignissimos esse?
+                                {{ $course->description }}
                             </p>
                         </div>
                     </div>
                     <div class="d-flex align-items-center">
-                        <span class="badge rounded-pill bg-graycolor fs-6">$175</span>
-                        <button
-                            class="btn bg-primarycolor text-white ms-3 px-3 py-1"
-                            style="background-color: var(--primary-color) !important"
-                        >
-                            Add to Cart
-                        </button>
+                        <span class="badge rounded-pill bg-graycolor fs-6">${{ $course->price}}</span>
+                        <form action="{{route('course.add.cart',['slug'=>$course->slug,'id'=>$course->id])}}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn bg-primarycolor text-white ms-3 px-3 py-1" style="background-color: var(--primary-color) !important" >
+                                Add to Cart
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -105,34 +104,15 @@
                             class="row"
                             style="--bs-gutter-y: 0.75rem; --bs-gutter-x: 0.75rem"
                         >
+                            @foreach($course->course_images as $item)
                             <div class="col-6 col-sm-3">
                                 <img
                                     onclick="openModal();currentSlide(1)"
-                                    src="https://images.unsplash.com/photo-1621508638997-e30808c10653?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
-                                    alt=""
+                                    src="{{Storage::url($item->image)}}"
+                                    alt="{{$item->description}}"
                                 />
                             </div>
-                            <div class="col-6 col-sm-3">
-                                <img
-                                    onclick="openModal();currentSlide(2)"
-                                    src="https://images.unsplash.com/photo-1647531452166-3584eb58e6e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
-                                    alt=""
-                                />
-                            </div>
-                            <div class="col-6 col-sm-3">
-                                <img
-                                    onclick="openModal();currentSlide(3)"
-                                    src="https://images.unsplash.com/photo-1652558973183-a3f046921163?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=581&q=80"
-                                    alt=""
-                                />
-                            </div>
-                            <div class="col-6 col-sm-3">
-                                <img
-                                    onclick="openModal();currentSlide(4)"
-                                    src="https://images.unsplash.com/photo-1541474583361-bc9527eb46d6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=557&q=80"
-                                    alt=""
-                                />
-                            </div>
+                            @endforeach
                         </div>
 
                         <!-- The Modal/Lightbox -->
@@ -193,21 +173,7 @@
                     <hr />
 
                     <div class="content">
-                        <h5>Highlight</h5>
-                        <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                            Assumenda, neque voluptatum. Adipisci, maxime est nemo, itaque
-                            minima minus voluptate alias repellat, iste sint praesentium!
-                        </p>
-                        <br />
-                        <h5>Program</h5>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum
-                            labore qui accusamus repellendus aliquid voluptate eaque sed
-                            quia, quasi ea minus quibusdam excepturi eos voluptatum. Amet
-                            nemo aliquid provident est nisi magnam, quae reiciendis
-                            excepturi eligendi.
-                        </p>
+                        {!!  $course->content !!}
                     </div>
                 </div>
                 <div class="col-12 col-sm-4 position-relative">
@@ -274,22 +240,22 @@
                 <!-- CREATOR INFO -->
                 <div class="creator-info">
                     <img
-                        class="rounded-circle"
-                        src="https://zone-assets-api.vercel.app/assets/images/avatars/avatar_1.jpg"
+                        class="rounded-circle img-fluid"
+                        src="{{Storage::url($course->user->profile_photo_path)}}"
                         alt=""
+                        width="150"
                     />
                     <a
                         class="mt-3 fw-bold fs-4 color-primary text-decoration-none"
                         href="productlist-creator.html"
-                    >John Doe</a
+                    >{{$course->user->name}}</a
                     >
                     <div class="stars my-3">
                         <i class="fa-solid fa-star color-star"></i>
                         <span><span class="fw-bold">4.0</span> (21 reviews)</span>
                     </div>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Laudantium quibusdam error dolorem.
+                        {{$course->user->bio}}
                     </p>
                     <div class="social-icons my-3">
                         <!-- Facebook -->

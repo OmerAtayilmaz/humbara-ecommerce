@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use App\Mail\RegisterationMail;
 use App\Mail\ResetPasswordMail;
+use App\Models\CourseCart;
 use App\Models\Faq;
 use App\Models\FeaturedCourses;
 use Illuminate\Http\Request;
@@ -21,24 +22,10 @@ use Illuminate\Support\Facades\Crypt;
 
 class HomeController extends Controller
 {
-    public static function printCoursePriceText($type,$pricing){
+
+    public static function printCoursePrice($pricing){
         $price="";
-        switch ($type){
-            case "OFF":
-                $price=$pricing->cheap_pr_title;
-                break;
-            case "NORMAL":
-                $price=$pricing->expensive_price;
-                break;
-            case "CAMPAINS":
-                $price=$pricing->campains_price;
-                break;
-        }
-        return $price;
-    }
-    public static function printCoursePrice($type,$pricing){
-        $price="";
-        switch ($type){
+        switch ($pricing->type){
             case "OFF":
                 $price=$pricing->cheap_price;
                 break;
@@ -51,6 +38,8 @@ class HomeController extends Controller
         }
         return $price;
     }
+
+
 
     public function index()
     {
@@ -82,7 +71,8 @@ class HomeController extends Controller
         return view('storefront.assets.latest');
     }
     public function coursescart(){
-        return view('storefront.courses.cart');
+        $cartCourses=Auth::user()->shoppingCartItem;
+        return view('storefront.courses.cart',compact('cartCourses'));
     }
     public function login(){
         if(Auth::user())

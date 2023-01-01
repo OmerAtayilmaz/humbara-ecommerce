@@ -4057,3 +4057,8 @@ video::cue {
   color: white;
   font-size: 0.8rem;
 }
+
+.btn-cart-remove{
+    background: none;
+    border: none;
+}

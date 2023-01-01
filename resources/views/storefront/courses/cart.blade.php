@@ -11,10 +11,10 @@
            class="d-flex justify-content-between align-items-center mb-5"
          >
            <h3 class="fw-bold mb-0 text-black">Shopping Cart</h3>
-           <h6 class="mb-0 text-muted">3 items</h6>
+           <h6 class="mb-0 text-muted">{{count($cartCourses)}} items</h6>
          </div>
          <hr class="my-4" />
-
+        @foreach($cartCourses as $c)
          <div
            class="row g-3 mb-4 d-flex justify-content-md-between justify-content-center align-items-center m-0"
          >
@@ -28,92 +28,27 @@
            <div
              class="col-12 col-md-7 col-lg-7 col-xl-7 flex-grow-1 text-md-start text-center"
            >
-             <h6 class="text-black fw-bold">Course Title</h6>
-             <h6 class="text-muted">John Doe</h6>
+             <h6 class="text-black fw-bold">{{$c->course->title}}</h6>
+             <h6 class="text-muted">{{$c->course->user->name}}</h6>
              <div class="stars me-sm-3 me-0 mb-sm-0 mb-3">
                <i class="fa-solid fa-star color-star"></i>
                <span>4.0 (21 reviews)</span>
              </div>
            </div>
            <div class="col-12 col-md-2 col-lg-2 col-xl-2">
-             <h5 class="mb-0 fw-bold text-center">€ 44.00</h5>
+             <h5 class="mb-0 fw-bold text-center">₺{{App\Http\Controllers\Home\HomeController::printCoursePrice($c->course->course_price)}}</h5>
            </div>
            <div
              class="col-12 col-md-1 col-lg-1 col-xl-1 text-md-end text-center"
            >
-             <a href="#!" class="text-danger"
-               ><i class="fas fa-times fs-4"></i
-             ></a>
+               <form action="{{route('course.add.cart.post',['slug'=>$c->course->slug,'id'=>$c->course->id])}}" method="POST">
+                 @csrf
+                 <button class="text-danger btn-cart-remove"><i class="fas fa-times fs-4"></i></button>
+               </form>
            </div>
          </div>
-
          <hr class="my-4" />
-         <div
-           class="row g-3 mb-4 d-flex justify-content-md-between justify-content-center align-items-center m-0"
-         >
-           <div class="col-12 col-md-2 col-lg-2 col-xl-2">
-             <img
-               src="{{asset('assets/home')}}/assets/images/card_img.png"
-               class="img-fluid rounded-3 w-100"
-               alt=""
-             />
-           </div>
-           <div
-             class="col-12 col-md-7 col-lg-7 col-xl-7 flex-grow-1 text-md-start text-center"
-           >
-             <h6 class="text-black fw-bold">Course Title</h6>
-             <h6 class="text-muted">John Doe</h6>
-             <div class="stars me-sm-3 me-0 mb-sm-0 mb-3">
-               <i class="fa-solid fa-star color-star"></i>
-               <span>4.0 (21 reviews)</span>
-             </div>
-           </div>
-           <div class="col-12 col-md-2 col-lg-2 col-xl-2">
-             <h5 class="mb-0 fw-bold text-center">€ 44.00</h5>
-           </div>
-           <div
-             class="col-12 col-md-1 col-lg-1 col-xl-1 text-md-end text-center"
-           >
-             <a href="#!" class="text-danger"
-               ><i class="fas fa-times fs-4"></i
-             ></a>
-           </div>
-         </div>
-
-         <hr class="my-4" />
-         <div
-           class="row g-3 mb-4 d-flex justify-content-md-between justify-content-center align-items-center m-0"
-         >
-           <div class="col-12 col-md-2 col-lg-2 col-xl-2">
-             <img
-               src="{{asset('assets/home')}}/assets/images/card_img.png"
-               class="img-fluid rounded-3 w-100"
-               alt=""
-             />
-           </div>
-           <div
-             class="col-12 col-md-7 col-lg-7 col-xl-7 flex-grow-1 text-md-start text-center"
-           >
-             <h6 class="text-black fw-bold">Course Title</h6>
-             <h6 class="text-muted">John Doe</h6>
-             <div class="stars me-sm-3 me-0 mb-sm-0 mb-3">
-               <i class="fa-solid fa-star color-star"></i>
-               <span>4.0 (21 reviews)</span>
-             </div>
-           </div>
-           <div class="col-12 col-md-2 col-lg-2 col-xl-2">
-             <h5 class="mb-0 fw-bold text-center">€ 44.00</h5>
-           </div>
-           <div
-             class="col-12 col-md-1 col-lg-1 col-xl-1 text-md-end text-center"
-           >
-             <a href="#!" class="text-danger"
-               ><i class="fas fa-times fs-4"></i
-             ></a>
-           </div>
-         </div>
-
-         <hr class="my-4" />
+        @endforeach
 
          <div class="pt-3">
            <h6 class="mb-0">
@@ -130,20 +65,20 @@
        <hr class="my-4" />
 
        <div class="d-flex justify-content-between mb-4">
-         <h6 class="text-uppercase fw-bold">items 3</h6>
-         <h6>€ 132.00</h6>
+         <h6 class="text-uppercase fw-bold">items {{count($cartCourses)}}</h6>
+           <h6>€{{App\Services\Pricing::getTotalPrices($cartCourses)}}</h6>
        </div>
 
        <hr class="my-4" />
 
        <div class="d-flex justify-content-between">
          <h6 class="text-uppercase fw-bold">Total price</h6>
-         <h6>€ 137.00</h6>
+         <h6>€{{App\Services\Pricing::getTotalPrices($cartCourses)}}</h6>
        </div>
 
        <div class="d-flex justify-content-between">
          <h6 class="text-uppercase fw-bold">Price with tax</h6>
-         <h6>€ 190.00</h6>
+         <h6>€ {{App\Services\Pricing::calcPriceWithKDV(App\Services\Pricing::getTotalPrices($cartCourses))}}</h6>
        </div>
        <hr class="my-4" />
 

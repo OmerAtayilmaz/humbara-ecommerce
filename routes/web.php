@@ -11,21 +11,25 @@ use App\Http\Controllers\Admin\FeaturedCoursesController;
 use App\Http\Controllers\Home\CourseController as HomeCourseController;
 /* HOME ROUTES */
 Route::controller(HomeController::class)->group(function(){
+
     Route::get('/','index')->name('home');
+    Route::redirect('/home','/');
+
+    //Lists
     Route::get('/search','search')->name('search');
     Route::get('/c/{id}','coursesByCategory')->name('courses.bycategory');
-    Route::redirect('/home','/');
     Route::get('/all-courses','allcourses')->name('allcourses');
     Route::get('/best-courses','bestcourses')->name('bestcourses');
     Route::get('/latest-courses','latestcourses')->name('latestcourses');
     Route::get('/all-assets','allassets')->name('allassets');
     Route::get('/best-assets','bestassets')->name('bestassets');
     Route::get('/latest-assets','latestassets')->name('latestassets');
-    Route::get('cart','coursescart')->name('coursescart');
-    Route::get("course/{slug}-{courseid}","coursedetail")->name("coursedetail");
     Route::get("creators","creators")->name("creators");
-    Route::get("creators/detail","creatordetail")->name("creator.detail");
     Route::get("off-courses/all","offcourses")->name("offcourses.list");
+
+    //One
+    Route::get('cart','coursescart')->name('coursescart');
+    Route::get("creators/detail","creatordetail")->name("creator.detail");
 
     //official
     Route::get('terms-conditions','termsconditions')->name('termsconditions');
@@ -49,15 +53,18 @@ Route::controller(HomeController::class)->group(function(){
         Route::post('/reset-password/{token}/{email}','App\Http\Controllers\Home\HomeController@reset_password_update');
     });
 });
-Route::controller(HomeCourseController::class)->name("product.")->group(function(){
-    Route::get("/detail/{id}","detail")->name("detail");
+
+Route::controller(HomeCourseController::class)->name("course.")->group(function(){
+    Route::get("/course/{slug}/{id}","detail")->name("detail");
+    Route::post("/course/{slug}/cart/{id}","add_cart")->name("add.cart")->middleware("auth");
+    Route::post("/course/{slug}/cart/{id}/delete","remove_cart")->name("add.cart.post")->middleware("auth");
 });
 Route::get("lang/{lang}",function ($locale){
         Cookie::queue("lang",$locale,1440);
         return back();
 })->name("language");
 
-
+//TODO: Bu routeları sadeleştir.
 Route::middleware("auth")->get("user/email/verify",[HomeController::class,"user_email_verify_panel"])->name("user.email.verify");
 Route::middleware("auth")->post("user/email/verify",[HomeController::class,"user_email_verify_post"]);
 Route::middleware("auth")->get("user/email/verify/{token}",[HomeController::class,"user_email_verified"])->name("user.email.verified");
@@ -78,7 +85,6 @@ Route::middleware(['auth',"verified"])->prefix('user')->controller(UserControlle
     Route::get("/course/{slug}-{courseid}/learn/lecture/{lectureid}");
 
     //kurs sepeti
-    Route::get("cart","coursecart")->name("coursecart");
     Route::get("checkout","coursecheckout")->name("coursecheckout"); //sepette satın ala tıklandığında açılacak ödeme sayfası
     Route::get("checkout/success","checkoutsuccess")->name("checkoutsuccess");
     Route::get("checkout/fail","checkoutfail")->name("checkoutfail");
