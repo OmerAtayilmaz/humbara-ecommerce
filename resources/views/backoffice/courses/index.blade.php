@@ -4,15 +4,12 @@
    <div class="container-fluid">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h3 class="m-0 font-weight-bold card-title-text">Course List</h3>
+            <h3 class="m-0 font-weight-bold card-title-text">Staged Course List</h3>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
                     <div class="row">
-                        <div class="col-sm-12 col-md-6 mb-4">
-                            <a href="{{route('admin.createcourse')}}" class="btn btn-primary btn-large card-btn">Add Course</a>
-                        </div>
                         <div class="col-sm-12 col-md-6 mb-4">
                             <div class="input-group">
                                 <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
@@ -61,7 +58,7 @@
                                             "><i class="fa-solid fa-image"></i></a></td>
                                         <td class="d-flex align-items-center justify-content-between border-0">
                                             <a href="
-                                            {{route('admin.edit_course',['courseid'=>$course->id])}}"><i class="fas fa-edit fa-lg text-warning"></i></a>
+                                            {{route('admin.course.edit',['courseid'=>$course->id])}}"><i class="fas fa-edit fa-lg text-warning"></i></a>
                                             <a href="
                                             {{route('admin.coursedetail',['courseid'=>$course->id])}}
                                             "><i class="fa-solid fa-eye fa-lg"></i></a>
@@ -69,7 +66,7 @@
                                         </td>
                                     </tr>
                                     @endforeach
-                               
+
                                 </tbody>
                             </table>
                         </div>

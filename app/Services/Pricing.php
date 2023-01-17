@@ -20,13 +20,26 @@ class Pricing
 
         $totalPrice=0;
         foreach ($courseCart as $course){
-            $totalPrice +=(double)HomeController::printCoursePrice($course->course->course_price);
+            $totalPrice +=(double)Pricing::printCoursePrice($course->course->course_price);
         }
         return $totalPrice;
     }
-
     public static function calcPriceWithKDV($price){
        return ($price+$price*(env("COURSE_KDV")/100));
     }
-
+    public static function printCoursePrice($pricing){
+        $price="";
+        switch ($pricing->type){
+            case "OFF":
+                $price=$pricing->cheap_price;
+                break;
+            case "NORMAL":
+                $price=$pricing->expensive_price;
+                break;
+            case "CAMPAINS":
+                $price=$pricing->campains_price;
+                break;
+        }
+        return $price;
+    }
 }

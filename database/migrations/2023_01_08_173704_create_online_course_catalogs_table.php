@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('featured_courses', function (Blueprint $table) {
+        Schema::create('online_course_catalogs', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->foreignId("course_id")->constrained()->onDelete('cascade');
-            $table->enum('status',['active','inactive','deleted'])->default('inactive');
-            $table->integer('priority')->default(0);
+            $table->foreignId("course_id")->references("id")->on("courses")->onDelete("cascade");
+            $table->enum("status",["active","deleted"])->default("active");
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('featured_courses');
+        Schema::dropIfExists('online_course_catalogs');
     }
 };

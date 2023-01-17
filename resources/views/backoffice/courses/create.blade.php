@@ -7,7 +7,7 @@
             <h3 class="m-0 font-weight-bold card-title-text">Add Course</h3>
         </div>
         <div class="card-body">
-            <form method="POST" action="{{route('admin.storecourse')}}" enctype="multipart/form-data">
+            <form method="POST" action="{{route('admin.store.course')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3 row">
                     <label for="courseInputTitle" class="col-sm-2 col-form-label">Title</label>

@@ -4,12 +4,15 @@
 
 <section class="payment__section section-padding checkout">
     <div class="container">
+        <form action="{{route("user.course.checkout")}}" method="post">
+            @csrf
       <div class="row g-3">
+
         <div class="col-md-7">
           <h3 class="fw-bold">Payment Method</h3>
           <div class="card">
             <div class="accordion" id="accordionExample">
-              <div class="accordion-item">
+              <div class="accordion-item p-3">
                 <h2 class="accordion-header" id="headingOne">
                   <button
                     class="accordion-button"
@@ -42,7 +45,7 @@
                 </div>
               </div>
 
-              <div class="accordion-item">
+              <div class="accordion-item p-3">
                 <h2 class="accordion-header" id="headingTwo">
                   <button
                     class="accordion-button collapsed"
@@ -81,12 +84,14 @@
                     <span class="font-weight-normal card-text"
                       >Card Number</span
                     >
+
                     <div class="input">
                       <i class="fa fa-credit-card"></i>
                       <input
                         type="text"
                         class="form-control"
                         placeholder="0000 0000 0000 0000"
+                        name="card_number"
                       />
                     </div>
 
@@ -101,6 +106,7 @@
                             type="text"
                             class="form-control"
                             placeholder="MM/YY"
+                            name="month_year"
                           />
                         </div>
                       </div>
@@ -115,6 +121,7 @@
                             type="text"
                             class="form-control"
                             placeholder="000"
+                            name="cvc"
                           />
                         </div>
                       </div>
@@ -130,22 +137,21 @@
             </div>
           </div>
         </div>
-
         <div class="col-md-5">
           <h3 class="fw-bold">Summary</h3>
 
           <div class="card">
             <div class="d-flex justify-content-between p-3">
-              <span class="fw-bold">Total Price</span>
+              <span class="fw-bold">Total Price(KDV Dahil)</span>
 
               <div class="mt-1">
-                <sup class="super-price">$9.99</sup>
+                <sup class="super-price">{{$totalPrice}} ₺</sup>
               </div>
             </div>
 
             <hr class="mt-0 line" />
 
-            <div class="p-3">
+<!--            <div class="p-3">
               <div class="d-flex justify-content-between mb-2">
                 <span class="fw-bold">Refferal Bonouses</span>
                 <span>-$2.00</span>
@@ -153,18 +159,19 @@
             </div>
 
             <hr class="mt-0 line" />
-
-            <div class="p-3 d-flex justify-content-between">
+-->
+<!--            <div class="p-3 d-flex justify-content-between">
               <div class="d-flex flex-column">
                 <span class="fw-bold">Proceed</span>
               </div>
               <span>$7</span>
-            </div>
+            </div>-->
 
             <div class="p-3">
               <button
                 class="btn bg-primarycolor text-white"
                 style="background-color: var(--primary-color)"
+                type="submit"
               >
                 Buy Now
               </button>
@@ -172,6 +179,7 @@
           </div>
         </div>
       </div>
+        </form>
     </div>
   </section>
 @endsection

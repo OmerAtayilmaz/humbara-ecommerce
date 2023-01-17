@@ -1,24 +1,21 @@
-what you'll learn section bitir
-[] -> Add to Cart logic işlemleri
-[] -> Newsletter kısmı aktif hale getirilecek
+[] -> StagedCourseCatalog
+[] -> OnlineCourseCatalog
+[] -> CampainsCourses
+[] -> OffCourses
+[] -> FeaturedCourses
+[] -> BestCourses
+[] -> LatestCourses
+[] -> AllCourses
+[] -> E-COMMERCE-SUIT: Uzerinde Checkout Ekle
+[] -> Ödeme İşlemleri(Checkout-success/fail UserController.php'den devam)
 [] -> Category Sayfasında Livewire ile anlık FACET Management yapılacak
-[] -> Buying Course
-[] -> Accessing Course If it has the course
-[] -> Authority => Customer, Manager, Editor
-[] -> Latest Comments
+[] ->
 
 
 --- Bulunan Buglar
 fiyat eklerken truncated exception 'type' kontrol edilmelidir.
 Sayfalarda geri buttonu çalışmıyor. - özellikle backofficede -
-
 -kredi kartlarının 6 hanesinden fazlasını tutmak suçtur-
-
 -unique olmayan email ile kayıt olunduğunda HATA dönüyor-mesaj dönmelidir.
-
 -Her sayfada ayrı ayrı konsol kontrol edilmelidir, exceptionların hepsi giderilmeli jsleri yüklenmelidir.
 
-
-
-----
-[COMPLETED] -> Course Details

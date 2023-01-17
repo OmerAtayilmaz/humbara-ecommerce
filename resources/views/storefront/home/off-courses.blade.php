@@ -13,7 +13,7 @@
             <a href="{{route("course.detail",["slug"=>$course->slug,"id"=>$course->id])}}" class="newproduct-card--link">
               <img src="{{Storage::url($course->card_image)}}" alt=" {{$course->title . $course->description}}" />
               <div class="newproduct--off">
-                <span>{{App\Http\Controllers\Home\HomeController::printCoursePrice($course->course_price)}} </span>
+                <span>{{App\Services\Pricing::printCoursePrice($course->course_price)}} </span>
               </div>
               <div class="newproduct--content">
                 <div class="container d-flex flex-column mt-3">
@@ -32,7 +32,7 @@
                       <span>4.7</span> <small>(174)</small>
                     </div>
                     <div class="newproduct-price">
-                      <span>₺{{App\Http\Controllers\Home\HomeController::printCoursePrice($course->course_price)}}</span>
+                      <span>₺{{App\Services\Pricing::printCoursePrice($course->course_price)}}</span>
                     </div>
                   </div>
                 </div>

@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use App\Models\TopBanner;
 use App\Models\CourseCategory;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Auth;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,5 +24,6 @@ class AppServiceProvider extends ServiceProvider
         $categoryList=CourseCategory::where('status','ACTIVE')->limit(5)->get();
         if(!empty($categoryList))
             View::share('categoryList',$categoryList);
+
     }
 }

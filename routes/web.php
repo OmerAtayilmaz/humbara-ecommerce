@@ -10,6 +10,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin\FeaturedCoursesController;
 use App\Http\Controllers\Home\CourseController as HomeCourseController;
 /* HOME ROUTES */
+Route::middleware("storefront")->group(function(){
 Route::controller(HomeController::class)->group(function(){
 
     Route::get('/','index')->name('home');
@@ -28,7 +29,7 @@ Route::controller(HomeController::class)->group(function(){
     Route::get("off-courses/all","offcourses")->name("offcourses.list");
 
     //One
-    Route::get('cart','coursescart')->name('coursescart');
+    Route::get('cart','coursescart')->name('coursescart')->middleware("auth");
     Route::get("creators/detail","creatordetail")->name("creator.detail");
 
     //official
@@ -53,11 +54,11 @@ Route::controller(HomeController::class)->group(function(){
         Route::post('/reset-password/{token}/{email}','App\Http\Controllers\Home\HomeController@reset_password_update');
     });
 });
-
 Route::controller(HomeCourseController::class)->name("course.")->group(function(){
     Route::get("/course/{slug}/{id}","detail")->name("detail");
     Route::post("/course/{slug}/cart/{id}","add_cart")->name("add.cart")->middleware("auth");
     Route::post("/course/{slug}/cart/{id}/delete","remove_cart")->name("add.cart.post")->middleware("auth");
+
 });
 Route::get("lang/{lang}",function ($locale){
         Cookie::queue("lang",$locale,1440);
@@ -73,8 +74,6 @@ Route::middleware("auth")->get("user/email/verify/{token}",[HomeController::clas
 /* USER ROUTES */
 Route::middleware(['auth',"verified"])->prefix('user')->controller(UserController::class)->name('user.')->group(function(){
 
-
-
     Route::get('/my-profile',"profile")->name('profile')->middleware("verified");;
     Route::get("/my-courses","courses")->name("courses");
     Route::get("/my-courses/archived","archivedcourses")->name("archivedcourses");
@@ -85,13 +84,15 @@ Route::middleware(['auth',"verified"])->prefix('user')->controller(UserControlle
     Route::get("/course/{slug}-{courseid}/learn/lecture/{lectureid}");
 
     //kurs sepeti
-    Route::get("checkout","coursecheckout")->name("coursecheckout"); //sepette satın ala tıklandığında açılacak ödeme sayfası
+    Route::get("checkout","coursecheckout")->name("course.checkout"); //sepette satın ala tıklandığında açılacak ödeme sayfası
+    Route::post("checkout","coursecheckout"); //sepette satın ala tıklandığında açılacak ödeme sayfası
+    Route::post("checkout","course_checkout_payment"); //sepette satın ala tıklandığında açılacak ödeme sayfası
     Route::get("checkout/success","checkoutsuccess")->name("checkoutsuccess");
     Route::get("checkout/fail","checkoutfail")->name("checkoutfail");
     Route::get("/courses","courses")->name("courses");
     Route::get("/logout","logout")->name("logout");
 });
-
+});
 /* ADMIN ROUTES */
 Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function(){
     Route::get('/',[AdminController::class,"index"])->name('index');
@@ -130,9 +131,9 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
     Route::get("/course/create",[AdminController::class,"createcourse"])->name('createcourse');
 
     Route::prefix("/course")->controller(CourseController::class)->group(function(){
-        Route::post("/create","store")->name('storecourse');
-        Route::get("/edit/{courseid}","editcourse")->name('edit_course');
-        Route::post("/update/{courseid}","updatecourse")->name('update_course');
+        Route::post("/create","store")->name('store.course');
+        Route::get("/edit/{courseid}","editcourse")->name('course.edit');
+        Route::post("/update/{courseid}","updatecourse")->name('course.update');
         Route::get("/delete/{courseid}","deletecourse")->name('delete_course');
         Route::get("/delete/q-a/{questionid}","delete_course_qa")->name('delete_course_qa');
         Route::get("/detail/{courseid}","coursedetail")->name('coursedetail');
@@ -143,6 +144,8 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
         Route::get("/{courseid}/prices/","course_price_list")->name("course_price_list");
         Route::post("/prices/{priceid}","course_price_update")->name("course_price_update");
         Route::get("/user","user_courses_list")->name("user_courses_list");
+        Route::get("/online-list","online_courses_list")->name("courses.online");
+        Route::post("/online-list","online_courses_list");
 
         Route::prefix("/reviews")->name("course.reviews.")->group(function(){
             Route::get("/{courseid}","course_reviews_list")->name("list");

@@ -45,17 +45,23 @@
                 <i class="fas fa-fw fa-question"></i>
                 <span>Faq</span></a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.store.course')}}">
+                <i class="fas fa-fw fa-book"></i>
+                <span>Create Course</span></a>
+        </li>
          <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
                 aria-expanded="true" aria-controls="collapseThree">
                 <i class="fas fa-fw fa-book"></i>
-                <span>Course</span>
+                <span>Courses</span>
             </a>
             <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="{{route('admin.courses')}}">Courses</a>
-                    <a class="collapse-item" href="{{route('admin.createcourse')}}">Create Course</a>
+                    <a class="collapse-item" href="{{route('admin.courses.online')}}">Online Catalog Courses</a>
+                    <a class="collapse-item" href="{{route('admin.courses')}}">Stage Catalog Courses</a>
                     <a class="collapse-item" href="{{route('admin.course.featured')}}">Featured Courses</a>
+                    <a class="collapse-item" href="{{route('admin.course.featured')}}">Off Courses</a>
                 </div>
             </div>
         </li>

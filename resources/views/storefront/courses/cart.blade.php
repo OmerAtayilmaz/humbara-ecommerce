@@ -36,12 +36,10 @@
              </div>
            </div>
            <div class="col-12 col-md-2 col-lg-2 col-xl-2">
-             <h5 class="mb-0 fw-bold text-center">₺{{App\Http\Controllers\Home\HomeController::printCoursePrice($c->course->course_price)}}</h5>
+             <h5 class="mb-0 fw-bold text-center">₺{{App\Services\Pricing::printCoursePrice($c->course->course_price)}}</h5>
            </div>
-           <div
-             class="col-12 col-md-1 col-lg-1 col-xl-1 text-md-end text-center"
-           >
-               <form action="{{route('course.add.cart.post',['slug'=>$c->course->slug,'id'=>$c->course->id])}}" method="POST">
+           <div class="col-12 col-md-1 col-lg-1 col-xl-1 text-md-end text-center">
+               <form action="{{route('course.add.cart.post',['slug'=>$c->course->slug,'id'=>$c->id])}}" method="POST">
                  @csrf
                  <button class="text-danger btn-cart-remove"><i class="fas fa-times fs-4"></i></button>
                </form>
@@ -105,7 +103,7 @@
            >
          </div>
          <a
-           href="{{route('user.coursecheckout')}}"
+           href="{{route('user.course.checkout')}}"
            class="btn bg-primarycolor text-white mt-3"
            style="background-color: var(--primary-color)"
          >

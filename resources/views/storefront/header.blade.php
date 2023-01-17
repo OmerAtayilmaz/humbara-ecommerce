@@ -341,11 +341,14 @@
                 </li>
               </ul>
             </div>
+
             <a href="{{route('coursescart')}}" class="d-none d-lg-block btn bg-primarycolor text-white btn-cart me-2 py-1"
               style="background-color: var(--primary-color) !important">
-              <span class="cart-counter bg-darkcolor rounded-circle text-white">
-                2
-              </span>
+                @if(request()->cartInfo)
+                  <span class="cart-counter bg-darkcolor rounded-circle text-white">
+                    {{request()->cartInfo}}
+                  </span>
+                @endif
               <i class="navbar-icon fa-solid fa-cart-shopping"></i>
             </a>
 

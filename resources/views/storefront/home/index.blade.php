@@ -1,5 +1,6 @@
 @extends('layouts.storefront')
 @section("title","Home Page")
+@section("cart-info",$cartInfo??null)
 @section('content')
  @include('storefront.home.hero-slider')
  @include('storefront.home.off-courses')

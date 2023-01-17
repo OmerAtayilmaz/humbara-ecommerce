@@ -9,6 +9,8 @@ use App\Models\CoursePrice;
 use App\Models\CourseReview;
 use App\Models\CourseImageGallery;
 use App\Models\CourseQA as CourseQuestions;
+use App\Models\OnlineCourseCatalog;
+use App\Models\StagedCourseCatalog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Auth;
@@ -42,6 +44,7 @@ class CourseController extends Controller
         $course->status=$request->status;
         $course->lang=$request->lang;
         $course->save();
+
     }catch(\Exception $e){
         return $e->getMessage();
     }
@@ -114,7 +117,7 @@ class CourseController extends Controller
             $price->cheap_pr_title='Cheap Price Title';
             $price->cheap_price=0;
             $price->expensive_pr_title='Expensive Price Title';
-            $price->expensive_price=0; 
+            $price->expensive_price=0;
             $price->campains='Campain Name';
             $price->campains_price=0;
             $price->type='CAMPAINS'; //,['CAMPAINS','NORMAL','OFF']
@@ -181,5 +184,10 @@ class CourseController extends Controller
         $image->status='DELETED';
         $image->save();
         return redirect()->back()->with('success','Image Deleted Successfully');
+    }
+
+    public function online_courses_list(){
+        $courseList=OnlineCourseCatalog::coursesList();
+        return view("backoffice.courses.online",compact("courseList"));
     }
 }

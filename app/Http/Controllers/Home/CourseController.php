@@ -28,7 +28,7 @@ class CourseController extends Controller
         $course_id=$id;
         $user_id=Auth::user()->id;
 
-        $isAlreadyExist=CourseCart::where('course_id',$course_id)->first();
+        $isAlreadyExist=CourseCart::where('course_id',$course_id)->where('user_id',auth()->user()->id)->first();
         if(!$isAlreadyExist){
             $cart=new CourseCart();
             $cart->course_id=$course_id;

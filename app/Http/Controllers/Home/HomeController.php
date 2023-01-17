@@ -23,21 +23,7 @@ use Illuminate\Support\Facades\Crypt;
 class HomeController extends Controller
 {
 
-    public static function printCoursePrice($pricing){
-        $price="";
-        switch ($pricing->type){
-            case "OFF":
-                $price=$pricing->cheap_price;
-                break;
-            case "NORMAL":
-                $price=$pricing->expensive_price;
-                break;
-            case "CAMPAINS":
-                $price=$pricing->campains_price;
-                break;
-        }
-        return $price;
-    }
+
 
 
 
