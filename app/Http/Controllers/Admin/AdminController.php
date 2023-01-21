@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Services\CourseService;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\Faq;
@@ -29,42 +30,35 @@ class Response {
 }
 class AdminController extends Controller
 {
-
+    protected $courseService;
+    public function __construct(CourseService $courseService){
+        $this->courseService=$courseService;
+    }
     public function index()
     {
         $userQuantity=User::count();
         $courseQuantity=Course::count();
         $reviews=CourseReview::count();
         $data=new Response($userQuantity,$courseQuantity,$reviews);
-        return view('backoffice.dashboard',[
-            'data'=>$data
-        ]);
+        return view('backoffice.dashboard',compact( 'data'));
     }
-
     public function userlist(){
         return view('backoffice.user.index');
     }
     public function userdetail($id){
         $user=User::find($id);
-        return view('backoffice.user.show',[
-            'user'=>$user
-        ]);
+        return view('backoffice.user.show',compact('user'));
     }
     public function userroles(){
         return view('backoffice.user.addrole');
     }
-
-    //CREATE
     public function categorylist(){
         return view('backoffice.category.index');
     }
     public function categoryshow($categoryid){
         $category=CourseCategory::find($categoryid);
-        return view('backoffice.category.show',[
-            'category'=>$category
-        ]);
+        return view('backoffice.category.show',compact('category'));
     }
-
     public function slideslist(){
         return view('backoffice.slides.index');
     }
@@ -76,14 +70,10 @@ class AdminController extends Controller
     }
     public function faqshow($id){
         $faq=Faq::find($id);
-        if(empty($faq)){
+        if(empty($faq))
             return redirect()->back();
-        }
-        return view('backoffice.faq.show',[
-            'faq'=>$faq
-        ]);
+        return view('backoffice.faq.show',compact('faq'));
     }
-
     public function settings(){
         $settings=SettingModel::first();
         if(empty($settings)){
@@ -140,26 +130,19 @@ class AdminController extends Controller
         $settings->save();
         return redirect()->back()->with('success','Settings updated successfully');
     }
-
     public function themes(){
         return view('backoffice.themes');
     }
-
     public function courses(){
-        $courseList=Course::where('status','<>','DELETED')->get();
-        return view('backoffice.courses.index',[
-            'courseList'=>$courseList
-        ]);
+        $courseList=$this->courseService->GetOnlyStagedCoursesList();
+        return view('backoffice.courses.index',compact('courseList'));
     }
-
     public function createcourse(){
         return view('backoffice.courses.create');
     }
-
     public function favourites(){
         return view('backoffice.favourites.index');
     }
-
     public function contactmessages(){
         return view('backoffice.contact.index');
     }
@@ -172,24 +155,20 @@ class AdminController extends Controller
             'message'=>$message
         ]);
     }
-
     public function userfavourites($userid){
         $favourites=Favourites::where('user_id',$userid)->get();
         return view('backoffice.favourites.index',['favourtiesList'=>$favourites]);
     }
-
     public function usercreditcards($userid){
         $user=User::find($userid);
         return view('backoffice.creditcards.index',['user'=>$user]);
     }
-
     public function shopcart($id){
         $cartItemsList=User::find($id)->shoppingCartItem;
         return view('backoffice.user.cartlist',[
             'cartItemsList'=>$cartItemsList
         ]);
     }
-
     public function topBanner(){
         $topBanner=TopBanner::first();
         if(empty($topBanner)){
@@ -217,7 +196,4 @@ class AdminController extends Controller
         return redirect()->back()->with('success','Top Banner updated successfully');
 
     }
-
-
-
 }

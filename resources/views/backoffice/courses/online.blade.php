@@ -49,7 +49,7 @@
                                             <td>{{$course->lang}}</td>
                                             <td><a class="btn btn-warning" href="
                                             {{route('admin.course_content_page',['courseid'=>$course->course->id])}}
-                                            "><i class="fa-solid fa-video"></i></i></a></td>
+                                            "><i class="fa-solid fa-video"></i></a></td>
                                             <td><a class="btn btn-info" href="
                                             {{route('admin.course.reviews.list',['courseid'=>$course->course->id])}}
                                             ">Reviews</a></td>

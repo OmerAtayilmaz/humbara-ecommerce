@@ -7,6 +7,7 @@ use App\Models\Favourites;
 use App\Models\PurchasedCoursesByUser;
 use App\Models\User;
 use App\Services\Pricing;
+use App\Strategies\ClearCartAfterPaymentSuccess;
 use Illuminate\Http\Request;
 use Auth;
 use Illuminate\Support\Facades\Validator;
@@ -154,6 +155,7 @@ class UserController extends Controller
                $purchasedCourse->course_id=$course->id;
                $purchasedCourse->save();
            }
+           ClearCartAfterPaymentSuccess::ClearUserCart(auth()->user()->getAuthIdentifier());
            return redirect()->route("user.checkoutsuccess");
         }else{
             dd($payment->getErrorMessage());

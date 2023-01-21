@@ -11,12 +11,17 @@ use App\Models\CourseImageGallery;
 use App\Models\CourseQA as CourseQuestions;
 use App\Models\OnlineCourseCatalog;
 use App\Models\StagedCourseCatalog;
+use App\Services\CourseService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Auth;
 
 class CourseController extends Controller
 {
+    protected CourseService $courseService;
+    function __construct(CourseService $courseService){
+        $this->courseService=$courseService;
+    }
     public function course_content_page($courseid){
         return view('backoffice.courses.content',[
             'courseid'=>$courseid
@@ -28,7 +33,6 @@ class CourseController extends Controller
             'course'=>$course
         ]);
     }
-
     public function store(Request $request){
         try{
         $course=new Course();
@@ -76,9 +80,9 @@ class CourseController extends Controller
         $course->save();
         return redirect()->route('admin.courses')->with('success','Course Deleted Successfully');
     }
-
-    //kalıcı olarak silindiğinde cascade çalışıyor
     public function deletePermentantly($courseid){
+        //kalıcı olarak silindiğinde cascade çalışıyor
+
         $course=Course::find($courseid);
         $course->delete();
         return redirect()->route('admin.courses')->with('success','Course Deleted Permentantly');
@@ -92,7 +96,6 @@ class CourseController extends Controller
             'courseid'=>$courseid
         ]);
     }
-
     public function course_questions_detail($courseid,$questionid){
         $question=CourseQuestions::find($questionid);
         return view('backoffice.courses.questiondetail',[
@@ -106,7 +109,6 @@ class CourseController extends Controller
         $question->save();
         return redirect()->back()->with('success','Question Deleted Successfully');
     }
-
     public function course_price_list(){
         $price=CoursePrice::
         where('course_id',request('courseid'))
@@ -141,7 +143,6 @@ class CourseController extends Controller
         $price->save();
         return redirect()->back()->with('success','Price Updated Successfully');
     }
-
     public function course_reviews_list(){
         $courseReviewsList=CourseReview::where('course_id',request('courseid'))
         ->where('status','<>','DELETED')
@@ -185,9 +186,12 @@ class CourseController extends Controller
         $image->save();
         return redirect()->back()->with('success','Image Deleted Successfully');
     }
-
     public function online_courses_list(){
-        $courseList=OnlineCourseCatalog::coursesList();
+        $courseList=OnlineCourseCatalog::with(["course","course.user"])->ActiveCourses()->get();
         return view("backoffice.courses.online",compact("courseList"));
+    }
+    public function course_publish(Request $req,$courseid){
+       $this->courseService->PublishCourse($courseid);
+       return redirect()->back()->with("Başarıyla Publish Edildi, Online Courses kısmında inceleyebilirsiniz");
     }
 }

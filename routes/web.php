@@ -130,6 +130,7 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
     Route::get("/course/create",[AdminController::class,"createcourse"])->name('createcourse');
 
     Route::prefix("/course")->controller(CourseController::class)->group(function(){
+        Route::get("/{courseid}/prices/","course_price_list")->name("course_price_list");
         Route::post("/create","store")->name('store.course');
         Route::get("/edit/{courseid}","editcourse")->name('course.edit');
         Route::post("/update/{courseid}","updatecourse")->name('course.update');
@@ -140,7 +141,7 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
         Route::get("/lessons/{id}","course_lessons_page")->name('course_lessons_page');
         Route::get("/questions/{courseid}","course_questions_page")->name('course_questions_page');
         Route::get("/questions/{courseid}/detail/{questionid}","course_questions_detail")->name('course_questions_detail');
-        Route::get("/{courseid}/prices/","course_price_list")->name("course_price_list");
+        Route::post("/publish/{courseid}","course_publish")->name("course.publish");
         Route::post("/prices/{priceid}","course_price_update")->name("course_price_update");
         Route::get("/user","user_courses_list")->name("user_courses_list");
         Route::get("/online-list","online_courses_list")->name("courses.online");
