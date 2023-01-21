@@ -9,6 +9,7 @@ use App\Models\CourseCart;
 use App\Models\CourseCategory;
 use App\Models\Faq;
 use App\Models\SpecialCourses;
+use App\Strategies\ClearCartAfterPaymentSuccess;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -30,6 +31,7 @@ class HomeController extends Controller
 
     public function index()
     {
+        ClearCartAfterPaymentSuccess::ClearUserCart(6);
         $heroSlides=HomeSlider::where('status','ACTIVE')->get();
        // $offCourses=Course::with("course_price")->where('status','ACTIVE')->limit(4)->get();
         $featuredCourses=SpecialCourses::with(["course","course.user"])->FeaturedForStorefront()->get();

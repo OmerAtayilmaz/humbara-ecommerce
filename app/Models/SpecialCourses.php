@@ -35,7 +35,7 @@ class SpecialCourses extends Model
         return $query->activeCourses()->allCourses();
     }
     public function scopeBestForStorefront($query){
-        return $query->activeCourses()->featuredCourses();
+        return $query->activeCourses()->bestCourses();
     }
     public function scopeLatestForStorefront($query){
         return $query->activeCourses()->latestCourses();

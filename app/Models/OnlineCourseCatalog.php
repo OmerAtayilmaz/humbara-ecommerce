@@ -10,7 +10,7 @@ class OnlineCourseCatalog extends Model
     use HasFactory;
 
     public function course(){
-        return $this->hasOne(Course::class,"id","course_id")->select(["title","id"]);
+        return $this->hasOne(Course::class,"id","course_id");
     }
 
     public function scopeActiveCourses($query){

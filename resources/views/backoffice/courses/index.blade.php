@@ -7,8 +7,14 @@
             <h3 class="m-0 font-weight-bold card-title-text">Staged Course List</h3>
         </div>
         <div class="card-body">
+
             <div class="table-responsive">
                 <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 mb-4">
+                            <a href="{{route('admin.createcourse')}}" class="btn btn-primary btn-large card-btn">Add Course</a>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-sm-12 col-md-6 mb-4">
                             <div class="input-group">
@@ -29,6 +35,7 @@
                                         <th>Q & A</th>
                                         <th>Pricing</th>
                                         <th>Language</th>
+                                        <th>Status</th>
                                         <th>Content</th>
                                         <th>Reviews</th>
                                         <th>Images</th>
@@ -47,9 +54,15 @@
                                             {{route('admin.course_price_list',['courseid'=>$course->id])}}
                                             ">  <i class="fa-solid fa-hand-holding-dollar fa-fw"></i></a></td>
                                         <td>{{$course->lang}}</td>
+                                        <td>
+                                            <form id="delete_form{{$course->id}}" action="{{route('admin.course.publish',['courseid'=>$course->id])}}" method="POST">
+                                                @csrf
+                                                <a class="btn btn-warning" href="javascript:void(0)" onclick="$('#delete_form{{$course->id}}').submit()">PUBLISH</a>
+                                            </form>
+                                        </td>
                                         <td><a class="btn btn-warning" href="
                                             {{route('admin.course_content_page',['courseid'=>$course->id])}}
-                                            "><i class="fa-solid fa-video"></i></i></a></td>
+                                            "><i class="fa-solid fa-video"></i></a></td>
                                         <td><a class="btn btn-info" href="
                                             {{route('admin.course.reviews.list',['courseid'=>$course->id])}}
                                             ">Reviews</a></td>
