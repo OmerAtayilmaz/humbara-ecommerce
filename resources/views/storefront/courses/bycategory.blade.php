@@ -178,7 +178,7 @@
                 @foreach($courseList as $course)
                 <div class="col-12 col-sm-6 col-lg-4">
                 <div class="newproduct-card">
-                    <a href="productdetail.html" class="newproduct-card--link">
+                    <a href="{{route("course.detail",["slug"=>$course->slug,"id"=>$course->id])}}" class="newproduct-card--link">
                     <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
                     <div class="newproduct--off">
                         <span>25% OFF</span>

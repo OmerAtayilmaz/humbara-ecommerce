@@ -29,6 +29,7 @@
                                         <th>Q & A</th>
                                         <th>Pricing</th>
                                         <th>Language</th>
+                                        <th>Unpublish</th>
                                         <th>Content</th>
                                         <th>Reviews</th>
                                         <th>Images</th>
@@ -40,13 +41,15 @@
                                         <tr class="odd">
                                             <td>{{substr($course->course->title,0,80)}}</td>
                                             <td><a class="btn btn-info" href="{{route('admin.usershow',['userid'=>$course->course->user->id])}}">{{$course->course->user->name}}</a></td>
-                                            <td><a class="btn btn-warning" href="
-                                            {{route('admin.course_questions_page',['courseid'=>$course->course->id])}}
-                                            ">Q&A</a></td>
-                                            <td><a class="btn btn-warning" href="
-                                            {{route('admin.course_price_list',['courseid'=>$course->course->id])}}
-                                            ">  <i class="fa-solid fa-hand-holding-dollar fa-fw"></i></a></td>
+                                            <td><a class="btn btn-warning" href="{{route('admin.course_questions_page',['courseid'=>$course->course->id])}}">Q&A</a></td>
+                                            <td><a class="btn btn-warning" href="{{route('admin.course_price_list',['courseid'=>$course->course->id])}}"><i class="fa-solid fa-hand-holding-dollar fa-fw"></i></a></td>
                                             <td>{{$course->lang}}</td>
+                                            <td>
+                                                <form id="delete_form{{$course->id}}" action="{{route('admin.course.unpublish',['courseid'=>$course->course->id])}}" method="POST">
+                                                    @csrf
+                                                    <a class="btn btn-warning" href="javascript:void(0)" onclick="$('#delete_form{{$course->id}}').submit()">UNPUBLISH</a>
+                                                </form>
+                                            </td>
                                             <td><a class="btn btn-warning" href="
                                             {{route('admin.course_content_page',['courseid'=>$course->course->id])}}
                                             "><i class="fa-solid fa-video"></i></a></td>

@@ -194,4 +194,8 @@ class CourseController extends Controller
        $this->courseService->PublishCourse($courseid);
        return redirect()->back()->with("Başarıyla Publish Edildi, Online Courses kısmında inceleyebilirsiniz");
     }
+    public function course_unpublish(Request $req,$courseid){
+        $this->courseService->UnpublishCourse($courseid);
+        return redirect()->back()->with("Başarıyla Unpublish Edildi, Online Courses kataloglarından kaldırıldı");
+    }
 }

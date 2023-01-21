@@ -9,7 +9,7 @@
         @foreach($featuredCourses as $c)
         <div class="col-12 col-sm-6 col-lg-3">
           <div class="newproduct-card">
-            <a href="productdetail.html" class="newproduct-card--link">
+            <a href="{{route("course.detail",["slug"=>$c->course->slug,"id"=>$c->course->id])}}" class="newproduct-card--link">
               <img src="{{Storage::url($c->course->card_image)}}" alt="" />
               <div class="newproduct--off">
                 <span>25% OFF</span>
