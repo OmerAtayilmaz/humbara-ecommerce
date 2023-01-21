@@ -3,11 +3,12 @@ namespace App\Services;
 
 use App\Models\Course;
 use App\Models\OnlineCourseCatalog;
+use App\Models\SpecialCourses;
 
 class CourseService {
 
 
-    public function PublishCourse($id):bool{
+    public function PublishCourse($id):string{
      try{
             $course=Course::find($id);
             $item=new OnlineCourseCatalog();
@@ -24,5 +25,15 @@ class CourseService {
         $onlineCourseIds=OnlineCourseCatalog::pluck("course_id");
         $courseList=Course::whereNotIn('id',$onlineCourseIds)->get();
         return $courseList;
+    }
+    public function UnpublishCourse($id):string{
+
+        try{
+        OnlineCourseCatalog::where('course_id',$id)->delete();
+        SpecialCourses::where('course_id',$id)->delete();
+        return "success";
+        }catch (\Exception $e){
+            return "fail";
+        }
     }
 }

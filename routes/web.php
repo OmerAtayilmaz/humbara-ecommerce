@@ -142,6 +142,7 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
         Route::get("/questions/{courseid}","course_questions_page")->name('course_questions_page');
         Route::get("/questions/{courseid}/detail/{questionid}","course_questions_detail")->name('course_questions_detail');
         Route::post("/publish/{courseid}","course_publish")->name("course.publish");
+        Route::post("/unpublish/{courseid}","course_unpublish")->name("course.unpublish");
         Route::post("/prices/{priceid}","course_price_update")->name("course_price_update");
         Route::get("/user","user_courses_list")->name("user_courses_list");
         Route::get("/online-list","online_courses_list")->name("courses.online");
