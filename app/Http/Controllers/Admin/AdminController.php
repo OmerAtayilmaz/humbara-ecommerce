@@ -14,6 +14,8 @@ use App\Models\Setting as SettingModel;
 use App\Models\ContactMessage;
 use App\Models\Favourites;
 use App\Models\TopBanner;
+use Illuminate\Support\Facades\Cookie;
+use PhpParser\Node\Expr\Cast\Object_;
 
 class Response {
     public $user;
@@ -63,13 +65,13 @@ class AdminController extends Controller
         ]);
     }
 
-    public function slideslist(){ 
+    public function slideslist(){
         return view('backoffice.slides.index');
     }
     public function slideshow(){
         return view('backoffice.slides.show');
     }
-    public function faq(){ 
+    public function faq(){
         return view('backoffice.faq.index');
     }
     public function faqshow($id){
@@ -92,7 +94,7 @@ class AdminController extends Controller
             $settings->c_description='';
             $settings->c_logo='';
             $settings->c_favicon='';
-            $settings->c_email=''; 
+            $settings->c_email='';
             $settings->c_phone='';
             $settings->c_address='';
             $settings->c_facebook='';
@@ -123,7 +125,7 @@ class AdminController extends Controller
         if($request->file('c_favicon')!=null){
             $settings->c_favicon=$request->file('c_favicon')->store('images');
         }
-        $settings->c_email=$request->c_email; 
+        $settings->c_email=$request->c_email;
         $settings->c_phone=$request->c_phone;
         $settings->c_address=$request->c_address;
         $settings->c_facebook=$request->c_facebook;
@@ -180,7 +182,7 @@ class AdminController extends Controller
         $user=User::find($userid);
         return view('backoffice.creditcards.index',['user'=>$user]);
     }
-    
+
     public function shopcart($id){
         $cartItemsList=User::find($id)->shoppingCartItem;
         return view('backoffice.user.cartlist',[
@@ -199,6 +201,7 @@ class AdminController extends Controller
             $topBanner->status='ACTIVE';
             $topBanner->save();
         }
+
         return view('backoffice.top-banner',[
             'topBanner'=>$topBanner
         ]);
@@ -211,10 +214,10 @@ class AdminController extends Controller
         $topBanner->text_en=$req->text_en;
         $topBanner->status=$req->status;
         $topBanner->save();
-        return redirect()->back()->with('success','Top Banner updated successfully');    
-    
+        return redirect()->back()->with('success','Top Banner updated successfully');
+
     }
-   
-    
-  
+
+
+
 }

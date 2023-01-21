@@ -25,6 +25,12 @@
                 <i class="fa-solid fa-photo-film fa-fw"></i>
                 <span>Slides</span></a>
         </li>
+        <!-- Nav Item - Slides -->
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.banner.index')}}">
+                <i class="fa-solid fa-photo-film fa-fw"></i>
+                <span>Top Banner</span></a>
+        </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('admin.userlist')}}">
                 <i class="fas fa-fw fa-users"></i>
@@ -60,8 +66,22 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="{{route('admin.courses.online')}}">Online Catalog Courses</a>
                     <a class="collapse-item" href="{{route('admin.courses')}}">Stage Catalog Courses</a>
-                    <a class="collapse-item" href="{{route('admin.course.featured')}}">Featured Courses</a>
-                    <a class="collapse-item" href="{{route('admin.course.featured')}}">Off Courses</a>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
+                aria-expanded="true" aria-controls="collapseThree">
+                <i class="fas fa-fw fa-book"></i>
+                <span>Special Courses</span>
+            </a>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="{{route('admin.course.special.all')}}">All Courses</a>
+                    <a class="collapse-item" href="{{route('admin.course.special.best')}}">Best Courses</a>
+                    <a class="collapse-item" href="{{route('admin.course.special.latest')}}">Latest Courses</a>
+                    <a class="collapse-item" href="{{route('admin.course.special.featured')}}">Featured Courses</a>
+                    <a class="collapse-item" href="{{route('admin.course.special.off')}}">Off Courses</a>
                 </div>
             </div>
         </li>

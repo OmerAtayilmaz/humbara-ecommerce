@@ -10,18 +10,18 @@
         @foreach($offCourses as $course)
         <div class="col-12 col-sm-6 col-lg-3">
           <div class="newproduct-card">
-            <a href="{{route("course.detail",["slug"=>$course->slug,"id"=>$course->id])}}" class="newproduct-card--link">
-              <img src="{{Storage::url($course->card_image)}}" alt=" {{$course->title . $course->description}}" />
+            <a href="{{route("course.detail",["slug"=>$course->course->slug,"id"=>$course->course->id])}}" class="newproduct-card--link">
+              <img src="{{Storage::url($course->course->card_image)}}" alt=" {{$course->title . $course->description}}" />
               <div class="newproduct--off">
-                <span>{{App\Services\Pricing::printCoursePrice($course->course_price)}} </span>
+                <span>{{App\Services\Pricing::printCoursePrice($course->course->course_price)}} </span>
               </div>
               <div class="newproduct--content">
                 <div class="container d-flex flex-column mt-3">
                   <small class="color-gray">Category</small>
-                  <span class="color-primary text-decoration-none newproduct--title">{{$course->title}}</span>
+                  <span class="color-primary text-decoration-none newproduct--title">{{$course->course->title}}</span>
                   <div class="creator">
                     <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
-                    <span class="color-gray">by {{$course->course_owner}}</span>
+                    <span class="color-gray">by {{$course->course->user->name}}</span>
                   </div>
                 </div>
                 <hr />
@@ -32,7 +32,7 @@
                       <span>4.7</span> <small>(174)</small>
                     </div>
                     <div class="newproduct-price">
-                      <span>₺{{App\Services\Pricing::printCoursePrice($course->course_price)}}</span>
+                      <span>₺{{App\Services\Pricing::printCoursePrice($course->course->course_price)}}</span>     </span>
                     </div>
                   </div>
                 </div>

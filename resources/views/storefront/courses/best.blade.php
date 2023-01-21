@@ -221,270 +221,45 @@
         </div>
         <div class="col-12 col-lg-9">
           <div class="row" style="--bs-gutter-y: 1rem">
-            <div class="col-12 col-sm-6 col-lg-4">
-              <div class="newproduct-card">
-                <a href="productdetail.html" class="newproduct-card--link">
-                  <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
-                  <div class="newproduct--off">
-                    <span>25% OFF</span>
-                  </div>
-                  <div class="newproduct--content">
-                    <div class="container d-flex flex-column mt-3">
-                      <small class="color-gray">Category</small>
-                      <span class="color-primary text-decoration-none newproduct--title">Full 3D Design Design Design
-                        Design Design Course</span>
-                      <div class="creator">
-                        <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
-                        <span class="color-gray">by John Doe</span>
+            @foreach($courses as $item)
+                  <div class="col-12 col-sm-6 col-lg-4">
+                      <div class="newproduct-card">
+                          <a href="productdetail.html" class="newproduct-card--link">
+                              <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
+                              <div class="newproduct--off">
+                                  <span>25% OFF</span>
+                              </div>
+                              <div class="newproduct--content">
+                                  <div class="container d-flex flex-column mt-3">
+                                      <small class="color-gray">Category</small>
+                                      <span
+                                          class="color-primary text-decoration-none newproduct--title"
+                                      >{{$item->course->title}}</span
+                                      >
+                                      <div class="creator">
+                                          <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
+                                          <span class="color-gray">BySomeOne</span>
+                                      </div>
+                                  </div>
+                                  <hr />
+                                  <div class="container mb-3">
+                                      <div
+                                          class="d-flex justify-content-between align-items-center"
+                                      >
+                                          <div class="stars">
+                                              <i class="fa-solid fa-star color-star"></i>
+                                              <span>4.7</span> <small>(174)</small>
+                                          </div>
+                                          <div class="newproduct-price">
+                                              <span>₺125.99</span>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </a>
                       </div>
-                    </div>
-                    <hr />
-                    <div class="container mb-3">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="stars">
-                          <i class="fa-solid fa-star color-star"></i>
-                          <span>4.7</span> <small>(174)</small>
-                        </div>
-                        <div class="newproduct-price">
-                          <span>₺125.99</span>
-                        </div>
-                      </div>
-                    </div>
                   </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4">
-              <div class="newproduct-card">
-                <a href="productdetail.html" class="newproduct-card--link">
-                  <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
-                  <div class="newproduct--off">
-                    <span>25% OFF</span>
-                  </div>
-                  <div class="newproduct--content">
-                    <div class="container d-flex flex-column mt-3">
-                      <small class="color-gray">Category</small>
-                      <span class="color-primary text-decoration-none newproduct--title">Full 3D Design Design Design
-                        Design Design Course</span>
-                      <div class="creator">
-                        <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
-                        <span class="color-gray">by John Doe</span>
-                      </div>
-                    </div>
-                    <hr />
-                    <div class="container mb-3">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="stars">
-                          <i class="fa-solid fa-star color-star"></i>
-                          <span>4.7</span> <small>(174)</small>
-                        </div>
-                        <div class="newproduct-price">
-                          <span>₺125.99</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4">
-              <div class="newproduct-card">
-                <a href="productdetail.html" class="newproduct-card--link">
-                  <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
-                  <div class="newproduct--off">
-                    <span>25% OFF</span>
-                  </div>
-                  <div class="newproduct--content">
-                    <div class="container d-flex flex-column mt-3">
-                      <small class="color-gray">Category</small>
-                      <span class="color-primary text-decoration-none newproduct--title">Full 3D Design Design Design
-                        Design Design Course</span>
-                      <div class="creator">
-                        <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
-                        <span class="color-gray">by John Doe</span>
-                      </div>
-                    </div>
-                    <hr />
-                    <div class="container mb-3">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="stars">
-                          <i class="fa-solid fa-star color-star"></i>
-                          <span>4.7</span> <small>(174)</small>
-                        </div>
-                        <div class="newproduct-price">
-                          <span>₺125.99</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4">
-              <div class="newproduct-card">
-                <a href="productdetail.html" class="newproduct-card--link">
-                  <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
-                  <div class="newproduct--off">
-                    <span>25% OFF</span>
-                  </div>
-                  <div class="newproduct--content">
-                    <div class="container d-flex flex-column mt-3">
-                      <small class="color-gray">Category</small>
-                      <span class="color-primary text-decoration-none newproduct--title">Full 3D Design Design Design
-                        Design Design Course</span>
-                      <div class="creator">
-                        <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
-                        <span class="color-gray">by John Doe</span>
-                      </div>
-                    </div>
-                    <hr />
-                    <div class="container mb-3">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="stars">
-                          <i class="fa-solid fa-star color-star"></i>
-                          <span>4.7</span> <small>(174)</small>
-                        </div>
-                        <div class="newproduct-price">
-                          <span>₺125.99</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4">
-              <div class="newproduct-card">
-                <a href="productdetail.html" class="newproduct-card--link">
-                  <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
-                  <div class="newproduct--off">
-                    <span>25% OFF</span>
-                  </div>
-                  <div class="newproduct--content">
-                    <div class="container d-flex flex-column mt-3">
-                      <small class="color-gray">Category</small>
-                      <span class="color-primary text-decoration-none newproduct--title">Full 3D Design Design Design
-                        Design Design Course</span>
-                      <div class="creator">
-                        <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
-                        <span class="color-gray">by John Doe</span>
-                      </div>
-                    </div>
-                    <hr />
-                    <div class="container mb-3">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="stars">
-                          <i class="fa-solid fa-star color-star"></i>
-                          <span>4.7</span> <small>(174)</small>
-                        </div>
-                        <div class="newproduct-price">
-                          <span>₺125.99</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4">
-              <div class="newproduct-card">
-                <a href="productdetail.html" class="newproduct-card--link">
-                  <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
-                  <div class="newproduct--off">
-                    <span>25% OFF</span>
-                  </div>
-                  <div class="newproduct--content">
-                    <div class="container d-flex flex-column mt-3">
-                      <small class="color-gray">Category</small>
-                      <span class="color-primary text-decoration-none newproduct--title">Full 3D Design Design Design
-                        Design Design Course</span>
-                      <div class="creator">
-                        <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
-                        <span class="color-gray">by John Doe</span>
-                      </div>
-                    </div>
-                    <hr />
-                    <div class="container mb-3">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="stars">
-                          <i class="fa-solid fa-star color-star"></i>
-                          <span>4.7</span> <small>(174)</small>
-                        </div>
-                        <div class="newproduct-price">
-                          <span>₺125.99</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4">
-              <div class="newproduct-card">
-                <a href="productdetail.html" class="newproduct-card--link">
-                  <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
-                  <div class="newproduct--off">
-                    <span>25% OFF</span>
-                  </div>
-                  <div class="newproduct--content">
-                    <div class="container d-flex flex-column mt-3">
-                      <small class="color-gray">Category</small>
-                      <span class="color-primary text-decoration-none newproduct--title">Full 3D Design Design Design
-                        Design Design Course</span>
-                      <div class="creator">
-                        <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
-                        <span class="color-gray">by John Doe</span>
-                      </div>
-                    </div>
-                    <hr />
-                    <div class="container mb-3">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="stars">
-                          <i class="fa-solid fa-star color-star"></i>
-                          <span>4.7</span> <small>(174)</small>
-                        </div>
-                        <div class="newproduct-price">
-                          <span>₺125.99</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4">
-              <div class="newproduct-card">
-                <a href="productdetail.html" class="newproduct-card--link">
-                  <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
-                  <div class="newproduct--off">
-                    <span>25% OFF</span>
-                  </div>
-                  <div class="newproduct--content">
-                    <div class="container d-flex flex-column mt-3">
-                      <small class="color-gray">Category</small>
-                      <span class="color-primary text-decoration-none newproduct--title">Full 3D Design Design Design
-                        Design Design Course</span>
-                      <div class="creator">
-                        <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
-                        <span class="color-gray">by John Doe</span>
-                      </div>
-                    </div>
-                    <hr />
-                    <div class="container mb-3">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="stars">
-                          <i class="fa-solid fa-star color-star"></i>
-                          <span>4.7</span> <small>(174)</small>
-                        </div>
-                        <div class="newproduct-price">
-                          <span>₺125.99</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
+              @endforeach
             <div class="col-12 col-sm-6 col-lg-4">
               <div class="newproduct-card">
                 <a href="productdetail.html" class="newproduct-card--link">

@@ -14,4 +14,7 @@ class CourseCategory extends Model
     public function user(){
         return $this->belongsTo('App\Models\User','creator_id');
     }
+    public function scopeActiveCategories($query){
+        return $query->where('status','active');
+    }
 }

@@ -6,8 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Mail\RegisterationMail;
 use App\Mail\ResetPasswordMail;
 use App\Models\CourseCart;
+use App\Models\CourseCategory;
 use App\Models\Faq;
-use App\Models\FeaturedCourses;
+use App\Models\SpecialCourses;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -30,22 +31,33 @@ class HomeController extends Controller
     public function index()
     {
         $heroSlides=HomeSlider::where('status','ACTIVE')->get();
-        $offCourses=Course::with("course_price")->where('status','ACTIVE')->limit(4)->get();
-        $featuredCourses=FeaturedCourses::where('status','active')->limit(4)->get();
-        $faqs=Faq::where('status','ACTIVE')->limit(4)->get();
-        return view('storefront.home.index',compact("offCourses","heroSlides","featuredCourses","faqs"));
+       // $offCourses=Course::with("course_price")->where('status','ACTIVE')->limit(4)->get();
+        $featuredCourses=SpecialCourses::with(["course","course.user"])->FeaturedForStorefront()->get();
+        $offCourses=SpecialCourses::with(["course","course.user"])->OffForStorefront()->get();
+        $faqs=Faq::FaqsForStoreFront()->get();
+        return view('storefront.home.index',compact("offCourses","heroSlides","featuredCourses","faqs","featuredCourses"));
     }
     public function offcourses(){
         return view("storefront.courses.show-all");
     }
     public function allcourses(){
-        return  view('storefront.courses.all');
+        /*["course"=>[
+            "user"
+        ]*/
+        $courses=SpecialCourses::with("course")->allForStorefront()->get();
+        $categories=CourseCategory::ActiveCategories()->select("id","title_en","title_tr","slug_en","slug_tr")->get();
+      //  dd(strlen($courses));
+        return  view('storefront.courses.all',compact("courses","categories"));
     }
     public function bestcourses(){
-        return view('storefront.courses.best');
+        $courses=SpecialCourses::with("course")->BestForStorefront()->get();
+        $categories=CourseCategory::ActiveCategories()->select("id","title_en","title_tr","slug_en","slug_tr")->get();
+        return view('storefront.courses.best',compact("courses","categories"));
     }
     public function latestcourses(){
-        return view('storefront.courses.latest');
+        $courses=SpecialCourses::with("course")->LatestForStorefront()->get();
+        $categories=CourseCategory::ActiveCategories()->select("id","title_en","title_tr","slug_en","slug_tr")->get();
+        return view('storefront.courses.latest',compact("courses","categories"));
     }
     public function allassets(){
         return  view('storefront.assets.all');

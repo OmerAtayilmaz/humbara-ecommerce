@@ -13,8 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('off_courses', function (Blueprint $table) {
-            $table->id();
+        Schema::create('special_courses', function (Blueprint $table) {
+            $table->id()->autoIncrement();
+            $table->foreignId("course_id")->nullable();
+            $table->enum("category",["all-course","best-course","latest-course","special-course","off-course"]);
+            $table->enum("status",['active','deleted','inactive']);
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('off_courses');
+        Schema::dropIfExists('special_courses');
     }
 };

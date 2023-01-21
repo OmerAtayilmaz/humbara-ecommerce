@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CourseOrder;
+use App\Models\Favourites;
 use App\Models\PurchasedCoursesByUser;
 use App\Models\User;
 use App\Services\Pricing;
@@ -166,7 +167,10 @@ class UserController extends Controller
         return view('storefront.user.checkout-fail');
     }
     public function courses(){
-        return view('storefront.user.courses');
+        $purchasedCourses=PurchasedCoursesByUser::with(["user","course"])->get();
+        $favouritedCourses=Favourites::with(["user","course"])->ActiveCourses()->get();
+        $archivedCourses=null;
+        return view('storefront.user.courses',compact('purchasedCourses','favouritedCourses'));
     }
     public function logout(Request $request){
         if(!Auth::user())

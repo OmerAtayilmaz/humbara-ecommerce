@@ -20,7 +20,7 @@
                   <span class="color-primary text-decoration-none newproduct--title">{{$c->course->title}}</span>
                   <div class="creator">
                     <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
-                    <span class="color-gray">by John Doe</span>
+                    <span class="color-gray">by {{$c->course->user->name}}</span>
                   </div>
                 </div>
                 <hr />

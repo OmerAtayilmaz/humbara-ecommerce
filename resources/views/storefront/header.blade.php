@@ -6,11 +6,11 @@
           <span class="color-dark fs-5">
             <i class="fa-solid fa-bullhorn"></i>
           </span>
-          <p class="m-0 ms-2 text-white">{{$topBanner->text_tr}}</p>
+          <p class="m-0 ms-2 text-white">{{$topBanner->title}}</p>
         </div>
         <div class="flex-grow-1 m-0">
           <h5 class="text-white text-center m-0">
-           {{$topBanner->title_tr}}
+           {{$topBanner->text}}
           </h5>
         </div>
         <div class="d-none d-lg-block">

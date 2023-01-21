@@ -14,7 +14,7 @@ class Faq extends Model
     //erişilemez
     protected $guarded=['id'];
 
-    
+
     /*
     protected $table= 'saygaAdı'; tablo adı farklı ise
     protected $primaryKey='id'; id farklı ise
@@ -23,5 +23,12 @@ class Faq extends Model
     use HasFactory;
     public function user(){ //fonksiyon adı tablo modeli adı olmak zorundadır!
         return $this->belongsTo(User::class,'created_by','id'); //birinci parametre Faq'dak isim, diğer ise user'daki id
+    }
+
+    public function scopeActiveFaqs($query){
+        return $query->where('status','active');
+    }
+    public function scopeFaqsForStorefront($query){
+        return $query->ActiveFaqs()->select("id","question","answer","priority");
     }
 }
