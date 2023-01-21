@@ -10,6 +10,9 @@ class PurchasedCoursesByUser extends Model
     use HasFactory;
 
     public function user(){
-        return $this->belongsToMany(User::class);
+        return $this->hasOne(User::class,"id","user_id")->select(["id","name"]);
+    }
+    public function course(){
+        return $this->hasOne(Course::class,"id","course_id")->select(["id","title"]);
     }
 }

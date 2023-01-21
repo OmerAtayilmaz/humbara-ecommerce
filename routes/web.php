@@ -7,7 +7,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\CouponsController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\Admin\FeaturedCoursesController;
+use App\Http\Controllers\Admin\SpecialCoursesController;
 use App\Http\Controllers\Home\CourseController as HomeCourseController;
 /* HOME ROUTES */
 Route::middleware("storefront")->group(function(){
@@ -89,7 +89,6 @@ Route::middleware(['auth',"verified"])->prefix('user')->controller(UserControlle
     Route::post("checkout","course_checkout_payment"); //sepette satın ala tıklandığında açılacak ödeme sayfası
     Route::get("checkout/success","checkoutsuccess")->name("checkoutsuccess");
     Route::get("checkout/fail","checkoutfail")->name("checkoutfail");
-    Route::get("/courses","courses")->name("courses");
     Route::get("/logout","logout")->name("logout");
 });
 });
@@ -159,8 +158,14 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
             Route::get("/delete/{imageid}","course_images_delete")->name("delete");
         });
 
-        Route::prefix("featured")->controller(FeaturedCoursesController::class)->name("course.featured")->group(function(){
-            Route::get("/","index");
+
+        Route::prefix("special")->controller(SpecialCoursesController::class)->name("course.special")->group(function(){
+            Route::get("/all","all_courses_index")->name(".all");
+            Route::get("/best","best_courses_index")->name(".best");
+            Route::get("/latest","latest_courses_index")->name(".latest");
+            Route::get("/featured","featured_courses_index")->name(".featured");
+            Route::get("/off","off_courses_index")->name(".off");
+
             Route::post("/","store")->name('.store');
             Route::get("/delete/{id}","destroy")->name('.destroy');
             Route::get("/edit/{id}","update")->name('.update');

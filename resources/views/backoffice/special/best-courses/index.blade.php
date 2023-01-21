@@ -1,6 +1,6 @@
 @extends('layouts.backoffice')
 @section('content')
-    @include("backoffice.featured.show")
+    @include("backoffice.special.off-courses.show",['courses'=>$online_courses])
     <!-- Begin Page Content -->
     <div class="container-fluid">
         <div class="card shadow mb-4">
@@ -13,7 +13,9 @@
                         <div class="row">
                             <div class="col-sm-12 col-md-6 mb-4">
                                 <div class="input-group">
-                                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                    <input type="text" class="form-control bg-light border-0 small"
+                                           placeholder="Search for..." aria-label="Search"
+                                           aria-describedby="basic-addon2">
                                     <div class="input-group-append">
                                         <button class="btn btn-primary search-nav" type="button">
                                             <i class="fas fa-search fa-sm"></i>
@@ -22,7 +24,9 @@
                                 </div>
                             </div>
                             <div class="col-sm-12">
-                                <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                                <table class="table table-bordered dataTable" id="dataTable" width="100%"
+                                       cellspacing="0" role="grid" aria-describedby="dataTable_info"
+                                       style="width: 100%;">
                                     <thead>
                                     <tr role="row">
                                         <th>Course Title</th>
@@ -42,8 +46,12 @@
                                             <td>{{$item->created_at}}</td>
                                             <td>{{$item->updated_at}}</td>
                                             <td class="d-flex justify-content-between align-items-center">
-                                                <a  href="{{route('admin.course.featured.destroy',['id'=>$item->id])}}" onclick="return confirm('are you sure?')"><i class="fas fa-trash fa-lg text-danger"></i></a>
-                                                <a class="btn btn-warning"  href="{{route('admin.course.featured.update',['id'=>$item->id])}}">Update Status</a>
+                                                <a href="{{route('admin.course.special.destroy',['id'=>$item->id])}}"
+                                                   onclick="return confirm('are you sure?')"><i
+                                                        class="fas fa-trash fa-lg text-danger"></i></a>
+                                                <a class="btn btn-warning"
+                                                   href="{{route('admin.course.special.update',['id'=>$item->id])}}">Update
+                                                    Status</a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -54,9 +62,18 @@
                         <div class="row justify-content-center">
                             <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
                                 <ul class="pagination">
-                                    <li class="paginate_button page-item previous disabled" id="dataTable_previous"><a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
-                                    <li class="paginate_button page-item active"><a href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
-                                    <li class="paginate_button page-item next disabled" id="dataTable_next"><a href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0" class="page-link">Next</a></li>
+                                    <li class="paginate_button page-item previous disabled" id="dataTable_previous"><a
+                                            href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0"
+                                            class="page-link">Previous</a></li>
+                                    <li class="paginate_button page-item active"><a href="#" aria-controls="dataTable"
+                                                                                    data-dt-idx="1" tabindex="0"
+                                                                                    class="page-link">1</a></li>
+                                    <li class="paginate_button page-item next disabled" id="dataTable_next"><a href="#"
+                                                                                                               aria-controls="dataTable"
+                                                                                                               data-dt-idx="2"
+                                                                                                               tabindex="0"
+                                                                                                               class="page-link">Next</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

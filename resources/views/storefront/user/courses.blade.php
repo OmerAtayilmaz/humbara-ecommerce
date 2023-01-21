@@ -77,7 +77,7 @@
               aria-controls="nav-contact"
               aria-selected="false"
             >
-              Listelerim
+              Arşiv
             </button>
           </div>
         </nav>
@@ -148,7 +148,8 @@
               </div>
             </div>
             <div class="courses-list row">
-              <div class="course-card col-sm-6 col-md-4 col-lg-3">
+              @foreach($purchasedCourses as $course)
+                <div class="course-card col-sm-6 col-md-4 col-lg-3">
                 <div class="link"></div>
                 <a class="course-card--link">
                   <div class="card--image">
@@ -161,7 +162,7 @@
                     </span>
                   </div>
                   <div class="card--detail">
-                    <h2>Complete C# Unity Game Developer</h2>
+                    <h2>{{$course->course->title}}</h2>
                     <p>Rick Davidson</p>
                     <div class="progress">
                       <div
@@ -210,503 +211,9 @@
                   </div>
                 </a>
               </div>
+              @endforeach
               <div class="course-card col-sm-6 col-md-4 col-lg-3">
                 <div class="link"></div>
-                <a class="course-card--link">
-                  <div class="card--image">
-                    <img src="{{asset('assets/home')}}/assets/images/fp-image.png" alt="" />
-                    <span
-                      id="image-video-icon"
-                      class="material-symbols-outlined"
-                    >
-                      play_circle
-                    </span>
-                  </div>
-                  <div class="card--detail">
-                    <h2>Complete C# Unity Game Developer</h2>
-                    <p>Rick Davidson</p>
-                    <div class="progress">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        aria-label="Example with label"
-                        style="width: 25%"
-                        aria-valuenow="25"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      >
-                        25%
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card--options">
-                    <div class="card-option__icon">
-                      <i
-                        id="option-icon"
-                        class="fa-solid fa-ellipsis-vertical"
-                      ></i>
-                    </div>
-                    <div class="card-option__content">
-                      <div class="content-lists">
-                        <p id="list-header">Listeler</p>
-                        <a href="#">List-1</a>
-                        <a href="#">List-2</a>
-                        <a href="#">List-3</a>
-                      </div>
-                      <hr />
-                      <div class="content-choices items">
-                        <a class="ch-item">
-                          <i class="fa-solid fa-share"></i>
-                          <p>Share</p>
-                        </a>
-                        <a class="ch-item">
-                          <i class="fa-solid fa-plus"></i>
-                          <p>Yeni Liste Oluştur</p>
-                        </a>
-                        <a class="ch-item">
-                          <i class="fa-solid fa-heart"></i>
-                          <p>Favorilere Ekle</p>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="course-card col-sm-6 col-md-4 col-lg-3">
-                <div class="link"></div>
-                <a class="course-card--link">
-                  <div class="card--image">
-                    <img src="{{asset('assets/home')}}/assets/images/fp-image.png" alt="" />
-                    <span
-                      id="image-video-icon"
-                      class="material-symbols-outlined"
-                    >
-                      play_circle
-                    </span>
-                  </div>
-                  <div class="card--detail">
-                    <h2>Complete C# Unity Game Developer</h2>
-                    <p>Rick Davidson</p>
-                    <div class="progress">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        aria-label="Example with label"
-                        style="width: 25%"
-                        aria-valuenow="25"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      >
-                        25%
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card--options">
-                    <div class="card-option__icon">
-                      <i
-                        id="option-icon"
-                        class="fa-solid fa-ellipsis-vertical"
-                      ></i>
-                    </div>
-                    <div class="card-option__content">
-                      <div class="content-lists">
-                        <p id="list-header">Listeler</p>
-                        <a href="#">List-1</a>
-                        <a href="#">List-2</a>
-                        <a href="#">List-3</a>
-                      </div>
-                      <hr />
-                      <div class="content-choices items">
-                        <a class="ch-item">
-                          <i class="fa-solid fa-share"></i>
-                          <p>Share</p>
-                        </a>
-                        <a class="ch-item">
-                          <i class="fa-solid fa-plus"></i>
-                          <p>Yeni Liste Oluştur</p>
-                        </a>
-                        <a class="ch-item">
-                          <i class="fa-solid fa-heart"></i>
-                          <p>Favorilere Ekle</p>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="course-card col-sm-6 col-md-4 col-lg-3">
-                <div class="link"></div>
-                <a class="course-card--link">
-                  <div class="card--image">
-                    <img src="{{asset('assets/home')}}/assets/images/fp-image.png" alt="" />
-                    <span
-                      id="image-video-icon"
-                      class="material-symbols-outlined"
-                    >
-                      play_circle
-                    </span>
-                  </div>
-                  <div class="card--detail">
-                    <h2>Complete C# Unity Game Developer</h2>
-                    <p>Rick Davidson</p>
-                    <div class="progress">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        aria-label="Example with label"
-                        style="width: 25%"
-                        aria-valuenow="25"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      >
-                        25%
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card--options">
-                    <div class="card-option__icon">
-                      <i
-                        id="option-icon"
-                        class="fa-solid fa-ellipsis-vertical"
-                      ></i>
-                    </div>
-                    <div class="card-option__content">
-                      <div class="content-lists">
-                        <p id="list-header">Listeler</p>
-                        <a href="#">List-1</a>
-                        <a href="#">List-2</a>
-                        <a href="#">List-3</a>
-                      </div>
-                      <hr />
-                      <div class="content-choices items">
-                        <a class="ch-item">
-                          <i class="fa-solid fa-share"></i>
-                          <p>Share</p>
-                        </a>
-                        <a class="ch-item">
-                          <i class="fa-solid fa-plus"></i>
-                          <p>Yeni Liste Oluştur</p>
-                        </a>
-                        <a class="ch-item">
-                          <i class="fa-solid fa-heart"></i>
-                          <p>Favorilere Ekle</p>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="course-card col-sm-6 col-md-4 col-lg-3">
-                <div class="link"></div>
-                <a class="course-card--link">
-                  <div class="card--image">
-                    <img src="{{asset('assets/home')}}/assets/images/fp-image.png" alt="" />
-                    <span
-                      id="image-video-icon"
-                      class="material-symbols-outlined"
-                    >
-                      play_circle
-                    </span>
-                  </div>
-                  <div class="card--detail">
-                    <h2>Complete C# Unity Game Developer</h2>
-                    <p>Rick Davidson</p>
-                    <div class="progress">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        aria-label="Example with label"
-                        style="width: 25%"
-                        aria-valuenow="25"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      >
-                        25%
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card--options">
-                    <div class="card-option__icon">
-                      <i
-                        id="option-icon"
-                        class="fa-solid fa-ellipsis-vertical"
-                      ></i>
-                    </div>
-                    <div class="card-option__content">
-                      <div class="content-lists">
-                        <p id="list-header">Listeler</p>
-                        <a href="#">List-1</a>
-                        <a href="#">List-2</a>
-                        <a href="#">List-3</a>
-                      </div>
-                      <hr />
-                      <div class="content-choices items">
-                        <a class="ch-item">
-                          <i class="fa-solid fa-share"></i>
-                          <p>Share</p>
-                        </a>
-                        <a class="ch-item">
-                          <i class="fa-solid fa-plus"></i>
-                          <p>Yeni Liste Oluştur</p>
-                        </a>
-                        <a class="ch-item">
-                          <i class="fa-solid fa-heart"></i>
-                          <p>Favorilere Ekle</p>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="course-card col-sm-6 col-md-4 col-lg-3">
-                <div class="link"></div>
-                <a class="course-card--link">
-                  <div class="card--image">
-                    <img src="{{asset('assets/home')}}/assets/images/fp-image.png" alt="" />
-                    <span
-                      id="image-video-icon"
-                      class="material-symbols-outlined"
-                    >
-                      play_circle
-                    </span>
-                  </div>
-                  <div class="card--detail">
-                    <h2>Complete C# Unity Game Developer</h2>
-                    <p>Rick Davidson</p>
-                    <div class="progress">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        aria-label="Example with label"
-                        style="width: 25%"
-                        aria-valuenow="25"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      >
-                        25%
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card--options">
-                    <div class="card-option__icon">
-                      <i
-                        id="option-icon"
-                        class="fa-solid fa-ellipsis-vertical"
-                      ></i>
-                    </div>
-                    <div class="card-option__content">
-                      <div class="content-lists">
-                        <p id="list-header">Listeler</p>
-                        <a href="#">List-1</a>
-                        <a href="#">List-2</a>
-                        <a href="#">List-3</a>
-                      </div>
-                      <hr />
-                      <div class="content-choices items">
-                        <a class="ch-item">
-                          <i class="fa-solid fa-share"></i>
-                          <p>Share</p>
-                        </a>
-                        <a class="ch-item">
-                          <i class="fa-solid fa-plus"></i>
-                          <p>Yeni Liste Oluştur</p>
-                        </a>
-                        <a class="ch-item">
-                          <i class="fa-solid fa-heart"></i>
-                          <p>Favorilere Ekle</p>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="course-card col-sm-6 col-md-4 col-lg-3">
-                <div class="link"></div>
-                <a class="course-card--link">
-                  <div class="card--image">
-                    <img src="{{asset('assets/home')}}/assets/images/fp-image.png" alt="" />
-                    <span
-                      id="image-video-icon"
-                      class="material-symbols-outlined"
-                    >
-                      play_circle
-                    </span>
-                  </div>
-                  <div class="card--detail">
-                    <h2>Complete C# Unity Game Developer</h2>
-                    <p>Rick Davidson</p>
-                    <div class="progress">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        aria-label="Example with label"
-                        style="width: 25%"
-                        aria-valuenow="25"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      >
-                        25%
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card--options">
-                    <div class="card-option__icon">
-                      <i
-                        id="option-icon"
-                        class="fa-solid fa-ellipsis-vertical"
-                      ></i>
-                    </div>
-                    <div class="card-option__content">
-                      <div class="content-lists">
-                        <p id="list-header">Listeler</p>
-                        <a href="#">List-1</a>
-                        <a href="#">List-2</a>
-                        <a href="#">List-3</a>
-                      </div>
-                      <hr />
-                      <div class="content-choices items">
-                        <a class="ch-item">
-                          <i class="fa-solid fa-share"></i>
-                          <p>Share</p>
-                        </a>
-                        <a class="ch-item">
-                          <i class="fa-solid fa-plus"></i>
-                          <p>Yeni Liste Oluştur</p>
-                        </a>
-                        <a class="ch-item">
-                          <i class="fa-solid fa-heart"></i>
-                          <p>Favorilere Ekle</p>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="course-card col-sm-6 col-md-4 col-lg-3">
-                <div class="link"></div>
-                <a class="course-card--link">
-                  <div class="card--image">
-                    <img src="{{asset('assets/home')}}/assets/images/fp-image.png" alt="" />
-                    <span
-                      id="image-video-icon"
-                      class="material-symbols-outlined"
-                    >
-                      play_circle
-                    </span>
-                  </div>
-                  <div class="card--detail">
-                    <h2>Complete C# Unity Game Developer</h2>
-                    <p>Rick Davidson</p>
-                    <div class="progress">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        aria-label="Example with label"
-                        style="width: 25%"
-                        aria-valuenow="25"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      >
-                        25%
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card--options">
-                    <div class="card-option__icon">
-                      <i
-                        id="option-icon"
-                        class="fa-solid fa-ellipsis-vertical"
-                      ></i>
-                    </div>
-                    <div class="card-option__content">
-                      <div class="content-lists">
-                        <p id="list-header">Listeler</p>
-                        <a href="#">List-1</a>
-                        <a href="#">List-2</a>
-                        <a href="#">List-3</a>
-                      </div>
-                      <hr />
-                      <div class="content-choices items">
-                        <a class="ch-item">
-                          <i class="fa-solid fa-share"></i>
-                          <p>Share</p>
-                        </a>
-                        <a class="ch-item">
-                          <i class="fa-solid fa-plus"></i>
-                          <p>Yeni Liste Oluştur</p>
-                        </a>
-                        <a class="ch-item">
-                          <i class="fa-solid fa-heart"></i>
-                          <p>Favorilere Ekle</p>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="course-card col-sm-6 col-md-4 col-lg-3">
-                <div class="link"></div>
-                <a class="course-card--link">
-                  <div class="card--image">
-                    <img src="{{asset('assets/home')}}/assets/images/fp-image.png" alt="" />
-                    <span
-                      id="image-video-icon"
-                      class="material-symbols-outlined"
-                    >
-                      play_circle
-                    </span>
-                  </div>
-                  <div class="card--detail">
-                    <h2>Complete C# Unity Game Developer</h2>
-                    <p>Rick Davidson</p>
-                    <div class="progress">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        aria-label="Example with label"
-                        style="width: 25%"
-                        aria-valuenow="25"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      >
-                        25%
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card--options">
-                    <div class="card-option__icon">
-                      <i
-                        id="option-icon"
-                        class="fa-solid fa-ellipsis-vertical"
-                      ></i>
-                    </div>
-                    <div class="card-option__content">
-                      <div class="content-lists">
-                        <p id="list-header">Listeler</p>
-                        <a href="#">List-1</a>
-                        <a href="#">List-2</a>
-                        <a href="#">List-3</a>
-                      </div>
-                      <hr />
-                      <div class="content-choices items">
-                        <a class="ch-item">
-                          <i class="fa-solid fa-share"></i>
-                          <p>Share</p>
-                        </a>
-                        <a class="ch-item">
-                          <i class="fa-solid fa-plus"></i>
-                          <p>Yeni Liste Oluştur</p>
-                        </a>
-                        <a class="ch-item">
-                          <i class="fa-solid fa-heart"></i>
-                          <p>Favorilere Ekle</p>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="course-card col-sm-6 col-md-4 col-lg-3">
                 <a class="course-card--link">
                   <div class="card--image">
                     <img src="{{asset('assets/home')}}/assets/images/fp-image.png" alt="" />
@@ -860,7 +367,8 @@
               </div>
             </div>
             <div class="courses-list row">
-              <div class="course-card favorite col-sm-6 col-md-4 col-lg-3">
+              @foreach($favouritedCourses as $course)
+               <div class="course-card favorite col-sm-6 col-md-4 col-lg-3">
                 <a href="#" class="course-card--link">
                   <div class="card--image">
                     <img src="{{asset('assets/home')}}/assets/images/fp-image.png" alt="" />
@@ -872,7 +380,7 @@
                   </div>
                   <i class="favorite-icon fa-solid fa-heart"></i>
                   <div class="card--detail">
-                    <h2>Complete C# Unity Game Developer</h2>
+                    <h2>{{$course->course->title}}</h2>
                     <p>Rick Davidson</p>
                     <hr />
                     <div class="container">
@@ -891,130 +399,7 @@
                   </div>
                 </a>
               </div>
-              <div class="course-card favorite col-sm-6 col-md-4 col-lg-3">
-                <a href="#" class="course-card--link">
-                  <div class="card--image">
-                    <img src="{{asset('assets/home')}}/assets/images/fp-image.png" alt="" />
-                    <div
-                      class="newproduct--off d-flex align-items-center justify-content-center"
-                    >
-                      <span>25% OFF</span>
-                    </div>
-                  </div>
-                  <i class="favorite-icon fa-solid fa-heart"></i>
-                  <div class="card--detail">
-                    <h2>Complete C# Unity Game Developer</h2>
-                    <p>Rick Davidson</p>
-                    <hr />
-                    <div class="container">
-                      <div
-                        class="d-flex justify-content-between align-items-center"
-                      >
-                        <div class="stars">
-                          <i class="fa-solid fa-star color-star"></i>
-                          <span>4.7</span> <small>(174)</small>
-                        </div>
-                        <div class="newproduct-price">
-                          <span>₺125.99</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="course-card favorite col-sm-6 col-md-4 col-lg-3">
-                <a href="#" class="course-card--link">
-                  <div class="card--image">
-                    <img src="{{asset('assets/home')}}/assets/images/fp-image.png" alt="" />
-                    <div
-                      class="newproduct--off d-flex align-items-center justify-content-center"
-                    >
-                      <span>25% OFF</span>
-                    </div>
-                  </div>
-                  <i class="favorite-icon fa-solid fa-heart"></i>
-                  <div class="card--detail">
-                    <h2>Complete C# Unity Game Developer</h2>
-                    <p>Rick Davidson</p>
-                    <hr />
-                    <div class="container">
-                      <div
-                        class="d-flex justify-content-between align-items-center"
-                      >
-                        <div class="stars">
-                          <i class="fa-solid fa-star color-star"></i>
-                          <span>4.7</span> <small>(174)</small>
-                        </div>
-                        <div class="newproduct-price">
-                          <span>₺125.99</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="course-card favorite col-sm-6 col-md-4 col-lg-3">
-                <a href="#" class="course-card--link">
-                  <div class="card--image">
-                    <img src="{{asset('assets/home')}}/assets/images/fp-image.png" alt="" />
-                    <div
-                      class="newproduct--off d-flex align-items-center justify-content-center"
-                    >
-                      <span>25% OFF</span>
-                    </div>
-                  </div>
-                  <i class="favorite-icon fa-solid fa-heart"></i>
-                  <div class="card--detail">
-                    <h2>Complete C# Unity Game Developer</h2>
-                    <p>Rick Davidson</p>
-                    <hr />
-                    <div class="container">
-                      <div
-                        class="d-flex justify-content-between align-items-center"
-                      >
-                        <div class="stars">
-                          <i class="fa-solid fa-star color-star"></i>
-                          <span>4.7</span> <small>(174)</small>
-                        </div>
-                        <div class="newproduct-price">
-                          <span>₺125.99</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="course-card favorite col-sm-6 col-md-4 col-lg-3">
-                <a href="#" class="course-card--link">
-                  <div class="card--image">
-                    <img src="{{asset('assets/home')}}/assets/images/fp-image.png" alt="" />
-                    <div
-                      class="newproduct--off d-flex align-items-center justify-content-center"
-                    >
-                      <span>25% OFF</span>
-                    </div>
-                  </div>
-                  <i class="favorite-icon fa-solid fa-heart"></i>
-                  <div class="card--detail">
-                    <h2>Complete C# Unity Game Developer</h2>
-                    <p>Rick Davidson</p>
-                    <hr />
-                    <div class="container">
-                      <div
-                        class="d-flex justify-content-between align-items-center"
-                      >
-                        <div class="stars">
-                          <i class="fa-solid fa-star color-star"></i>
-                          <span>4.7</span> <small>(174)</small>
-                        </div>
-                        <div class="newproduct-price">
-                          <span>₺125.99</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
+              @endforeach
               <div class="course-card favorite col-sm-6 col-md-4 col-lg-3">
                 <a href="#" class="course-card--link">
                   <div class="card--image">
@@ -1081,7 +466,7 @@
             tabindex="0"
           >
             <div class="my-list row">
-              <div class="my-list--header col-12">
+<!--              <div class="my-list&#45;&#45;header col-12">
                 <div class="header-top list-header">
                   <h4>List Name-1</h4>
                   <a href="#"><i class="fa-solid fa-pencil"></i></a>
@@ -1093,8 +478,9 @@
                     adipisicing elit. Quidem
                   </p>
                 </div>
-              </div>
+              </div>-->
               <div class="my-list--content courses-list row">
+              @foreach($favouritedCourses as $course)
                 <div class="course-card col-sm-6 col-md-4 col-lg-3">
                   <a href="#" class="course-card--link">
                     <div class="card--image">
@@ -1107,7 +493,7 @@
                       </span>
                     </div>
                     <div class="card--detail">
-                      <h2>Complete C# Unity Game Developer</h2>
+                      <h2>{{$course->course->title}}</h2>
                       <p>Rick Davidson</p>
                       <div class="progress">
                         <div
@@ -1125,96 +511,7 @@
                     </div>
                   </a>
                 </div>
-                <div class="course-card col-sm-6 col-md-4 col-lg-3">
-                  <a href="#" class="course-card--link">
-                    <div class="card--image">
-                      <img src="{{asset('assets/home')}}/assets/images/fp-image.png" alt="" />
-                      <span
-                        id="image-video-icon"
-                        class="material-symbols-outlined"
-                      >
-                        play_circle
-                      </span>
-                    </div>
-                    <div class="card--detail">
-                      <h2>Complete C# Unity Game Developer</h2>
-                      <p>Rick Davidson</p>
-                      <div class="progress">
-                        <div
-                          class="progress-bar"
-                          role="progressbar"
-                          aria-label="Example with label"
-                          style="width: 25%"
-                          aria-valuenow="25"
-                          aria-valuemin="0"
-                          aria-valuemax="100"
-                        >
-                          25%
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="course-card col-sm-6 col-md-4 col-lg-3">
-                  <a href="#" class="course-card--link">
-                    <div class="card--image">
-                      <img src="{{asset('assets/home')}}/assets/images/fp-image.png" alt="" />
-                      <span
-                        id="image-video-icon"
-                        class="material-symbols-outlined"
-                      >
-                        play_circle
-                      </span>
-                    </div>
-                    <div class="card--detail">
-                      <h2>Complete C# Unity Game Developer</h2>
-                      <p>Rick Davidson</p>
-                      <div class="progress">
-                        <div
-                          class="progress-bar"
-                          role="progressbar"
-                          aria-label="Example with label"
-                          style="width: 25%"
-                          aria-valuenow="25"
-                          aria-valuemin="0"
-                          aria-valuemax="100"
-                        >
-                          25%
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="course-card col-sm-6 col-md-4 col-lg-3">
-                  <a href="#" class="course-card--link">
-                    <div class="card--image">
-                      <img src="{{asset('assets/home')}}/assets/images/fp-image.png" alt="" />
-                      <span
-                        id="image-video-icon"
-                        class="material-symbols-outlined"
-                      >
-                        play_circle
-                      </span>
-                    </div>
-                    <div class="card--detail">
-                      <h2>Complete C# Unity Game Developer</h2>
-                      <p>Rick Davidson</p>
-                      <div class="progress">
-                        <div
-                          class="progress-bar"
-                          role="progressbar"
-                          aria-label="Example with label"
-                          style="width: 25%"
-                          aria-valuenow="25"
-                          aria-valuemin="0"
-                          aria-valuemax="100"
-                        >
-                          25%
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
+              @endforeach
                 <div class="course-card col-sm-6 col-md-4 col-lg-3">
                   <a href="#" class="course-card--link">
                     <div class="card--image">
@@ -1248,158 +545,6 @@
               </div>
               <div class="my-list--pagination w-100">
                 <button>Daha Az</button>
-              </div>
-            </div>
-            <div class="my-list row">
-              <div class="my-list--header col-12">
-                <div class="header-top list-header">
-                  <h4>List Name-2</h4>
-                  <a href="#"><i class="fa-solid fa-pencil"></i></a>
-                  <a href="#"><i class="fa-solid fa-trash"></i></a>
-                </div>
-                <div class="header-button list-description">
-                  <p>
-                    List Description Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Quidem
-                  </p>
-                </div>
-              </div>
-              <div class="my-list--content courses-list row">
-                <div class="course-card col-sm-6 col-md-4 col-lg-3">
-                  <a href="#" class="course-card--link">
-                    <div class="card--image">
-                      <img src="{{asset('assets/home')}}/assets/images/fp-image.png" alt="" />
-                      <span
-                        id="image-video-icon"
-                        class="material-symbols-outlined"
-                      >
-                        play_circle
-                      </span>
-                    </div>
-                    <div class="card--detail">
-                      <h2>Complete C# Unity Game Developer</h2>
-                      <p>Rick Davidson</p>
-                      <div class="progress">
-                        <div
-                          class="progress-bar"
-                          role="progressbar"
-                          aria-label="Example with label"
-                          style="width: 25%"
-                          aria-valuenow="25"
-                          aria-valuemin="0"
-                          aria-valuemax="100"
-                        >
-                          25%
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="course-card col-sm-6 col-md-4 col-lg-3">
-                  <a href="#" class="course-card--link">
-                    <div class="card--image">
-                      <img src="{{asset('assets/home')}}/assets/images/fp-image.png" alt="" />
-                      <span
-                        id="image-video-icon"
-                        class="material-symbols-outlined"
-                      >
-                        play_circle
-                      </span>
-                    </div>
-                    <div class="card--detail">
-                      <h2>Complete C# Unity Game Developer</h2>
-                      <p>Rick Davidson</p>
-                      <div class="progress">
-                        <div
-                          class="progress-bar"
-                          role="progressbar"
-                          aria-label="Example with label"
-                          style="width: 25%"
-                          aria-valuenow="25"
-                          aria-valuemin="0"
-                          aria-valuemax="100"
-                        >
-                          25%
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="course-card col-sm-6 col-md-4 col-lg-3">
-                  <a href="#" class="course-card--link">
-                    <div class="card--image">
-                      <img src="{{asset('assets/home')}}/assets/images/fp-image.png" alt="" />
-                      <span
-                        id="image-video-icon"
-                        class="material-symbols-outlined"
-                      >
-                        play_circle
-                      </span>
-                    </div>
-                    <div class="card--detail">
-                      <h2>Complete C# Unity Game Developer</h2>
-                      <p>Rick Davidson</p>
-                      <div class="progress">
-                        <div
-                          class="progress-bar"
-                          role="progressbar"
-                          aria-label="Example with label"
-                          style="width: 25%"
-                          aria-valuenow="25"
-                          aria-valuemin="0"
-                          aria-valuemax="100"
-                        >
-                          25%
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="course-card col-sm-6 col-md-4 col-lg-3">
-                  <a href="#" class="course-card--link">
-                    <div class="card--image">
-                      <img src="{{asset('assets/home')}}/assets/images/fp-image.png" alt="" />
-                      <span
-                        id="image-video-icon"
-                        class="material-symbols-outlined"
-                      >
-                        play_circle
-                      </span>
-                    </div>
-                    <div class="card--detail">
-                      <h2>Complete C# Unity Game Developer</h2>
-                      <p>Rick Davidson</p>
-                      <div class="progress">
-                        <div
-                          class="progress-bar"
-                          role="progressbar"
-                          aria-label="Example with label"
-                          style="width: 25%"
-                          aria-valuenow="25"
-                          aria-valuemin="0"
-                          aria-valuemax="100"
-                        >
-                          25%
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="my-list--pagination w-100">
-                <button>Daha Fazla</button>
-              </div>
-            </div>
-            <div class="my-list row">
-              <div class="my-list--header col-12">
-                <div class="header-top list-header">
-                  <h4>List Name-3</h4>
-                  <a href="#"><i class="fa-solid fa-pencil"></i></a>
-                  <a href="#"><i class="fa-solid fa-trash"></i></a>
-                </div>
-                <div class="header-button list-description">
-                  <p>Bu listede henüz bir kurs yok!</p>
-                </div>
               </div>
             </div>
           </div>

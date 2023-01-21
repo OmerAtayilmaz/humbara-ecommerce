@@ -1,33 +1,32 @@
 <div class="container-fluid">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h3 class="m-0 font-weight-bold card-title-text">Add Course</h3>
+            <h3 class="m-0 font-weight-bold card-title-text">Add Course to {{$page_title}}</h3>
         </div>
         <div class="card-body">
-            <form method="POST" action="{{route('admin.course.featured.store')}}" enctype="multipart/form-data">
+            <form method="POST" action="{{route('admin.course.special.store')}}" enctype="multipart/form-data">
                 @csrf
+                <input type="hidden" name="category" value="{{$status}}"/>
                 <div class="mb-3 row">
-                    <label for="courseInputStatus" class="col-sm-2 col-form-label">Course Language</label>
+                    <label for="courseInputStatus" class="col-sm-2 col-form-label">Course</label>
                     <div class="col-sm-10">
                         <select name="course_id" class="form-control" id="courseInputStatus">
-                            <option selected="selected" value="TR">Choose Language</option>
-                            @foreach($courses as $course)
-                                <option value="{{$course->id}}">{{$course->title}}</option>
+                            @foreach($courses as $c)
+                                <option value="{{$c->course->id}}">{{$c->course->title}}</option>
                             @endforeach
                         </select>
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="courseInputKeyword" class="col-sm-2 col-form-label">Priority</label>
+                    <label for="priority" class="col-sm-2 col-form-label">Priority</label>
                     <div class="col-sm-10">
-                        <input name="priority" type="number" class="form-control" id="courseInputKeyword">
+                        <input name="priority" type="number" class="form-control" id="priority">
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="courseInputStatus" class="col-sm-2 col-form-label">Status</label>
+                    <label for="courseInput" class="col-sm-2 col-form-label">Status</label>
                     <div class="col-sm-10">
-                        <select name="status" class="form-control" id="courseInputStatus">
-                            <option selected="selected" value="TR">Choose Language</option>
+                        <select name="status" class="form-control" id="courseInput">
                             <option value="active" >Active</option>
                             <option value="inactive" selected>Inactive</option>
                         </select>

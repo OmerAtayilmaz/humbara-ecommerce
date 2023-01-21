@@ -5,6 +5,6 @@
         "navbar"=>[
             'courses'=>"Courses",
             'assets'=>"Assets",
-            "search"=>"Search"
+            'search'=>"Search"
         ]
     ];
