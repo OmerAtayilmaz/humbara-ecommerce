@@ -27,8 +27,14 @@ class HomeController extends Controller
 
 
 
+    public function facetmanagement(){
+        $courseList=Course::all();
+        return view("storefront.facetmanagement",compact("courseList"));
+    }
+    public function facetmanagementpost(Request $req){
 
-
+       return $req->all();
+    }
     public function index()
     {
         ClearCartAfterPaymentSuccess::ClearUserCart(6);

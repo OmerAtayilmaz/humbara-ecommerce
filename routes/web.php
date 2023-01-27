@@ -14,6 +14,8 @@ Route::middleware("storefront")->group(function(){
 Route::controller(HomeController::class)->group(function(){
 
     Route::get('/','index')->name('home');
+    Route::get('/facet-management','facetmanagement')->name('facetmanagement');
+    Route::post('/facet-management','facetmanagementpost');
     Route::redirect('/home','/');
 
     //Lists
