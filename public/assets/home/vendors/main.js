@@ -49,8 +49,8 @@ const qualitysArr = Array.from(qualitys);
 //
 //IIFE
 (function () {
-  totalTime.innerHTML = "00:00:00";
-  currentTime.innerHTML = "00:00:00";
+  // totalTime.innerHTML = "00:00:00";
+  // currentTime.innerHTML = "00:00:00";
 })();
 /// subtitle changing
 function playFunc() {

@@ -33,7 +33,8 @@ class HomeController extends Controller
     }
     public function facetmanagementpost(Request $req){
 
-       return $req->all();
+        $courses = Course::with(["user","course_price"])->get();
+        return $courses;
     }
     public function index()
     {
