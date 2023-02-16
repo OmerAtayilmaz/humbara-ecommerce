@@ -6,12 +6,17 @@ use Livewire\Component;
 use App\Models\HomeSlider;
 use Auth;
 use Livewire\WithFileUploads;
+use Livewire\WithPagination;
 
 class Slides extends Component
 {
     use WithFileUploads;
-    public $slides;
+    use WithPagination;
+
+    protected $slides;
     public $user_id,$title,$subtitle,$priority,$image,$status,$button_text,$button_link,$creator_device_ip;
+    private mixed $PAGINATION_COUNT=5;
+
     protected $listeners=[
         'createFaq'=>'create',
         'updateFaq'=>'updateFaq',
@@ -26,13 +31,13 @@ class Slides extends Component
     }
     public function render()
     {
-        $this->slides=HomeSlider::where('status','<>','DELETED')->get();
+        $this->slides=HomeSlider::ActiveSlides()->paginate($this->PAGINATION_COUNT);
         return view('livewire.admin.slides',[
             'slides'=>$this->slides
         ]);
     }
     public function create(){
-     
+
         $slide=new HomeSlider();
         $slide->user_id=Auth::user()->id;
         $slide->title=$this->title;
@@ -65,5 +70,5 @@ class Slides extends Component
             'type'=>'success'
         ]);
     }
-    
+
 }

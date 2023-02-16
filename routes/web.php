@@ -30,6 +30,7 @@ Route::controller(HomeController::class)->group(function(){
     Route::get("creators","creators")->name("creators");
     Route::get("off-courses/all","offcourses")->name("offcourses.list");
 
+
     //One
     Route::get('cart','coursescart')->name('coursescart')->middleware("auth");
     Route::get("creators/detail","creatordetail")->name("creator.detail");

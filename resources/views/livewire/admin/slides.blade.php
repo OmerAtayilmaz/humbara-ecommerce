@@ -1,5 +1,5 @@
 <div>
-   
+
     @if(session()->get('form'))
  <div class="container-fluid">
     <div class="card shadow mb-4">
@@ -10,7 +10,7 @@
         </div>
         <div class="card-body">
             <form @if(session()->get('status')=='edit')  wire:submit.prevent="update" @else wire:submit.prevent="create" @endif enctype="multipart/form-data">
-              
+
                 <div class="mb-3 row">
                     <label for="image" class="col-sm-2 col-form-label">Image</label>
                     <div class="col-sm-10">
@@ -34,7 +34,7 @@
 
                     </div>
                 </div>
-      
+
                 <div class="mb-3 row">
                     <label for="priority" class="col-sm-2 col-form-label">Priority</label>
                     <div class="col-sm-10">
@@ -156,11 +156,7 @@
                     </div>
                     <div class="row justify-content-center">
                         <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
-                            <ul class="pagination">
-                                <li class="paginate_button page-item previous disabled" id="dataTable_previous"><a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
-                                <li class="paginate_button page-item active"><a href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
-                                <li class="paginate_button page-item next disabled" id="dataTable_next"><a href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0" class="page-link">Next</a></li>
-                            </ul>
+                            {{$slides->links('vendor.pagination.custom')}}
                         </div>
                     </div>
                 </div>

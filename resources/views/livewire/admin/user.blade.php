@@ -16,16 +16,16 @@
                                     </button>
                                 </div>
                             </div>
-                           
+
                         </div>
                         <div class="col-md-3">
                             <div class="input-group">
                              <label class="p-2" for="limit">Limit:</label>
                                 <input id="limit" wire:model="limit" type="number" min="1" class="form-control bg-light border-0 small" placeholder="Limit: " aria-label="Search" aria-describedby="basic-addon2">
-                               
+
                             </div>
                         </div>
-                        <div class="col-sm-12">   
+                        <div class="col-sm-12">
                         <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                             <thead>
                                 <tr role="row">
@@ -58,7 +58,7 @@
                                         <td>{{$user->email}}</td>
                                         <td>{{$user->email_verified_at?"Active":"Unconfirmed"}}</td>
                                         <td>
-                                            user 
+                                            user
                                             <a href="{{route('admin.userroles',['userid'=>2])}}" onclick="return !window.open(this.href, '', 'top=50 left=100 width=800, height=600')">
                                                 <i class="fa-solid fa-circle-plus"></i>
                                             </a>
@@ -73,15 +73,11 @@
                                 @endif
                             </tbody>
                         </table>
-                </div>
+                        </div>
                     </div>
                         <div class="row justify-content-center">
                             <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
-                                <ul class="pagination">
-                                    <li class="paginate_button page-item previous disabled" id="dataTable_previous"><a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
-                                    <li class="paginate_button page-item active"><a href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
-                                    <li class="paginate_button page-item next disabled" id="dataTable_next"><a href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0" class="page-link">Next</a></li>
-                                </ul>
+                                {{$userList->links("vendor.pagination.custom")}}
                             </div>
                         </div>
                 </div>

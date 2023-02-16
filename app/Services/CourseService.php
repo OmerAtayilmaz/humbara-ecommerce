@@ -7,7 +7,7 @@ use App\Models\SpecialCourses;
 
 class CourseService {
 
-
+    private int $PAGINATION_COUNT = 10;
     public function PublishCourse($id):string{
      try{
             $course=Course::find($id);
@@ -23,7 +23,7 @@ class CourseService {
     }
     public function GetOnlyStagedCoursesList(){
         $onlineCourseIds=OnlineCourseCatalog::pluck("course_id");
-        $courseList=Course::whereNotIn('id',$onlineCourseIds)->get();
+        $courseList=Course::whereNotIn('id',$onlineCourseIds)->paginate($this->PAGINATION_COUNT);
         return $courseList;
     }
     public function UnpublishCourse($id):string{
@@ -35,5 +35,9 @@ class CourseService {
         }catch (\Exception $e){
             return "fail";
         }
+    }
+    public function getSimilarCourses(){
+        $onlineCourses = OnlineCourseCatalog::SimilarCourses();
+        return $onlineCourses;
     }
 }

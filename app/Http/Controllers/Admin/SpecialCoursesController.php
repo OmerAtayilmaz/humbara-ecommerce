@@ -10,45 +10,46 @@ use Illuminate\Http\Request;
 class SpecialCoursesController extends Controller
 {
 
+    private int $PAGINATION_COUNT=4;
     public function all_courses_index()
     {
-       $off_courses=SpecialCourses::with("course")->allCourses()->get();
+       $courses=SpecialCourses::with("course")->allCourses()->paginate($this->PAGINATION_COUNT);;
        $online_courses=OnlineCourseCatalog::activeCourses()->with("course")->get();
        $page_title="All Courses List";
        $status="all-course";
-       return view("backoffice.special.index",compact('status','page_title','off_courses','online_courses'));
+       return view("backoffice.special.index",compact('status','page_title','courses','online_courses'));
     }
     public function best_courses_index()
     {
-       $off_courses=SpecialCourses::with("course")->BestCourses()->get();
+        $courses=SpecialCourses::with("course")->BestCourses()->paginate($this->PAGINATION_COUNT);;
        $online_courses=OnlineCourseCatalog::activeCourses()->with("course")->get();
        $page_title="Best Courses List";
        $status="best-course";
-       return view("backoffice.special.index",compact('status','page_title','off_courses','online_courses'));
+       return view("backoffice.special.index",compact('status','page_title','courses','online_courses'));
     }
     public function latest_courses_index()
     {
-       $off_courses=SpecialCourses::with("course")->LatestCourses()->get();
+        $courses=SpecialCourses::with("course")->LatestCourses()->paginate($this->PAGINATION_COUNT);;
        $online_courses=OnlineCourseCatalog::activeCourses()->with("course")->get();
        $page_title="Latest Courses List";
        $status="latest-course";
-        return view("backoffice.special.index",compact('status','page_title','off_courses','online_courses'));
+        return view("backoffice.special.index",compact('status','page_title','courses','online_courses'));
     }
     public function featured_courses_index()
     {
-       $off_courses=SpecialCourses::with("course")->FeaturedCourses()->get();
+        $courses=SpecialCourses::with("course")->FeaturedCourses()->paginate($this->PAGINATION_COUNT);;
        $online_courses=OnlineCourseCatalog::activeCourses()->with("course")->get();
        $page_title="Featured Courses List";
        $status="featured-course";
-       return view("backoffice.special.index",compact('status','page_title','off_courses','online_courses'));
+       return view("backoffice.special.index",compact('status','page_title','courses','online_courses'));
     }
     public function off_courses_index()
     {
-        $off_courses=SpecialCourses::with("course")->OffCourses()->get();
+        $courses=SpecialCourses::with("course")->OffCourses()->paginate($this->PAGINATION_COUNT);;
         $online_courses=OnlineCourseCatalog::activeCourses()->with("course")->get();
         $page_title="Off Courses List";
         $status="off-course";
-        return view("backoffice.special.index",compact('status','page_title','off_courses','online_courses'));
+        return view("backoffice.special.index",compact('status','page_title','courses','online_courses'));
     }
 
     public function store(Request $request)

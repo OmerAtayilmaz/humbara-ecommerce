@@ -1,5 +1,5 @@
-<div>      
-     
+<div>
+
     @if(session()->has('CREATE_CATEGORY'))
                 <form @if(session()->get('status')=='edit')  wire:submit.prevent="update" @else wire:submit.prevent="create" @endif  class="p-5" enctype="multipart/form-data">
                     <div class="mb-3 row">
@@ -96,13 +96,13 @@
                         @endif
                 </form>
     @endif
-   
+
      <!-- Page Content -->
      <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h3 class="m-0 font-weight-bold card-title-text">Category List</h3>
         </div>
-        
+
         <div class="card-body">
             <div class="col-sm-12 col-md-6 mb-4">
                 <a wire:click="showPanel" class="btn btn-primary btn-large card-btn">Create Panel</a>
@@ -110,7 +110,7 @@
             <div class="table-responsive">
                 <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
                     <div class="row p-3">
-                       
+
                         <div class="col-sm-12 col-md-6 mb-4">
                             <div class="input-group">
                                 <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
@@ -162,7 +162,7 @@
                     </div>
                     <div class="row justify-content-center">
                         <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
-                           
+                            {{$categoryList->links("vendor.pagination.custom")}}
                         </div>
                     </div>
                 </div>

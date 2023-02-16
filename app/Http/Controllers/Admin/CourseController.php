@@ -10,15 +10,18 @@ use App\Models\CourseReview;
 use App\Models\CourseImageGallery;
 use App\Models\CourseQA as CourseQuestions;
 use App\Models\OnlineCourseCatalog;
-use App\Models\StagedCourseCatalog;
 use App\Services\CourseService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Auth;
+use Illuminate\View\View;
 
 class CourseController extends Controller
 {
+
     protected CourseService $courseService;
+    private int $PAGINATE_COUNT = 5;
+
     function __construct(CourseService $courseService){
         $this->courseService=$courseService;
     }
@@ -186,8 +189,8 @@ class CourseController extends Controller
         $image->save();
         return redirect()->back()->with('success','Image Deleted Successfully');
     }
-    public function online_courses_list(){
-        $courseList=OnlineCourseCatalog::with(["course","course.user"])->ActiveCourses()->get();
+    public function online_courses_list() : View{
+        $courseList = OnlineCourseCatalog::with(["course","course.user"])->ActiveCourses()->paginate($this->PAGINATE_COUNT);
         return view("backoffice.courses.online",compact("courseList"));
     }
     public function course_publish(Request $req,$courseid){

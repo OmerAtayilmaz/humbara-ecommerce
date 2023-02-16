@@ -8,6 +8,7 @@ use App\Mail\ResetPasswordMail;
 use App\Models\CourseCart;
 use App\Models\CourseCategory;
 use App\Models\Faq;
+use App\Models\OnlineCourseCatalog;
 use App\Models\SpecialCourses;
 use App\Strategies\ClearCartAfterPaymentSuccess;
 use Illuminate\Http\Request;
@@ -78,8 +79,9 @@ class HomeController extends Controller
         return view('storefront.assets.latest');
     }
     public function coursescart(){
-        $cartCourses=Auth::user()->shoppingCartItem;
-        return view('storefront.courses.cart',compact('cartCourses'));
+        $cartCourses = Auth::user()->shoppingCartItem;
+        $similarCourses = OnlineCourseCatalog::SimilarCourses()->get();
+        return view('storefront.courses.cart',compact('cartCourses','similarCourses'));
     }
     public function login(){
         if(Auth::user())

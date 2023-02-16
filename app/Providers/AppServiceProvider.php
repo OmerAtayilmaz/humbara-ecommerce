@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\ServiceProvider;
 use App\Models\TopBanner;
@@ -17,6 +18,7 @@ class AppServiceProvider extends ServiceProvider
     }
     public function boot()
     {
+
         $categoryList=CourseCategory::where('status','ACTIVE')->limit(5)->get();
         if(!empty($categoryList))
             View::share('categoryList',$categoryList);

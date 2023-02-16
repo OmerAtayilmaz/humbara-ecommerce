@@ -4,11 +4,14 @@ namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
 use App\Models\ContactMessage;
+use Livewire\WithPagination;
 
 class ContactMessages extends Component
 {
+    use WithPagination;
     public $listeners=['delete'=>'delete'];
     public $search='';
+    private int $PAGINATION_COUNT = 10;
 
     public function render()
     {
@@ -20,7 +23,7 @@ class ContactMessages extends Component
             ->orWhere('message','LIKE','%'.$search.'%')
             ->orWhere('status','LIKE','%'.$search.'%')
             ->orWhere('id','LIKE','%'.$search.'%');
-        })->orderBy('status','ASC')->get();
+        })->orderBy('status','ASC')->paginate($this->PAGINATION_COUNT);
         return view('livewire.admin.contact-messages',[
         'contactMessagesList'=>$contactMessagesList
     ]);

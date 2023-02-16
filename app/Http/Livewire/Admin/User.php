@@ -4,10 +4,13 @@ namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
 use App\Models\User as UserORM;
+use Livewire\WithPagination;
+
 class User extends Component
 {
+    use WithPagination;
     public $search='';
-    public $limit=10;
+    private mixed $PAGINATION_COUNT=10;
     public function render()
     {
         $search=$this->search;
@@ -20,12 +23,9 @@ class User extends Component
                     ->orWhere('surname','LIKE','%'.$search.'%')
                     ->orWhere('id','LIKE','%'.$search.'%');
         })
-        ->limit($this->limit)
-        ->get();
+        ->paginate($this->PAGINATION_COUNT);
 
 
-        return view('livewire.admin.user',[
-            'userList'=>$userList
-        ]);
+        return view('livewire.admin.user',compact('userList'));
     }
 }

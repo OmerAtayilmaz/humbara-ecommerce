@@ -7,4 +7,8 @@ return [
     ],
     "best-courses"=>[],
     "latest-courses"=>[],
+    "similar-courses"=>[
+        'title' => "Similar Courses",
+        'button_text' => "Show All"
+    ]
 ];

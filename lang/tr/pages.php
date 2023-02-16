@@ -7,4 +7,8 @@ return [
     ],
     "best-courses"=>[],
     "latest-courses"=>[],
+    "similar-courses"=>[
+        'title' => "Benzer Kurslar",
+        'button_text' => "Hepsini Göster"
+    ]
 ];

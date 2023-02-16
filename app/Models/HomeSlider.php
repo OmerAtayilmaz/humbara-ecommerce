@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Utils\enums\SlideStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,5 +14,8 @@ class HomeSlider extends Model
 
     public function owner(){
         return $this->belongsTo(User::class,'user_id');
+    }
+    public function scopeActiveSlides($query){
+        return $query->where('status',SlideStatus::ACTIVE);
     }
 }

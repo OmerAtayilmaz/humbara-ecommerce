@@ -3,13 +3,11 @@
 namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
-//image
 use Livewire\WithFileUploads;
 use Intervention\Image\ImageManagerStatic as ImageConverter;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
-use App\Models\CourseCategory as CourseCategoryORM;
-//slug
+use App\Models\CourseCategory;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Livewire\WithPagination;
@@ -17,12 +15,8 @@ use Livewire\WithPagination;
 class Category extends Component
 {
     use WithPagination;
-
-
-    //for image
     use WithFileUploads;
 
-    
     public $parent_id=0;
     public $status;
     public $title_en;
@@ -35,19 +29,19 @@ class Category extends Component
     public $description_tr;
     public $image;
     public $type="CATEGORY";
-    public $categoryList;
+    private $categoryList;
 
     public $edit_id;
     public $search;
     protected $listeners=['create','delete'];
 
+    private mixed $PAGINATION_COUNT = 5;
     public function showPanel(){
         if(session()->get('CREATE_CATEGORY'))
             session()->forget('CREATE_CATEGORY');
         else
             session(['CREATE_CATEGORY'=>true]);
     }
-    
 
     public function create(){
         $this->validate([
@@ -85,9 +79,8 @@ class Category extends Component
 
         session()->flash('success','Category created successfully');
         session()->forget('CREATE_CATEGORY');
-    
-    }
 
+    }
     public function edit($edit_id){
         $this->toggleForm('edit');
         $selected=CourseCategoryORM::find($edit_id);
@@ -142,10 +135,6 @@ class Category extends Component
             'type'=>'success'
         ]);
     }
-    function ipShow(){
-        $ip = Request::getClientIp();
-        return $ip;
-    }
     public function toggleForm($status){
         session([
             'form'=>!session('form'),
@@ -173,8 +162,8 @@ class Category extends Component
     }
     public function render()
     {
-        $search=$this->search;
-        $this->categoryList=CourseCategoryORM::where('status','<>','DELETED')->where(function($query) use ($search){
+        $search = $this->search;
+        $this->categoryList = CourseCategory::where('status','<>','DELETED')->where(function($query) use ($search){
             return $query->where('title_tr','LIKE',"%".$search."%")
                     ->orWhere('title_en','LIKE','%'.$search.'%')
                     ->orWhere('id','LIKE','%'.$search.'%')
@@ -182,9 +171,9 @@ class Category extends Component
                     ->orWhere('keywords_en','LIKE','%'.$search.'%')
                     ->orWhere('keywords_en','LIKE','%'.$search.'%')
                     ->orWhere('content_tr','LIKE','%'.$search.'%');
-        })->get();
-        return view('livewire.admin.category',[
-            'categoryList'=>$this->categoryList
+        })->paginate($this->PAGINATION_COUNT);
+        return view('livewire.admin.category', [
+            'categoryList' => $this->categoryList
         ]);
     }
 }

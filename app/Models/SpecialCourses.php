@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Utils\enums\SpecialCourseType;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,19 +11,19 @@ class SpecialCourses extends Model
     use HasFactory;
 
     public function scopeAllCourses($query){
-        return $query->where("category","all-course")->where('status','<>','deleted');
+        return $query->where("category",SpecialCourseType::ALL_COURSE)->where('status','<>','deleted');
     }
     public function scopeBestCourses($query){
-        return $query->where("category","best-course")->where('status','<>','deleted');
+        return $query->where("category",SpecialCourseType::BEST_COURSE)->where('status','<>','deleted');
     }
     public function scopeLatestCourses($query){
-        return $query->where("category","latest-course")->where('status','<>','deleted');
+        return $query->where("category",SpecialCourseType::LATEST_COURSE)->where('status','<>','deleted');
     }
     public function scopeFeaturedCourses($query){
-        return $query->where("category","featured-course")->where('status','<>','deleted');
+        return $query->where("category",SpecialCourseType::FEATURED_COURSE)->where('status','<>','deleted');
     }
     public function scopeOffCourses($query){
-        return $query->where("category","off-course")->where('status','<>','deleted');
+        return $query->where("category",SpecialCourseType::OFF_COURSE)->where('status','<>','deleted');
     }
     public function scopeActiveCourses($query){
         return $query->where("status","active");
