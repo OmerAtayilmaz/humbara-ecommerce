@@ -17,6 +17,27 @@ class OnlineCourseCatalog extends Model
     public function scopeActiveCourses($query){
         return $query->where('status',CourseStatus::ACTIVE);
     }
+    // Get online courses by course category id
+    public function scopeGetOnlineCoursesByCategory($query,$category_id){
+        return $query->activeCourses()->whereHas("course",function($q) use ($category_id){
+            $q->where("category_id",$category_id);
+        })->with(["course" => function($q){
+            $q->with("user");
+            $q->with("course_price");
+        }]);
+    }
+    public function scopeGetOnlineCoursesBySearch($query,$search){
+        return $query->activeCourses()->whereHas("course",function($q) use ($search){
+            $q->where("title","like","%$search%")
+            ->orWhere('lang','LIKE','%'.$search.'%')
+                ->orWhere('description','LIKE','%'.$search.'%')
+                ->orWhere('keywords','LIKE','%'.$search.'%')
+                ->orWhere('content','LIKE','%'.$search.'%');
+        })->with(["course" => function($q){
+            $q->with("user");
+            $q->with("course_price");
+        }]);
+    }
 
     // TODO:  Similar Courses Strategy is not implemented yet.
     public function scopeSimilarCourses($query){
@@ -25,6 +46,5 @@ class OnlineCourseCatalog extends Model
             $q->with("course_price");
         }]);
     }
-
 
 }

@@ -217,21 +217,13 @@ class HomeController extends Controller
     }
     public function search(){
        $search=request("query");
-       $data=Course::where('status','<>','DELETED')
-        ->where(function($query) use ($search){
-            return $query->where('title','LIKE',"%".$search."%")
-                    ->orWhere('lang','LIKE','%'.$search.'%')
-                    ->orWhere('description','LIKE','%'.$search.'%')
-                    ->orWhere('keywords','LIKE','%'.$search.'%')
-                    ->orWhere('content','LIKE','%'.$search.'%');
-        })->get();
-        return view('storefront.courses.search-list')->with('courseList',$data)->with("search",$search);
+       $courses=OnlineCourseCatalog::GetOnlineCoursesBySearch($search)->get();
+       return view('storefront.courses.search-list',compact('courses'))->with("search",$search);
     }
 
     public function coursesByCategory($id){
-        $data=Course::where('status','ACTIVE')
-        ->where('category_id',$id)->get();
-        return view('storefront.courses.bycategory')->with('courseList',$data);
+        $courses=OnlineCourseCatalog::GetOnlineCoursesByCategory($id)->get();
+        return view('storefront.courses.bycategory',compact('courses'));
     }
 
     public function user_email_verify_panel(){

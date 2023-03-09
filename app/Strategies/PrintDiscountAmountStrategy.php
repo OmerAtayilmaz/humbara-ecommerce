@@ -1,5 +1,5 @@
 <?php
-namespace App\Utils;
+namespace App\Strategies;
 class PrintDiscountAmountStrategy
 {
 

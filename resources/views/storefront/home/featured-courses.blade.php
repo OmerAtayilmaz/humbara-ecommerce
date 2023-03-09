@@ -12,7 +12,7 @@
             <a href="{{route("course.detail",["slug"=>$c->course->slug,"id"=>$c->course->id])}}" class="newproduct-card--link">
               <img src="{{Storage::url($c->course->card_image)}}" alt="" />
               <div class="newproduct--off">
-                <span>25% OFF</span>
+                <span>{{App\Services\Pricing::printCoursePriceName($c->course->course_price)}}</span>
               </div>
               <div class="newproduct--content">
                 <div class="container d-flex flex-column mt-3">

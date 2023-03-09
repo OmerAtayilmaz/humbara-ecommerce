@@ -6,7 +6,7 @@ use App\Models\CourseCart;
 use App\Http\Controllers\Home\HomeController;
 class Pricing
 {
-   public static function getPrice(CoursePrice $pricing){
+    public static function getPrice(CoursePrice $pricing){
        switch ($pricing["type"]){
            case "OFF":
                return $pricing["cheap_price"];
@@ -41,5 +41,14 @@ class Pricing
                 break;
         }
         return $price;
+    }
+    public static function printCoursePriceName($pricing) : string{
+        if ($pricing["type"] == "OFF")
+           return $pricing->cheap_pr_title;
+        if ($pricing["type"] == "CAMPAINS")
+           return $pricing->campains;
+        if ($pricing["type"] == "NORMAL")
+           return $pricing->expensive_pr_title;
+        return $pricing->expensive_pr_title;
     }
 }

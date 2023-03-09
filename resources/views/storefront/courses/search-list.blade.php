@@ -174,26 +174,26 @@
         </div>
         <div class="col-12 col-lg-9">
           <div class="row" style="--bs-gutter-y: 1rem">
-            @if(count($courseList)>0)
-                @foreach($courseList as $course)
+            @if(count($courses)>0)
+                @foreach($courses as $course)
                 <div class="col-12 col-sm-6 col-lg-4">
                 <div class="newproduct-card">
-                    <a href="{{route("course.detail",["slug"=>$course->slug,"id"=>$course->id])}}" class="newproduct-card--link">
+                    <a href="{{route("course.detail",["slug"=>$course->course->slug,"id"=>$course->course->id])}}" class="newproduct-card--link">
                     <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
                     <div class="newproduct--off">
-                        <span>25% OFF</span>
+                        <span>{{App\Services\Pricing::printCoursePriceName($course->course->course_price)}}</span>
                     </div>
                     <div class="newproduct--content">
                         <div class="container d-flex flex-column mt-3">
                         <small class="color-gray">Category</small>
-                        <span class="color-primary text-decoration-none newproduct--title">{{$course->title}}</span>
+                        <span class="color-primary text-decoration-none newproduct--title">{{$course->course->title}}</span>
                         <div class="creator">
-                            @if($course->user->profile_photo_path==null)
+                            @if($course->course->user->profile_photo_path==null)
                             <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
                             @else
-                            <img src="{{Storage::url($course->user->profile_photo_path)}}" alt="{{$course->user->name}} {{$course->user->surname}}" />
+                            <img src="{{Storage::url($course->course->user->profile_photo_path)}}" alt="{{$course->course->user->name}} {{$course->course->user->surname}}" />
                             @endif
-                            <span class="color-gray">by {{$course->user->name}} {{$course->user->surname}}</span>
+                            <span class="color-gray">by {{$course->course->user->name}} {{$course->course->user->surname}}</span>
                         </div>
                         </div>
                         <hr />
@@ -214,72 +214,7 @@
                 </div>
                 @endforeach
             @endif
-            <div class="col-12 col-sm-6 col-lg-4">
-              <div class="newproduct-card">
-                <a href="productdetail.html" class="newproduct-card--link">
-                  <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
-                  <div class="newproduct--off">
-                    <span>25% OFF</span>
-                  </div>
-                  <div class="newproduct--content">
-                    <div class="container d-flex flex-column mt-3">
-                      <small class="color-gray">Category</small>
-                      <span class="color-primary text-decoration-none newproduct--title">Full 3D Design Design Design
-                        Design Design Course</span>
-                      <div class="creator">
-                        <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
-                        <span class="color-gray">by John Doe</span>
-                      </div>
-                    </div>
-                    <hr />
-                    <div class="container mb-3">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="stars">
-                          <i class="fa-solid fa-star color-star"></i>
-                          <span>4.7</span> <small>(174)</small>
-                        </div>
-                        <div class="newproduct-price">
-                          <span>₺125.99</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4">
-              <div class="newproduct-card">
-                <a href="productdetail.html" class="newproduct-card--link">
-                  <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
-                  <div class="newproduct--off">
-                    <span>25% OFF</span>
-                  </div>
-                  <div class="newproduct--content">
-                    <div class="container d-flex flex-column mt-3">
-                      <small class="color-gray">Category</small>
-                      <span class="color-primary text-decoration-none newproduct--title">Full 3D Design Design Design
-                        Design Design Course</span>
-                      <div class="creator">
-                        <img src="{{asset('assets/home')}}/assets/images/aboutus.png" alt="" />
-                        <span class="color-gray">by John Doe</span>
-                      </div>
-                    </div>
-                    <hr />
-                    <div class="container mb-3">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="stars">
-                          <i class="fa-solid fa-star color-star"></i>
-                          <span>4.7</span> <small>(174)</small>
-                        </div>
-                        <div class="newproduct-price">
-                          <span>₺125.99</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
+
           </div>
           <div class="w-100 d-flex align-items-center justify-content-center mt-5">
             <button class="btn bg-primarycolor text-white" style="background-color: var(--primary-color)">

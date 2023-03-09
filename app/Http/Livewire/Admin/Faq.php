@@ -10,7 +10,7 @@ use Auth;
 class Faq extends Component
 {
 
-    
+
     use WithPagination;
 
     public $question;
@@ -26,7 +26,7 @@ class Faq extends Component
         'updateFaq'=>'updateFaq',
         'delete'=>'delete'
     ];
-    
+
     public function render()
     {
         $search=$this->search;

@@ -1,21 +1,11 @@
-[] -> StagedCourseCatalog
-[] -> OnlineCourseCatalog
-[] -> CampainsCourses
-[] -> OffCourses
-[] -> FeaturedCourses
-[] -> BestCourses
-[] -> LatestCourses
-[] -> AllCourses
-[] -> E-COMMERCE-SUIT: Uzerinde Checkout Ekle
-[] -> Ödeme İşlemleri(Checkout-success/fail UserController.php'den devam)
-[] -> Category Sayfasında Livewire ile anlık FACET Management yapılacak
-[] ->
-
-
---- Bulunan Buglar
-fiyat eklerken truncated exception 'type' kontrol edilmelidir.
-Sayfalarda geri buttonu çalışmıyor. - özellikle backofficede -
--kredi kartlarının 6 hanesinden fazlasını tutmak suçtur-
--unique olmayan email ile kayıt olunduğunda HATA dönüyor-mesaj dönmelidir.
--Her sayfada ayrı ayrı konsol kontrol edilmelidir, exceptionların hepsi giderilmeli jsleri yüklenmelidir.
+PLP PAGES
+[] -> Ürün Listeleme Alanlarımız
+    - Featured Products // HomePage
+    - Off Products // HomePage
+    - Search Products // Search Page
+    - Category Products // Category Page
+    # SPECIAL PAGES
+    - all courses
+    - best courses
+    - latest courses
 

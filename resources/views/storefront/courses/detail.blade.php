@@ -69,15 +69,35 @@
                             </p>
                         </div>
                     </div>
-                    <div class="d-flex align-items-center">
-                        <span class="badge rounded-pill bg-graycolor fs-6">${{ $course->price}}</span>
-                        <form action="{{route('course.add.cart',['slug'=>$course->slug,'id'=>$course->id])}}" method="POST">
-                            @csrf
-                            <button type="submit" class="btn bg-primarycolor text-white ms-3 px-3 py-1" style="background-color: var(--primary-color) !important" >
-                                Add to Cart
-                            </button>
-                        </form>
-                    </div>
+                    @if(\App\Strategies\StoreFrontBasicStrategies::isCourseInCartOrPurchasedByUser($course->id) == \App\Utils\enums\CourseOwnershipStatus::IN_CART)
+                        <div class="d-flex align-items-center">
+                            <span class="badge rounded-pill bg-graycolor fs-6">${{ $course->price}}</span>
+                            <form>
+                                <button disabled  class="btn bg-primarycolor text-white ms-3 px-3 py-1" style="background-color: var(--primary-color) !important" >
+                                    {{__('messages.warning.course.already_in_cart')}}
+                                </button>
+                            </form>
+                        </div>
+                    @elseif(\App\Strategies\StoreFrontBasicStrategies::isCourseInCartOrPurchasedByUser($course->id) == \App\Utils\enums\CourseOwnershipStatus::PURCHASED)
+                        <div class="d-flex align-items-center">
+                            <span class="badge rounded-pill bg-graycolor fs-6">${{ $course->price}}</span>
+                            <form>
+                                <button disabled  class="btn bg-primarycolor text-white ms-3 px-3 py-1" style="background-color: var(--primary-color) !important" >
+                                    {{__('messages.warning.course.already_bought')}}
+                                </button>
+                            </form>
+                        </div>
+                    @else
+                        <div class="d-flex align-items-center">
+                            <span class="badge rounded-pill bg-graycolor fs-6">${{ $course->price}}</span>
+                            <form action="{{route('course.add.cart',['slug'=>$course->slug,'id'=>$course->id])}}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn bg-primarycolor text-white ms-3 px-3 py-1" style="background-color: var(--primary-color) !important" >
+                                    Add to Cart
+                                </button>
+                            </form>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
@@ -205,12 +225,33 @@
                                 for="info-outlined-2"
                             >Commercial License - $16.00</label
                             >
-                            <button
-                                class="btn bg-primarycolor text-white w-100 mb-3"
-                                style="background-color: var(--primary-color) !important"
-                            >
-                                Add to Cart
-                            </button>
+                            @if(\App\Strategies\StoreFrontBasicStrategies::isCourseInCartOrPurchasedByUser($course->id) == \App\Utils\enums\CourseOwnershipStatus::IN_CART)
+                                <button
+                                    class="btn bg-primarycolor text-white w-100 mb-3"
+                                    style="background-color: var(--primary-color) !important"
+                                    disabled
+                                >
+                                    {{__('messages.warning.course.already_in_cart')}}
+                                </button>
+                            @elseif(\App\Strategies\StoreFrontBasicStrategies::isCourseInCartOrPurchasedByUser($course->id) == \App\Utils\enums\CourseOwnershipStatus::PURCHASED)
+                                <button
+                                    class="btn bg-primarycolor text-white w-100 mb-3"
+                                    style="background-color: var(--primary-color) !important"
+                                    disabled
+                                >
+                                    {{__('messages.warning.course.already_bought')}}
+
+                                </button>
+                            @else
+                                <button
+                                    class="btn bg-primarycolor text-white w-100 mb-3"
+                                    style="background-color: var(--primary-color) !important"
+                                    disabled
+                                >
+                                    Add to Cart
+                                </button>
+                            @endif
+
                         </div>
                         <div>
                             <h5 class="fw-bold">Product Details</h5>
