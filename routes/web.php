@@ -193,13 +193,3 @@ Route::middleware('auth')->prefix('/backoffice')->name('admin.')->group(function
         Route::post("/store","topBannerStore")->name("store");
     });
 });
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
