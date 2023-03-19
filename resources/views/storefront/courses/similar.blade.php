@@ -10,7 +10,7 @@
             @foreach($similarCourses as $item)
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                 <div class="newproduct-card">
-                    <a href="productdetail.html" class="newproduct-card--link">
+                    <a href="{{route("course.detail",["slug"=>$item->course->slug,"id"=>$item->course->id])}}" class="newproduct-card--link">
                         <img src="{{Storage::url($item->course->card_image)}}" alt="" />
                         <div
                             class="newproduct--off"

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Utils\enums;
+namespace App\Utils\Enums;
 
 class PriceTypes{
     public const OFF = "off";

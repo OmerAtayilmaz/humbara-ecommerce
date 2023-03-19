@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Utils\enums\CourseStatus;
+use App\Utils\Enums\OrderStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -15,7 +15,7 @@ class OnlineCourseCatalog extends Model
     }
 
     public function scopeActiveCourses($query){
-        return $query->where('status',CourseStatus::ACTIVE);
+        return $query->where('status',OrderStatus::ACTIVE);
     }
     // Get online courses by course category id
     public function scopeGetOnlineCoursesByCategory($query,$category_id){
@@ -42,7 +42,10 @@ class OnlineCourseCatalog extends Model
     // TODO:  Similar Courses Strategy is not implemented yet.
     public function scopeSimilarCourses($query){
         return $query->activeCourses()->limit(4)->with(["course"=>function($q){
-            $q->with("user");
+            $q->select("id","title","course_owner","card_image","slug");
+            $q->with([ "user" => function($q){
+                $q->select("id", "name", "profile_photo_path");
+            }]);
             $q->with("course_price");
         }]);
     }

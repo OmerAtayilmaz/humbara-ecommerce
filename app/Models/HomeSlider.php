@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Utils\enums\SlideStatus;
+use App\Utils\Enums\SlideStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

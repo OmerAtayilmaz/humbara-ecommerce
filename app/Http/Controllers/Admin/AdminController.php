@@ -165,6 +165,7 @@ class AdminController extends Controller
     }
     public function shopcart($id){
         $cartItemsList=User::find($id)->shoppingCartItem;
+
         return view('backoffice.user.cartlist',[
             'cartItemsList'=>$cartItemsList
         ]);

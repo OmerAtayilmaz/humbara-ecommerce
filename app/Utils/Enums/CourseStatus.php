@@ -1,5 +1,5 @@
 <?php
-namespace App\Utils\enums;
+namespace App\Utils\Enums;
 
 class CourseStatus {
     public const ACTIVE = 'active';

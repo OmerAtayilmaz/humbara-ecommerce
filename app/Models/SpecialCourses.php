@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Utils\enums\SpecialCourseType;
+use App\Utils\Enums\SpecialCourseType;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

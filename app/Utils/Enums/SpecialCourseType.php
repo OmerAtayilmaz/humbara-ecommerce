@@ -1,5 +1,5 @@
 <?php
-namespace App\Utils\enums;
+namespace App\Utils\Enums;
 
 class SpecialCourseType{
     const ALL_COURSE="all-course";
